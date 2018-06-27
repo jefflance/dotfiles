@@ -52,9 +52,11 @@ cnoremap w!! w !sudo tee > /dev/null %
 "    \_/  |___|_|  |_| |_|   |_____\___/ \____|
 "
 """""""""""""""""""""""""""""""""""""""""""""""
-" Load vim-plug
-if empty(glob("./vim/autoload/plug.vim"))
-    execute '!curl -fLo ./vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+" Install vim-plug if we don't already have it
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
 endif
 
 " Specify a directory for plugins
