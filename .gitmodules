@@ -1,6 +1,3 @@
-[submodule "awesome"]
-	path = awesome
-	url = https://github.com/jefflance/awesomerc.git
 [submodule "libs/github/dotbot"]
 	path = libs/github/dotbot
 	url = https://github.com/anishathalye/dotbot.git
