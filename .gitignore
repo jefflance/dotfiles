@@ -1,0 +1,23 @@
+#
+# Ignore these files globally in this repo.
+#
+
+# log files
+*.log
+
+# vim backed up files
+*~
+
+# emacs files
+/emacs/*\#*
+/emacs/emacs.d/ac-comphist.dat
+/emacs/emacs.d/history
+/emacs/emacs.d/custom.el
+/emacs/emacs.d/SessionDesktop.el
+/emacs/emacs.d/backups/*
+/emacs/emacs.d/elpa/*
+/emacs/emacs.d/ido.last
+/emacs/emacs.d/network-security.data
+/emacs/emacs.d/thumbs/*
+/emacs/emacs.d/auto-save-list
+/emacs/emacs.d/\#*
