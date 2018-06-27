@@ -21,3 +21,6 @@
 /emacs/emacs.d/thumbs/*
 /emacs/emacs.d/auto-save-list
 /emacs/emacs.d/\#*
+
+# .uuid fils
+*.uuid
