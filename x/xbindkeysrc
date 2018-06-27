@@ -1,0 +1,5 @@
+# Fix to allow the use of mouse button to navigate into PCManFM
+"/usr/bin/xvkbd -text '\[Alt_L]\[Left]'"
+ b:8
+"/usr/bin/xvkbd -text '\[Alt_L]\[Right]'"
+ b:9

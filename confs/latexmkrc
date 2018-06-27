@@ -1,0 +1,29 @@
+###########################
+#   LatexMK config file   #
+###########################
+
+# where auxiliary files are to be written (don't work with lualatex)
+$aux_dir = "build";
+
+# where output files are to be written
+$out_dir = "build";
+
+# files to be deleted during a cleanup operation
+$clean_ext = "nav pre snm synctex.gz bbl vrb";
+$clean_full_ext = "nav pre snm synctex.gz bbl vrb";
+push @generated_exts, "nav", "pre", "snm", "synctex.gz", "bbl", "vrb";
+
+# default excluded files when run without any arguments
+@default_excluded_files = ("partie*.tex");
+
+# LaTeX processing program used when run with pdflatex option
+# i use lualatex and generate a pdf version of the document using pdflatex
+$pdf_mode = "1";
+$postscript_mode = $dvi_mode = 0;
+$pdflatex = "lualatex -shell-escape -synctex=1 -interaction=nonstopmode -halt-on-error %O %S";
+
+# LaTeX processing program used when run with lualatex option
+# generate a pdf version of the document using lualatex
+$pdf_mode = 4;
+$lualatex = "lualatex -shell-escape -synctex=1 -interaction=nonstopmode -halt-on-error %O %S";
+

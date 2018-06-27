@@ -1,0 +1,78 @@
+! ------------------------------------------------------------------------------
+! Theme Configuration 
+! ------------------------------------------------------------------------------
+#include ".Xresources.d/themes/dracula.res"
+
+! ------------------------------------------------------------------------------
+! ROFI Configuration
+! ------------------------------------------------------------------------------
+#include ".Xresources.d/rofi/dracula.res"
+
+! ------------------------------------------------------------------------------
+! Xft fonts Configuration 
+! ------------------------------------------------------------------------------
+Xft.dpi:				  96
+Xft.antialias:				  true
+Xft.rgba:				  rgb
+Xft.hinting:				  true
+Xft.hintstyle:				  hintslight
+Xft.autohint:				  false
+Xft.lcdfilter:				  lcddefault
+
+! ------------------------------------------------------------------------------
+! SSH-ASKPASS
+! ------------------------------------------------------------------------------
+ssh-askpass.Dialog.font:                  xft:roboto,mono-11:regular
+ssh-askpass.?.foreground:                 rgb:b6/b6/b6
+ssh-askpass.?.background:                 rgb:00/00/00
+ssh-askpass.topShadowColor:               rgb:5f/5f/5f
+ssh-askpass.bottomShadowColor:            rgb:24/24/24
+ssh-askpass.borderColor:                  rgb:00/00/00
+ssh-askpass.shadowThickness:              1
+ssh-askpass.borderWidth:                  0
+ssh-askpass.horizontalSpacing:            5
+ssh-askpass.verticalSpacing:              6
+
+ssh-askpass.Button.font:                  Roboto
+ssh-askpass.Button.shadowThickness:       2
+ssh-askpass.Button.borderWidth:           0
+ssh-askpass.Button.horizontalSpacing:     5
+ssh-askpass.Button.verticalSpacing:       2
+
+ssh-askpass.Indicator.foreground:         rgb:f0/54/4c
+ssh-askpass.Indicator.background:         rgb:55/55/55
+ssh-askpass.Indicator.shadowThickness:    1
+ssh-askpass.Indicator.borderWidth:        0
+ssh-askpass.Indicator.height:             7
+ssh-askpass.Indicator.width:              15
+ssh-askpass.Indicator.horizontalSpacing:  2
+ssh-askpass.Indicator.verticalSpacing:    4
+ssh-askpass.Indicator.minimumCount:       8
+ssh-askpass.Indicator.maximumCount:       24
+
+! ------------------------------------------------------------------------------
+! Urxvt
+! ------------------------------------------------------------------------------
+URxvt*font:				  xft:Inconsolata\ for\ Powerline:size=11
+URxvt.depth:				  32
+URxvt.background:			  rgba:0000/0000/0200/c800
+URxvt*scrollBar:			  False
+URxvt.scrollBar_right:			  False
+URxvt.scrollBar_floating:		  False
+URxvt.scrollstyle:			  rxvt
+URxvt.perl-ext-common:			  default,fullscreen,resize-font,selection-to-clipboard,pasta,tabbed,-readline
+URxvt.keysym.M-u:			  perl:url-select:select_next
+URxvt.keysym.F11:			  perl:fullscreen:switch
+URxvt.url-launcher:			  /usr/bin/chromium-browser
+URxvt.underlineURLs:			  True
+URxvt.matcher.button:			  1
+URxvt.keysym.M-Escape:			  perl:keyboard-select:activate
+URxvt.keysym.Control-Shift-V:		  perl:pasta:paste
+URxvt.clipboard.autocopy:		  True
+URxvt*termName:				  rxvt-unicode
+
+! ------------------------------------------------------------------------------
+! XTerm
+! ------------------------------------------------------------------------------
+XTerm*termName:				  xterm-256color
+

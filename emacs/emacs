@@ -1,0 +1,626 @@
+;;;; .emacs --- Emacs init file
+;;;; Commentary:
+
+
+
+;;;; Code:
+;;  ______   ______ _____ _____ __  __   ___ _   _ _____ ___  ____
+;; / ___\ \ / / ___|_   _| ____|  \/  | |_ _| \ | |  ___/ _ \/ ___|
+;; \___ \\ V /\___ \ | | |  _| | |\/| |  | ||  \| | |_ | | | \___ \
+;;  ___) || |  ___) || | | |___| |  | |  | || |\  |  _|| |_| |___) |
+;; |____/ |_| |____/ |_| |_____|_|  |_| |___|_| \_|_|   \___/|____/
+;;
+;; Check if system is Darwin/Mac OS X
+(setq is-mac (equal system-type 'darwin))
+;; Check if system is GNU/Linux
+(setq is-gnu (equal system-type 'gnu/linux))
+;; Check if system is desktop "saitama"
+(setq is-saitama (equal (system-name) "saitama"))
+;; Check if system is laptop "genos"
+(setq is-genos (equal (system-name) "genos.local"))
+;; Check if there's we are connected to an host given as optional parameter
+(defun is-connected-to (&optional host)
+  "Return if we are or not connected to an HOST."
+  (= 0 (call-process "ping" nil nil nil "-c" "1" "-W" "1"
+                     (if host host "www.google.fr"))))
+
+
+
+;;   ____ _     ___  ____    _    _
+;;  / ___| |   / _ \| __ )  / \  | |
+;; | |  _| |  | | | |  _ \ / _ \ | |
+;; | |_| | |__| |_| | |_) / ___ \| |___
+;;  \____|_____\___/|____/_/   \_\_____|
+;;
+;; User details
+(setq user-full-name "Jeff LANCE"
+			 user-mail-address "jeff.lance@mala.fr")
+
+;; My directory Location
+(defconst jeff/emacsd (concat (getenv "HOME") "/.emacs.d/"))
+(defun my-emacssubd (d)
+  "Define a subdirectory named D from the ~/.emacs.d location."
+  (expand-file-name d jeff/emacsd))
+
+;; Directory structure
+(let* ((subdirs '("elisp" "backups"))
+       (fulldirs (mapcar (lambda (d) (my-emacssubd d)) subdirs)))
+  (dolist (dir fulldirs)
+    (when (not (file-exists-p dir))
+      (message "Make directory: %s" dir)
+      (make-directory dir))))
+
+;; Setting up the Load Path
+;; Packages not available in the package manager are stored in the
+;; personal directory: $HOME/.emacs.d/elisp
+(add-to-list 'load-path (my-emacssubd "elisp"))
+;;(let ((default-directory "~/.emacs.d/elisp" ))
+;;  (normal-top-level-add-subdirs-to-load-path))
+
+;; Redirect custom system config to another file
+(setq custom-file (concat jeff/emacsd "custom.el"))
+(load custom-file)
+
+;; Force locale environment setting as it cause an error when compile
+;; LaTeX file with LuaLaTeX.
+(setenv "LC_ALL" "fr_FR.UTF-8")
+
+ 
+
+;;  ____ _____  _    ____ _____     _   _ ____
+;; / ___|_   _|/ \  |  _ \_   _|   | | | |  _ \
+;; \___ \ | | / _ \ | |_) || |_____| | | | |_) |
+;;  ___) || |/ ___ \|  _ < | |_____| |_| |  __/
+;; |____/ |_/_/   \_\_| \_\|_|      \___/|_|
+;;
+;; Splash screen
+(setq inhibit-splash-screen t
+			 initial-scratch-message nil
+       initial-major-mode 'org-mode)
+
+;; Scroll bar, menu bar, tool bar
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+;; Marking text
+(delete-selection-mode t)
+(transient-mark-mode t)
+(setq select-enable-clipboard t)
+
+;; UTF-8
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(setq current-language-environment "UTF-8")
+(prefer-coding-system 'utf-8)
+(setenv "LC_CTYPE" "UTF-8")
+
+;; Column and line numbers
+(setq column-number-mode t
+			 line-number-mode t)
+
+;; Indentation
+; no tabs for indentation but two spaces.
+(setq tab-width 2
+       indent-tabs-mode nil)
+; make tab key do indent first then completion.
+(setq-default tab-always-indent 'complete)
+
+;; Paren-mode
+(show-paren-mode t)
+
+
+
+;;  ____   _    ____ _  __    _    ____ _____ ____
+;; |  _ \ / \  / ___| |/ /   / \  / ___| ____/ ___|
+;; | |_) / _ \| |   | ' /   / _ \| |  _|  _| \___ \
+;; |  __/ ___ \ |___| . \  / ___ \ |_| | |___ ___) |
+;; |_| /_/   \_\____|_|\_\/_/   \_\____|_____|____/
+;;
+;; Package Manager
+(require 'package)
+(setq package-archives '(("org"			. "http://orgmode.org/elpa/")
+                         ("gnu"				. "http://elpa.gnu.org/packages/")
+                         ("melpa"			. "http://melpa.org/packages/")
+                         ("marmalade"	. "http://marmalade-repo.org/packages/")))
+(package-initialize)
+(if (is-connected-to) (package-refresh-contents)) ; package refresh if we are connected.
+
+;; Use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+
+;; AucTeX
+(use-package auctex
+  :ensure t
+  :mode ("\\.tex\\'" . latex-mode)
+  :commands (latex-mode LaTeX-mode plain-tex-mode)
+  :init
+  (progn
+	(eval-after-load "tex"
+	  '(add-to-list 'TeX-command-list
+					'("LatexMk Clean" "latexmk -lualatex %t && latexmk -c %t" TeX-run-command)))
+    ;; (add-hook 'LaTeX-mode-hook #'LaTeX-preview-setup)
+    (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+    (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+    (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+    ;; (add-hook 'LaTeX-mode-hook #'turn-on-reftex)
+    (setq TeX-auto-save t)
+    (setq TeX-parse-self t)
+    (setq TeX-save-query nil)
+    (setq TeX-PDF-mode t)
+  	(setq-default TeX-master nil)))
+
+;; AucTeX-LaTeXmk
+(use-package auctex-latexmk
+  :ensure t
+  :config
+  (auctex-latexmk-setup))
+
+;; Yasnippet
+;; Needed to load yasnippet before auto-complete to make them work together.
+(use-package yasnippet
+  :ensure t
+  :init
+	(unless (package-installed-p 'yasnippet-snippets)
+    (package-refresh-contents)
+    (package-install 'yasnippet-snippets))
+  :config
+  (yas-global-mode 1))
+
+;; Auto-complete
+(use-package auto-complete
+  :ensure t
+  :config
+  (add-to-list 'ac-dictionary-directories (concat jeff/emacsd "ac-dict"))
+  (setq ac-comphist-file (concat jeff/emacsd "ac-comphist.dat"))
+  (ac-config-default)
+  (ac-set-trigger-key "TAB")
+	(ac-set-trigger-key "<tab>")
+  (global-auto-complete-mode t)
+  (auto-complete-mode))
+
+;; Auto-insert
+(use-package autoinsert
+  :init
+  (setq auto-insert-query nil)
+  (setq auto-insert-directory (concat jeff/emacsd "my-templates/"))
+	(add-hook 'find-file-hook 'auto-insert)
+  (auto-insert-mode 1)
+	:config
+  (define-auto-insert "\\.py" ["python.py" my-autoinsert-yas-expand])
+  (define-auto-insert "\\.sh" ["shellscript.sh" my-autoinsert-yas-expand])
+  (define-auto-insert "\\.yml" ["yaml.yml" my-autoinsert-yas-expand]))
+
+;; Better-defaults
+(use-package better-defaults
+  :ensure t)
+
+;; Darkroom-mode
+(use-package darkroom-mode
+	:load-path "elisp/darkroom-mode"
+	:config
+	(setq darkroom-mode-face-foreground "Inconsolata 15")
+	(setq darkroom-mode-face-size 150)
+	(setq darkroom-mode-center-margin 150))
+
+;; Deft
+(use-package deft
+  :ensure t)
+
+;; Dired-open
+(use-package dired-open
+  :ensure t)
+
+;; Ditaa
+(setq org-ditaa-jar-path "/usr/bin/ditaa")
+
+;; Elpy
+(use-package elpy
+  :ensure t
+  :config
+  (elpy-enable))
+
+;; Exec-path-from-shell
+(use-package exec-path-from-shell
+;  :if (memq window-system '(mac ns))
+  :ensure t
+  :config
+  (exec-path-from-shell-copy-env "TEXPATH")
+  (setq exec-path-from-shell-check-startup-files nil)
+  (exec-path-from-shell-initialize))
+
+;; Flycheck
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
+;; Iso-transl
+;; Support deadkeys
+(use-package iso-transl)
+
+;; Linum
+(use-package hlinum
+  :ensure t
+  :pin melpa
+  :config
+  (hlinum-activate)
+  (setq linum-format "%4d \u2502")
+  (setq linum-highlight-face "#bc0744")
+  (global-linum-mode 1))
+
+;; Lua-mode
+(use-package lua-mode
+  :ensure t
+  :pin melpa
+  :mode ("\\.lua\\'")
+  :config
+  (setq lua-indent-level 2))
+
+;; Magit
+(use-package magit
+  :ensure t)
+
+;; Markdown-mode
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'"	   	 . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init
+  (setq markdown-command "multimarkdown")
+  (unless (package-installed-p 'markdown-preview-mode)
+    (package-refresh-contents)
+    (package-install 'markdown-preview-mode)))
+(eval-after-load "markdown-mode"
+  '(defalias 'markdown-add-xhtml-header-and-footer 'my-markdown-add-xhtml-header-and-footer))
+
+;; Neotree
+(use-package neotree
+  :ensure t
+  :init
+  (unless (package-installed-p 'all-the-icons)
+    (package-refresh-contents)
+    (package-install 'all-the-icons)
+    (all-the-icons-install-fonts))
+  :config
+  (setq neo-theme (if (display-graphic-p) 'nerd 'arrow)))
+
+;; Org
+(use-package org
+  :ensure t
+  :pin org
+  :mode ("\\.org\\'" . org-mode)
+  :init
+  (unless (package-installed-p 'org-plus-contrib)
+    (package-refresh-contents)
+    (package-install 'org-plus-contrib))
+  (unless (package-installed-p 'org-bullets)
+    (package-refresh-contents)
+    (package-install 'org-bullets))
+  (unless (package-installed-p 'org-ac)
+    (package-refresh-contents)
+    (package-install 'org-ac))
+  :config
+  (require 'ox-latex)
+  (require 'ob-ditaa)
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (setq org-log-done t)
+  (setq org-list-allow-alphabetical t)
+  (setq org-agenda-files (file-expand-wildcards "~/Notes/*.org"))
+  (setq org-tag-alist
+        '((:startgroup . nil)
+          ("@TRAVAIL" . ?t)
+          ("@MAISON" . ?m)
+					(:endgroup . nil)
+          (:startgroup . nil)
+          ("ADMINISTRATIF" . ?a)
+          ("COURS" . ?c)
+          ("RECHERCHE" . ?r)
+          ("DEV" . ?d)
+          ("OS" . ?o)
+          ("WWW" . ?w)
+          (:endgroup . nil)
+          (:startgroup . nil)
+          ("EASY" . ?1)
+          ("MEDIUM" . ?2)
+          ("HARD" . ?3)
+          (:endgroup . nil)
+          ("URGENT" . ?u)
+          )
+        )
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((ditaa . t))) ; this line activates ditaa
+  (setq org-support-shift-select 'always)
+  (setq org-latex-compiler "lualatex")
+  (setq org-latex-pdf-process
+        '("lualatex -shell-escape -synctex=1 -interaction nonstopmode %f"
+          "lualatex -shell-escape -synctex=1 -interaction nonstopmode %f"))
+  ;(setq org-latex-pdf-process '("latexmk -f %f"))
+  (setq org-export-with-toc nil)
+  (add-to-list 'org-latex-classes
+               '("devoir"
+                 "\\documentclass{cours_devoir}"
+                 ("\\section{%s}"       . "\\section*{%s}")
+								 ("\\subsection{%s}"		. "\\subsection*{%s}")
+                 ("\\subsubsection{%s}"	. "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" 		. "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" 	. "\\subparagraph*{%s}")))
+  (add-to-list 'org-latex-classes
+               '("cours_prof"
+                 "\\documentclass{cours_prof}"))
+  (add-to-list 'org-latex-classes
+               '("cours_beamer"
+                 "\\documentclass{cours_beamer}")))
+
+;; Pc-bufsw
+(use-package pc-bufsw
+  :ensure t
+  :config
+  (pc-bufsw-default-keybindings))
+
+;; Powerline
+(use-package powerline
+  :ensure t
+  :config
+  (powerline-default-theme))
+
+;; Rainbow-mode
+(use-package rainbow-mode
+  :ensure t
+  :config
+  (rainbow-mode))
+
+;; Rigid-tabs
+(use-package rigid-tabs
+  :ensure t
+  :config
+  (rigid-tabs-mode))
+
+;;; Rings
+(use-package rings
+  :ensure t)
+
+;; Smart-mode-line
+(use-package smart-mode-line
+  :ensure t
+  :pin melpa
+  :config
+  (setq sml/theme 'dark)
+  (sml/setup))
+
+;; Smart-tabs-mode
+(use-package smart-tabs-mode
+  :ensure t
+  :config
+  (smart-tabs-add-language-support lua lua-mode-hook
+      ((lua-indent-line . lua-basic-offset)
+       (lua-indent-region . lua-basic-offset)))
+  (smart-tabs-insinuate 'c 'c++ 'javascript 'lua 'python 'ruby))
+
+;; Smartparens
+(use-package smartparens
+  :ensure t
+  :pin melpa
+  :config
+  (smartparens-global-mode 1)
+  (sp-pair "$" "$")  ;; latex math inline mode
+  (sp-pair "\[" "\]")) ;; latex math display mode
+
+;; Smooth-scroll
+(use-package smooth-scrolling
+  :ensure t
+  :pin melpa
+  :config
+  (smooth-scrolling-mode 1))
+
+;; Tabbar-ruler
+(use-package tabbar-ruler
+  :ensure t
+  :pin melpa
+  :config
+  (setq tabbar-ruler-global-tabbar t)
+  (setq tabbar-ruler-popup-menu t)
+  (setq tabbar-ruler-popup-scrollbar t))
+
+;; Undo/Redo
+(use-package undo-tree
+  :ensure t
+  :diminish undo-tree-mode
+  :init
+  (global-undo-tree-mode))
+
+;; Which-key
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+
+
+
+;;  _____ _   _ _   _  ____ _____ ___ ___  _   _ ____
+;; |  ___| | | | \ | |/ ___|_   _|_ _/ _ \| \ | / ___|
+;; | |_  | | | |  \| | |     | |  | | | | |  \| \___ \
+;; |  _| | |_| | |\  | |___  | |  | | |_| | |\  |___) |
+;; |_|    \___/|_| \_|\____| |_| |___\___/|_| \_|____/
+;;
+;; Generates a HTML 5 header instead of an XHTML header adds a UTF-8 charset declaration,
+;; ignores markdown-content-type, markdown-coding-system and markdown-xhtml-header-content.
+(defun my-markdown-add-xhtml-header-and-footer (title)
+  "Wrap XHTML header and footer with given TITLE around current buffer."
+  (goto-char (point-min))
+  (insert "<!DOCTYPE html5>\n"
+    "<html>\n"
+    "<head>\n<title>")
+  (insert title)
+  (insert "</title>\n")
+  (insert "<meta charset=\"utf-8\" />\n")
+  (when (> (length markdown-css-paths) 0)
+    (insert (mapconcat 'markdown-stylesheet-link-string markdown-css-paths "\n")))
+  (insert "\n</head>\n\n"
+    "<body>\n\n")
+  (goto-char (point-max))
+  (insert "\n"
+    "</body>\n"
+    "</html>\n"))
+
+;; Clone current buffer to a file and switch to it.
+(defun my-save-as-and-switch (filename)
+  "Clone the current buffer to FILENAME and switch to the clone."
+  (interactive "FCopy and switch to file: ")
+  (save-restriction
+    (widen)
+    (write-region (point-min) (point-max) filename nil nil nil 'confirm))
+  (find-file filename))
+
+;; Clone current buffer to a file and don't switch to it.
+(defun my-save-as-but-do-not-switch (filename)
+  "Clone the current buffer to FILENAME but don't switch to the clone."
+  (interactive "FCopy (without switching) to file:")
+  (write-region (point-min) (point-max) filename)
+  (find-file-noselect filename))
+
+;; Clone current buffer to a file and switch or not to.
+(defun my-save-as (filename)
+  "Prompt user whether to switch to the clone named FILENAME."
+  (interactive "FCopy to file: ")
+  (if (y-or-n-p "Switch to new file ? ")
+    (my-save-as-and-switch filename)
+    (my-save-as-but-do-not-switch filename)))
+
+;; Insert a litteral tab when pressing TAB key.
+(defun my-insert-tab-char ()
+  "Insert a tab char. (ASCII 9, \\t)."
+  (interactive)
+  (insert "\t"))
+
+;; Mode-line
+(defun my-add-mode-line-dirtrack ()
+  "Show the current directory in the mode line."
+  (add-to-list 'mode-line-buffer-identification
+               '(:propertize (" " default-directory " ") face dired-directory)))
+
+;; Enable some minor modes
+(defun my-enable-minor-modes ()
+  "Enables several minor modes."
+  (interactive "")
+  (define-globalized-minor-mode real-global-auto-complete-mode 
+    auto-complete-mode (lambda ()
+                         (if (not (minibufferp (current-buffer)))
+                             (auto-complete-mode 1))))
+  (real-global-auto-complete-mode t)
+  (font-lock-mode 1)
+  (my-add-mode-line-dirtrack)
+  (rainbow-mode 1))
+
+;; Insert date
+(defun my-insert-date (prefix)
+  "Insert the current date.
+With prefix-argument, use ISO format.
+With two PREFIX arguments,  write out the day and month name."
+    (interactive "P")
+    (let ((format (cond
+                   ((not prefix) "%d/%m/%Y")
+                   ((equal prefix '(4)) "%Y-%m-%d")
+                   ((equal prefix '(16)) "%A, %d. %B %Y")))
+          (system-time-locale "fr_FR"))
+      (insert (format-time-string format))))
+
+;; Insert comment title for LaTeX source
+(defun my-insert-comment-title (string)
+  "Insert STRING as a comment title for LaTeX sources."
+  (interactive "sComment title: ")
+  (insert (format "%%\n%%\n%% %s\n%%\n%%\n" string)))
+
+;; Combining YAs and auto-insert
+(defun my-autoinsert-yas-expand()
+  "Replace text in yasnippet template."
+  (yas-expand-snippet (buffer-string) (point-min) (point-max)))
+
+
+
+;;  _  _________   ______ ___ _   _ ____ ___ _   _  ____ ____
+;; | |/ / ____\ \ / / __ )_ _| \ | |  _ \_ _| \ | |/ ___/ ___|
+;; | ' /|  _|  \ V /|  _ \| ||  \| | | | | ||  \| | |  _\___ \
+;; | . \| |___  | | | |_) | || |\  | |_| | || |\  | |_| |___) |
+;; |_|\_\_____| |_| |____/___|_| \_|____/___|_| \_|\____|____/
+;; CUA-Mode : ctrl-v, ctrl-z, ctrl-x
+(cua-mode)
+;; Reload-buffer
+(global-set-key (kbd "<C-f5>") 'eval-buffer)
+;; Distraction-free mode
+(global-set-key (kbd "<C-f11>") 'darkroom-mode)
+;; Save-as and switch or not to cloned buffer
+(global-set-key (kbd "C-x c") 'my-save-as)
+;; Magit status
+(global-set-key (kbd "C-x g") 'magit-status)
+;; Neotree
+(global-set-key (kbd "<f8>") 'neotree-toggle)
+;; Org-mode
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cs" 'org-iswitchb)
+(global-set-key "\C-ct" 'org-set-tags-command)
+;; Pc-bufsw
+(global-set-key (kbd "<C-next>") 'pc-bufsw-mru)
+(global-set-key (kbd "<C-prior>") 'pc-bufsw-lru)
+;; Rings
+(global-set-key (kbd "<f2>")   (rings-generate-cycler 2))
+(global-set-key (kbd "C-<f2>") (rings-generate-setter 2))
+(global-set-key (kbd "<f3>")   (rings-generate-cycler 3))
+(global-set-key (kbd "C-<f3>") (rings-generate-setter 3))
+(global-set-key (kbd "<f4>")   (rings-generate-cycler 4))
+(global-set-key (kbd "C-<f4>") (rings-generate-setter 4))
+;; Tab
+(global-set-key (kbd "TAB") 'my-insert-tab-char) ; same as Ctrl+i
+;; Tabbar-ruler
+(global-set-key (kbd "C-<prior>") 'tabbar-ruler-backward)
+(global-set-key (kbd "C-<next>") 'tabbar-ruler-forward)
+;; Insert date
+(global-set-key (kbd "C-c d") 'insert-date)
+
+
+
+;;  ___ _   _ _____ _____ ____  _____ _    ____ _____
+;; |_ _| \ | |_   _| ____|  _ \|  ___/ \  / ___| ____|
+;;  | ||  \| | | | |  _| | |_) | |_ / _ \| |   |  _|
+;;  | || |\  | | | | |___|  _ <|  _/ ___ \ |___| |___
+;; |___|_| \_| |_| |_____|_| \_\_|/_/   \_\____|_____|
+;;
+;; Theme
+(use-package dracula-theme
+  :ensure t)
+(use-package melancholy-theme
+  :ensure t)
+(use-package sourcerer-theme
+  :ensure t)
+(use-package sublime-themes
+  :ensure t)
+(load-theme 'dracula t)
+
+;; Set minor modes
+(add-hook 'c-mode-hook 'my-enable-minor-modes)
+(add-hook 'emacs-lisp-mode-hook 'my-enable-minor-modes)
+(add-hook 'latex-mode-hook 'my-enable-minor-modes)
+(add-hook 'lua-mode-hook 'my-enable-minor-modes)
+(add-hook 'org-mode-hook 'my-enable-minor-modes)
+(add-hook 'shell-mode-hook 'my-enable-minor-modes)
+(add-hook 'text-mode-hook 'my-enable-minor-modes)
+
+;; Depends on host
+(set-frame-font "Inconsolata 12") ;default font if not customized for host
+(cond
+ (is-saitama (set-frame-font "Inconsolata 11"))
+ (is-genos (set-frame-font "Inconsolata 14") ;change font size on laptop
+           (display-battery-mode 1) ;battery status
+           ))
+
+
+(provide '.emacs)
+;;; .emacs ends here

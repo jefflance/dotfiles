@@ -1,0 +1,13 @@
+# -*- mode: org; -*-
+
+#+MACRO: hr @@latex:\renewcommand{\headrulewidth}{1.0pt}@@
+
+#+MACRO: fb @@latex:\fbox{$1}@@
+
+#+MACRO: ul @@latex:\underline{$1}@@
+
+#+MACRO: bf @@latex:\textbf{$1}@@
+
+#+MACRO: title @@latex:\fancyhead[CO]{$1}@@
+
+#+MACRO: subtitle @@latex:\fancyhead[RO]{$1}@@

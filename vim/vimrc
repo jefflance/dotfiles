@@ -1,0 +1,162 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  ___ _   _ _____ _____ ____  _____ _    ____ _____
+" |_ _| \ | |_   _| ____|  _ \|  ___/ \  / ___| ____|
+"  | ||  \| | | | |  _| | |_) | |_ / _ \| |   |  _|
+"  | || |\  | | | | |___|  _ <|  _/ ___ \ |___| |___
+" |___|_| \_| |_| |_____|_| \_\_|/_/   \_\____|_____|
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" UTF-8
+set encoding=utf8
+
+"syntax highlighting
+syntax on
+set synmaxcol=512
+filetype off
+
+" stop unnecessary rendering
+set lazyredraw
+
+" show line numbers
+set number
+
+" no line wrapping
+set nowrap
+
+" start NERDTree if no file is pass as arg
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cnoremap w!! w !sudo tee > /dev/null %
+
+" Start in insert mode for ALL files
+"au BufRead,BufNewFile * startinsert
+"startinsert
+
+
+
+""""""""""""""""""""""""""""""""""""""""""
+" __     ___   _ _   _ ____  _     _____
+" \ \   / / | | | \ | |  _ \| |   | ____|
+"  \ \ / /| | | |  \| | | | | |   |  _|
+"   \ V / | |_| | |\  | |_| | |___| |___
+"    \_/   \___/|_| \_|____/|_____|_____|
+"
+""""""""""""""""""""""""""""""""""""""""""
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" on GitHub repo
+"Plugin 'ajh17/VimCompletesMe'
+Plugin 'Shougo/denite.nvim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-scripts/colorizer'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sleuth'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'mhinz/vim-signify'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-surround'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'mattn/gist-vim'
+Plugin 'kamwitsta/commentToggle'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'xero/sourcerer.vim'
+Plugin 'dracula/vim'
+Plugin 'romainl/apprentice'
+Plugin 'jacoborus/tender'
+Plugin 'noahfrederick/vim-noctu'
+Plugin 'ryanoasis/vim-devicons'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  ____ _____  _  _____ _   _ ____  _     ___ _   _ _____
+" / ___|_   _|/ \|_   _| | | / ___|| |   |_ _| \ | | ____|
+" \___ \ | | / _ \ | | | | | \___ \| |    | ||  \| |  _|
+"  ___) || |/ ___ \| | | |_| |___) | |___ | || |\  | |___
+" |____/ |_/_/   \_\_|  \___/|____/|_____|___|_| \_|_____|
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set noshowmode
+set laststatus=2
+if !has('gui_running')
+  set t_Co=256
+endif
+
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}',
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+  \ }
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"   ____ ___  _     ___  ____  ____   ____ _   _ _____ __  __ _____
+"  / ___/ _ \| |   / _ \|  _ \/ ___| / ___| | | | ____|  \/  | ____|
+" | |  | | | | |  | | | | |_) \___ \| |   | |_| |  _| | |\/| |  _|
+" | |__| |_| | |__| |_| |  _ < ___) | |___|  _  | |___| |  | | |___
+"  \____\___/|_____\___/|_| \_\____/ \____|_| |_|_____|_|  |_|_____|
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme dracula
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"        _             _                      _   _   _                 
+"  _ __ | |_   _  __ _(_)_ __  ___   ___  ___| |_| |_(_)_ __   __ _ ___ 
+" | '_ \| | | | |/ _` | | '_ \/ __| / __|/ _ \ __| __| | '_ \ / _` / __|
+" | |_) | | |_| | (_| | | | | \__ \ \__ \  __/ |_| |_| | | | | (_| \__ \
+" | .__/|_|\__,_|\__, |_|_| |_|___/ |___/\___|\__|\__|_|_| |_|\__, |___/
+" |_|            |___/                                        |___/ 
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_toggle=2
+let vim_markdown_preview_browser='firefox'
+
