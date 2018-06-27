@@ -4,5 +4,5 @@
 
 - shell:
   - [
-    vim/install, "Updating and cleaning Vim plugins."
+    ~/.vim/install, "Updating and cleaning Vim plugins."
   ]

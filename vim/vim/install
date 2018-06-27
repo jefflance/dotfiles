@@ -3,7 +3,7 @@
 echo "Updating/cleaning Vim plugins."
 
 # Thanks for greywh in #vim for this tip
-vim -E -c '<<-EOF
+vim -E -s -c '<<-EOF
     :source ~/.vimrc
     :PlugInstall
     :PlugClean
