@@ -9,7 +9,7 @@ META_DIR="libs"
 CONFIG_DIR="configs"
 PROFILES_DIR="profiles"
 
-DOTBOT_DIR="libs/github/dotbot"
+DOTBOT_DIR="github/dotbot"
 DOTBOT_BIN="bin/dotbot"
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
