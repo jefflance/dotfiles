@@ -1,3 +1,6 @@
 - link:
     ~/.vim: vim/vim
     ~/.vimrc: vim/vimrc
+
+- shell:
+  - [~/.vim/install, "Updating and cleaning Vim plugins."]
