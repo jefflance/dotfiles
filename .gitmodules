@@ -10,9 +10,6 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-	[submodule "awesome"]
-		path = awesome
-		url = https://github.com/jefflance/awesome.git
 [submodule "zsh/custom/themes/dracula"]
 	path = zsh/custom/themes/dracula
 	url = https://github.com/dracula/zsh.git
