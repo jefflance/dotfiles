@@ -4,9 +4,11 @@
       relink: true
 
 - shell:
-    - [git submodule update --init --recursive, "Installing submodules."]
+    - [
+    git submodule update --init --recursive, "Installing submodules."
+    ]
 
 - clean: [
     '~',
     '~/.config'
-]
+    ]
