@@ -59,7 +59,8 @@
 
 ;; Redirect custom system config to another file
 (setq custom-file (concat jeff/emacsd "custom.el"))
-(load custom-file)
+(if (file-exists-p custom-file)
+  (load custom-file))
 
 ;; Force locale environment setting as it cause an error when compile
 ;; LaTeX file with LuaLaTeX.
