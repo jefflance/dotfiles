@@ -1,8 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Installing the Plug plugin manager, and all the plugins are included in this
-" other file.
+" Installing the Plug plugin manager
 source $HOME/.vim/plug.vim
 
 
