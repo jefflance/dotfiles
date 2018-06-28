@@ -2,3 +2,7 @@
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh: zsh/oh-my-zsh
+    ~/.oh-my-zsh/custom:
+      # force: true
+      # relink: true
+      path: zsh/custom
