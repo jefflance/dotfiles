@@ -218,6 +218,12 @@
 ;; Ditaa
 (setq org-ditaa-jar-path "/usr/bin/ditaa")
 
+;; EditorConfig
+(use-package editorconfig
+  :ensure t
+  :config
+    (editorconfig-mode 1))
+
 ;; Elpy
 (use-package elpy
   :ensure t
