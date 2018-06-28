@@ -25,6 +25,9 @@ Plug 'romainl/apprentice'
 Plug 'dracula/vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'scrooloose/nerdtree'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'itchyny/lightline.vim'
 
 " required !
 filetype plugin indent on
