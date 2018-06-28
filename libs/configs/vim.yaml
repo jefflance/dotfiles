@@ -1,13 +1,3 @@
 - link:
     ~/.vim: vim/vim
     ~/.vimrc: vim/vimrc
-
-- shell:
-  -
-    command: vim -E -c ":PlugInstall" -c ":PlugClean" -c ":qa!"
-    stdin: true
-    description: Updating and cleaning Vim plugins.
-  # -
-  #   command: ~/.vim/install
-  #   stdin: true
-  #   description: Updating and cleaning Vim plugins.

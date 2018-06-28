@@ -5,6 +5,9 @@
 # log files
 *.log
 
+# oh-my-zsh
+/zsh/oh-my-zsh/custom/
+
 # vim backed up files
 *~
 /vim/vim/autoload
