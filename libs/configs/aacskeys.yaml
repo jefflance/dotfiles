@@ -1,0 +1,6 @@
+- shell:
+  -
+    command: wget -O confs/aacskeys.cfg https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg
+
+- link:
+    ~/.config/aacs/KEYDB.cfg: confs/aacskeys.cfg
