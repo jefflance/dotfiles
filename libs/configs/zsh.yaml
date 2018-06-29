@@ -6,3 +6,11 @@
       glob: true
       force: false
       path: zsh/custom/*
+    ~/.oh-my-zsh/custom/plugins/:
+      glob: true
+      force: false
+      path: zsh/custom/plugins/*
+    ~/.oh-my-zsh/custom/themes/:
+      glob: true
+      force: false
+      path: zsh/custom/themes/*
