@@ -7,9 +7,6 @@
 [submodule "slate/slate.d"]
 	path = slate/slate.d
 	url = https://github.com/jefflance/slate_config.git
-[submodule "zsh/oh-my-zsh"]
-	path = zsh/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "zsh/custom/themes/dracula"]
 	path = zsh/custom/themes/dracula
 	url = https://github.com/dracula/zsh.git
