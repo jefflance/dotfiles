@@ -4,5 +4,5 @@
     ~/.oh-my-zsh: zsh/oh-my-zsh
     ~/.oh-my-zsh/custom/:
       glob: true
-      force: true
+      force: false
       path: zsh/custom/*
