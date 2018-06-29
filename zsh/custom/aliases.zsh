@@ -13,16 +13,15 @@ alias ifconfig="sudo ifconfig $1"
 alias ovpn="sudo openvpn $1"
 
 # APT commands
-alias ase="apt search $1"
-alias ash="apt show $1"
-# Replaced by ubuntu plugin
-#alias ain="sudo apt install $1"
-#alias arm="sudo apt remove $1"
-#alias aar="sudo apt autoremove"
-#alias aud="sudo apt update"
-#alias aug="sudo apt upgrade"
-#alias adg="aud && aug"
-#alias alu="apt list --upgradable"
+alias acse="apt-cache search $1"
+alias acsh="apt-cache show $1"
+alias agi="sudo apt-get install $1"
+alias agr="sudo apt-get remove --purge $1"
+alias agar="sudo apt-get autoremove"
+alias agud="sudo apt-get update"
+alias agug="sudo apt-get upgrade"
+alias aguu="agud && agug"
+alias alu="apt list --upgradable"
 
 # Python
 alias pup="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
@@ -31,7 +30,7 @@ alias pbp="pip freeze > pip_installed_$(date +%d%m%yT%H%M%S).txti"
 
 # Commands utlities
 #alias rm="trash $1"
-alias khardsyn="vdirsyncer -vdebug discover $1 && vdirsyncer -vdebug sync $1"
+#alias khardsyn="vdirsyncer -vdebug discover $1 && vdirsyncer -vdebug sync $1"
 alias scan="clamscan -r $1"
 
 # Edit config of zsh, vim, awesome
