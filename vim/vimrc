@@ -1,9 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" Installing the Plug plugin manager
-source $HOME/.vim/plug.vim
-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -31,19 +28,36 @@ set number
 " no line wrapping
 set nowrap
 
-" start NERDTree if no file is pass as arg
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cnoremap w!! w !sudo tee > /dev/null %
 
 " Start in insert mode for ALL files
 "au BufRead,BufNewFile * startinsert
 "startinsert
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""
+"  ____  _    _   _  ____ ___ _   _ ____   
+" |  _ \| |  | | | |/ ___|_ _| \ | / ___|  
+" | |_) | |  | | | | |  _ | ||  \| \___ \  
+" |  __/| |__| |_| | |_| || || |\  |___) | 
+" |_|   |_____\___/ \____|___|_| \_|____/
+" 
+"""""""""""""""""""""""""""""""""""""""""""
+
+
+" Installing the Plug plugin manager
+source $HOME/.vim/plug.vim
+
+
+
+" start NERDTree if no file is pass as arg
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 

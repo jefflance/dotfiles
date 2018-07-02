@@ -50,8 +50,8 @@ hash -d crs="$HOME/Cours"
 hash -d dev="$HOME/Développement"
 hash -d dld="$HOME/Téléchargements"
 hash -d doc="$HOME/Documents"
-hash -d vid="$HOME/Videos"
-hash -d dot="$HOME/dotfiles"
+hash -d vid="$HOME/Vidéos"
+hash -d dot="$HOME/Dotfiles"
 
 # Editors
 alias ec="emacsclient -t"
