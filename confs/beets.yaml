@@ -1,0 +1,40 @@
+directory: /mnt/zombiman/music 
+library: /mnt/zombiman/music/library.blb
+
+import:
+    copy: no
+    write: no 
+    move: no
+
+paths:
+    default: $albumartist/$year - $album%aunique{}/%if{$multidisc,Disc $disc/}$track - $albumartist - $album%if{$multidisc, (disc $disc)} - $title
+    singleton: Singles/$artist/$track - $artist - $title
+    comp: Compilations/$year - $album%aunique{}/$track - $title
+
+item_fields:
+    multidisc: 1 if disctotal > 1 else 0
+
+plugins:
+    acousticbrainz
+    bpd
+    chroma
+    fetchart
+    inline
+    lyrics
+    mbsync
+    mpdstats
+    mbcollection
+    web
+
+chroma:
+    auto: yes
+
+lyrics:
+    auto: yes
+
+musicbrainz:
+    user: Gune
+    pass: Elisa
+
+mbcollection:
+    auto: yes
