@@ -15,7 +15,7 @@ zsh/oh-my-zsh/custom/*
 
 # emacs files
 /emacs/*\#*
-/emacs/emacs.d/ac-comphist.dat
+ac-comphist.dat
 /emacs/emacs.d/history
 /emacs/emacs.d/custom.el
 /emacs/emacs.d/SessionDesktop.el
@@ -27,6 +27,5 @@ zsh/oh-my-zsh/custom/*
 /emacs/emacs.d/auto-save-list
 /emacs/emacs.d/\#*
 
-/ac-comphist.dat
 # .uuid files
 .uuid
