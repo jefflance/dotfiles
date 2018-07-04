@@ -2,30 +2,87 @@
 # Ignore these files globally in this repo.
 #
 
-# log files
+### log files ###
 *.log
 
-# oh-my-zsh
+### oh-my-zsh ###
 zsh/oh-my-zsh/custom/*
 
-# vim backed up files
+### Emacs ###
+# -*- mode: gitignore; -*-
 *~
-/vim/vim/autoload
-/vim/vim/plugged
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+history
+custom.el
+SessionDesktop.el
+/backups/
+ido.last
+network-security.data
+/thumbs/
 
-# emacs files
-/emacs/*\#*
-ac-comphist.dat
-/emacs/emacs.d/history
-/emacs/emacs.d/custom.el
-/emacs/emacs.d/SessionDesktop.el
-/emacs/emacs.d/backups/*
-/emacs/emacs.d/elpa/*
-/emacs/emacs.d/ido.last
-/emacs/emacs.d/network-security.data
-/emacs/emacs.d/thumbs/*
-/emacs/emacs.d/auto-save-list
-/emacs/emacs.d/\#*
+# Org-mode
+.org-id-locations
+*_archive
 
-# .uuid files
-.uuid
+# flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# elpa packages
+/elpa/
+
+# reftex files
+*.rel
+
+# AUCTeX auto folder
+/auto/
+
+# cask packages
+.cask/
+dist/
+
+# Flycheck
+flycheck_*.el
+
+# server auth directory
+/server/
+
+# projectiles files
+.projectile
+
+# directory configuration
+.dir-locals.el
+
+### Vim ###
+autoload
+plugged
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+
+# Temporary
+.netrwhist
+*~
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
+
+
+# End of https://www.gitignore.io/api/vim
