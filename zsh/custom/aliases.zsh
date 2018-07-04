@@ -26,7 +26,6 @@ alias alu="apt list --upgradable"
 # Python
 alias pup="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias pbp="pip freeze > pip_installed_$(date +%d%m%yT%H%M%S).txti"
-#alias pipsi="pipsi --home $WORKON_HOME --bin-dir ~/bin $1"
 
 # Commands utlities
 #alias rm="trash $1"
@@ -54,5 +53,6 @@ hash -d vid="$HOME/Vidéos"
 hash -d dot="$HOME/Dotfiles"
 
 # Editors
+alias vim="nvim"
 alias ec="emacsclient -t"
 alias emacs="emacsclient-oneframe.sh"
