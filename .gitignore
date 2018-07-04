@@ -21,7 +21,7 @@ tramp
 history
 custom.el
 SessionDesktop.el
-/backups/
+emacs/emacs.d/backups/
 ido.last
 network-security.data
 /thumbs/
@@ -38,8 +38,8 @@ network-security.data
 /eshell/lastdir
 
 # elpa packages
-/emacs/emacs.d/elpa
-/elpa
+emacs/emacs.d/elpa
+/elpa/
 
 # reftex files
 *.rel
