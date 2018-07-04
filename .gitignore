@@ -22,6 +22,7 @@ history
 custom.el
 SessionDesktop.el
 emacs/emacs.d/backups/
+emacs/emacs.d/ac-comphist.dat
 ido.last
 network-security.data
 /thumbs/
