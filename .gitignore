@@ -38,6 +38,7 @@ network-security.data
 /eshell/lastdir
 
 # elpa packages
+emacs.d/elpa
 /elpa/
 
 # reftex files
