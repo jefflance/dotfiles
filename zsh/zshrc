@@ -61,6 +61,7 @@ ZSH_THEME="cypher"
 plugins=(
   debian
   git
+  gitignore
   sudo
 )
 
