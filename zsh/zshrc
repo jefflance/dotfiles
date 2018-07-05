@@ -62,6 +62,8 @@ plugins=(
   debian
   git
   gitignore
+  my_debian
+  my_helpers
   sudo
 )
 
