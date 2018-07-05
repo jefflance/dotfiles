@@ -6,6 +6,7 @@ editorconfig
 emacs
 fonts
 tmux
+mopidy
 vim
 x
 zsh
