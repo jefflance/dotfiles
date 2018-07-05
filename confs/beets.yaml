@@ -1,5 +1,5 @@
-directory: /mnt/zombiman/music 
-library: /mnt/zombiman/music/library.blb
+directory: /mnt/music 
+library: /mnt/music/library.blb
 
 import:
     copy: no
