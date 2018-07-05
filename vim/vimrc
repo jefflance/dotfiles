@@ -45,12 +45,8 @@ cnoremap w!! w !sudo tee > /dev/null %
 " |_|   |_____\___/ \____|___|_| \_|____/
 " 
 """""""""""""""""""""""""""""""""""""""""""
-
-
 " Installing the Plug plugin manager
 source $HOME/.vim/plug.vim
-
-
 
 " start NERDTree if no file is pass as arg
 autocmd StdinReadPre * let s:std_in=1
@@ -111,6 +107,31 @@ colorscheme dracula
 " |_|            |___/                                        |___/
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Markdown review
+"
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_toggle=2
-let vim_markdown_preview_browser='firefox'
+let vim_markdown_preview_browser='chromium-browser'
+
+"
+" UltiSnips
+"
+if has("python")
+    let g:UltiSnipsUsePythonVersion = 2
+elseif has("python3")
+    let g:UltiSnipsUsePythonVersion = 3
+endif
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  _  _________   ______ ___ _   _ ____ ___ _   _  ____ ____
+" | |/ / ____\ \ / / __ )_ _| \ | |  _ \_ _| \ | |/ ___/ ___|
+" | ' /|  _|  \ V /|  _ \| ||  \| | | | | ||  \| | |  _\___ \
+" | . \| |___  | | | |_) | || |\  | |_| | || |\  | |_| |___) | 
+" |_|\_\_____| |_| |____/___|_| \_|____/___|_| \_|\____|____/
+" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Load keybindings from file
+source $HOME/.vim/keybindings.vim
