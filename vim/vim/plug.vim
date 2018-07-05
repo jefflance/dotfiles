@@ -19,6 +19,8 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'flazz/vim-colorschemes'
 Plug 'xero/sourcerer.vim'
 Plug 'romainl/apprentice'
