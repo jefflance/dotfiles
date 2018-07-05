@@ -53,6 +53,6 @@ hash -d vid="$HOME/Vidéos"
 hash -d dot="$HOME/Dotfiles"
 
 # Editors
-alias vim="nvim"
+#alias vim="nvim"
 alias ec="emacsclient -t"
 alias emacs="emacsclient-oneframe.sh"
