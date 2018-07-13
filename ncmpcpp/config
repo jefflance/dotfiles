@@ -25,7 +25,7 @@
 #
 ##### connection settings #####
 #
-#mpd_host = localhost
+mpd_host = localhost
 #
 #mpd_port = 6600
 mpd_port = 6700
@@ -75,7 +75,7 @@ visualizer_in_stereo = yes
 ## Multiply received samples by given value. Very
 ## useful for proper visualization of quiet music.
 ##
-visualizer_sample_multiplier = 1
+#visualizer_sample_multiplier = 1
 #
 ##
 ## Note: Below parameter defines how often ncmpcpp
@@ -520,7 +520,9 @@ main_window_color = white
 #
 #color2 = green
 #
-main_window_highlight_color = white
+current_item_prefix = "$(white)$r"
+current_item_suffix = "$/r$(end)"
+#main_window_highlight_color = white
 #
 #progressbar_color = black
 #

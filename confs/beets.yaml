@@ -7,9 +7,9 @@ import:
     move: no
 
 paths:
-    default: $albumartist/$year - $album%aunique{}/%if{$multidisc,Disc $disc/}$track - $albumartist - $album%if{$multidisc, (disc $disc)} - $title
+    default: $albumartist/$original_year - $album%aunique{}/%if{$multidisc,Disc $disc/}$track - $albumartist - $album%if{$multidisc, (disc $disc)} - $title
     singleton: Singles/$artist/$track - $artist - $title
-    comp: Compilations/$year - $album%aunique{}/$track - $title
+    comp: Compilations/$original_year - $album%aunique{}/$track - $title
 
 item_fields:
     multidisc: 1 if disctotal > 1 else 0
@@ -26,6 +26,9 @@ plugins:
     mbcollection
     web
 
+acousticbrainz:
+    auto: no
+
 chroma:
     auto: yes
 
@@ -37,4 +40,4 @@ musicbrainz:
     pass: Elisa
 
 mbcollection:
-    auto: yes
+    auto: no 
