@@ -76,7 +76,7 @@
 ;;
 ;; Splash screen
 (setq inhibit-splash-screen t
-			initial-scratch-message nil
+      initial-scratch-message nil
       initial-major-mode 'org-mode)
 
 ;; Scroll bar, menu bar, tool bar
@@ -99,7 +99,7 @@
 
 ;; Column and line numbers
 (setq column-number-mode t
-			line-number-mode t)
+      line-number-mode t)
 
 ;; Indentation
 ; no tabs for indentation but two spaces.
@@ -276,7 +276,7 @@
   :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'"	   	 . markdown-mode)
+         ("\\.md\\'"	   . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init
     (setq markdown-command "multimarkdown")
@@ -323,7 +323,7 @@
           '((:startgroup . nil)
             ("@TRAVAIL" . ?t)
             ("@MAISON" . ?m)
-  					(:endgroup . nil)
+  	    (:endgroup . nil)
             (:startgroup . nil)
             ("ADMINISTRATIF" . ?a)
             ("COURS" . ?c)
@@ -354,10 +354,10 @@
                  '("devoir"
                    "\\documentclass{cours_devoir}"
                    ("\\section{%s}"       . "\\section*{%s}")
-  								 ("\\subsection{%s}"		. "\\subsection*{%s}")
-                   ("\\subsubsection{%s}"	. "\\subsubsection*{%s}")
-                   ("\\paragraph{%s}" 		. "\\paragraph*{%s}")
-                   ("\\subparagraph{%s}" 	. "\\subparagraph*{%s}")))
+  	           ("\\subsection{%s}"	  . "\\subsection*{%s}")
+                   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                   ("\\paragraph{%s}" 	  . "\\paragraph*{%s}")
+                   ("\\subparagraph{%s}"  . "\\subparagraph*{%s}")))
     (add-to-list 'org-latex-classes
                  '("cours_prof"
                    "\\documentclass{cours_prof}"))
