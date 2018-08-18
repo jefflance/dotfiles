@@ -122,7 +122,7 @@
 ;;
 ;; Package Manager
 (require 'package)
-(setq package-archives '(("org" . "http://orgmode.org/elpa/")
+(setq package-archives '(("org"       . "http://orgmode.org/elpa/")
                          ("gnu"       . "http://elpa.gnu.org/packages/")
                          ("melpa"     . "http://melpa.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
@@ -341,6 +341,9 @@
             ("URGENT" . ?u)
             )
           )
+    (setq org-tags-column 80)
+    (setq org-startup-indented t)
+    (setq org-hide-leading-stars nil)
     (org-babel-do-load-languages
      'org-babel-load-languages
      '((ditaa . t))) ; this line activates ditaa
