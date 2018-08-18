@@ -1,2 +1,8 @@
 - link:
-    ~/.latexmkr: confs/latexmkrc
+    ~/.latexmkrc: confs/latexmkrc
+
+- shell:
+  -
+    command: MYTEXMF=texmf/tex/latex ; if [ $(uname -s) = Darwin ]; then mkdir -p "$HOME/Library/$MYTEXMF"; elif [ $(uname -s) = Linux ]; then mkdir -p "$HOME/$MYTEXMF"; fi
+    description: Create latex personal directory
+
