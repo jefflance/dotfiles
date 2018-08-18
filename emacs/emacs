@@ -102,9 +102,10 @@
       line-number-mode t)
 
 ;; Indentation
-; no tabs for indentation but two spaces.
-(setq tab-width 2
-      indent-tabs-mode nil)
+; tabs for indentation.
+(setq-default indent-tabs-mode nil)
+; tab width is 2 spaces.
+(setq tab-width 2)
 ; make tab key do indent first then completion.
 (setq-default tab-always-indent 'complete)
 
@@ -295,7 +296,7 @@
       (package-install 'all-the-icons)
       (all-the-icons-install-fonts))
   :config
-    (setq neo-theme (if (display-graphic-p) 'nerd 'arrow)))
+    (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
 
 ;; Org
 (use-package org
@@ -323,7 +324,7 @@
           '((:startgroup . nil)
             ("@TRAVAIL" . ?t)
             ("@MAISON" . ?m)
-  	    (:endgroup . nil)
+		  	    (:endgroup . nil)
             (:startgroup . nil)
             ("ADMINISTRATIF" . ?a)
             ("COURS" . ?c)
@@ -354,7 +355,7 @@
                  '("devoir"
                    "\\documentclass{cours_devoir}"
                    ("\\section{%s}"       . "\\section*{%s}")
-  	           ("\\subsection{%s}"	  . "\\subsection*{%s}")
+  			           ("\\subsection{%s}"	  . "\\subsection*{%s}")
                    ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                    ("\\paragraph{%s}" 	  . "\\paragraph*{%s}")
                    ("\\subparagraph{%s}"  . "\\subparagraph*{%s}")))
@@ -605,6 +606,8 @@ With two PREFIX arguments,  write out the day and month name."
   :ensure t)
 (use-package melancholy-theme
   :ensure t)
+(use-package org-beautify-theme
+  :ensure t)
 (use-package sourcerer-theme
   :ensure t)
 (use-package sublime-themes
@@ -617,6 +620,7 @@ With two PREFIX arguments,  write out the day and month name."
 (add-hook 'latex-mode-hook 'my-enable-minor-modes)
 (add-hook 'lua-mode-hook 'my-enable-minor-modes)
 (add-hook 'org-mode-hook 'my-enable-minor-modes)
+(add-hook 'org-mode-hook (lambda() (load-theme 'org-beautify)))
 (add-hook 'shell-mode-hook 'my-enable-minor-modes)
 (add-hook 'text-mode-hook 'my-enable-minor-modes)
 
