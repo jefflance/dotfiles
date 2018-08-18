@@ -18,6 +18,10 @@ function convert_asy_to_png {
   rsvg-convert "$filename.svg" -o $(echo "$filename.svg" | sed -e 's/svg$/png/')
 }
 
+function latexmk {
+  latexmk -lualatex "$1"
+  latexmk -c "$1"
+}
 
 
 #
