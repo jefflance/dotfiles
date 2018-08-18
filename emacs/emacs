@@ -122,7 +122,7 @@
 ;;
 ;; Package Manager
 (require 'package)
-(setq package-archives '(("org"       . "http://orgmode.org/elpa/")
+(setq package-archives '(("org" . "http://orgmode.org/elpa/")
                          ("gnu"       . "http://elpa.gnu.org/packages/")
                          ("melpa"     . "http://melpa.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")))
@@ -142,9 +142,9 @@
   :commands (latex-mode LaTeX-mode plain-tex-mode)
   :init
     (progn
-	  (eval-after-load "tex"
-	    '(add-to-list 'TeX-command-list
-	    '("LatexMk Clean" "latexmk -lualatex %t && latexmk -c %t" TeX-run-command)))
+          (eval-after-load "tex"
+            '(add-to-list 'TeX-command-list
+            '("LatexMk Clean" "latexmk -lualatex %t && latexmk -c %t" TeX-run-command)))
     ;; (add-hook 'LaTeX-mode-hook #'LaTeX-preview-setup)
     (add-hook 'LaTeX-mode-hook 'visual-line-mode)
     (add-hook 'LaTeX-mode-hook 'flyspell-mode)
@@ -154,7 +154,7 @@
     (setq TeX-parse-self t)
     (setq TeX-save-query nil)
     (setq TeX-PDF-mode t)
-  	(setq-default TeX-master nil)))
+    (setq-default TeX-master nil)))
 
 ;; AucTeX-LaTeXmk
 (use-package auctex-latexmk
@@ -181,7 +181,7 @@
     (setq ac-comphist-file (concat jeff/emacsd "ac-comphist.dat"))
     (ac-config-default)
     (ac-set-trigger-key "TAB")
-	  (ac-set-trigger-key "<tab>")
+    (ac-set-trigger-key "<tab>")
     (global-auto-complete-mode t)
     (auto-complete-mode))
 
@@ -192,7 +192,7 @@
     (setq auto-insert-directory (concat jeff/emacsd "my-templates/"))
     (add-hook 'find-file-hook 'auto-insert)
     (auto-insert-mode 1)
-	:config
+        :config
     (define-auto-insert "\\.py" ["python.py" my-autoinsert-yas-expand])
     (define-auto-insert "\\.sh" ["shellscript.sh" my-autoinsert-yas-expand])
     (define-auto-insert "\\.yml" ["yaml.yml" my-autoinsert-yas-expand]))
@@ -277,7 +277,7 @@
   :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'"	   . markdown-mode)
+         ("\\.md\\'"       . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init
     (setq markdown-command "multimarkdown")
@@ -324,7 +324,7 @@
           '((:startgroup . nil)
             ("@TRAVAIL" . ?t)
             ("@MAISON" . ?m)
-		  	    (:endgroup . nil)
+	          (:endgroup . nil)
             (:startgroup . nil)
             ("ADMINISTRATIF" . ?a)
             ("COURS" . ?c)
@@ -355,7 +355,7 @@
                  '("devoir"
                    "\\documentclass{cours_devoir}"
                    ("\\section{%s}"       . "\\section*{%s}")
-  			           ("\\subsection{%s}"	  . "\\subsection*{%s}")
+  	               ("\\subsection{%s}"	  . "\\subsection*{%s}")
                    ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                    ("\\paragraph{%s}" 	  . "\\paragraph*{%s}")
                    ("\\subparagraph{%s}"  . "\\subparagraph*{%s}")))
@@ -511,7 +511,7 @@
 (defun my-add-mode-line-dirtrack ()
   "Show the current directory in the mode line."
   (add-to-list 'mode-line-buffer-identification
-               '(:propertize (" " default-directory " ") face dired-directory)))
+                  '(:propertize (" " default-directory " ") face dired-directory)))
 
 ;; Enable some minor modes
 (defun my-enable-minor-modes ()
