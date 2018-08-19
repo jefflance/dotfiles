@@ -1,8 +1,8 @@
 [submodule "awesome"]
 	path = awesome
 	url = https://github.com/jefflance/awesome.git
-[submodule "libs/github/dotbot"]
-	path = libs/github/dotbot
+[submodule "meta/github/dotbot"]
+	path = meta/github/dotbot
 	url = https://github.com/anishathalye/dotbot.git
 [submodule "slate/slate.d"]
 	path = slate/slate.d
@@ -13,6 +13,6 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "libs/github/asymptote-config"]
-	path = libs/github/asymptote-config
+[submodule "meta/github/asymptote-config"]
+	path = meta/github/asymptote-config
 	url = https://github.com/jefflance/asymptote-config.git
