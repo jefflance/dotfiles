@@ -1,0 +1,6 @@
+- link:
+    ~/.fonts: fonts
+- shell:
+  -
+    command: fc-cache -fv ~/.fonts
+    stdout: true
