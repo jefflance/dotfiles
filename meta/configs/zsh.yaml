@@ -1,7 +1,7 @@
 - link:
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
-    ~/.oh-my-zsh: zsh/oh-my-zsh
+    ~/.oh-my-zsh: meta/github/oh-my-zsh
     ~/.oh-my-zsh/custom/:
       glob: true
       force: false
