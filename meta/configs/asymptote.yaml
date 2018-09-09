@@ -1,2 +1,3 @@
 - link:
-    ~/.asy: libs/github/asymptote-config
+    ~/.asy: meta/github/asymptote-config
+    force: true
