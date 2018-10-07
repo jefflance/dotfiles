@@ -18,6 +18,12 @@ function convert_asy_to_png {
   rsvg-convert "$filename.svg" -o $(echo "$filename.svg" | sed -e 's/svg$/png/')
 }
 
+function rns {
+  nf=$(echo "$1" | tr ' ' '_')
+  mv "$1" "$nf"
+}
+
+
 
 #
 # Aliases
