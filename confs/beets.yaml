@@ -18,6 +18,7 @@ plugins:
     acousticbrainz
     bpd
     chroma
+    edit
     fetchart
     inline
     lyrics
@@ -31,6 +32,10 @@ acousticbrainz:
 
 chroma:
     auto: yes
+
+edit:
+    itemfields: track title artist album
+    albumfields: album albumartist
 
 lyrics:
     auto: yes
