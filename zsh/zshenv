@@ -11,3 +11,6 @@ fi
 
 # set PATH so it includes miniconda bin dir if it exists
 path=(~/miniconda3/bin $path[@])
+
+# environment variables
+export EDITOR=nano
