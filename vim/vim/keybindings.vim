@@ -8,6 +8,16 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "
+" Custom
+"
+
+"
+" NERDTree
+"
+" Trigger configuration
+map <f2> :NERDTreeToggle<CR>
+
+"
 " UltiSnips
 "
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.

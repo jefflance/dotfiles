@@ -1,0 +1,4 @@
+- link:
+    ~/.config/lgogdownloader/config.cfg:
+        create: true
+        path: confs/lgogdownloader.cfg

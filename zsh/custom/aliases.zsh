@@ -57,3 +57,6 @@ hash -d dot="$HOME/Dotfiles"
 alias ec="emacsclient -t"
 alias emacs="emacsclient-oneframe.sh"
 alias ltxmk="latexmk $1 && latexmk -c $1"
+
+# Other
+alias open="xdg-open $1"

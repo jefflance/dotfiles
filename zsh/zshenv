@@ -12,5 +12,12 @@ fi
 # set PATH so it includes miniconda bin dir if it exists
 path=(~/miniconda3/bin $path[@])
 
+# set PATH for nvm
+export NVM_DIR="$HOME/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # environment variables
 export EDITOR=nano
+export XDG_CURRENT_DESKTOP=
+# export DESKTOP_SESSION=
