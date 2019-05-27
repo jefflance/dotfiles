@@ -10,7 +10,7 @@ if [ -n "${DESKTOP_SESSION}" ];then
 fi
 
 # set PATH so it includes miniconda bin dir if it exists
-path=(~/miniconda3/bin $path[@])
+#path=(~/miniconda3/bin $path[@])
 
 # set PATH for nvm
 export NVM_DIR="$HOME/nvm"
