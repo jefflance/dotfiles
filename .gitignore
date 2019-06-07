@@ -85,6 +85,6 @@ Session.vim
 tags
 # Persistent undo
 [._]*.un~
-
+fonts/**/.uuid
 
 # End of https://www.gitignore.io/api/vim
