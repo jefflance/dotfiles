@@ -8,7 +8,7 @@
 
 # Net commands
 alias iptables="sudo iptables $1"
-#alias netstat="sudo netstat $1"
+alias ip="ip -c $1"
 alias ifconfig="sudo ifconfig $1"
 alias ovpn="sudo openvpn $1"
 
@@ -60,3 +60,4 @@ alias ltxmk="latexmk $1 && latexmk -c $1"
 
 # Other
 alias open="xdg-open $1"
+alias youtube-dl="youtube-dl -f best $1"
