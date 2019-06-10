@@ -34,7 +34,7 @@ mpd_port = 6700
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = /mnt/music
+mpd_music_dir = /mnt/diskstation1/music
 #
 mpd_crossfade_time = 5
 #
