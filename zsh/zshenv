@@ -21,3 +21,4 @@ export NVM_DIR="$HOME/nvm"
 export EDITOR=nano
 export XDG_CURRENT_DESKTOP=
 # export DESKTOP_SESSION=
+export XDG_DATA_DIRS="/home/jeff/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
