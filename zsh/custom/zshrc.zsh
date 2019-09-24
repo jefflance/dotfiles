@@ -1,3 +1,7 @@
 # Finally, we do:
-#source "${HOME}/.local/bin/virtualenvwrapper.sh"
+
+# gitignore function
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+# completion for kitty
+kitty + complete setup zsh | source /dev/stdin
