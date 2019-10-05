@@ -25,11 +25,14 @@ Plug 'flazz/vim-colorschemes'
 Plug 'xero/sourcerer.vim'
 Plug 'romainl/apprentice'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sainnhe/edge', { 'as': 'edge' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
 " required !
 filetype plugin indent on
