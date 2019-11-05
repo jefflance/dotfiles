@@ -24,3 +24,9 @@ map <f2> :NERDTreeToggle<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"
+" DMenu file opening
+"
+map <c-t> :call DmenuOpen("tabe")<CR>
+map <c-f> :call DmenuOpen("e")<CR>

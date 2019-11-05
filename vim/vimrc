@@ -32,7 +32,7 @@ set nowrap
 cnoremap w!! w !sudo tee > /dev/null %
 
 " Start in insert mode for ALL files
-"au BufRead,BufNewFile * startinsert
+au BufRead,BufNewFile * startinsert
 "startinsert
 
 
@@ -75,10 +75,14 @@ let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
+      \             [ 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'kitestatus' ] ],
       \ },
       \ 'component': {
       \   'readonly': '%{&readonly?"⭤":""}',
+      \   'kitestatus': '%{kite#statusline()}',
       \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
@@ -125,13 +129,26 @@ endif
 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""
+"  ____   ____ ____  ___ ____ _____ ____  
+" / ___| / ___|  _ \|_ _|  _ \_   _/ ___| 
+" \___ \| |   | |_) || || |_) || | \___ \ 
+"  ___) | |___|  _ < | ||  __/ | |  ___) |
+" |____/ \____|_| \_\___|_|    |_| |____/ 
+"
+"""""""""""""""""""""""""""""""""""""""""""
+" Load scripts from file
+source $HOME/.vim/scripts.vim
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  _  _________   ______ ___ _   _ ____ ___ _   _  ____ ____
 " | |/ / ____\ \ / / __ )_ _| \ | |  _ \_ _| \ | |/ ___/ ___|
 " | ' /|  _|  \ V /|  _ \| ||  \| | | | | ||  \| | |  _\___ \
 " | . \| |___  | | | |_) | || |\  | |_| | || |\  | |_| |___) | 
 " |_|\_\_____| |_| |____/___|_| \_|____/___|_| \_|\____|____/
 " 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load keybindings from file
 source $HOME/.vim/keybindings.vim
