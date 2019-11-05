@@ -39,6 +39,10 @@ if !exists('g:kite_long_timeout')
   let g:kite_long_timeout = 400  " ms
 endif
 
+if !exists('g:kite_completion_max_width')
+  let g:kite_completion_max_width = 75
+endif
+
 if !(has('nvim') || has('job'))
   call kite#utils#warn('disabled - requires nvim or vim with the +job feature')
   finish
@@ -57,6 +61,7 @@ endif
 augroup Kite
   autocmd!
   autocmd BufEnter * call kite#bufenter()
+  autocmd VimEnter * nested if &filetype !~# '^git' | call kite#onboarding#call(0) | endif
 augroup END
 
 
@@ -66,7 +71,7 @@ command! KiteDocsAtCursor         call kite#docs#docs()
 command! KiteOpenCopilot          call kite#client#copilot()
 command! KiteGeneralSettings      call kite#client#settings()
 command! KitePermissions          call kite#client#permissions()
-command! KiteHelp                 call kite#utils#generate_help() | help kite
+command! KiteTutorial             call kite#onboarding#call(1)
 command! KiteDisableAutoStart     call kite#disable_auto_start()
 command! KiteEnableAutoStart      call kite#enable_auto_start()
 command! KiteShowPopularPatterns  call kite#signature#show_popular_patterns()
