@@ -34,8 +34,8 @@ alias pbp="pip freeze > pip_installed_$(date +%d%m%yT%H%M%S).txti"
 alias scan="clamscan -r $1"
 
 # Edit config of zsh, vim, awesome
-alias zshcfg="vim $HOME/.zshrc"
-alias zshrld="source $HOME/.zshrc"
+alias zshrc="vim $HOME/.zshrc"
+alias zsh_reload="source $HOME/.zshrc"
 alias vimrc="vim $HOME/.vimrc"
 alias awerc="emacs ~dot/awesome/.config/awesome/rc.lua"
 
