@@ -53,6 +53,8 @@ ssh-askpass.Indicator.maximumCount:       24
 ! ------------------------------------------------------------------------------
 ! Urxvt
 ! ------------------------------------------------------------------------------
+URxvt.perl-lib:				  ~/.urxvt
+URxvt*termName:				  rxvt-unicode
 URxvt*font:				  xft:Inconsolata\ for\ Powerline:size=11
 URxvt.depth:				  32
 URxvt.background:			  rgba:0000/0000/0200/c800
@@ -60,16 +62,22 @@ URxvt*scrollBar:			  False
 URxvt.scrollBar_right:			  False
 URxvt.scrollBar_floating:		  False
 URxvt.scrollstyle:			  rxvt
-URxvt.perl-ext-common:			  default,fullscreen,resize-font,selection-to-clipboard,pasta,tabbed,-readline
-URxvt.keysym.M-u:			  perl:url-select:select_next
-URxvt.keysym.F11:			  perl:fullscreen:switch
-URxvt.url-launcher:			  /usr/bin/chromium-browser
-URxvt.underlineURLs:			  True
-URxvt.matcher.button:			  1
+
+URxvt.perl-ext-common:			  default,keyboard-select,url-select,clipboard,tabbed
+! keyboard-select
 URxvt.keysym.M-Escape:			  perl:keyboard-select:activate
-URxvt.keysym.Control-Shift-V:		  perl:pasta:paste
-URxvt.clipboard.autocopy:		  True
-URxvt*termName:				  rxvt-unicode
+URxvt.keysym.M-s:			  perl:keyboard-select:search
+! url-select
+URxvt.keysym.M-u:			  perl:url-select:select_next
+URxvt.url-select.autocopy:		  true
+URxvt.url-select.launcher:		  /usr/bin/xdg-open
+URxvt.url-select.button:		  2
+URxvt.url-select.underline:		  true
+!clipboard
+URxvt.keysym.C-c:		  	  perl:clipboard:copy
+URxvt.keysym.C-v:		  	  perl:clipboard:paste
+URxvt.clipboard.autocopy:		  true
+! tabbed
 
 ! ------------------------------------------------------------------------------
 ! XTerm
