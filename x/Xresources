@@ -53,11 +53,12 @@ ssh-askpass.Indicator.maximumCount:       24
 ! ------------------------------------------------------------------------------
 ! Urxvt
 ! ------------------------------------------------------------------------------
-URxvt.perl-lib:				  ~/.urxvt
+URxvt.perl-lib:				  /home/jeff/.urxvt
 URxvt*termName:				  rxvt-unicode
-URxvt*font:				  xft:Inconsolata\ for\ Powerline:size=11
+URxvt*font:				  xft:Hack:pixelsize=15:style=regular
+!URxvt.letterSpace:			  -1
 URxvt.depth:				  32
-URxvt.background:			  rgba:0000/0000/0200/c800
+URxvt.background:			  rgba:0000/0000/0200/d800
 URxvt*scrollBar:			  False
 URxvt.scrollBar_right:			  False
 URxvt.scrollBar_floating:		  False
@@ -74,8 +75,8 @@ URxvt.url-select.launcher:		  /usr/bin/xdg-open
 URxvt.url-select.button:		  2
 URxvt.url-select.underline:		  true
 !clipboard
-URxvt.keysym.C-c:		  	  perl:clipboard:copy
-URxvt.keysym.C-v:		  	  perl:clipboard:paste
+URxvt.keysym.M-c:		  	  perl:clipboard:copy
+URxvt.keysym.M-v:		  	  perl:clipboard:paste
 URxvt.clipboard.autocopy:		  true
 ! tabbed
 
