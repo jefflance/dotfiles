@@ -21,7 +21,7 @@
 ## (eg. ncmpc) also use that location.
 ##
 #
-#lyrics_directory = ~/.lyrics
+lyrics_directory = /mnt/diskstation1/music/lyrics
 #
 ##### connection settings #####
 #
@@ -292,7 +292,7 @@ song_columns_list_format = (4)[]{: } (20)[]{a:Artiste} (6f)[white]{nE:Piste} (50
 ## Note: Custom command that will be executed each
 ## time song changes. Useful for notifications etc.
 ##
-execute_on_song_change = "~/.ncmpcpp/art.sh"
+#execute_on_song_change = "~/.ncmpcpp/art.sh"
 #
 #playlist_show_mpd_host = no
 #

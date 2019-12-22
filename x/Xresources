@@ -54,7 +54,7 @@ ssh-askpass.Indicator.maximumCount:       24
 ! Urxvt
 ! ------------------------------------------------------------------------------
 URxvt.perl-lib:				  /home/jeff/.urxvt
-URxvt*termName:				  rxvt-unicode
+URxvt*termName:				  rxvt-color
 URxvt*font:				  xft:Hack:pixelsize=15:style=regular
 !URxvt.letterSpace:			  -1
 URxvt.depth:				  32

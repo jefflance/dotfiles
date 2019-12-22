@@ -32,7 +32,7 @@ set nowrap
 cnoremap w!! w !sudo tee > /dev/null %
 
 " Start in insert mode for ALL files
-au BufRead,BufNewFile * startinsert
+"au BufRead,BufNewFile * startinsert
 "startinsert
 
 
