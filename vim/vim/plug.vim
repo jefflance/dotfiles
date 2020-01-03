@@ -33,6 +33,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'ryanoasis/vim-devicons'
+Plug 'decayofmind/vim-lightline-functions'
 
 " required !
 filetype plugin indent on

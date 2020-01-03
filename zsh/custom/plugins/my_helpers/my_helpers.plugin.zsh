@@ -23,6 +23,30 @@ function rns {
   mv "$1" "$nf"
 }
 
+function conf {
+  option="${1}"
+
+  case ${option} in
+    "awe")
+      vim ~/.config/awesome/rc.lua
+      ;;
+    "qut")
+      vim $HOME/.config/qutebrowser/config.py
+      ;;
+    "ran")
+      vim $HOME/.config/ranger
+      ;;
+    "vim")
+      vim $HOME/.vimrc
+      ;;
+    "zsh")
+      vim $HOME/.zshrc
+      ;;
+    *)
+      echo "$(basename $0): usage: awe(somewm) | qut(ebrowser) | ran(ger) | vim | zsh"
+      ;;
+  esac
+}
 
 
 #

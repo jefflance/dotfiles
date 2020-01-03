@@ -14,22 +14,25 @@ filetype off                  " required
 " UTF-8
 set encoding=utf8
 
-"syntax highlighting
+" Syntax highlighting
 syntax on
 set synmaxcol=512
 filetype off
 
-" stop unnecessary rendering
+" Stop unnecessary rendering
 set lazyredraw
 
-" show line numbers
+" Show line numbers
 set number
 
-" no line wrapping
+" No line wrapping
 set nowrap
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cnoremap w!! w !sudo tee > /dev/null %
+
+" Font config
+set guifont=Hack\ 11
 
 " Start in insert mode for ALL files
 "au BufRead,BufNewFile * startinsert
@@ -48,11 +51,11 @@ cnoremap w!! w !sudo tee > /dev/null %
 " Installing the Plug plugin manager
 source $HOME/.vim/plug.vim
 
-" start NERDTree if no file is pass as arg
+" Start NERDTree if no file is pass as arg
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" close vim if the only window left open is a NERDTree
+" Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
