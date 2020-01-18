@@ -56,7 +56,7 @@ ssh-askpass.Indicator.maximumCount:       24
 URxvt.perl-lib:				  /home/jeff/.urxvt
 URxvt*termName:				  rxvt-color
 URxvt*font:				  xft:Hack Regular Nerd Font Complete Mono:pixelsize=11:style=regular
-!URxvt.letterSpace:			  -1
+URxvt.letterSpace:			  -1
 URxvt.depth:				  32
 URxvt.background:			  rgba:0000/0000/0200/d800
 URxvt*scrollBar:			  False

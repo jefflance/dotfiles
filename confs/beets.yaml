@@ -1,5 +1,5 @@
-directory: /mnt/music 
-library: /mnt/music/library.blb
+directory: /mnt/diskstation1/music 
+library: /mnt/diskstation1/music/library.blb
 
 import:
     copy: no
