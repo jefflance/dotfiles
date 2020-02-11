@@ -1,0 +1,717 @@
+# Ce fichier viminfo a été généré par Vim 8.1.
+# Vous pouvez l'éditer, mais soyez prudent.
+
+# Viminfo version
+|1,4
+
+# 'encoding' dans lequel ce fichier a été écrit
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~H
+# Dernier motif de recherche  :
+~MSle0/window
+
+# Dernier motif de recherche Substitue  :
+~MSle0~&Generations.
+
+# Dernières chaînes de substitution :
+$Generations - S05
+
+# Historique ligne de commande (chronologie décroissante) :
+:q
+|2,0,1581415966,,"q"
+:q!
+|2,0,1581414898,,"q!"
+:w !sudo tee > /dev/null %
+|2,0,1581414890,,"w !sudo tee > /dev/null %"
+:Q
+|2,0,1581414681,,"Q"
+:%s/Generations./Generations - S05/
+|2,0,1581335986,,"%s/Generations./Generations - S05/"
+:%s/Generations./Generations - S04/
+|2,0,1581335808,,"%s/Generations./Generations - S04/"
+:%s/Generations./Generations - S06/
+|2,0,1581332914,,"%s/Generations./Generations - S06/"
+:w
+|2,0,1581332793,,"w"
+:<F2>
+|2,0,1581196486,,"<F2>"
+:buffers 1
+|2,0,1581099426,,"buffers 1"
+:buffer
+|2,0,1581099421,,"buffer"
+:buffers
+|2,0,1581099409,,"buffers"
+:PlugInstall
+|2,0,1580238038,,"PlugInstall"
+:source %
+|2,0,1580238033,,"source %"
+:h startify-faq
+|2,0,1580212834,,"h startify-faq"
+
+# Historique chaîne de recherche (chronologie décroissante) :
+? Generations.
+|2,1,1581335986,,"Generations."
+?/window
+|2,1,1581331847,47,"window"
+? \<deb\>
+|2,1,1581099429,,"\\<deb\\>"
+
+# Historique expression (chronologie décroissante) :
+
+# Historique ligne de saisie (chronologie décroissante) :
+
+# Historique Ligne de débogage (chronologie décroissante) :
+
+# Registres :
+"0	LINE	0
+	deb [arch=amd64] https://download.docker.com/linux/debian buster stable
+	# deb-src [arch=amd64] https://download.docker.com/linux/debian buster stable
+|3,0,0,1,2,0,1581099351,"deb [arch=amd64] https://download.docker.com/linux/debian buster stable","# deb-src [arch=amd64] https://download.docker.com/linux/debian buster stable"
+"1	LINE	0
+	    stdout: true
+|3,0,1,1,1,0,1581340515,"    stdout: true"
+"2	LINE	0
+	    command: fc-cache -fv ~/.local/share/fonts
+|3,0,2,1,1,0,1581340514,"    command: fc-cache -fv ~/.local/share/fonts"
+"3	LINE	0
+	  -
+|3,0,3,1,1,0,1581340514,"  -"
+"4	LINE	0
+	- shell:
+|3,0,4,1,1,0,1581340513,"- shell:"
+"5	BLOCK	45
+	 VOSTFR ''Mon Histoire'' ... WebDl1080p ! 2018
+	 VOSTFR ''Le Super Mode Papillon De Chôchô'' .
+	 VOSTFR ''Le Super Mode Baiser De Chôchô'' ...
+	 VOSTFR ''Les Amours Super Tumultueux De Chôch
+	 VOSTFR ''Au-Delà Du Stress'' ... WebDl1080p !
+	 VOSTFR ''La Pierre La Plus Dure Du Monde'' ..
+	 VOSTFR ''La Volonté De Mitsuki'' ... WebDl108
+	 VOSTFR ''La Face Cachée De La Lune'' ... WebD
+	 VOSTFR ''Bataille Contre Ino-Shika-Chô'' ... 
+|3,0,5,2,9,45,1581336320," VOSTFR ''Mon Histoire'' ... WebDl1080p ! 2018"," VOSTFR ''Le Super Mode Papillon De Chôchô'' ."," VOSTFR ''Le Super Mode Baiser De Chôchô'' ..."," VOSTFR ''Les Amours Super Tumultueux De Chôch"," VOSTFR ''Au-Delà Du Stress'' ... WebDl1080p !"," VOSTFR ''La Pierre La Plus Dure Du Monde'' .."," VOSTFR ''La Volonté De Mitsuki'' ... WebDl108"," VOSTFR ''La Face Cachée De La Lune'' ... WebD",>49
+|<" VOSTFR ''Bataille Contre Ino-Shika-Chô'' ... "
+"6	BLOCK	28
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1800p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+|3,0,6,2,14,28,1581335975,"VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1800p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.",>31
+|<"VOSTFR.1080p.WEB-DL.x264-ADN."
+"7	BLOCK	28
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+|3,0,7,2,8,28,1581335792,"VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN."
+"8	BLOCK	28
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+	.VOSTFR.1080p.WEB-DL.x264-ADN
+|3,0,8,2,16,28,1581332903,".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",>31
+|<".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN",".VOSTFR.1080p.WEB-DL.x264-ADN"
+"9	BLOCK	28
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+	VOSTFR.1080p.WEB-DL.x264-ADN.
+|3,0,9,2,10,28,1581332787,"VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN.","VOSTFR.1080p.WEB-DL.x264-ADN."
+""-	CHAR	0
+	t
+|3,1,36,0,1,0,1581414820,"t"
+
+# Marques dans le fichier :
+'0  3  1  ~/Dotfiles/kitty/fonts.conf
+|4,48,3,1,1581415966,"~/Dotfiles/kitty/fonts.conf"
+'1  41  49  /etc/conky/conky.conf
+|4,49,41,49,1581414898,"/etc/conky/conky.conf"
+'2  1  0  ~/.conky/conky-startup.sh
+|4,50,1,0,1581414684,"~/.conky/conky-startup.sh"
+'3  6  13  ~/.config/autostart/conky.desktop
+|4,51,6,13,1581346562,"~/.config/autostart/conky.desktop"
+'4  31  0  ~/.ncmpcpp/config
+|4,52,31,0,1581343292,"~/.ncmpcpp/config"
+'5  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,53,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+'6  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,54,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+'7  2  34  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,55,2,34,1581340654,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+'8  2  34  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,56,2,34,1581340654,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+'9  1  0  ~/Dotfiles/.gitmodules
+|4,57,1,0,1581340445,"~/Dotfiles/.gitmodules"
+
+# Liste de sauts (le plus récent en premier) :
+-'  3  1  ~/Dotfiles/kitty/fonts.conf
+|4,39,3,1,1581415966,"~/Dotfiles/kitty/fonts.conf"
+-'  41  49  /etc/conky/conky.conf
+|4,39,41,49,1581414898,"/etc/conky/conky.conf"
+-'  1  0  ~/Dotfiles/kitty/fonts.conf
+|4,39,1,0,1581414851,"~/Dotfiles/kitty/fonts.conf"
+-'  1  0  /etc/conky/conky.conf
+|4,39,1,0,1581414810,"/etc/conky/conky.conf"
+-'  1  0  ~/.conky/conky-startup.sh
+|4,39,1,0,1581414684,"~/.conky/conky-startup.sh"
+-'  1  0  ~/.conky/conky-startup.sh
+|4,39,1,0,1581414684,"~/.conky/conky-startup.sh"
+-'  1  0  ~/.conky/conky-startup.sh
+|4,39,1,0,1581414684,"~/.conky/conky-startup.sh"
+-'  6  13  ~/.config/autostart/conky.desktop
+|4,39,6,13,1581346562,"~/.config/autostart/conky.desktop"
+-'  6  13  ~/.config/autostart/conky.desktop
+|4,39,6,13,1581346562,"~/.config/autostart/conky.desktop"
+-'  6  13  ~/.config/autostart/conky.desktop
+|4,39,6,13,1581346562,"~/.config/autostart/conky.desktop"
+-'  6  13  ~/.config/autostart/conky.desktop
+|4,39,6,13,1581346562,"~/.config/autostart/conky.desktop"
+-'  6  13  ~/.config/autostart/conky.desktop
+|4,39,6,13,1581346562,"~/.config/autostart/conky.desktop"
+-'  6  13  ~/.config/autostart/conky.desktop
+|4,39,6,13,1581346562,"~/.config/autostart/conky.desktop"
+-'  1  0  ~/.config/autostart/conky.desktop
+|4,39,1,0,1581346545,"~/.config/autostart/conky.desktop"
+-'  1  0  ~/.config/autostart/conky.desktop
+|4,39,1,0,1581346545,"~/.config/autostart/conky.desktop"
+-'  1  0  ~/.config/autostart/conky.desktop
+|4,39,1,0,1581346545,"~/.config/autostart/conky.desktop"
+-'  1  0  ~/.config/autostart/conky.desktop
+|4,39,1,0,1581346545,"~/.config/autostart/conky.desktop"
+-'  1  0  ~/.config/autostart/conky.desktop
+|4,39,1,0,1581346545,"~/.config/autostart/conky.desktop"
+-'  1  0  ~/.config/autostart/conky.desktop
+|4,39,1,0,1581346545,"~/.config/autostart/conky.desktop"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  31  0  ~/.ncmpcpp/config
+|4,39,31,0,1581343292,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  1  0  ~/.ncmpcpp/config
+|4,39,1,0,1581343276,"~/.ncmpcpp/config"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  33  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,5,33,1581341147,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  1  0  ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+|4,39,1,0,1581341142,"~/Dotfiles/meta/configs/gtk-theme-collections.yaml"
+-'  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,39,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+-'  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,39,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+-'  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,39,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+-'  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,39,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+-'  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,39,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+-'  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,39,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+-'  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,39,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+-'  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,39,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+-'  5  47  ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+|4,39,5,47,1581341060,"~/Dotfiles/meta/configs/gtk-themes-collections.yaml"
+
+# Historique des marques dans les fichiers (les plus récentes en premier) :
+
+> /etc/conky/conky.conf
+	*	1581414896	0
+	"	41	49
+	^	41	50
+	.	41	49
+	+	29	25
+	+	31	19
+	+	41	49
+
+> ~/Dotfiles/kitty/fonts.conf
+	*	1581414857	0
+	"	3	1
+
+> ~/.conky/conky-startup.sh
+	*	1581414683	0
+	"	1	0
+
+> ~/.config/autostart/conky.desktop
+	*	1581346562	0
+	"	6	13
+	^	6	14
+	.	6	13
+	+	6	13
+
+> ~/.ncmpcpp/config
+	*	1581343292	0
+	"	31	0
+	^	31	1
+	.	31	0
+	+	30	0
+	+	31	0
+
+> ~/Dotfiles/meta/configs/gtk-theme-collections.yaml
+	*	1581341147	0
+	"	5	33
+	.	5	33
+	+	5	33
+
+> ~/Dotfiles/meta/configs/gtk-themes-collections.yaml
+	*	1581341058	0
+	"	5	47
+	^	5	48
+	.	5	47
+	+	3	0
+	+	2	15
+	+	3	16
+	+	5	47
+
+> ~/Dotfiles/.gitmodules
+	*	1581340440	0
+	"	1	0
+
+> ~/Dotfiles/meta/configs/fonts-linux.yaml
+	*	1581340392	0
+	"	1	0
+
+> ~/Dotfiles/meta/configs/slate.yaml
+	*	1581340381	0
+	"	1	0
+
+> ~/Dotfiles/meta/configs/awesome.yaml
+	*	1581340357	0
+	"	1	0
+
+> /usr/local/src/conky-manager/makefile
+	*	1581339054	0
+	"	1	0
+
+> /usr/local/src/conky-manager/INSTALL
+	*	1581337565	0
+	"	346	5
+
+> /usr/local/src/conky-manager/README
+	*	1581337530	0
+	"	1	0
+
+> /tmp/tmpm5_bgl3_
+	*	1581336388	0
+	"	1	0
+
+> /tmp/tmpyna3ahiu
+	*	1581336387	0
+	"	1	33
+	^	1	39
+	.	2	0
+	+	1	36
+	+	2	36
+	+	3	36
+	+	4	36
+	+	5	36
+	+	6	36
+	+	7	36
+	+	8	36
+	+	9	36
+	+	2	0
+
+> /tmp/tmpyc2atbaq
+	*	1581336229	0
+	"	1	0
+
+> /tmp/tmp8769r5l2
+	*	1581336226	0
+	"	1	39
+	^	1	40
+	.	2	0
+	+	2	0
+
+> /tmp/tmpp71l632k
+	*	1581335995	0
+	"	14	0
+	.	1	0
+	+	1	0
+
+> /tmp/tmpqabjoj4u
+	*	1581335995	0
+	"	1	0
+
+> /tmp/tmp13nbwvah
+	*	1581335812	0
+	"	1	0
+
+> /tmp/tmp4_lafhiz
+	*	1581335810	0
+	"	8	0
+	.	1	0
+	+	1	0
+
+> /tmp/tmpq989yqqr
+	*	1581332917	0
+	"	16	0
+	.	1	0
+	+	1	0
+
+> /tmp/tmpiblzy4_f
+	*	1581332917	0
+	"	1	0
+
+> /tmp/tmpa56ikmng
+	*	1581332872	0
+	"	1	0
+
+> /tmp/tmpwuay1r82
+	*	1581332871	0
+	"	12	0
+	^	3	37
+	.	1	0
+	+	1	32
+	+	2	32
+	+	1	37
+	+	2	37
+	+	3	38
+	+	1	0
+
+> ~/.config/qutebrowser/config.py
+	*	1581332168	0
+	"	1041	40
+	^	1041	41
+	.	1041	40
+	+	779	36
+	+	1026	0
+	+	1030	37
+	+	1035	35
+	+	1041	40
+
+> /tmp/tmpovveoyo0
+	*	1581331493	0
+	"	1	35
+
+> ~/MakeMKV_log.txt
+	*	1581196674	0
+	"	1	0
+
+> ~/.config/ranger/rifle.conf
+	*	1581196584	0
+	"	262	0
+
+> ~/NERD_tree_1
+	*	1581196582	0
+	"	11	0
+	.	1	0
+	+	1	0
+
+> ~/.config/ranger/scope.sh
+	*	1581196490	0
+	"	57	8
+
+> ~/NERD_tree_2
+	*	1581196486	0
+	"	4	0
+	.	1	0
+	+	1	0
+
+> ~/.zshrc
+	*	1581193730	0
+	"	1	0
+
+> ~/.zshenv
+	*	1581193661	0
+	"	21	16
+	^	21	17
+	.	21	16
+	+	24	0
+	+	21	16
+
+> ~/.config/mopidy/mopidy.conf
+	*	1581193419	0
+	"	71	0
+
+> /tmp/abcde/abcde.930b660b/datasource.0
+	*	1581173173	0
+	"	1	0
+
+> /tmp/abcde/abcde.930b660b/cddbread.0
+	*	1581173153	0
+	"	23	18
+	^	23	19
+	.	23	18
+	+	23	18
+
+> /tmp/abcde/abcde.930b660b/cddbquery
+	*	1581173135	0
+	"	1	0
+
+> /tmp/abcde/abcde.930b660b/cddbdiscid
+	*	1581173129	0
+	"	1	0
+
+> /tmp/abcde/abcde.930b660b/cddbchoices
+	*	1581173124	0
+	"	1	0
+
+> /etc/apt/sources.list
+	*	1581099550	0
+	"	9	0
+	.	10	0
+	+	10	0
+
+> /etc/apt/sources.list.d/docker.list
+	*	1581099495	0
+	"	2	27
+	^	2	28
+	.	2	27
+	+	6	80
+	+	6	1
+	+	5	0
+	+	3	0
+	+	6	0
+	+	3	1
+	+	2	27
+
+> /etc/apt/sources.list.d/NERD_tree_1
+	*	1581099390	0
+	"	19	0
+	.	1	0
+	+	1	0
+
+> /etc/auto.nfs
+	*	1580930000	0
+	"	1	0
+
+> ~/.vimrc
+	*	1580238240	0
+	"	71	0
+	^	111	18
+	.	111	17
+	+	59	20
+	+	60	28
+	+	62	16
+	+	63	5
+	+	99	6
+	+	100	0
+	+	152	6
+	+	153	0
+	+	160	6
+	+	161	0
+	+	63	0
+	+	61	0
+	+	111	17
+
+> ~/tmp/NERD_tree_2
+	*	1580238204	0
+	"	8	0
+	.	1	0
+	+	1	0
+
+> ~/tmp/NERD_tree_1
+	*	1580238129	0
+	"	41	0
+	.	1	0
+	+	1	0
+
+> ~/Dotfiles/vim/vim/NERD_tree_1
+	*	1580238048	0
+	"	7	0
+	.	1	0
+	+	1	0
+
+> ~/Dotfiles/vim/vim/plug.vim
+	*	1580238021	0
+	"	31	49
+	^	31	50
+	.	31	49
+	+	30	18
+	+	32	0
+	+	31	49
+
+> .vim/plug.vim
+	*	1580237714	0
+	"	1	0
+
+> ~/Développement/perso/latex/latex-homework/jl-cours/jl-cours.cls
+	*	1580213194	0
+	"	278	0
+
+> ~/upgrade-buster1.time
+	*	1580213160	0
+	"	1	0
+
+> ~/upgrade-buster1.script
+	*	1580213155	0
+	"	1	0
+
+> ~/latex-homework.txss
+	*	1580213153	0
+	"	1	0
+
+> ~/env.yml
+	*	1580213142	0
+	"	71	2
+
+> ~/Dotfiles/vim/vim/plugged/vim-startify/doc/startify.txt
+	*	1580213025	0
+	"	987	66

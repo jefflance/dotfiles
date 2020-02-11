@@ -19,13 +19,16 @@ endif
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
+Plug 'mhinz/vim-startify'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'flazz/vim-colorschemes'
-Plug 'xero/sourcerer.vim'
-Plug 'romainl/apprentice'
+Plug 'xero/sourcerer.vim', { 'as': 'sourcerer' }
+Plug 'romainl/apprentice', { 'as': 'apprentice' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sainnhe/edge', { 'as': 'edge' }
+Plug 'kyoto-shift/film-noir', { 'as': 'film-noir' }
+Plug 'kyoz/purify', { 'as': 'purify', 'rtp': 'vim' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
@@ -33,8 +36,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'ryanoasis/vim-devicons'
 Plug 'decayofmind/vim-lightline-functions'
+Plug 'ryanoasis/vim-devicons'
 
 " required !
 filetype plugin indent on

@@ -1,0 +1,5 @@
+- link:
+    ~/.themes/:
+      glob: true
+      force: false
+      path: meta/github/gtk-theme-collections/*

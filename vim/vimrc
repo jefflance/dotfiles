@@ -1,5 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+" viminfo configuration
+set viminfo='100,n$HOME/.vim/files/info/viminfo
 
 
 
@@ -32,7 +34,7 @@ set nowrap
 cnoremap w!! w !sudo tee > /dev/null %
 
 " Font config
-set guifont=Hack\ 11
+set guifont=Hasklug\ Nerd\ Font\ Complete\ 11
 
 " Start in insert mode for ALL files
 "au BufRead,BufNewFile * startinsert
@@ -53,7 +55,12 @@ source $HOME/.vim/plug.vim
 
 " Start NERDTree if no file is pass as arg
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter *
+    \ if argc() == 0
+    \ && !exists("s:std_in")
+    \ | Startify
+    \ | NERDTree
+    \ | endif
 
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -75,21 +82,21 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype', 'kitestatus' ] ],
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&readonly?"⭤":""}',
-      \   'kitestatus': '%{kite#statusline()}',
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-  \ }
+    \ 'colorscheme': 'jellybeans',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'readonly', 'filename', 'modified' ] ],
+    \   'right': [ [ 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'fileformat', 'fileencoding', 'filetype', 'kitestatus' ] ],
+    \ },
+    \ 'component': {
+    \   'readonly': '%{&readonly?"⭤":""}',
+    \   'kitestatus': '%{kite#statusline()}',
+    \ },
+    \ 'separator': { 'left': '⮀', 'right': '⮂' },
+    \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+    \ }
 
 
 
@@ -101,7 +108,7 @@ let g:lightline = {
 "  \____\___/|_____\___/|_| \_\____/ \____|_| |_|_____|_|  |_|_____|
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme dracula
+colorscheme purify
 
 
 
@@ -129,6 +136,28 @@ if has("python")
 elseif has("python3")
     let g:UltiSnipsUsePythonVersion = 3
 endif
+
+"
+" Startify
+"
+let g:startify_custom_header = []
+
+let g:startify_list_order = [
+    \ ['  ---------  FICHIERS  ---------'],
+    \ 'files',
+    \ ['  ---------  SESSIONS  ---------'],
+    \ 'sessions',
+    \ ['  ---------  PROJETS  ---------'],
+    \ 'bookmarks',
+    \ ]
+
+let g:startify_enable_special = 0
+let g:startify_files_number = 5
+
+" projets
+let g:startify_bookmarks = [
+    \ '~/Développement/'
+    \ ]
 
 
 

@@ -16,3 +16,6 @@
 [submodule "meta/github/asymptote-config"]
 	path = meta/github/asymptote-config
 	url = https://github.com/jefflance/asymptote-config.git
+[submodule "meta/github/gtk-theme-collections"]
+	path = meta/github/gtk-theme-collections
+	url = https://github.com/addy-dclxvi/gtk-theme-collections.git

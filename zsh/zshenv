@@ -18,7 +18,7 @@ export NVM_DIR="$HOME/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # environment variables
-export EDITOR=nano
+export EDITOR=vim
 export XDG_CURRENT_DESKTOP=
 export DESKTOP_SESSION=
-export XDG_DATA_DIRS="/home/jeff/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
+#export XDG_DATA_DIRS="/home/jeff/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
