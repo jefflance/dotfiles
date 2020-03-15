@@ -18,10 +18,10 @@
       #      path: zsh/custom/themes/*
 - shell:
   -
-    command: ln -s $HOME/Dotfiles/zsh/custom/aliases.szh $HOME/.oh-my-zsh/custom/aliases.zsh
+    command: ln -s $HOME/Dotfiles/zsh/custom/aliases.zsh $HOME/.oh-my-zsh/custom/aliases.zsh
     stdout: true
   -
-    command: ln -s $HOME/Dotfiles/zsh/custom/zshrc.szh $HOME/.oh-my-zsh/custom/zshrc.zsh
+    command: ln -s $HOME/Dotfiles/zsh/custom/zshrc.zsh $HOME/.oh-my-zsh/custom/zshrc.zsh
     stdout: true
   -
     command: rm -rf $HOME/.oh-my-zsh/custom/plugins
