@@ -24,7 +24,13 @@
     command: ln -s $HOME/Dotfiles/zsh/custom/zshrc.szh $HOME/.oh-my-zsh/custom/zshrc.zsh
     stdout: true
   -
+    command: rm -rf $HOME/.oh-my-zsh/custom/plugins
+    stdout: true
+  -
     command: ln -s $HOME/Dotfiles/zsh/custom/plugins $HOME/.oh-my-zsh/custom/plugins
+    stdout: true
+  -
+    command: rm -rf $HOME/.oh-my-zsh/custom/themes
     stdout: true
   -
     command: ln -s $HOME/Dotfiles/zsh/custom/themes $HOME/.oh-my-zsh/custom/themes
