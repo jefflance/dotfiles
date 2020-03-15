@@ -6,15 +6,15 @@
       path: meta/github/oh-my-zsh
     ~/.oh-my-zsh/custom/:
       glob: true
-      force: true
+      force: false
       path: zsh/custom/*
     ~/.oh-my-zsh/custom/plugins/:
       glob: true
-      force: true
+      force: false
       path: zsh/custom/plugins/*
     ~/.oh-my-zsh/custom/themes/:
       glob: true
-      force: true
+      force: false
       path: zsh/custom/themes/*
       #- shell:
       #  -
