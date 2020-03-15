@@ -4,25 +4,28 @@
     ~/.oh-my-zsh:
       force: true
       path: meta/github/oh-my-zsh
-    ~/.oh-my-zsh/custom/:
-      glob: true
-      force: false
-      path: zsh/custom/*
-    ~/.oh-my-zsh/custom/plugins/:
-      glob: true
-      force: false
-      path: zsh/custom/plugins/*
-    ~/.oh-my-zsh/custom/themes/:
-      glob: true
-      force: false
-      path: zsh/custom/themes/*
-      #- shell:
-      #  -
-      #    command: ln -s $HOME/Dotfiles/meta/github/oh-my-zsh $HOME/.oh-my-zsh
-      #    stdout: true
-      #  -
-      #    command: ln -s $HOME/Dotfiles/zsh/custom/aliases.szh $HOME/.oh-my-zsh/custom/aliases.zsh
-      #    stdout: true
-      #  -
-      #    command: ln -s $HOME/Dotfiles/zsh/custom/zshrc.szh $HOME/.oh-my-zsh/custom/zshrc.zsh
-      #    stdout: true
+      #    ~/.oh-my-zsh/custom/:
+      #      glob: true
+      #      force: false
+      #      path: zsh/custom/*
+      #    ~/.oh-my-zsh/custom/plugins/:
+      #      glob: true
+      #      force: false
+      #      path: zsh/custom/plugins/*
+      #    ~/.oh-my-zsh/custom/themes/:
+      #      glob: true
+      #      force: false
+      #      path: zsh/custom/themes/*
+- shell:
+  -
+    command: ln -s $HOME/Dotfiles/zsh/custom/aliases.szh $HOME/.oh-my-zsh/custom/aliases.zsh
+    stdout: true
+  -
+    command: ln -s $HOME/Dotfiles/zsh/custom/zshrc.szh $HOME/.oh-my-zsh/custom/zshrc.zsh
+    stdout: true
+  -
+    command: ln -s $HOME/Dotfiles/zsh/custom/plugins $HOME/.oh-my-zsh/custom/plugins
+    stdout: true
+  -
+    command: ln -s $HOME/Dotfiles/zsh/custom/themes $HOME/.oh-my-zsh/custom/themes
+    stdout: true
