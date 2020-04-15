@@ -1,9 +1,9 @@
 directory: /mnt/diskstation1/music 
-library: /mnt/diskstation1/music/library.blb
+library: /mnt/diskstation1/music/beets_library.blb
 
 import:
     copy: no
-    write: no 
+    write: yes 
     move: no
 
 paths:
@@ -16,7 +16,6 @@ item_fields:
 
 plugins:
     acousticbrainz
-    bpd
     chroma
     edit
     fetchart
@@ -24,7 +23,8 @@ plugins:
     lyrics
     mbsync
     mpdstats
-    mbcollection
+    mpdupdate
+    thumbnails
     web
 
 acousticbrainz:
@@ -39,10 +39,15 @@ edit:
 
 lyrics:
     auto: yes
+    google_engine_ID: 004234001817710914369:abwpkdjsfq7
 
 musicbrainz:
     user: Gune
     pass: Elisa
 
-mbcollection:
-    auto: no 
+mpd:
+    host: localhost
+    port: 6600
+
+thumbnails:
+    auto: yes

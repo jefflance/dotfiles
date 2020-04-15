@@ -2,15 +2,10 @@
 # -*- coding: utf-8 -*-
 
 # Name: `(file-name-nondirectory (buffer-file-name))`
-# Author: `user-full-name` <`user-mail-address`>
-# Date: `(format-time-string "%x")`
 
+"""
 
-""" $1.
-
-
-$2.
-
+{Description}
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
@@ -24,6 +19,39 @@ this program. If not, see <http://www.gnu.org/licenses/>.
 """
 
 
+# Generic imports
+import os
+import sys
 
+
+# Libs
+#import panda as pd
+
+
+# Own modules
+#from {path} import {class}
+#from {path} import {function}
+
+
+__author__ = '`user-full-name`'
+__copyright__ = 'Copyright `(format-time-string "%Y")`, `(file-name-nondirectory (buffer-file-name))`'
+__credits__ = ['`user-full-name`']
+__license__ = 'GPLv3'
+__version__ = '{mayor}.{minor}.{rel}'
+__maintainer__ = '`user-full-name`'
+__email__ = '`user-mail-address`'
+__status__ = 'dev'
+
+
+
+# Code
 $0
 
+
+
+def main():
+    pass
+
+
+if __name__ == '__main__':
+    main()

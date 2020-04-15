@@ -205,7 +205,7 @@
 (use-package darkroom-mode
   :load-path "elisp/darkroom-mode"
   :config
-    (setq darkroom-mode-face-foreground "Inconsolata 15")
+    (setq darkroom-mode-face-foreground "Monofur Nerd Font Mono 15")
     (setq darkroom-mode-face-size 150)
     (setq darkroom-mode-center-margin 150))
 
@@ -231,6 +231,18 @@
   :ensure t
   :config
     (elpy-enable))
+
+;; EMMS
+(use-package emms
+	:ensure t
+  :config
+  	(emms-all)
+		(emms-default-players)
+    (setq emms-source-file-default-directory "/mnt/diskstation1/music/"))
+(use-package emms-info-mediainfo
+	:ensure t)
+(use-package emms-state
+	:ensure t)
 
 ;; Exec-path-from-shell
 (use-package exec-path-from-shell
@@ -287,16 +299,25 @@
 (eval-after-load "markdown-mode"
   '(defalias 'markdown-add-xhtml-header-and-footer 'my-markdown-add-xhtml-header-and-footer))
 
+;; Multiple-cursors
+(use-package multiple-cursors
+	:ensure t
+  :config
+  	(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+		(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+		(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+		(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+
 ;; Neotree
 (use-package neotree
   :ensure t
+  :config
+  	(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   :init
     (unless (package-installed-p 'all-the-icons)
       (package-refresh-contents)
       (package-install 'all-the-icons)
-      (all-the-icons-install-fonts))
-  :config
-    (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+      (all-the-icons-install-fonts)))
 
 ;; Org
 (use-package org
@@ -553,6 +574,32 @@ With two PREFIX arguments,  write out the day and month name."
   "Replace text in yasnippet template."
   (yas-expand-snippet (buffer-string) (point-min) (point-max)))
 
+;; Cycling between themes
+(defun my-theme-set-default () ; Set the first row
+	(interactive)
+	(setq theme-current my-color-themes)
+  (load-theme (car theme-current) t))
+     
+(defun my-describe-theme () ; Show the current theme
+	(interactive)
+	(message "%s" (car theme-current)))
+     
+; Set the next theme (fixed by Chris Webber - tanks)
+(defun my-theme-cycle ()		
+	(interactive)
+	(setq theme-current (cdr theme-current))
+	(if (null theme-current)
+  	(setq theme-current my-color-themes))
+  (load-theme (car theme-current) t)
+  (message "%S" (car theme-current)))
+
+;; Transparency function
+;; Set transparency of emacs
+(defun transparency (value)
+	"Sets the transparency of the frame window. 0=transparent/100=opaque"
+  (interactive "nTransparency Value 0 - 100 opaque:")
+  (set-frame-parameter (selected-frame) 'alpha value))
+
 
 
 ;;  _  _________   ______ ___ _   _ ____ ___ _   _  ____ ____
@@ -566,6 +613,8 @@ With two PREFIX arguments,  write out the day and month name."
 (global-set-key (kbd "<C-f5>") 'eval-buffer)
 ;; Distraction-free mode
 (global-set-key (kbd "<C-f11>") 'darkroom-mode)
+;; Cycling themes
+(global-set-key (kbd "<f12>") 'my-theme-cycle)
 ;; Save-as and switch or not to cloned buffer
 (global-set-key (kbd "C-x c") 'my-save-as)
 ;; Magit status
@@ -605,17 +654,54 @@ With two PREFIX arguments,  write out the day and month name."
 ;; |___|_| \_| |_| |_____|_| \_\_|/_/   \_\____|_____|
 ;;
 ;; Theme
+(use-package alect-themes
+  :ensure t
+  :config
+		(alect-set-color 'dark 'fg "#FFFFFF")
+		(alect-set-color 'dark 'gray "#A1A8B9")
+  	(alect-set-color 'dark 'bg "#000000")
+  	(alect-set-color 'dark 'bg-1 "#0F1318")
+		(alect-set-color 'dark 'blue "#81A1C1")
+		(alect-set-color 'dark 'green "#A3BE8C")
+		(alect-set-color 'dark 'magenta "#BF616A")
+		(alect-set-color 'dark 'red "#B48EAD")
+		(alect-set-color 'dark 'yellow "#EBCB8B")
+		(setq alect-overriding-faces
+			'((alect-prompt           ((t :foreground blue :weight bold)))
+				(font-lock-string-face  ((t :foreground green-1)))
+				(font-lock-doc-face     ((t :inherit font-lock-string-face)))
+				(font-lock-comment-face ((t :foreground gray)))
+				(mode-line-buffer-id    ((t :foreground "yellow" :weight bold)))
+				(mode-line              ((((background light))
+				                          :foreground fg+1 :background "#ffaaaa"
+				                          :box (:line-width 2 :color bg-2 :style nil))
+				                         (((background dark))
+				                          :foreground fg+1 :background "firebrick3"
+				                          :box (:line-width 2 :color bg-2 :style nil)))))))
+(use-package arc-dark-theme
+  :ensure t)
+(use-package atom-dark-theme
+  :ensure t)
 (use-package dracula-theme
   :ensure t)
+(use-package exotica-theme
+  :ensure t)
+(use-package madhat2r-theme
+	:ensure t)
 (use-package melancholy-theme
   :ensure t)
 (use-package org-beautify-theme
   :ensure t)
 (use-package sourcerer-theme
   :ensure t)
-(use-package sublime-themes
-  :ensure t)
-(load-theme 'dracula t)
+
+(setq my-color-themes (list 'alect-dark 'arc-dark 'atom-dark
+														'dracula 'exotica 'madhat2r
+                            'melancholy 'org-beautify 'sourcerer))
+
+(setq theme-current my-color-themes)
+(setq color-theme-is-global nil) ; Initialization
+(my-theme-set-default)
 
 ;; Set minor modes
 (add-hook 'c-mode-hook 'my-enable-minor-modes)
@@ -628,10 +714,10 @@ With two PREFIX arguments,  write out the day and month name."
 (add-hook 'text-mode-hook 'my-enable-minor-modes)
 
 ;; Depends on host
-(set-frame-font "Inconsolata 12") ;default font if not customized for host
+(set-frame-font "Monofur Nerd Font Mono 14") ;default font if not customized for host
 (cond
- (is-saitama (set-frame-font "Inconsolata 11"))
- (is-genos (set-frame-font "Inconsolata 14") ;change font size on laptop
+ (is-saitama (set-frame-font "Monofur Nerd Font Mono 14"))
+ (is-genos (set-frame-font "Monofur Nerd Font Mono 14") ;change font size on laptop
            (display-battery-mode 1) ;battery status
            ))
 

@@ -18,7 +18,11 @@ export NVM_DIR="$HOME/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # environment variables
+# export TERM=tmux-256color
 export EDITOR=vim
 export XDG_CURRENT_DESKTOP=
 export DESKTOP_SESSION=
+export RANGER_LOAD_DEFAULT_RC=False
+export PASSWORD_STORE_DIR="$HOME/Private/.password-store"
+export PASSWORD_STORE_ENABLE_EXTENSIONS=True
 #export XDG_DATA_DIRS="/home/jeff/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"

@@ -1,23 +1,23 @@
 ! ------------------------------------------------------------------------------
 ! Theme Configuration 
 ! ------------------------------------------------------------------------------
-#include ".Xresources.d/themes/dracula.res"
+#include ".Xresources.d/themes/jellybeans.res"
 
 ! ------------------------------------------------------------------------------
 ! ROFI Configuration
 ! ------------------------------------------------------------------------------
-#include ".Xresources.d/rofi/dracula.res"
+#include ".Xresources.d/rofi/jellybeans.res"
 
 ! ------------------------------------------------------------------------------
 ! Xft fonts Configuration 
 ! ------------------------------------------------------------------------------
-Xft.dpi:				  96
-Xft.antialias:				  true
-Xft.rgba:				  rgb
-Xft.hinting:				  true
-Xft.hintstyle:				  hintslight
-Xft.autohint:				  false
-Xft.lcdfilter:				  lcddefault
+Xft.dpi:                96
+Xft.antialias:          true
+Xft.rgba:               rgb
+Xft.hinting:            true
+Xft.hintstyle:          hintslight
+Xft.autohint:           false
+Xft.lcdfilter:          lcddefault
 
 ! ------------------------------------------------------------------------------
 ! SSH-ASKPASS
@@ -55,29 +55,35 @@ ssh-askpass.Indicator.maximumCount:       24
 ! ------------------------------------------------------------------------------
 URxvt.perl-lib:				  /home/jeff/.urxvt
 URxvt*termName:				  rxvt-color
-URxvt*font:				  xft:Hasklug Term Medium Nerd Font Complete Mono:pixelsize=11:style=medium
-URxvt.letterSpace:			  -1
+URxvt*font:				      xft:Monofur Nerd Font Mono:pixelsize=18:size=13:style=Book
+!URxvt.letterSpace:			  -1
 URxvt.depth:				  32
-URxvt.background:			  rgba:0000/0000/0200/d800
+URxvt.geometry:				  80x24+877+462
+URxvt.background:			  rgba:0000/0000/0000/e800
+!URxvt*transparent:			  True
+!URxvt*shading:			  	  15
 URxvt*scrollBar:			  False
-URxvt.scrollBar_right:			  False
-URxvt.scrollBar_floating:		  False
+URxvt.scrollBar_right:		  False
+URxvt.scrollBar_floating:	  False
 URxvt.scrollstyle:			  rxvt
 
-URxvt.perl-ext-common:			  default,keyboard-select,url-select,clipboard,tabbed
+!URxvt.perl-ext-common:		  default,keyboard-select,url-select,clipboard,tabbed
+URxvt.perl-ext-common:		  default,keyboard-select,url-select,clipboard
 ! keyboard-select
-URxvt.keysym.M-Escape:			  perl:keyboard-select:activate
+URxvt.keysym.M-Escape:		  perl:keyboard-select:activate
 URxvt.keysym.M-s:			  perl:keyboard-select:search
 ! url-select
 URxvt.keysym.M-u:			  perl:url-select:select_next
-URxvt.url-select.autocopy:		  true
-URxvt.url-select.launcher:		  /usr/bin/xdg-open
-URxvt.url-select.button:		  2
-URxvt.url-select.underline:		  true
+URxvt.url-select.autocopy:	  true
+URxvt.url-select.launcher:	  /usr/bin/xdg-open
+URxvt.url-select.button:	  2
+URxvt.url-select.underline:	  true
 !clipboard
 URxvt.keysym.M-c:		  	  perl:clipboard:copy
+URxvt.keysym.I-c:		  	  perl:clipboard:copy
 URxvt.keysym.M-v:		  	  perl:clipboard:paste
-URxvt.clipboard.autocopy:		  true
+URxvt.keysym.I-v:		  	  perl:clipboard:paste
+URxvt.clipboard.autocopy:	  true
 ! tabbed
 
 ! ------------------------------------------------------------------------------

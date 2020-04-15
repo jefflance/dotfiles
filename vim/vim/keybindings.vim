@@ -10,23 +10,56 @@
 "
 " Custom
 "
+"
+" Disable highlights when you press <leader><cr>:
+map <silent> <leader><cr> :noh<cr>
+
+"
+" Tabs
+"
+set hidden
+nnoremap <silent> <C-w> :tabclose<cr>
+nnoremap <silent> <C-t> :tabe<cr>
+nnoremap <C-n> :tabnext<cr>
+nnoremap <C-p> :tabprevious<cr>
+
+
+"
+" Functions
+"
+
+" Renaming
+map <leader>rn :call RenameFile()<cr>
+
+" Windows move
+map <C-h> :call WinMove('h')<cr>
+map <C-j> :call WinMove('j')<cr>
+map <C-k> :call WinMove('k')<cr>
+map <C-l> :call WinMove('l')<cr>
 
 "
 " NERDTree
 "
 " Trigger configuration
 map <f2> :NERDTreeToggle<CR>
+map <leader>nb :NERDTreeFromBookmark 
+map <leader>nf :NERDTreeFind<cr>
+
 
 "
-" UltiSnips
+" CtrlP
 "
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+map <silent> <C-f> :CtrlPMixed<cr>
 
 "
-" DMenu file opening
+" Vimroom
 "
-map <c-t> :call DmenuOpen("tabe")<CR>
-map <c-f> :call DmenuOpen("e")<CR>
+nnoremap <silent> <leader>z :Goyo<cr>
+
+
+"
+" Vimux
+"
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+map <Leader>vz :VimuxZoomRunner<CR>

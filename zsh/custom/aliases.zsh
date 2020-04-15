@@ -47,11 +47,11 @@ alias -s asy='asy2png'
 
 # Directories
 hash -d crs="$HOME/Cours"
-hash -d dev="$HOME/Développement"
-hash -d dld="$HOME/Téléchargements"
 hash -d doc="$HOME/Documents"
-hash -d vid="$HOME/Vidéos"
 hash -d dot="$HOME/Dotfiles"
+hash -d prj="$HOME/Projets"
+hash -d dld="$HOME/Téléchargements"
+hash -d vid="$HOME/Vidéos"
 
 # Editors
 #alias vim="nvim"
