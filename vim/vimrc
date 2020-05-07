@@ -1,3 +1,9 @@
+" File              : vimrc
+" Author            : Jeff LANCE <email@jefflance.me>
+" Date              : 15.04.2015
+" Last Modified Date: 28.04.2020
+" Last Modified By  : Jeff LANCE <email@jefflance.me>
+
 """"""""""""""""""""""""""""""""""""""""""""""
 "
 "  ____ _____ _   _ _____ ____      _    _     
@@ -9,10 +15,20 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
+" some useful vars
+let using_neovim = has('nvim')
+let using_vim = !using_neovim
+
+
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype plugin indent on
 " viminfo configuration
-set viminfo='100,n$HOME/.vim/files/info/viminfo
+if using_vim
+	set viminfo='100,n$HOME/.vim/files/info/viminfo
+endif
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/tmp
+set noswapfile
 
 " UTF-8
 set encoding=utf8
@@ -21,22 +37,33 @@ set encoding=utf8
 syntax on
 set synmaxcol=512
 
-"" Set to auto read when a file is changed from the outside
+" Set to auto read when a file is changed from the outside
 set autoread
-"au FocusGained,BufEnter * checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ","
+let mapleader = ";"
 
 " Fast saving
 nmap <leader>w :w!<cr>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-command! W execute 'w !sudo tee % > /dev/null %'
+" ca w!! w !sudo tee "%"
 
 " A buffer becomes hidden when it is abandoned
 set hidden
+
+" Use system clipboard
+set clipboard=unnamedplus
+
+" Mouse
+set mouse=a
+
+" Auto change dir to current buffer dir
+autocmd BufEnter * silent! lcd %:p:h
+
+" Delete extra blank line at the end of file
+" autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 
 
 
@@ -49,8 +76,14 @@ set hidden
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" To use fancy symbols wherever possible, 
+let fancy_symbols_enabled = 1
+
 " Font config
 set guifont=Inconsolata\ Nerd\ Font\ Mono\ 11
+
+" Remove ugly vertical lines on window division
+set fillchars+=vert:\ 
 
 "
 set linespace=5
@@ -66,16 +99,32 @@ set number
 set wrap
 
 " Tab control
-set noexpandtab " tabs ftw
-set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=4 " the visible width of tabs
-set softtabstop=4 " edit as if the tabs are 4 characters wide
-set shiftwidth=4 " number of spaces to use for indent and unindent
-set shiftround " round indent to a multiple of 'shiftwidth'
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set textwidth=80
+set autoindent
+set smartindent
+" python
+au BufNewFile,BufRead *.py
+  \ set tabstop=4
+  \ set softtabstop=4
+  \ set shiftwidth=4
+  \ set textwidth=79
+  \ set expandtab
+  \ set autoindent
+  \ set fileformat=unix
+" js, html, css
+au BufNewFile,BufRead *.js, *.html, *.css
+  \ set noexpandtab
+  \ set tabstop=2
+  \ set softtabstop=2
+  \ set shiftwidth=2
 
-" Configure backspace so it acts as it should act
-set backspace=indent,eol,start
-set whichwrap+=<,>,h,l
+" Let the cursor traverse to the previous or following line when at the or the
+" end of a line
+set whichwrap=b,s,<,>,[,]
 
 " Search
 set ignorecase " Ignore case when searching
@@ -95,17 +144,15 @@ set lazyredraw
 " For regular expressions turn magic on
 set magic
 
-" Auto indent
-set ai 
-
-" Smart indent
-set si 
-
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
+
+" Spell checking
+set spell
+set spelllang=fr,en
 
 
 
@@ -121,29 +168,24 @@ set guioptions-=L
 " Installing the Plug plugin manager
 source $HOME/.vim/plug.vim
 
-" Start NERDTree if no file is pass as arg
+" Start startify if no arg 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter *
-    \ if argc() == 0
-    \ && !exists("s:std_in")
-    \ | Startify
-    \ | NERDTree
-    \ | endif
+  \ if argc() == 0
+  \ && !exists("s:std_in")
+  \ | Startify
+  \ | endif
 
-" Close vim if the only window left open is a NERDTree
-autocmd BufEnter *
-    \ if (winnr("$") == 1
-    \ && exists("b:NERDTree")
-    \ && b:NERDTree.isTabTree())
-    \ | q
-    \ | endif
+" needed so deoplete can auto select the first suggestion
+set completeopt+=noinsert
+" comment this line to enable autocompletion preview window
+" (displays documentation related to the selected completion option)
+" disabled by default because preview makes the window flicker
+" set completeopt-=preview
 
-" If more than one window and previous buffer was NERDTree, go back to it.
-autocmd BufEnter *
-	\ if bufname('#') =~# "^NERD_tree_"
-	\ && winnr('$') > 1
-	\ | b#
-	\ | endif
+" autocompletion of files and commands behaves like shell
+" (complete only the common part, list the options that match)
+set wildmode=list:longest
 
 
 
@@ -174,8 +216,9 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let base16colorspace=256  " Access colors present in 256 colorspace"
-" set background=dark
-colorscheme abstract
+set background=dark
+" colorscheme abstract
+colorscheme sourcerer
 
 
 
@@ -190,88 +233,166 @@ colorscheme abstract
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "
-" Markdown review
+" BufTabLine
 "
-let vim_markdown_preview_toggle=1
-let vim_markdown_preview_toggle=2
-let vim_markdown_preview_browser='x-www-browser'
-
-"
-" NERDTree
-"
-let g:NERDTreeQuitOnOpen=0 " close NERDTree after a file is opened
+hi TabLineSel ctermbg=green ctermfg=black guibg=green guifg=black
+hi PmenuSel ctermbg=white ctermfg=white guibg=white guifg=white
 
 "
-" Startify
+" Defx
 "
-" let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
+" Set appearance
+call defx#custom#option(
+  \ '_', {
+  \   'winwidth': 40,
+  \   'split': 'vertical',
+  \   'direction': 'botright',
+  \   'show_ignored_files': 0,
+  \   'buffer_name': 'defxplorer',
+  \   'toggle': 1,
+  \   'columns': 'icon:indent:icons:filename',
+  \   'resume': 1,
+  \   }
+  \ )
 
-" let g:startify_session_dir = '~/.vim/session'
+call defx#custom#column(
+  \ 'icon', {
+  \   'directory_icon': '▸',
+  \   'opened_icon': '▾',
+  \   }
+  \ )
 
-" let g:startify_lists = [
-"     \ { 'type': 'files',     'header': ['RÉCENTS']  },
-"     \ { 'type': 'sessions',  'header': ['SESSIONS'] },
-"     \ { 'type': 'bookmarks', 'header': ['MARQUES-PAGES'] },
-"     \ ]
+call defx#custom#column(
+  \ 'mark', {
+    \ 'readonly_icon': '✗',
+	  \ 'selected_icon': '✓',
+    \ }
+  \ )
 
-" let g:startify_enable_special = 0
-" let g:startify_files_number = 5
+"
+" Deoplete
+"
+if using_neovim
+  let g:deoplete#enable_at_startup = 1
+endif
 
-" let g:startify_bookmarks = [
-"     \ '~/.vimrc',
-"     \ '~/.vim/keybindings.vim',
-"     \ '~/.vim/plug.vim',
-"     \ '~/.vim/scripts.vim',
-"     \ '~/Projets/latex/latex-homework'
-"     \ ]
+"
+" FZF
+"
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'enter': 'e',
+  \ 'ctrl-h': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \ }
+" Preview window
+let g:fzf_preview_window = 'right:60%'
+if has('nvim') && !exists('g:fzf_layout')
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+endif
+
+"
+" Header
+"
+let g:header_field_author = 'Jeff LANCE'
+let g:header_field_author_email = 'email@jefflance.me'
+let g:header_auto_add_header = 0
 
 "
 " Lightline
 "
 let g:lightline = {
-    \ 'colorscheme': 'jellybeans',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'readonly', 'filename', 'modified' ] ],
-    \   'right': [ [ 'lineinfo' ],
-    \              [ 'percent' ],
-    \              [ 'fileformat', 'fileencoding', 'filetype', 'kitestatus' ] ],
-    \ },
-    \ 'component': {
-    \   'readonly': '%{&readonly?"|":""}',
-    \   'kitestatus': '%{kite#statusline()}',
-    \ },
+  \ 'colorscheme': 'jellybeans',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'readonly', 'filename', 'modified' ] ],
+  \   'right': [ [ 'lineinfo' ],
+  \              [ 'percent' ],
+  \              [ 'fileformat', 'fileencoding', 'filetype', 'kitestatus' ] ],
+  \ },
+  \ 'component': {
+  \   'readonly': '%{&readonly?"|":""}',
+  \   'kitestatus': '%{kite#statusline()}',
+  \ },
 	\ 'component_function': {
-    \   'gitbranch': 'FugitiveHead'
-    \ },
-    \ 'separator': { 'left': '', 'right': '' },
-    \ 'subseparator': { 'left': '', 'right': '' }
-    \ }
+  \   'gitbranch': 'FugitiveHead'
+  \ },
+  \ 'separator': { 'left': '', 'right': '' },
+  \ 'subseparator': { 'left': '', 'right': '' }
+  \ }
+
+"
+" Markdown review
+"
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_browser='x-www-browser'
+
+"
+" REPL
+"
+let g:repl_program = {
+  \ 'python': ['ipython'],
+  \ 'default': ['zsh'],
+  \ 'r': ['R'],
+  \ 'lua': ['lua'],
+  \ 'vim': ['vim -e']
+  \ }
+let g:repl_predefine_python = {
+  \ 'numpy': 'import numpy as np',
+  \ 'matplotlib': 'from matplotlib import pyplot as plt'
+  \ }
+let g:repl_cursor_down = 1
+let g:repl_python_automerge = 1
+let g:repl_ipython_version = '7'
+let g:repl_position = 3
+
+"
+" Startify
+"
+let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
+let g:startify_session_dir = '~/.vim/session'
+let g:startify_lists = [
+  \ { 'type': 'files',     'header': ['MRU' . getcwd()]  },
+  \ { 'type': 'sessions',  'header': ['SESSIONS'] },
+  \ { 'type': 'bookmarks', 'header': ['BOOKMARKS'] },
+  \ ]
+let g:startify_enable_special = 0
+let g:startify_files_number = 10
+let g:startify_bookmarks = [
+  \ '~/.config/',
+  \ '~/.vimrc',
+  \ '~/.vim/keybindings.vim',
+  \ '~/.vim/plug.vim',
+  \ '~/.vim/functions.vim',
+  \ '~/Projets/latex/latex-homework'
+  \ ]
 
 "
 " Tmuxline
 "
 let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : ['#I', '#W'],
-      \'cwin' : ['#I', '#W', '#F'],
-      \'y'    : ['%a', '%d', '%b', '%R'],
-      \'z'    : '#H'
-	  \ }
+  \'a'    : '#S',
+  \'win'  : ['#I', '#W'],
+  \'cwin' : ['#I', '#W', '#F'],
+  \'y'    : ['%a', '%d', '%b', '%R'],
+  \'z'    : '#H'
+  \ }
 let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '>',
-    \ 'right' : '',
-    \ 'right_alt' : '',
-    \ 'space' : ' '}
-let g:tmuxline_theme = 'jellybeans'
+  \ 'left' : '',
+  \ 'left_alt': '>',
+  \ 'right' : '',
+  \ 'right_alt' : '',
+  \ 'space' : ' '
+  \ }
+let g:tmuxline_theme = 'sourcerer'
 
 "
-" CtrlP
+" TMux navigator
 "
-let g:ctrlp_map = '<C-f>'
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_switch_buffer = 'et'
+let g:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_save_on_switch = 2
 
 "
 " Vimroom
@@ -308,3 +429,5 @@ source $HOME/.vim/functions.vim
 
 " Load keybindings from file
 source $HOME/.vim/keybindings.vim
+
+
