@@ -1,7 +1,7 @@
 " File              : keybindings.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 28.04.2020
+" Last Modified Date: 24.06.2020
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -13,9 +13,8 @@
 " 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"
-" Custom
-"
+" Custom {{{
+" -----
 
 " Disable highlights when you press <leader><cr>:
 map <silent> <leader><cr> :noh<cr>
@@ -27,11 +26,21 @@ nnoremap <space> za
 map <leader>s :echom 'Source file' <bar> :so %<cr>
 
 " Two semicolons to escape
-" imap ;; <Esc>
+imap ;; <Esc>
 
-"
-" Buffers
-"
+" Open a current file with sudo
+map <silent> <leader>E :e suda://%<cr>
+
+" Save a current file with sudo
+map <silent> <leader>W :w suda://%<cr>
+
+" -----
+"  }}}
+
+
+" Buffers {{{
+" -----
+
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(
 		\ <q-args>,
@@ -41,31 +50,81 @@ command! -bang -nargs=? -complete=dir Files
 	\ <bang>0
 	\ )
 map <C-w> :echom 'Close buffer' <bar> :call BufClose()<cr>
-map <C-S-w> :echom 'Force close buffer' <bar> bwipeout!<cr>
 map <C-o> :e 
 map <C-n> :enew<cr>
 map <Tab> :bn<cr> 
 map <S-Tab> :bp<cr> 
 
-"
-" Windows
-"
+" -----
+"  }}}
+
+
+" Windows {{{
+" -----
+
 map <C-h> :call WinMove('h')<cr>
 map <C-j> :call WinMove('j')<cr>
 map <C-k> :call WinMove('k')<cr>
 map <C-l> :call WinMove('l')<cr>
 
-"
-" Tabs
-"
+" -----
+"  }}}
+
+
+" Tabs {{{
+" -----
+
 map <leader>tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
 map <C-Tab> :tabnext<cr>
 map <leader><Tab> :tabnext<cr>
 
-"
-" Defx
-"
+" -----
+"  }}}
+
+
+" COC {{{
+" -----
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" -----
+"  }}}
+
+
+" Defx {{{
+" -----
+
 map <silent> <f3> :Defx<cr>
 
 function! s:defx_toggle_tree() abort
@@ -145,40 +204,62 @@ function! s:defx_my_settings() abort
   \   defx#do_action('change_vim_cwd')
 endfunction
 
+" -----
+"  }}}
 
-"
-" FZF
-"
+
+" FZF {{{
+" -----
+
 map <C-f> :Files<cr>
 
-"
-" Header
-"
+" -----
+"  }}}
+
+
+" Header {{{
+" -----
+
 map <f4> :AddHeader<cr>
 
-"
-" REPL
-"
-nnoremap <leader>rp :REPLToggle<Cr>
-autocmd Filetype python nnoremap <F12> <Esc>:REPLDebugStopAtCurrentLine<Cr>
-autocmd Filetype python nnoremap <F10> <Esc>:REPLPDBN<Cr>
-autocmd Filetype python nnoremap <F11> <Esc>:REPLPDBS<Cr>
+" -----
+"  }}}
 
+
+"" REPL {{{
+"" -----
 "
-" Vimroom
+"nnoremap <leader>rp :REPLToggle<Cr>
+"autocmd Filetype python nnoremap <F12> <Esc>:REPLDebugStopAtCurrentLine<Cr>
+"autocmd Filetype python nnoremap <F10> <Esc>:REPLPDBN<Cr>
+"autocmd Filetype python nnoremap <F11> <Esc>:REPLPDBS<Cr>
 "
+"" -----
+""  }}}
+
+
+" Vimroom {{{
+" -----
+
 nnoremap <silent> <leader>z :Goyo<cr>
 
-"
-" Vimux
-"
+" -----
+"  }}}
+
+
+" Vimux {{{
+" -----
+
 map <Leader>vp :VimuxPromptCommand<cr>
 " map <Leader>vr :VimuxRunCommand<cr>
 " map <Leader>vo :VimuxOpenRunner<cr>
 
-"
-" Functions
-"
+" -----
+"  }}}
+
+
+" Functions {{{
+" -----
 
 " Renaming
 map <leader>r :call RenameFile()<cr>
@@ -187,8 +268,10 @@ map <leader>r :call RenameFile()<cr>
 map <leader>o :call GotoFile("")<cr>
 
 map <leader>' ciw''<esc>P
+map <leader>" c""<esc>P
 
+" Rewrap paragraph using <S-q>
+map <silent> <S-q> {gq}<Bar>:echo "Rewrapped paragraph"<CR>
 
-
-
-
+" -----
+"  }}}

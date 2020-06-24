@@ -1,7 +1,7 @@
 " File              : functions.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 28.04.2020
+" Last Modified Date: 24.06.2020
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,8 +40,9 @@ function! WinMove(key)
   endif
 endfunction
 
+
 " Count buffers
-function! CountBuf()
+function! CountBuffers()
   let bufcount = 0
   for buf in getbufinfo()
     let bufcount += 1
@@ -49,30 +50,54 @@ function! CountBuf()
   return bufcount
 endfunction
 
+
 " Test if current buffer is netrw buffer
-function! IsNetrw()
-  if (getbufvar('%', '&filetype') == "netrw" || bufname('%') =~ 'NetrwTreeListing')
+function! IsExplorerBuffer()
+  if (getbufvar('%', '&filetype') == "netrw"
+      \ || bufname('%') =~ 'NetrwTreeListing'
+      \ || bufname('%') =~ '[defx] defxplorer-0')
     return 1
   endif
   return 0
 endfunction
 
+
 " Test if current buffer is empty
-function! IsEmptyBuf()
+function! IsEmptyBuffer()
   if (bufname('%') == '') 
     return 1
   endif
   return 0
 endfunction
 
+
 " Close current buffer
-" If empty return to Startify
+" If the last buffer is closed go back to Startify
 function! BufClose()
-  if (IsEmptyBuf() || IsNetrw())
+  if (CountBuffers() == 1 || IsExplorerBuffer() || IsEmptyBuffer())
+    bwipeout
     Startify
   else
     bwipeout
   endif
 endfunction
+
+
+" COC functions
+"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 
 

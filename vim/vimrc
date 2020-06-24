@@ -1,7 +1,7 @@
 " File              : vimrc
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 28.04.2020
+" Last Modified Date: 24.06.2020
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -15,30 +15,120 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-" some useful vars
-let using_neovim = has('nvim')
-let using_vim = !using_neovim
-
-
+" General {{{
+" -----
 set nocompatible              " be iMproved, required
 filetype plugin indent on
-" viminfo configuration
-if using_vim
-	set viminfo='100,n$HOME/.vim/files/info/viminfo
-endif
-set backupdir=$HOME/.vim/backup
-set directory=$HOME/.vim/tmp
-set noswapfile
 
-" UTF-8
+set mouse=nv                 " Disable mouse in command-line mode
+set report=0                 " Don't report on line changes
+set errorbells               " Trigger bell on error
+set visualbell               " Use visual bell instead of beeping
+set hidden                   " hide buffers when abandoned instead of unload
+set fileformats=unix,dos,mac " Use Unix as the standard file type
+set magic                    " For regular expressions turn magic on
+set path+=**                 " Directories to search when using gf and friends
+set isfname-==               " Remove =, detects filename in var=/foo/bar
+set virtualedit=block        " Position cursor anywhere in visual block
+set synmaxcol=2500           " Don't syntax highlight long lines
+set formatoptions+=1         " Don't break lines after a one-letter word
+set formatoptions-=t         " Don't auto-wrap text
+set formatoptions-=o         " Disable comment-continuation (normal 'o'/'O')
+
+" file encoding
 set encoding=utf8
 
 " Syntax highlighting
 syntax on
 set synmaxcol=512
+" -----
+" }}}
+
+
+" Vim Directories {{{
+" -----
+set nobackup
+set nowritebackup
+set undofile noswapfile
+set directory=$DATA_PATH/swap//,$DATA_PATH,~/tmp,/var/tmp,/tmp
+set undodir=$DATA_PATH/undo//,$DATA_PATH,~/tmp,/var/tmp,/tmp
+set backupdir=$DATA_PATH/backup/,$DATA_PATH,~/tmp,/var/tmp,/tmp
+set viewdir=$DATA_PATH/view/
+" Use the coc-spell-checker to do this
+" set spellfile=$VIM_PATH/spell/en.utf-8.add
+
+" History saving
+set history=2000
+
+if has('nvim') && ! has('win32') && ! has('win64')
+	set shada=!,'300,<50,@100,s10,h
+else
+	set viminfo='300,<10,@50,h,n$DATA_PATH/viminfo
+endif
+
+augroup user_persistent_undo
+	autocmd!
+	au BufWritePre /tmp/*          setlocal noundofile
+	au BufWritePre COMMIT_EDITMSG  setlocal noundofile
+	au BufWritePre MERGE_MSG       setlocal noundofile
+	au BufWritePre *.tmp           setlocal noundofile
+	au BufWritePre *.bak           setlocal noundofile
+augroup END
+
+" If sudo, disable vim swap/backup/undo/shada/viminfo writing
+if $SUDO_USER !=# '' && $USER !=# $SUDO_USER
+		\ && $HOME !=# expand('~'.$USER)
+		\ && $HOME ==# expand('~'.$SUDO_USER)
+
+	set noswapfile
+	set nobackup
+	set noundofile
+	if has('nvim')
+		set shada="NONE"
+	else
+		set viminfo="NONE"
+	endif
+endif
+
+" Secure sensitive information, disable backup files in temp directories
+if exists('&backupskip')
+	set backupskip+=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*
+	set backupskip+=.vault.vim
+endif
+
+" Disable swap/undo/viminfo/shada files in temp directories or shm
+augroup user_secure
+	autocmd!
+	silent! autocmd BufNewFile,BufReadPre
+		\ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
+		\ setlocal noswapfile noundofile nobackup nowritebackup viminfo= shada=
+augroup END
+" -----
+"  }}}
+
+
+" Timing {{{
+" ------
+set timeout ttimeout
+set timeoutlen=500   " Time out on mappings
+set ttimeoutlen=10   " Time out on key codes
+set updatetime=100   " Idle time to write swap and trigger CursorHold
+set redrawtime=1500  " Time in milliseconds for stopping display redraw
+" -----
+"  }}}
+
+
+" Behaviour {{{
+" -----
 
 " Set to auto read when a file is changed from the outside
 set autoread
+
+" Netrw
+let g:netrw_fastbrowse=0
+
+" Use system clipboard
+set clipboard=unnamedplus
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -47,23 +137,18 @@ let mapleader = ";"
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-" ca w!! w !sudo tee "%"
-
-" A buffer becomes hidden when it is abandoned
-set hidden
-
-" Use system clipboard
-set clipboard=unnamedplus
-
-" Mouse
-set mouse=a
+" " Allow saving of files as sudo when I forgot to start vim using sudo.
+" ca w!! w !sudo tee > /dev/null %
+" nmap <leader>W :w!!<cr>
 
 " Auto change dir to current buffer dir
 autocmd BufEnter * silent! lcd %:p:h
 
 " Delete extra blank line at the end of file
 " autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
+
+" -----
+"  }}}
 
 
 
@@ -80,17 +165,30 @@ autocmd BufEnter * silent! lcd %:p:h
 let fancy_symbols_enabled = 1
 
 " Font config
-set guifont=Inconsolata\ Nerd\ Font\ Mono\ 11
+if has('gui')
+  set guifont=RobotoMono\ Nerd\ Font\ Mono\ 12
+endif
+
+" Disable default status ruler
+set noruler
+
+" Keep at least 2 lines above/below
+set scrolloff=2         
+
+" hide ~ tila
+set fcs=eob:\           
 
 " Remove ugly vertical lines on window division
 set fillchars+=vert:\ 
 
-"
-set linespace=5
-
 " vim tab title
-let &titlestring = @%
 set title
+" Title length.
+set titlelen=95
+" Title string.
+let &g:titlestring="
+      \ %{expand('%:p:~:.')}%(%m%r%w%)
+      \ %<\[%{fnamemodify(getcwd(), ':~')}\] - Neovim"
 
 " Show line numbers
 set number
@@ -121,6 +219,10 @@ au BufNewFile,BufRead *.js, *.html, *.css
   \ set tabstop=2
   \ set softtabstop=2
   \ set shiftwidth=2
+" astroid format=flowed 
+au FileType mail setlocal tw=72 
+au FileType mail setlocal fo+=q 
+au FileType mail setlocal comments+=nb:>
 
 " Let the cursor traverse to the previous or following line when at the or the
 " end of a line
@@ -154,6 +256,25 @@ set guioptions-=L
 set spell
 set spelllang=fr,en
 
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess=aFc
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
 
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -171,21 +292,20 @@ source $HOME/.vim/plug.vim
 " Start startify if no arg 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter *
-  \ if argc() == 0
-  \ && !exists("s:std_in")
+  \ if (argc() == 0 && !exists("s:std_in") && !has('gui'))
   \ | Startify
   \ | endif
 
-" needed so deoplete can auto select the first suggestion
-set completeopt+=noinsert
-" comment this line to enable autocompletion preview window
-" (displays documentation related to the selected completion option)
-" disabled by default because preview makes the window flicker
+" " needed so deoplete can auto select the first suggestion
+" set completeopt+=noinsert
+" " comment this line to enable autocompletion preview window
+" " (displays documentation related to the selected completion option)
+" " disabled by default because preview makes the window flicker
 " set completeopt-=preview
 
-" autocompletion of files and commands behaves like shell
-" (complete only the common part, list the options that match)
-set wildmode=list:longest
+" " autocompletion of files and commands behaves like shell
+" " (complete only the common part, list the options that match)
+" " set wildmode=list:longest
 
 
 
@@ -215,10 +335,46 @@ endif
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" General {{{
+" -----
+
+let g:SnazzyTransparent = 1
 let base16colorspace=256  " Access colors present in 256 colorspace"
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
-" colorscheme abstract
-colorscheme sourcerer
+colorscheme snazzy
+
+" Pseudo-transparency for completion menu and floating windows
+if &termguicolors
+	if exists('&pumblend')
+		set pumblend=10
+	endif
+	if exists('&winblend')
+		set winblend=10
+	endif
+endif
+
+" -----
+"  }}}
+
+
+" Buffet {{{
+" -----
+
+function! g:BuffetSetCustomColors()
+    hi! BuffetTab cterm=NONE ctermbg=NONE ctermfg=8 guibg=NONE guifg=#FFFFFF
+    hi! BuffetBuffer cterm=NONE ctermbg=NONE ctermfg=8 guibg=NONE guifg=#FFFFFF
+    hi! BuffetModBuffer cterm=NONE ctermbg=NONE ctermfg=8 guibg=NONE guifg=#FF0000
+    hi! BuffetCurrentBuffer cterm=NONE ctermbg=NONE ctermfg=8 guibg=NONE guifg=#00FF00
+    hi! BuffetModCurrentBuffer cterm=NONE ctermbg=NONE ctermfg=8 guibg=NONE guifg=#FF0000
+  endfunction
+
+  " -----
+" }}}
 
 
 
@@ -232,15 +388,58 @@ colorscheme sourcerer
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"" BufTabLine {{{
+"" -----
 "
-" BufTabLine
+"hi TabLineSel ctermbg=Red ctermfg=black guibg=Red guifg=black
+"hi PmenuSel ctermbg=Black ctermfg=Red guibg=Black guifg=Red
 "
-hi TabLineSel ctermbg=green ctermfg=black guibg=green guifg=black
-hi PmenuSel ctermbg=white ctermfg=white guibg=white guifg=white
+"" -----
+"" }}}
 
-"
-" Defx
-"
+
+" Buffet {{{
+" -----
+
+let g:buffet_always_show_tabline = 1
+let g:buffet_powerline_separators = 1
+let g:buffet_use_devicons = 1
+let g:buffet_tab_icon = "\uf00a"
+let g:buffet_modified_icon = "+"
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+
+" -----
+"  }}}
+
+
+
+" COC {{{
+" -----
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Disable warnings
+let g:coc_disable_startup_warning = 1
+
+" -----
+"  }}}
+
+
+" Colorizer {{{
+" -----
+
+let g:colorizer_auto_filetype='css,html'
+
+" -----
+"  }}}
+
+
+
+" Defx {{{
+" -----
+
 " Set appearance
 call defx#custom#option(
   \ '_', {
@@ -269,22 +468,31 @@ call defx#custom#column(
     \ }
   \ )
 
-"
-" Deoplete
-"
-if using_neovim
-  let g:deoplete#enable_at_startup = 1
+" -----
+"  }}}
+
+
+" Deoplete {{{
+" -----
+
+if has('nvim') 
+  let g:deoplete#enable_at_startup = 0
 endif
 
-"
-" FZF
-"
+" -----
+"  }}}
+
+
+" FZF {{{
+" -----
+
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'enter': 'e',
   \ 'ctrl-h': 'split',
   \ 'ctrl-v': 'vsplit'
   \ }
+
 " Preview window
 let g:fzf_preview_window = 'right:60%'
 if has('nvim') && !exists('g:fzf_layout')
@@ -293,64 +501,83 @@ if has('nvim') && !exists('g:fzf_layout')
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 endif
 
-"
-" Header
-"
+" -----
+"  }}}
+
+
+" Header {{{
+" -----
+
 let g:header_field_author = 'Jeff LANCE'
 let g:header_field_author_email = 'email@jefflance.me'
 let g:header_auto_add_header = 0
 
-"
-" Lightline
-"
-let g:lightline = {
-  \ 'colorscheme': 'jellybeans',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'readonly', 'filename', 'modified' ] ],
-  \   'right': [ [ 'lineinfo' ],
-  \              [ 'percent' ],
-  \              [ 'fileformat', 'fileencoding', 'filetype', 'kitestatus' ] ],
-  \ },
-  \ 'component': {
-  \   'readonly': '%{&readonly?"|":""}',
-  \   'kitestatus': '%{kite#statusline()}',
-  \ },
-	\ 'component_function': {
-  \   'gitbranch': 'FugitiveHead'
-  \ },
-  \ 'separator': { 'left': '', 'right': '' },
-  \ 'subseparator': { 'left': '', 'right': '' }
-  \ }
+" -----
+"  }}}
 
+
+"" Lightline {{{
+"" -----
 "
-" Markdown review
+"let g:lightline = {
+"  \ 'colorscheme': 'snazzy',
+"  \ 'active': {
+"  \   'left': [ [ 'mode', 'paste' ],
+"  \             [ 'readonly', 'filename', 'gitstatus', 'modified' ]
+"  \   ],
+"  \   'right': [ [ 'lineinfo' ],
+"  \              [ 'percent' ],
+"  \              [ 'fileformat', 'fileencoding', 'filetype', 'kitestatus' ]
+"  \   ]
+"  \ },
+"  \ 'component': {
+"  \   'readonly': '%{&readonly?"|":""}',
+"  \   'kitestatus': '%{kite#statusline()}',
+"  \   'gitstatus': '%{FugitiveStatusline()}'
+"  \ },
+"	\ 'component_function': {
+"  \   'gitbranch': 'FugitiveHead'
+"  \ },
+"  \ 'separator': { 'left': '', 'right': '' },
+"  \ 'subseparator': { 'left': '', 'right': '' }
+"  \ }
 "
+"" -----
+"" }}}
+
+
+" Markdown preview {{{
+" -----
+
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_browser='x-www-browser'
 
-"
-" REPL
-"
-let g:repl_program = {
-  \ 'python': ['ipython'],
-  \ 'default': ['zsh'],
-  \ 'r': ['R'],
-  \ 'lua': ['lua'],
-  \ 'vim': ['vim -e']
-  \ }
-let g:repl_predefine_python = {
-  \ 'numpy': 'import numpy as np',
-  \ 'matplotlib': 'from matplotlib import pyplot as plt'
-  \ }
-let g:repl_cursor_down = 1
-let g:repl_python_automerge = 1
-let g:repl_ipython_version = '7'
-let g:repl_position = 3
+" -----
+"  }}}
 
-"
-" Startify
-"
+
+" Neovim {{{
+" -----
+
+let g:python3_host_prog = '/usr/bin/python3'
+
+" -----
+"  }}}
+
+
+" Spaceline {{{
+" -----
+
+let g:spaceline_seperate_style= 'slant-fade'
+" let g:spaceline_colorscheme = 'snazzy'
+
+" -----
+"  }}}
+
+
+" Startify {{{
+" -----
+
 let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
 let g:startify_session_dir = '~/.vim/session'
 let g:startify_lists = [
@@ -369,9 +596,23 @@ let g:startify_bookmarks = [
   \ '~/Projets/latex/latex-homework'
   \ ]
 
-"
-" Tmuxline
-"
+" -----
+"  }}}
+
+
+" Suda {{{
+" -----
+
+let g:suda#prompt = 'Mot de passe: '
+let g:suda_smart_edit = 1
+
+" -----
+"  }}}
+
+
+" Tmuxline {{{
+" -----
+
 let g:tmuxline_preset = {
   \'a'    : '#S',
   \'win'  : ['#I', '#W'],
@@ -388,18 +629,38 @@ let g:tmuxline_separators = {
   \ }
 let g:tmuxline_theme = 'sourcerer'
 
-"
-" TMux navigator
-"
+" -----
+"  }}}
+
+
+" TMux navigator {{{
+" -----
+
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 2
 
-"
-" Vimroom
-"
+" -----
+"  }}}
+
+
+" Vimroom {{{
+" -----
+
 let g:goyo_width=200
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
+
+" -----
+"  }}}
+
+
+" Vimtex {{{
+" -----
+
+let g:vimtex_compiler_progname = 'nvr'
+
+" -----
+"  }}}
 
 
 
@@ -413,7 +674,7 @@ let g:goyo_margin_bottom = 2
 " 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Load fucntions from file
+" Load functions from file
 source $HOME/.vim/functions.vim
 
 
@@ -429,5 +690,6 @@ source $HOME/.vim/functions.vim
 
 " Load keybindings from file
 source $HOME/.vim/keybindings.vim
+
 
 
