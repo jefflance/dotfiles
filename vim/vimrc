@@ -388,16 +388,6 @@ function! g:BuffetSetCustomColors()
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"" BufTabLine {{{
-"" -----
-"
-"hi TabLineSel ctermbg=Red ctermfg=black guibg=Red guifg=black
-"hi PmenuSel ctermbg=Black ctermfg=Red guibg=Black guifg=Red
-"
-"" -----
-"" }}}
-
-
 " Buffet {{{
 " -----
 
@@ -568,8 +558,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 " Spaceline {{{
 " -----
 
-let g:spaceline_seperate_style= 'slant-fade'
-" let g:spaceline_colorscheme = 'snazzy'
+let g:spaceline_seperate_style = 'arrow-fade'
+" let g:spaceline_colorscheme = ''
 
 " -----
 "  }}}

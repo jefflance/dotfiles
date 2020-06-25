@@ -10,7 +10,7 @@
 " | |_  | | | |  \| | |     | |  | | | | |  \| \___ \
 " |  _| | |_| | |\  | |___  | |  | | |_| | |\  |___) |
 " |_|    \___/|_| \_|\____| |_| |___\___/|_| \_|____/
-" 
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Rename current file
@@ -64,7 +64,7 @@ endfunction
 
 " Test if current buffer is empty
 function! IsEmptyBuffer()
-  if (bufname('%') == '') 
+  if (bufname('%') == '')
     return 1
   endif
   return 0
@@ -83,13 +83,13 @@ function! BufClose()
 endfunction
 
 
-" COC functions
-"
+" COC functions {{{
+" -----
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -99,5 +99,5 @@ function! s:show_documentation()
   endif
 endfunction
 
-
-
+" -----
+"  }}}
