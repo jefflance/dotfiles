@@ -145,6 +145,8 @@ Plug 'lambdalisue/suda.vim'
 " Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" REPL
+Plug 'jpalardy/vim-slime'
 
 " Required {{{
 " -----

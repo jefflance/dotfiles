@@ -555,6 +555,15 @@ let g:python3_host_prog = '/usr/bin/python3'
 "  }}}
 
 
+" Slime {{{
+" -----
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
+
+" -----
+"  }}}
+
+
 " Spaceline {{{
 " -----
 
