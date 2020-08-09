@@ -1,3 +1,4 @@
 - link:
     ~/.vim: vim/vim
     ~/.vimrc: vim/vimrc
+    relink: true
