@@ -1,0 +1,4 @@
+- shell:
+  - command: 'https://raw.githubusercontent.com/zimfw/install/master/install.zsh'
+    description: Installing Zsh IMproved FrameWork
+    stdout: true
