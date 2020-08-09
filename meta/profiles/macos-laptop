@@ -1,8 +1,5 @@
-asymptote
-emacs
+brew
 fonts-macos
 latex
-slate
-tmux
 vim
-zsh
+zim
