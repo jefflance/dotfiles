@@ -1,0 +1,5 @@
+- shell:
+    - command: '[[ $(command -v brew) == "" ]] && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" || echo "Updating homebrew..." && /bin/bash -c "brew update"'
+      stdout: true
+      quiet: true
+      description: Installing homebrew
