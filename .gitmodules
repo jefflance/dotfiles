@@ -1,3 +1,0 @@
-[submodule "meta/github/dotbot"]
-	path = meta/github/dotbot
-	url = https://github.com/anishathalye/dotbot.git
