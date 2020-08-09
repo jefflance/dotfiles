@@ -1,4 +1,12 @@
 - shell:
-  - command: 'curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh'
-    description: Installing Zsh IMproved FrameWork
-    stdout: true
+  - command: '/bin/bash -c "curl -fsSL https://github.com/zimfw/install/blob/master/src/templates/zshenv https://github.com/zimfw/install/blob/master/src/templates/zshrc https://github.com/zimfw/install/blob/master/src/templates/zlogin https://github.com/zimfw/install/blob/master/src/templates/zimrc -o $HOME/.zshenv -o $HOME/.zshrc -o $HOME/.zlogin -o $HOME/.zimrc"'
+    # stdout: true
+    description: Getting dotfiles for Zsh IMproved FrameWork
+  - command: '[[ ! -d "$HOME/.zim" ]] && mkdir "$HOME/.zim" ; /bin/bash -c "curl -fsSL https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh -o $HOME/.zim/zimfw.zsh"'
+    # stdout: true
+    description: Creating and getting zim dir and installation file
+  - command: '$(/usr/bin/env zsh) "$HOME/.zim/zimfw.zsh install"'
+    # stdin: true
+    # stdout: true
+    # stderr: true
+    description: Installing the Zsh IMproved FrameWork
