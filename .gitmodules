@@ -1,6 +1,3 @@
-[submodule "meta/github/awesome"]
-	path = meta/github/awesome
-	url = https://github.com/jefflance/awesome.git
 [submodule "meta/github/dotbot"]
 	path = meta/github/dotbot
 	url = https://github.com/anishathalye/dotbot.git
