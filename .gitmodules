@@ -1,9 +1,6 @@
 [submodule "meta/github/dotbot"]
 	path = meta/github/dotbot
 	url = https://github.com/anishathalye/dotbot.git
-[submodule "zsh/custom/themes/dracula"]
-	path = zsh/custom/themes/dracula
-	url = https://github.com/dracula/zsh.git
 [submodule "meta/github/oh-my-zsh"]
 	path = meta/github/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
