@@ -3,3 +3,4 @@
       glob: true
       force: false
       path: fonts/*
+      relink: true
