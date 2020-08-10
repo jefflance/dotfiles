@@ -2,6 +2,8 @@
     ~/.latexmkrc: confs/latexmkrc
 
 - shell:
-  - command: 'MYTEXMF=texmf/tex/latex ; [[ $(uname -s) = Darwin ]] && mkdir -p "$HOME/Library/$MYTEXMF" || [[ $(uname -s) = Linux ]] && mkdir -p "$HOME/$MYTEXMF"'
+  - command: '/bin/bash -c helpers/install_latex.sh'
     description: Create latex personal directory
+    stderr: true
+    stdout: true
 
