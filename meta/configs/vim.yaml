@@ -5,3 +5,10 @@
     ~/.vimrc:
         path: vim/vimrc
         relink: true
+
+- shell:
+    - command: '/bin/bash -c "$(which vim) -es -u $HOME/.vimrc -i NONE -c PlugInstall -c qa || true"'
+      stdout: true
+      stdin: true
+      stderre: true
+      description: Installing vim plugins
