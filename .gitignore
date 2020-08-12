@@ -2,6 +2,9 @@
 # Ignore these files globally in this repo.
 #
 
+### old files ###
+old/
+
 ### log files ###
 *.log
 
