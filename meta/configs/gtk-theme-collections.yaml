@@ -1,5 +1,6 @@
-- link:
-    ~/.themes/:
-      glob: true
-      force: false
-      path: meta/github/gtk-theme-collections/*
+- shell:
+  - [
+  git clone https://github.com/addy-dclxvi/gtk-theme-collections ~/.themes,
+  "Installing GTK themes."
+  ]
+    

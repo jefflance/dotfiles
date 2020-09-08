@@ -46,18 +46,18 @@ Once installed, the plugin will be automatically updated by Kite when necessary.
 
 ### Configuring supported languages
 
-Kite supports Python (on by default) and Golang (off by default).
+Kite supports Python (on by default), JavaScript (off by default), and Golang (off by default and in beta).
 
-To turn off Python support, set the `g:kite_supported_languages` list in your vimrc:
+To turn off Python, set the `g:kite_supported_languages` list in your vimrc:
 
 ```viml
 let g:kite_supported_languages = []
 ```
 
-To turn on Golang support, ensure the Kite Engine has Golang enabled and then set the `g:kite_supported_languages` list in your vimrc:
+To turn on JavaScript or Golang support, ensure the Kite Engine has JavaScript or Golang enabled and then set the `g:kite_supported_languages` list in your vimrc:
 
 ```viml
-let g:kite_supported_languages = ['python', 'go']
+let g:kite_supported_languages = ['python', 'javascript', 'go']
 ```
 
 [Learn more about why Kite is the best autocomplete for Vim.](https://kite.com/integrations/vim/)
@@ -161,6 +161,11 @@ let g:kite_documentation_continual=1
 ```
 
 
+### Goto Definition
+
+Use `<C-]>` or `:KiteGotoDefinition` to jump to a method's definition.
+
+
 ### Commands
 
 - `KiteDocsAtCursor` - show documentation for the keyword under the cursor.
@@ -170,6 +175,7 @@ let g:kite_documentation_continual=1
 - `KiteTutorial` - show a tutorial for how to use Kite with Vim.
 - `KiteEnableAutoStart` - start Kite automatically when Vim starts.
 - `KiteDisableAutoStart` - do not start Kite automatically when Vim starts.
+- `KiteGotoDefinition` - jump to a method's definition.
 
 
 

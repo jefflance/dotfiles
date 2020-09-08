@@ -80,7 +80,7 @@ augroup Kite
   autocmd!
   autocmd BufEnter * call kite#bufenter()
   autocmd VimEnter * call kite#configure_completeopt()
-  autocmd VimEnter * nested if &filetype !~# '^git' | call kite#onboarding#call(0) | endif
+  autocmd VimEnter * nested if kite#utils#kite_running() && &filetype !~# '^git' | call kite#onboarding#call(0) | endif
 augroup END
 
 
@@ -95,4 +95,5 @@ command! KiteDisableAutoStart     call kite#disable_auto_start()
 command! KiteEnableAutoStart      call kite#enable_auto_start()
 command! KiteShowPopularPatterns  call kite#signature#show_popular_patterns()
 command! KiteHidePopularPatterns  call kite#signature#hide_popular_patterns()
+command! KiteGotoDefinition       call kite#hover#goto_definition()
 
