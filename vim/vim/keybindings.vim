@@ -52,8 +52,10 @@ command! -bang -nargs=? -complete=dir Files
 map <C-w> :echom 'Close buffer' <bar> :call BufClose()<cr>
 map <C-o> :e 
 map <C-n> :enew<cr>
-map <Tab> :bn<cr> 
-map <S-Tab> :bp<cr> 
+map <C-]> :bn<cr> 
+map <C-[> :bp<cr> 
+imap <C-]> :bn<cr> 
+imap <C-[> :bp<cr> 
 
 " -----
 "  }}}
@@ -74,10 +76,10 @@ map <C-l> :call WinMove('l')<cr>
 " Tabs {{{
 " -----
 
-map <leader>tn :tabnew<cr>
-map <leader>tc :tabclose<cr>
-map <C-Tab> :tabnext<cr>
-map <leader><Tab> :tabnext<cr>
+"map <leader>tn :tabnew<cr> <bar> :Startify<cr>
+"map <leader>tc :tabclose<cr>
+"map <C-]> :tabnext<cr>
+"map <C-[> :tabprev<cr>
 
 " -----
 "  }}}
@@ -104,6 +106,13 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -117,6 +126,13 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " -----
 "  }}}
