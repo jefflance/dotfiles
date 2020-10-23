@@ -1,0 +1,4 @@
+- link:
+    ~/.elinks:
+        path: elinks
+        relink: true
