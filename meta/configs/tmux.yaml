@@ -1,2 +1,3 @@
 - link:
     ~/.tmux.conf: confs/tmux.conf
+    ~/.tmux.conf.local: confs/tmux.conf.local
