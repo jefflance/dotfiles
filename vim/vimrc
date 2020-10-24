@@ -586,9 +586,10 @@ let g:spaceline_seperate_style = 'arrow-fade'
 let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
 let g:startify_session_dir = '~/.vim/session'
 let g:startify_lists = [
-  \ { 'type': 'files',     'header': ['MRU' . getcwd()]  },
+  \ { 'type': 'commands',  'header': ['FICHIER'] },
+  \ { 'type': 'files',     'header': ['RÉCENTS']  },
+  \ { 'type': 'bookmarks', 'header': ['SIGNETS'] },
   \ { 'type': 'sessions',  'header': ['SESSIONS'] },
-  \ { 'type': 'bookmarks', 'header': ['BOOKMARKS'] },
   \ ]
 let g:startify_enable_special = 0
 let g:startify_files_number = 10
@@ -599,6 +600,10 @@ let g:startify_bookmarks = [
   \ '~/.vim/plug.vim',
   \ '~/.vim/functions.vim',
   \ '~/Projets/latex/latex-homework'
+  \ ]
+let g:startify_commands = [
+  \ ['Nouveau', 'enew'],
+  \ ['Aide', 'help reference'],
   \ ]
 
 " -----

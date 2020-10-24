@@ -34,6 +34,16 @@ map <silent> <leader>E :e suda://%<cr>
 " Save a current file with sudo
 map <silent> <leader>W :w suda://%<cr>
 
+" Comment the target of a motion
+map <silent> <leader>/ :Commentary<cr>
+
+" Indent line
+map <silent> <C-]> >>
+map <silent> <C-[> <<
+
+" (Re|Un)do
+map <silent> <C-u> uu
+
 " -----
 "  }}}
 
@@ -50,12 +60,10 @@ command! -bang -nargs=? -complete=dir Files
 	\ <bang>0
 	\ )
 map <C-w> :echom 'Close buffer' <bar> :call BufClose()<cr>
-map <C-o> :e 
-map <C-n> :enew<cr>
-map <C-]> :bn<cr> 
-map <C-[> :bp<cr> 
-imap <C-]> :bn<cr> 
-imap <C-[> :bp<cr> 
+map <C-o> :e
+map <C-n> :Startify<cr>
+map <C-PageDown> :bn<cr>
+map <C-PageUp> :bp<cr>
 
 " -----
 "  }}}
@@ -285,6 +293,8 @@ map <leader>o :call GotoFile("")<cr>
 
 map <leader>' ciw''<esc>P
 map <leader>" c""<esc>P
+map <leader>[ c[]<esc>P
+map <leader>{ c{}<esc>P
 
 " Rewrap paragraph using <S-q>
 map <silent> <S-q> {gq}<Bar>:echo "Rewrapped paragraph"<CR>
