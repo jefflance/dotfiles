@@ -300,11 +300,8 @@ map <leader>{ c{}<esc>P
 map <silent> <S-q> {gq}<Bar>:echo "Rewrapped paragraph"<CR>
 
 " Git
-Shortcut git status
-      \ map <silent> <leader>Gs :Git status<cr>
-Shortcut git add
-      \ map <leader>Ga :Git add
-Shortcut git commit 
-      \ map <leader>Gc :Git commit
+map <silent> <leader>Gs :Git status<cr>
+map <leader>Ga :Git add
+map <leader>Gc :Git commit
 " -----
 "  }}}
