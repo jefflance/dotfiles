@@ -60,7 +60,7 @@ command! -bang -nargs=? -complete=dir Files
 	\ <bang>0
 	\ )
 map <C-w> :echom 'Close buffer' <bar> :call BufClose()<cr>
-map <C-o> :e
+map <C-o> :e 
 map <C-n> :Startify<cr>
 map <C-PageDown> :bn<cr>
 map <C-PageUp> :bp<cr>
@@ -116,9 +116,9 @@ endif
 
 " Use <c-space> to trigger completion.
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <C-space> coc#refresh()
 else
-  inoremap <silent><expr> <c-@> coc#refresh()
+  inoremap <silent><expr> <C-@> coc#refresh()
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -299,5 +299,12 @@ map <leader>{ c{}<esc>P
 " Rewrap paragraph using <S-q>
 map <silent> <S-q> {gq}<Bar>:echo "Rewrapped paragraph"<CR>
 
+" Git
+Shortcut git status
+      \ map <silent> <leader>Gs :Git status<cr>
+Shortcut git add
+      \ map <leader>Ga :Git add
+Shortcut git commit 
+      \ map <leader>Gc :Git commit
 " -----
 "  }}}

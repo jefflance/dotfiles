@@ -117,6 +117,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+" Shortcuts
+Plug 'sunaku/vim-shortcut'
+
 " Status line
 Plug 'hardcoreplayers/spaceline.vim'
 " Plug 'itchyny/lightline.vim'
