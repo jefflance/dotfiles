@@ -1,7 +1,7 @@
-" File              : startify.vim
+" File              : startscreen.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 01.11.2020
-" Last Modified Date: 01.11.2020
+" Last Modified Date: 26.01.2021
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
