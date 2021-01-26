@@ -55,6 +55,7 @@ let g:startify_lists = [
 
 let g:startify_bookmarks = [
   \ '~/.config/',
+  \ '~/Dotfiles/',
   \ '~/Projets/latex/latex-homework',
   \ '~/.asy'
   \ ]
