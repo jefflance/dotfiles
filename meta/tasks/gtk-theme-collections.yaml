@@ -1,6 +1,6 @@
 - shell:
-  - [
-  git clone https://github.com/addy-dclxvi/gtk-theme-collections ~/.themes,
-  "Installing GTK themes."
-  ]
-    
+  - command: '/bin/bash -c helpers/install_gtk-theme-collections.sh'
+    description: Get GTK themes
+    stderr: true
+    stdout: true
+
