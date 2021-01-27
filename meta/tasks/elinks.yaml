@@ -1,4 +1,2 @@
 - link:
-    ~/.elinks:
-        path: conf.d/elinks
-        relink: true
+    ~/.elinks.conf: conf/elinks.conf
