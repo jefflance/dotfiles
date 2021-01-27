@@ -580,36 +580,6 @@ let g:spaceline_seperate_style = 'arrow-fade'
 "  }}}
 
 
-" " Startify {{{
-" " -----
-
-" let g:startify_custom_header = 'startify#center(startify#fortune#cowsay())'
-" let g:startify_session_dir = '~/.vim/session'
-" let g:startify_lists = [
-"   \ { 'type': 'commands',  'header': ['FICHIER'] },
-"   \ { 'type': 'files',     'header': ['RÉCENTS']  },
-"   \ { 'type': 'bookmarks', 'header': ['SIGNETS'] },
-"   \ { 'type': 'sessions',  'header': ['SESSIONS'] },
-"   \ ]
-" let g:startify_enable_special = 0
-" let g:startify_files_number = 10
-" let g:startify_bookmarks = [
-"   \ '~/.config/',
-"   \ '~/.vimrc',
-"   \ '~/.vim/keybindings.vim',
-"   \ '~/.vim/plug.vim',
-"   \ '~/.vim/functions.vim',
-"   \ '~/Projets/latex/latex-homework'
-"   \ ]
-" let g:startify_commands = [
-"   \ ['Nouveau', 'enew'],
-"   \ ['Aide', 'help reference'],
-"   \ ]
-
-" " -----
-" "  }}}
-
-
 " Suda {{{
 " -----
 
@@ -675,14 +645,14 @@ let g:tex_flavor = 'latex'
 
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 "  ____ _____  _    ____ _____ ___ _______   __
 " / ___|_   _|/ \  |  _ \_   _|_ _|  ___\ \ / /
 " \___ \ | | / _ \ | |_) || |  | || |_   \ V / 
 "  ___) || |/ ___ \|  _ < | |  | ||  _|   | |  
 " |____/ |_/_/   \_\_| \_\|_| |___|_|     |_|  
 "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Load functions from file
 source $HOME/.vim/startscreen.vim
