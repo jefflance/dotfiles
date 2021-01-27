@@ -1,5 +1,5 @@
 - link:
-    ~/.gitignore.global: confs/gitignore.global
+    ~/.gitignore.global: conf/gitignore.global
 
 - shell:
   -

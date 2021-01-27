@@ -2,5 +2,5 @@
     ~/Library/Fonts:
       glob: true
       force: false
-      path: fonts/*
+      path: conf.d/fonts/*
       relink: true

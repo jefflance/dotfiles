@@ -1,4 +1,4 @@
 - link:
-    ~/.xbindkeysrc: x/xbindkeysrc
-    ~/.Xresources: x/Xresources
-    ~/.Xresources.d: x/Xresources.d
+    ~/.xbindkeysrc: conf.d/x/xbindkeysrc
+    ~/.Xresources: conf.d/x/Xresources
+    ~/.Xresources.d: conf.d/x/Xresources.d

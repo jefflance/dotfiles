@@ -1,5 +1,5 @@
 - link:
-    ~/.config/kitty: kitty
+    ~/.config/kitty: conf.d/kitty
 
 - shell:
   -

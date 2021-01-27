@@ -1,2 +1,2 @@
 - link:
-    ~/.config/mopidy/mopidy.conf: confs/mopidy.conf
+    ~/.config/mopidy/mopidy.conf: conf/mopidy.conf

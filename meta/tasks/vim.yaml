@@ -1,9 +1,9 @@
 - link:
     ~/.vim:
-        path: vim/vim
+        path: conf.d/vim/vim
         relink: true
     ~/.vimrc:
-        path: vim/vimrc
+        path: conf.d/vim/vimrc
         relink: true
 
 - shell:

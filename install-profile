@@ -6,7 +6,7 @@ BASE_CONFIG="base"
 CONFIG_SUFFIX=".yaml"
 
 META_DIR="meta"
-CONFIG_DIR="configs"
+CONFIG_DIR="tasks"
 PROFILES_DIR="profiles"
 
 DOTBOT_DIR="dotbot"

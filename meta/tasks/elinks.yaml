@@ -1,4 +1,4 @@
 - link:
     ~/.elinks:
-        path: elinks
+        path: conf.d/elinks
         relink: true

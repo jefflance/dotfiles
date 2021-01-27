@@ -1,2 +1,2 @@
 - link:
-    ~/.config/conky: conky
+    ~/.config/conky: conf.d/conky
