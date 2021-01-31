@@ -29,10 +29,10 @@ map <leader>s :echom 'Source file' <bar> :so %<cr>
 imap ;; <Esc>
 
 " Open a current file with sudo
-map <silent> <leader>E :e suda://%<cr>
+" map <silent> <leader>E :e suda://%<cr>
 
 " Save a current file with sudo
-map <silent> <leader>W :w suda://%<cr>
+" map <silent> <leader>W :w suda://%<cr>
 
 " Comment the target of a motion
 map <silent> <leader>/ :Commentary<cr>
@@ -44,6 +44,8 @@ map <silent> <C-[> <<
 " (Re|Un)do
 map <silent> <C-u> uu
 
+" Save as
+map <C-s> :saveas<cr>
 " -----
 "  }}}
 
@@ -245,6 +247,17 @@ map <C-f> :Files<cr>
 " -----
 
 map <f4> :AddHeader<cr>
+
+" -----
+"  }}}
+
+
+" Plug {{{
+" -----
+
+map Pud :PlugUpdate<cr>
+map Pug :PlugUpgrade<cr>
+map Pui :PlugInstall<cr>
 
 " -----
 "  }}}

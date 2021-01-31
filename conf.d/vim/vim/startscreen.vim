@@ -44,7 +44,7 @@ endfunction
 function s:config_vim()
   return [
         \ { 'line': 'général', 'cmd': 'edit ~/.vimrc' },
-        \ { 'line': 'fonctions', 'cmd': 'edit ~/.vim/plug.vim' },
+        \ { 'line': 'fonctions', 'cmd': 'edit ~/.vim/functions.vim' },
         \ { 'line': 'raccourcis clavier', 'cmd': 'edit ~/.vim/keybindings.vim' },
         \ { 'line': 'plugings', 'cmd': 'edit ~/.vim/plug.vim' },
         \ { 'line': "cet écran d'accueil", 'cmd': 'edit ~/.vim/startscreen.vim' },
@@ -64,6 +64,7 @@ let g:startify_lists = [
 let g:startify_bookmarks = [
   \ '~/.config/',
   \ '~/Dotfiles/',
+  \ '~/Projets',
   \ '~/Projets/latex/latex-homework',
   \ '~/.asy'
   \ ]
