@@ -2,3 +2,4 @@
     ~/.xbindkeysrc: conf.d/x/xbindkeysrc
     ~/.Xresources: conf.d/x/Xresources
     ~/.Xresources.d: conf.d/x/Xresources.d
+    ~/.urxvt/urxvt-perls: conf.d/urxvt-perls
