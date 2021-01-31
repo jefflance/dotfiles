@@ -89,6 +89,6 @@ vim/vim/files/info/viminfo
 tags
 # Persistent undo
 [._]*.un~
-fonts/**/.uuid
+fonts/*/.uuid
 
 # End of https://www.gitignore.io/api/vim
