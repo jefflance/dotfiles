@@ -687,4 +687,4 @@ source $HOME/.vim/functions.vim
 source $HOME/.vim/keybindings.vim
 
 
-
+" vim:ft=vim

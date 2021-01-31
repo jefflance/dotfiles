@@ -111,3 +111,6 @@ endfunction
 
 " -----
 "  }}}
+
+
+" vim:ft=vim

@@ -73,3 +73,6 @@ let g:startify_commands = [
   \ ['Nouveau', 'enew'],
   \ ['Aide', 'help reference'],
   \ ]
+
+
+" vim:ft=vim

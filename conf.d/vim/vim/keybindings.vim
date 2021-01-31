@@ -318,3 +318,6 @@ map <leader>Ga :Git add
 map <leader>Gc :Git commit
 " -----
 "  }}}
+
+
+" vim:ft=vim
