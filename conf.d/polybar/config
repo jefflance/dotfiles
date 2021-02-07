@@ -69,9 +69,9 @@ module-margin-right = 2
 font-0 = "Monofur Nerd Font Mono:size=12:weight=bold" 
 font-1 = "FontAwesome:size=12" 
 
-modules-left = filesystem
+modules-left = publicip filesystem
 modules-center = mpd
-modules-right = pulseaudio publicip 
+modules-right = pulseaudio
 
 tray-position = right
 tray-padding = 2
@@ -101,7 +101,8 @@ type = internal/mpd
 host = 127.0.0.1
 port = 6600
 interval = 2
-format-online = "<icon-prev> <icon-stop> <toggle> <icon-next>  %{F#fbcdeb}<label-song>%{F-}: %{F#1592a6}<label-time>%{F-}"
+; format-online = "<icon-prev> <icon-stop> %{F#fbcdeb}<label-song>%{F-} %{F#1592a6}<label-time>%{F-} <toggle> <icon-next>"
+format-online = "%{F#fbcdeb}<label-song>%{F-} %{F#1592a6}<label-time>%{F-}"
 
 icon-prev = %{T2}%{T-}
 icon-stop = %{T2}%{T-}
@@ -109,8 +110,9 @@ icon-play = %{T2}%{T-}
 icon-pause = %{T2}%{T-}
 icon-next = %{T2}%{T-}
 
-label-song = %artist%
-label-song-maxlen = 25
+; label-song = %artist%:
+label-song = %artist% - %title%:
+label-song-maxlen = 50
 label-song-ellipsis = true
 label-time = %elapsed% / %total%
 
