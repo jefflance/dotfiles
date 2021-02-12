@@ -120,8 +120,8 @@ label-time = %elapsed% / %total%
 
 [module/publicip]
 type = custom/script
-exec = "curl --silent -L ipinfo.io | jq -r '.ip'"
-interval = 5
+exec = "curl --silent -L 'ipinfo.io?token=2a605445c3e4fe' | jq -r '.ip'"
+interval = 86400
 format-underline = #268bd2
 format-prefix = "%{T2}%{T-} "
 format-prefix-foreground = #5b
