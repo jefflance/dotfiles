@@ -69,7 +69,8 @@ module-margin-right = 2
 font-0 = "Monofur Nerd Font Mono:size=12:weight=bold" 
 font-1 = "FontAwesome:size=12" 
 
-modules-left = publicip filesystem
+; modules-left = publicip filesystem
+modules-left = filesystem
 modules-center = mpd
 modules-right = pulseaudio
 
