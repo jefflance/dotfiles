@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      relink: true
+
+- shell:
+  #- command: '/bin/bash -c "curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/src/templates/zshenv https://raw.githubusercontent.com/zimfw/install/master/src/templates/zshrc https://raw.githubusercontent.com/zimfw/install/master/src/templates/zlogin https://raw.githubusercontent.com/zimfw/install/master/src/templates/zimrc -o $HOME/.zshenv -o $HOME/.zshrc -o $HOME/.zlogin -o $HOME/.zimrc"'
+  #  description: Getting dotfiles for Zsh IMproved FrameWork
+  -
+    command: '[[ ! -d "${HOME}/.zim" ]] && mkdir "${HOME}/.zim" ; /bin/bash -c "curl -fsSL https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh -o ${HOME}/.zim/zimfw.zsh"'
+    description: Creating and getting zim dir and installation file
+  -
+    command: ''
+    description: Linking zsh and zim configuration files
+
+- shell:    
+  -
+    command: '/bin/bash -c "$(which zsh) ${HOME}/.zim/zimfw.zsh install"'
+    description: Installing the Zsh IMproved FrameWork

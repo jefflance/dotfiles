@@ -1,13 +1,13 @@
 - shell:
   -
-    command: '[[ ! -d ${HOME}/.config/aacs ]] && mkdir ${HOME}/.config/aacs'
-    stdout: true
-    stderr: true
-    description: Testing directory
+    command: '[[ ! -d ${HOME}/.config/aacs ]] && mkdir ${HOME}/.config/aacs || true'
+    #stdout: true
+    #stderr: true
+    description: Creating directory
 
   -
-    command: '[[ ! -f ${HOME}/.config/aacs/KEYDB.cfg ]] && /bin/bash -c "curl -fsSL http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg -o ${HOME}/.config/aacs/KEYDB.cfg"'
-    stdout: true
-    stderr: true
+    command: '[[ ! -e ${HOME}/.config/aacs/KEYDB.cfg ]] && /bin/bash -c "curl -kfsSL https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg -o ${HOME}/.config/aacs/KEYDB.cfg" || true'
+    #stdout: true
+    #stderr: true
     description: Downloading AACS db keys
 

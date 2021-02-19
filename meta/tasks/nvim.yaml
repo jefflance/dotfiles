@@ -7,5 +7,5 @@
     - command: '/bin/bash -c "$(which nvim) -es -u ${HOME}/.config/nvim/init.vim -i NONE -c PlugInstall -c qa || true"'
       stdout: true
       stdin: true
-      stderre: true
+      stderr: true
       description: Installing Nvim plugins
