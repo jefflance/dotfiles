@@ -1,0 +1,13 @@
+{
+"name" : "bullet" ,
+"tag" : [
+ "\textbullet"
+ ],
+"description" : [
+ ""
+ ],
+"abbrev" : "" ,
+"trigger" : "" ,
+"menu" : "" ,
+"shortcut" : "Ctrl+8"
+}

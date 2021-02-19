@@ -1,0 +1,17 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Solution",
+    "shortcut": "",
+    "tag": [
+        "% solution",
+        "\\begin{solution}",
+        "\t",
+        "\\end{solution}"
+    ],
+    "trigger": ""
+}

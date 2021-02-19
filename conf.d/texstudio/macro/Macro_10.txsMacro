@@ -1,0 +1,16 @@
+{
+"name" : "Solution" ,
+"tag" : [
+ "% Solution",
+ "\begin{solution}",
+ "  %<•%>",
+ "\end{solution}"
+ ],
+"description" : [
+ ""
+ ],
+"abbrev" : "" ,
+"trigger" : "" ,
+"menu" : "" ,
+"shortcut" : "Ctrl+Shift+F6"
+}

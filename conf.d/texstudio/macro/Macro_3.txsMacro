@@ -1,0 +1,17 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Questions",
+    "shortcut": "",
+    "tag": [
+        "% questions",
+        "\\begin{questions}",
+        "",
+        "\\end{questions}"
+    ],
+    "trigger": ""
+}

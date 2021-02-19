@@ -1,0 +1,8 @@
+- link:
+    ${HOME}/.config/texstudio/profile.txsprofile:
+        path: conf.d/texstudio/profile.txsprofile
+        relink: true
+    ${HOME}/.config/texstudio/macro:
+        path: conf.d/texstudio/macro
+        relink: true
+        force: true
