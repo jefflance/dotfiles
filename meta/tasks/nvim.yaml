@@ -1,13 +1,10 @@
 - link:
-    ${XDG_CONFIG_HOME}/nvim/:
-        path: conf.d/nvim/nvim
-        relink: true
-    ${XDG_CONFIG_HOME}/nvim/init.vim:
-        path: conf.d/nvim/init.vim
+    ${HOME}/.config/nvim:
+        path: conf.d/nvim
         relink: true
 
 - shell:
-    - command: '/bin/bash -c "$(which nvim) -es -u ${XDG_CONFIG_HOME}/nvim/init.vim -i NONE -c PlugInstall -c qa || true"'
+    - command: '/bin/bash -c "$(which nvim) -es -u ${HOME}/.config/nvim/init.vim -i NONE -c PlugInstall -c qa || true"'
       stdout: true
       stdin: true
       stderre: true

@@ -287,7 +287,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""
 
 " Installing the Plug plugin manager
-source ${XDG_CONFIG_HOME}/nvim/plug.vim
+source ${HOME}/.config/nvim/plug.vim
 
 " Start startify if no arg 
 autocmd StdinReadPre * let s:std_in=1
@@ -504,36 +504,6 @@ let g:header_auto_add_header = 0
 "  }}}
 
 
-"" Lightline {{{
-"" -----
-"
-"let g:lightline = {
-"  \ 'colorscheme': 'snazzy',
-"  \ 'active': {
-"  \   'left': [ [ 'mode', 'paste' ],
-"  \             [ 'readonly', 'filename', 'gitstatus', 'modified' ]
-"  \   ],
-"  \   'right': [ [ 'lineinfo' ],
-"  \              [ 'percent' ],
-"  \              [ 'fileformat', 'fileencoding', 'filetype', 'kitestatus' ]
-"  \   ]
-"  \ },
-"  \ 'component': {
-"  \   'readonly': '%{&readonly?"|":""}',
-"  \   'kitestatus': '%{kite#statusline()}',
-"  \   'gitstatus': '%{FugitiveStatusline()}'
-"  \ },
-"	\ 'component_function': {
-"  \   'gitbranch': 'FugitiveHead'
-"  \ },
-"  \ 'separator': { 'left': '', 'right': '' },
-"  \ 'subseparator': { 'left': '', 'right': '' }
-"  \ }
-"
-"" -----
-"" }}}
-
-
 " Markdown preview {{{
 " -----
 
@@ -647,7 +617,7 @@ let g:tex_flavor = 'latex'
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 " Load functions from file
-source ${XDG_CONFIG_HOME}/nvim/startscreen.vim
+source ${HOME}/.config/nvim/startscreen.vim
 
 
 
@@ -662,7 +632,7 @@ source ${XDG_CONFIG_HOME}/nvim/startscreen.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Load functions from file
-source ${XDG_CONFIG_HOME}/nvim/functions.vim
+source ${HOME}/.config/nvim/functions.vim
 
 
 
@@ -676,7 +646,7 @@ source ${XDG_CONFIG_HOME}/nvim/functions.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Load keybindings from file
-source ${XDG_CONFIG_HOME}/nvim/keybindings.vim
+source ${HOME}/.config/nvim/keybindings.vim
 
 
 " vim:ft=vim

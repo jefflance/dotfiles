@@ -1,5 +1,12 @@
 - shell:
   -
-    command: [[ -d ${XDG_CONFIG_HOME}/aacs ]] && rm -r ${XDG_CONFIG_HOME}/aacs && mkdir ${XDG_CONFIG_HOME}/aacs
+    command: if [ ! -d ${HOME}/.config/aacs ]; then mkdir ${HOME}/.config/aacs; fi
+    stdout: true
+    stderr: true
+    description: Testing directory
+
   -
-    command: wget -O ${XDG_CONFIG_HOME}/aacs/KEYDB.cfg https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg
+    command: if [ ! -f ${HOME}/.config/aacs/KEYDB.cfg ]; then wget --no-check-certificate -O ${HOME}/.config/aacs/KEYDB.cfg http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg; fi
+    stdout: true
+    stderr: true
+    description: Downloading AACS db keys
