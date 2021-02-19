@@ -1,6 +1,5 @@
 - shell:
   -
-    command: wget -O conf/aacskeys.cfg https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg
-
-- link:
-    ~/.config/aacs/KEYDB.cfg: conf/aacskeys.cfg
+    command: [[ -d ${XDG_CONFIG_HOME}/aacs ]] && rm -r ${XDG_CONFIG_HOME}/aacs && mkdir ${XDG_CONFIG_HOME}/aacs
+  -
+    command: wget -O ${XDG_CONFIG_HOME}/aacs/KEYDB.cfg https://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg
