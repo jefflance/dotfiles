@@ -1,0 +1,28 @@
+# Start configuration added by Zim install {{{
+#
+# User configuration sourced by all invocations of the shell
+#
+
+# Define Zim location
+: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
+# }}} End configuration added by Zim install
+
+#
+# Personnal configuration directives
+#
+typeset -U path
+
+# >>> set PATH so it includes user's private bin if it exists >>>
+path=(~/bin ~/.local/bin $path[@])
+# <<< set PATH so it includes user's private bin if it exists <<<
+
+# >>> environment variables >>>
+export EDITOR=nvim
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export MYVIMRC="${HOME}/.vimrc"
+export PASSWORD_STORE_DIR="${HOME}/Private/.password-store"
+export PASSWORD_STORE_ENABLE_EXTENSIONS=True
+# <<< environment variables <<<
+
+# }}} End personnal configuration directives
+

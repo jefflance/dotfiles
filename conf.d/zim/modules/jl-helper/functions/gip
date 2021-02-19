@@ -1,0 +1,23 @@
+# vim:et sts=2 sw=2 ft=zsh
+#
+# Display public ip information 
+#
+
+URL="ipinfo.io?token=2a605445c3e4fe"
+
+case "${1}" in
+ (-a)
+   curl --silent -L ${URL} > /dev/null | jq ;;
+ (-c)
+   curl --silent -L ${URL} > /dev/null | jq '.city';;
+ (-C)
+   curl --silent -L ${URL} > /dev/null | jq '.country';;
+ (-i)
+   curl --silent -L ${URL} > /dev/null | jq '.ip';;
+ (-r)
+   curl --silent -L ${URL} > /dev/null | jq '.region';;
+ (*)
+   curl --silent -L ${URL} > /dev/null | jq ;;
+esac
+
+compdef _files gip

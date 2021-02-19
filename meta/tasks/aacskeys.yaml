@@ -1,12 +1,13 @@
 - shell:
   -
-    command: if [ ! -d ${HOME}/.config/aacs ]; then mkdir ${HOME}/.config/aacs; fi
+    command: '[[ ! -d ${HOME}/.config/aacs ]] && mkdir ${HOME}/.config/aacs'
     stdout: true
     stderr: true
     description: Testing directory
 
   -
-    command: if [ ! -f ${HOME}/.config/aacs/KEYDB.cfg ]; then wget --no-check-certificate -O ${HOME}/.config/aacs/KEYDB.cfg http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg; fi
+    command: '[[ ! -f ${HOME}/.config/aacs/KEYDB.cfg ]] && /bin/bash -c "curl -fsSL http://vlc-bluray.whoknowsmy.name/files/KEYDB.cfg -o ${HOME}/.config/aacs/KEYDB.cfg"'
     stdout: true
     stderr: true
     description: Downloading AACS db keys
+

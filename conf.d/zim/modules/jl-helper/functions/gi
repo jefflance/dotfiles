@@ -1,0 +1,10 @@
+# vim:et sts=2 sw=2 ft=zsh
+#
+# Get .gitignore from distant api 
+#
+
+function gi() {
+  curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/"$@" ;
+}
+
+compdef _files gi
