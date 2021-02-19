@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo "Updating/cleaning Nvim plugins."
+
+source $XDG_CONFIG_HOME/nvim/init.vim
+
+# Thanks for greywh in #vim for this tip
+nvim -e -c ':PlugInstall' -c ':PlugClean' -c ':qa!'

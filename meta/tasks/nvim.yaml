@@ -1,0 +1,14 @@
+- link:
+    ${XDG_CONFIG_HOME}/nvim/:
+        path: conf.d/nvim/nvim
+        relink: true
+    ${XDG_CONFIG_HOME}/nvim/init.vim:
+        path: conf.d/nvim/init.vim
+        relink: true
+
+- shell:
+    - command: '/bin/bash -c "$(which nvim) -es -u ${XDG_CONFIG_HOME}/nvim/init.vim -i NONE -c PlugInstall -c qa || true"'
+      stdout: true
+      stdin: true
+      stderre: true
+      description: Installing Nvim plugins
