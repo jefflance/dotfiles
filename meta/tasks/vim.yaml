@@ -1,14 +1,14 @@
 - link:
-    ~/.vim:
+    ${HOME}/.vim/:
         path: conf.d/vim/vim
         relink: true
-    ~/.vimrc:
+    ${HOME}/.vimrc:
         path: conf.d/vim/vimrc
         relink: true
 
 - shell:
-    - command: '/bin/bash -c "$(which vim) -es -u $HOME/.vimrc -i NONE -c PlugInstall -c qa || true"'
+    - command: '/bin/bash -c "$(which vim) -es -u ${HOME}/.vimrc -i NONE -c PlugInstall -c qa || true"'
       stdout: true
       stdin: true
       stderre: true
-      description: Installing vim plugins
+      description: Installing Vim plugins
