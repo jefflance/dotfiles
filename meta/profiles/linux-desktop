@@ -1,8 +1,6 @@
 aacskeys
 abcde
 ansiweather
-alot
-astroid
 beets
 conky
 editorconfig
@@ -15,6 +13,7 @@ gtk-theme-collections
 latex
 lgogdownloader
 tmux
+mail
 mopidy
 ncmpcpp
 nvim
