@@ -1,2 +1,3 @@
 - link:
-    ~/.editorconfig: conf/editorconfig
+    ~/.editorconfig:
+      path: conf/editorconfig

@@ -1,0 +1,43 @@
+#!/bin/bash
+# File              : spam
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 10.02.2015
+# Last Modified Date: 04.05.2020
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+#
+# $1 = message id
+
+# All directory names relative to mail folder's root
+DIR_JUNK="junk"  # Junk directory path
+DIR_INBOX="inbox" # Inbox directory path
+
+# Set thread ID and message ID from args
+TID=$1
+MID=$2
+
+FILE=$(notmuch search --exclude=false --output=files\
+       "thread:${TID}" "${MID:+id:$MID}")
+
+# Set junk tag on mails and unset inbox tag
+# notmuch tag --remove-all -- "thread:${TID}" "${MID:+id:$MID}"
+notmuch tag -inbox +spam -- "thread:${TID}" "${MID:+id:$MID}"
+
+# Set mail as spam in bogofilter database
+echo ${FILE} | bogofilter -s
+
+# # if mail is in inbox dir
+# if $(echo $FILE | grep -q $DIR_INBOX); then
+#   # replace inbox dir with spam dir
+#   FILE_NEW=$(echo $FILE | sed "s|$DIR_INBOX/|$DIR_JUNK/|")
+#   # move from inbox to spam dir
+#   echo "Moving $FILE to $FILE_NEW"
+#   mv "$FILE" "$FILE_NEW"
+# fi
+
+# Use afew to move junk mail to junk directory
+afew --move-mails
+
+exit 0
+
+
+# vim:ft=sh

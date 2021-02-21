@@ -1,0 +1,10 @@
+[accounts]
+  [[work]]
+    realname = Jeff LANCE
+    address = jeff.lance@mala.fr
+    alias_regexp = \+@mala.fr
+    # gpg_key = D7D6C5AA
+    sendmail_command = msmtp --account=jeff.lance@mala.fr -t
+    sent_box = maildir:///home/jeff/Mail/jeff.lance@mala.fr/sent
+    # ~ expansion also works
+    draft_box = maildir://~/Mail/jeff.lance@mala.fr/drafts

@@ -1,2 +1,3 @@
 - link:
-    ~/.ncmpcpp/config: conf.d/ncmpcpp/config
+    ~/.ncmpcpp/config:
+     path: conf.d/ncmpcpp/config

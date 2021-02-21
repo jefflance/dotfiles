@@ -1,0 +1,178 @@
+{
+    "astroid": {
+        "config": {
+            "version": "11"
+        },
+        "notmuch_config": "\/home\/jeff\/.notmuch-config",
+        "debug": {
+            "dryrun_sending": "false"
+        },
+        "hints": {
+            "level": "-1"
+        },
+        "log": {
+            "syslog": "true",
+            "stdout": "true",
+            "level": "debug"
+        }
+    },
+    "accounts": {
+        "account1": {
+            "name": "Jeff LANCE",
+            "email": "jeff.lance@mala.fr",
+            "gpgkey": "",
+            "always_gpg_sign": "false",
+            "sendmail": "msmtp -a jeff.lance@mala.fr --read-envelope-from -i -t",
+            "default": "true",
+            "save_sent": "true",
+            "save_sent_to": "\/home\/jeff\/Mail\/jeff.lance@mala.fr\/sent\/cur\/",
+            "additional_sent_tags": "",
+            "save_drafts_to":
+            "\/home\/jeff\/Mail\/jeff.lance@mala.fr\/drafts\/cur\/",
+            "signature_separate": "false",
+            "signature_file": "",
+            "signature_file_markdown": "",
+            "signature_default_on": "true",
+            "signature_attach": "false",
+            "select_query": ""
+        },
+        "account2": {
+            "name": "Maths LANCE",
+            "email": "mathslance@gmail.com",
+            "gpgkey": "",
+            "always_gpg_sign": "false",
+            "sendmail": "msmtp -a mathslance@gmail.com --read-envelope-from -i -t",
+            "default": "false",
+            "save_sent": "true",
+            "save_sent_to": "\/home\/jeff\/Mail\/mathslance@gmail.com\/sent\/cur\/",
+            "additional_sent_tags": "",
+            "save_drafts_to": "\/home\/jeff\/Mail\/mathslance@gmail.com\/drafts\/cur\/",
+            "signature_separate": "false",
+            "signature_file": "",
+            "signature_file_markdown": "",
+            "signature_default_on": "true",
+            "signature_attach": "false",
+            "select_query": ""
+        },
+        "account3": {
+            "name": "Games",
+            "email": "games@mala.fr",
+            "gpgkey": "",
+            "always_gpg_sign": "false",
+            "sendmail": "msmtp -a games@mala.fr --read-envelope-from -i -t",
+            "default": "true",
+            "save_sent": "true",
+            "save_sent_to": "\/home\/jeff\/Mail\/games@mala.fr\/sent\/cur\/",
+            "additional_sent_tags": "",
+            "save_drafts_to":
+            "\/home\/jeff\/Mail\/games@mala.fr\/drafts\/cur\/",
+            "signature_separate": "false",
+            "signature_file": "",
+            "signature_file_markdown": "",
+            "signature_default_on": "true",
+            "signature_attach": "false",
+            "select_query": ""
+        }
+    },
+    "startup": {
+        "queries": {
+            "INBOX": "tag:inbox",
+            "IMPORTANT": "tag:flagged",
+            "Jeff LANCE (MaLa)": "tag:inbox folder:/jeff.lance@mala.fr/",
+            "Maths LANCE (GMail)": "tag:inbox folder:/mathslance@gmail.com/",
+            "Games (MaLa)": "tag:inbox folder:/games@mala.fr/"
+        }
+    },
+    "terminal": {
+        "height": "10",
+        "font_description": "default"
+    },
+    "thread_index": {
+        "page_jump_rows": "6",
+        "sort_order": "newest",
+        "cell": {
+            "font_description": "default",
+            "line_spacing": "5",
+            "date_length": "10",
+            "message_count_length": "4",
+            "authors_length": "20",
+            "subject_color": "#807d74",
+            "subject_color_selected": "#000000",
+            "background_color_selected": "",
+            "background_color_marked": "#fff584",
+            "background_color_marked_selected": "#bcb559",
+            "tags_length": "80",
+            "tags_upper_color": "#e5e5e5",
+            "tags_lower_color": "#333333",
+            "tags_alpha": "0.5",
+            "hidden_tags": "attachment,flagged,unread"
+        }
+    },
+    "general": {
+        "time": {
+            "clock_format": "local",
+            "same_year": "%b %-e",
+            "diff_year": "%x"
+        }
+    },
+    "editor": {
+        "cmd": "gnvim %1",
+        "external_editor": "true",
+        "charset": "utf-8",
+        "save_draft_on_force_quit": "true",
+        "attachment_words": "joins, joint, ci-joint",
+        "attachment_directory": "~",
+        "markdown_processor": "cmark"
+    },
+    "mail": {
+        "reply": {
+            "quote_line": "Message de %1, du %2:",
+            "mailinglist_reply_to_sender": "true"
+        },
+        "forward": {
+            "quote_line": "Transfert du message de %1, du %2:",
+            "disposition": "inline"
+        },
+        "sent_tags": "sent",
+        "message_id_fqdn": "",
+        "message_id_user": "",
+        "user_agent": "default",
+        "send_delay": "2",
+        "close_on_success": "false",
+        "format_flowed": "false"
+    },
+    "poll": {
+        "interval": "600",
+        "always_full_refresh": "true"
+    },
+    "attachment": {
+        "external_open_cmd": "/home/jeff/.config/astroid/hooks/open_attachment"
+    },
+    "thread_view": {
+        "open_html_part_external": "false",
+        "preferred_type": "plain",
+        "preferred_html_only": "true",
+        "allow_remote_when_encrypted": "true",
+        "open_external_link": "xdg-open",
+        "default_save_directory": "~",
+        "indent_messages": "true",
+        "gravatar": {
+            "enable": "true"
+        },
+        "mark_unread_delay": "3",
+        "expand_flagged": "true"
+    },
+    "crypto": {
+        "gpg": {
+            "path": "gpg2",
+            "always_trust": "true",
+            "enabled": "false"
+        }
+    },
+    "saved_searches": {
+        "show_on_startup": "false",
+        "save_history": "true",
+        "history_lines_to_show": "15",
+        "history_lines": "1000"
+    }
+}

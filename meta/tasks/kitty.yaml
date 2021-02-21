@@ -1,10 +1,9 @@
 - link:
-    ~/.config/kitty: conf.d/kitty
+    ~/.config/kitty:
+      path: conf.d/kitty
 
 - shell:
-  -
-    command: echo "\n# completion for kitty" >> $HOME/.oh-my-zsh/custom/zshrc.zsh
-  -
-    command: echo "kitty + complete setup zsh | source /dev/stdin" >> $HOME/.oh-my-zsh/custom/zshrc.zsh
+  - command: 'echo "\n# completion for kitty" >> $HOME/.oh-my-zsh/custom/zshrc.zsh'
+  - command: 'echo "kitty + complete setup zsh | source /dev/stdin" >> $HOME/.oh-my-zsh/custom/zshrc.zsh'
              
 

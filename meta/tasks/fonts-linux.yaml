@@ -1,6 +1,7 @@
 - link:
-    ~/.local/share/fonts: conf.d/fonts
+    ~/.local/share/fonts:
+      path: conf.d/fonts
+
 - shell:
-  -
-    command: fc-cache -fv ~/.local/share/fonts
+  - command: 'fc-cache -fv ~/.local/share/fonts'
     stdout: true

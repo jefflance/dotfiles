@@ -1,0 +1,33 @@
+#!/bin/bash
+# File              : trash
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 10.02.2015
+# Last Modified Date: 06.05.2020
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+#
+# $1 = message id
+
+echo "[ASTROID] $(basename $0)"
+
+# All directory names relative to mail folder's root
+DIR_INBOX="inbox" # Inbox directory path
+DIR_TRASH="trash" # Trash directory path
+
+# Get thread ID and message ID
+TID=$1
+MID=$2
+
+FILE=$(notmuch search --exclude=false --output=files\
+       "thread:${TID}" "${MID:+id:$MID}")
+
+# Trash mail and unset inbox
+# notmuch tag --remove-all -- "thread:${TID}" "${MID:+id:$MID}"
+notmuch tag -inbox +deleted -- "thread:${TID}" "${MID:+id:$MID}"
+
+# Move mail with afew
+afew --move-mails
+
+exit 0
+
+
+# vim:ft=sh

@@ -1,0 +1,146 @@
+# File              : keybindings
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 10.02.2015
+# Last Modified Date: 07.05.2020
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+
+
+########
+# MAIN #
+########
+# Start manual poll
+main_window.poll=C-r
+main_window.toggle_auto_poll=P
+
+### Searching in main window
+main_window.search_tag=?
+main_window.search=/
+main_window.show_help=h
+
+# Refresh
+thread_index.run(hooks::refresh)=F5
+
+##############
+# NAVIGATION #
+##############
+
+main_window.next_page=Page_Up
+main_window.previous_page=Page_Down
+main_window.open_new_window=C-n
+main_window.jump_to_page=
+
+help.up=Up
+Help.down=Down
+help.page_up=Page_Up
+help.page_down=Page_Down
+help.next_page=C-Page_Up
+help.previous_page=C-Page_Down
+help.page_top=Home
+help.page_end=End
+
+thread_view.up=Up
+thread_view.down=Down
+thread_view.page_up=Page_Up
+thread_view.page_down=Page_Down
+thread_view.next_page=C-Page_Up
+thread_view.previous_page=C-Page_Down
+thread_view.page_top=Home
+thread_view.page_end=End
+
+thread_index.up=Up
+thread_index.down=Down
+thread_index.page_up=Page_Up
+thread_index.page_down=Page_Down
+thread_index.next_page=C-Page_Up
+thread_index.previous_page=C-Page_Down
+thread_index.page_top=Home
+thread_index.page_end=End
+
+### undo
+thread_index.undo=u
+
+### replying, composing, etc
+main_window.new_mail=n
+
+edit_message.edit=e
+edit_message.send=s
+edit_message.cancel=C-c
+edit_message.view_raw=v
+edit_message.cycle_from=f
+edit_message.attach=a
+edit_messsage.attach_mids=M-a
+edit_message.save_draft=C-s
+edit_message.delete_draft=Delete
+edit_message.toggle_signature=S
+edit_message.toggle_markdown=M
+edit_message.toggle_encrypt=E
+
+thread_index.reply=
+thread_index.reply_all=M-r
+thread_index.reply_sender=r
+thread_index.reply_mailinglist=M-R
+thread_index.edit_draft=e
+
+thread_view.reply=
+thread_view.reply_all=R
+thread_view.reply_sender=r
+thread_view.reply_mailinglist=M-r
+thread_view.edit_draft=e
+thread_view.multi.toggle=Space # Toggle marked, default: t
+thread_view.next_element=Tab
+thread_view.previous_element=ISO_Left_Tab
+thread_view.save=C-s # Save attachment or message, default: s
+thread_view.save_all_attachments=C-S # Save all attachments, default: S
+
+### tagging, etc
+thread_index.mute=
+thread_index.archive=I # Toggle 'inbox' tag on thread, default: a
+thread_index.unread=U # Toggle 'unread' tag on thread, default: N
+thread_index.multi.archive=I
+thread_index.multi.mark_unread=U # Toggle unread, default: N
+thread_view.archive_thread=I # Toggle 'inbox' tag on the whole thread, default: a
+thread_view.toggle_unread=U # Toggle the unread tag on the message, default: N
+
+### move to spam / remove from spam
+# old version with two different hooks
+thread_index.run(hooks::spam %1)=s
+thread_index.run(hooks::unspam %1)=M-s
+thread_view.run(hooks::spam %1 %2)=s
+thread_view.run(hooks::unspam %1 %2)=M-s
+# new version with a toggle hook
+# thread_index.run(hooks::toggle_spam %1, hooks::toggle_spam %1)=S
+# thread_view.run(hooks::toggle_spam %1 %2, hooks::toggle_spam %1 %2)=S
+
+### move to trash / remove from trash
+# old version with two different hooks
+thread_index.run(hooks::trash %1)=d
+thread_index.run(hooks::trash %1)=Delete
+thread_index.run(hooks::untrash %1)=M-d
+thread_view.run(hooks::trash %1 %2)=d
+thread_view.run(hooks::trash %1 %2)=Delete
+thread_view.run(hooks::untrash %1 %2)=M-d
+# new version with a toggle hook
+# thread_index.run(hooks::toggle_trash %1, hooks::toggle_trash %1)=Delete
+# thread_view.run(hooks::toggle_trash %1 %2, hooks::toggle_trash %1 %2)=Delete
+
+thread_index.run(hooks::move_mail %1)=C-m
+thread_view.run(hooks::move_mail %1 %2)=C-m
+
+### delete
+# thread_view.delete=C-Delete
+# thread_index.delete=C-Delete 
+thread_index.run(hooks::purge_trash)=M-Delete
+
+### printing
+thread_view.multi.print=C-p
+thread_view.print=C-p
+
+### closing app, tabs
+main_window.quit_ask=q # Quit astroid, default: q
+main_window.quit=Q # Quit astroid (without asking), default: Q
+main_window.close_page=C-w # Close mode (or window if other windows are open), default: C-w
+main_window.close_page_force=C-W # Force close mode (or window if other windows are open), default: C-W
+thread_index.close_pane=C-w # Close thread view pane if open, default: C-w
+
+
+# vim:ft=sh

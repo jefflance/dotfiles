@@ -1,0 +1,45 @@
+#!/bin/bash
+# File              : unspam
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 10.02.2015
+# Last Modified Date: 04.05.2020
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+#
+# $1 = message id
+
+# All directory names relative to mail folder's root
+DIR_JUNK="junk" # Junk directory path
+DIR_INBOX="inbox"      # Inbox directory path
+
+# Get thread ID and message ID
+TID=$1
+MID=$2
+
+FILE=$(notmuch search --exclude=false --output=files\
+       "thread:${TID}" "${MID:+id:$MID}")
+
+# Only do something if mail is spam
+if [[ $(notmuch search "thread:${TID}" "${MID:+id:$MID}" and tag:spam) ]]; then
+  # unspam mail and reset inbox status
+  notmuch tag -spam +inbox -- "thread:${TID}" "${MID:+id:$MID}"
+fi
+
+# Delete mail from bogofilter spam database
+echo ${FILE} | bogofilter -n
+
+# # If mail is in spam dir
+# if $(echo ${FILE} | grep -q ${DIR_JUNK}); then
+#   # replace spam dir with inbox dir
+#   FILE_NEW=$(echo $FILE | sed "s|$DIR_JUNK/|$DIR_INBOX/|")
+#   # move from spam dir to inbox
+#   echo "Moving $FILE to $FILE_NEW"
+#   mv "$FILE" "$FILE_NEW"
+# fi
+
+# Move mail with afew
+afew --move-mails
+
+exit 0
+
+
+# vim:ft=sh

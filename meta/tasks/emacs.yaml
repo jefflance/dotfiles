@@ -1,3 +1,5 @@
 - link:
-    ~/.emacs: conf.d/emacs/emacs
-    ~/.emacs.d: conf.d/emacs/emacs.d
+    ~/.emacs:
+      path: conf.d/emacs/emacs
+    ~/.emacs.d:
+      path: conf.d/emacs/emacs.d

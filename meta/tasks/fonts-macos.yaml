@@ -3,4 +3,3 @@
       glob: true
       force: false
       path: conf.d/fonts/*
-      relink: true

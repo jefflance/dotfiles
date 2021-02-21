@@ -1,2 +1,3 @@
 - link:
-    ~/.figlet: conf.d/figlet
+    ~/.figlet:
+      path: conf.d/figlet

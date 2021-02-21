@@ -1,2 +1,3 @@
 - link:
-    ~/.config/beets/config.yaml: conf/beets.yaml
+    ~/.config/beets/config.yaml:
+      path: conf/beets.yaml

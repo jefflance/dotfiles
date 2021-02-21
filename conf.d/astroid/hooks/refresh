@@ -1,0 +1,17 @@
+#!/bin/bash
+# File              : refresh
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 10.02.2015
+# Last Modified Date: 05.05.2020
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+#
+# $1 = message id
+
+notmuch tag --input=${HOME}/Mail/.notmuch/tagupdate
+afew --move-mails
+astroid --refresh 0
+
+exit 0
+
+
+# vim:ft=sh

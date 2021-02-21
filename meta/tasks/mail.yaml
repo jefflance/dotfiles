@@ -1,0 +1,10 @@
+- link:
+  ${HOME}/.mbsynrc:
+    path: conf/mbsynrc
+  ${HOME}/.notmuch-config:
+    path: conf/notmuch-config
+  ${HOME}/.config/astroid:
+    path: conf.d/astroid
+  ${HOME}/.config/alot:
+     path: conf.d/alot
+    

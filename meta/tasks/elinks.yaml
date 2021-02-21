@@ -1,2 +1,3 @@
 - link:
-    ~/.elinks.conf: conf/elinks.conf
+    ~/.elinks.conf:
+      path: conf/elinks.conf

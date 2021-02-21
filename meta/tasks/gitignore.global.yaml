@@ -1,6 +1,6 @@
 - link:
-    ~/.gitignore.global: conf/gitignore.global
+    ~/.gitignore.global:
+      path: conf/gitignore.global
 
 - shell:
-  -
-    command: git config --global core.excludesfile ~/.gitignore.global
+  - command: 'git config --global core.excludesfile ~/.gitignore.global'

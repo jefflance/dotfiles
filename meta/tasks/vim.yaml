@@ -1,10 +1,8 @@
 - link:
     ${HOME}/.vim/:
         path: conf.d/vim/vim
-        relink: true
     ${HOME}/.vimrc:
         path: conf.d/vim/vimrc
-        relink: true
 
 - shell:
     - command: '/bin/bash -c "$(which vim) -es -u ${HOME}/.vimrc -i NONE -c PlugInstall -c qa || true"'

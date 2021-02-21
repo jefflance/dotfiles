@@ -1,3 +1,5 @@
 - link:
-    ~/.slate.d: conf.d/slate/slate.d
-    ~/.slate.js: conf.d/slate/slate.js
+    ~/.slate.d:
+      path: conf.d/slate/slate.d
+    ~/.slate.js:
+      path: conf.d/slate/slate.js

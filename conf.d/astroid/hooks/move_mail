@@ -1,0 +1,67 @@
+#!/bin/bash
+# File              : move_mail
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 10.02.2015
+# Last Modified Date: 07.05.2020
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+#
+# $1 = message id
+
+# Some constants
+MAILBOX="${HOME}/Mail/jeff.lance@mala.fr"
+ARCHIVES="archives"
+CONFIG_AFEW="/home/jeff/.config/afew/config"
+
+MOVER_LINE="jeff.lance@mala.fr/inbox = 'tag:spam':jeff.lance@mala.fr/junk 'tag:deleted':jeff.lance@mala.fr/trash"
+
+# Set thread ID and message ID from args
+TID=$1
+MID=$2
+
+# Get mail file
+FILE=$(notmuch search --exclude=false --output=files\
+       "thread:${TID}" "${MID:+id:$MID}")
+
+
+DEST_TAG="archive"
+CURRENT=""
+TAG=""
+
+while [ ${DEST_TAG} ]; do
+  DEST_TAG=$(ls -1 --group-directories-first \
+    -I 'cur' -I 'new' -I 'tmp' \
+    "${MAILBOX}/${ARCHIVES}${CURRENT}" \
+    | rofi -dmenu -p 'move mail to')
+
+  CURRENT="${CURRENT}/${DEST_TAG}"
+  
+  # Create the string to put in afew
+  MOVER_LINE_UPD="jeff.lance@mala.fr/inbox = 'tag:spam':jeff.lance@mala.fr/junk \
+    'tag:deleted':jeff.lance@mala.fr/trash 'tag:${DEST_TAG}':jeff.lance@mala.fr/${ARCHIVES}${CURRENT}"
+
+  if ! [ -n "$(ls -I 'cur' -I 'new' -I 'tmp' ${MAILBOX}/${ARCHIVES}${CURRENT})" ]; then
+    # If there's more subdir in current place, set current place as our tag
+    TAG=${DEST_TAG}
+    unset DEST_TAG
+  fi
+done
+
+# Set archive tag on mails and unset inbox tag
+notmuch tag -inbox +archive +${TAG} -- "thread:${TID}" "${MID:+id:$MID}"
+
+# Let's format the strings for the sed command
+MOVER_LINE=$(echo ${MOVER_LINE} | sed 's,/,\\/,g' | sed 's, ,\\ ,g')
+MOVER_LINE_UPD=$(echo ${MOVER_LINE_UPD} | sed 's,/,\\/,g' | sed 's, ,\\ ,g')
+
+sed -i "s,${MOVER_LINE},${MOVER_LINE_UPD}," "${CONFIG_AFEW}"
+
+# Use afew to move mails
+afew --move-mails
+
+# Get back to the old afew
+sed -i "s,${MOVER_LINE_UPD},${MOVER_LINE}," "${CONFIG_AFEW}"
+
+exit 0
+
+
+# vim:ft=sh

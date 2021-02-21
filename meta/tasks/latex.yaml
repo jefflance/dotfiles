@@ -1,5 +1,6 @@
 - link:
-    ~/.latexmkrc: conf/latexmkrc
+    ~/.latexmkrc:
+      path: conf/latexmkrc
 
 - shell:
   - command: '/bin/bash -c helpers/install_latex.sh'

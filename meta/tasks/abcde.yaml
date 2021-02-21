@@ -1,2 +1,4 @@
 - link:
-    ~/.abcde.conf: conf/abcde.conf
+    ~/.abcde.conf:
+      path: conf/abcde.conf
+

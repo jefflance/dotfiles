@@ -1,0 +1,30 @@
+#!/bin/bash
+# File              : open_attachment
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 10.02.2015
+# Last Modified Date: 04.05.2020
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+#
+# check for viruses and wait for file to be closed and for xdg-open to finish
+#
+# this script requires: libnotify, exo, clamav, inotify-tools
+
+# test for viruses (comment out this section if things go too slow and 
+# you are feeling reckless / trusting).
+clamscan "$1" &>/dev/null
+
+if [ $? -eq 1 ]; then
+  notify-send "Virus detected" "Virus found in attachment, not opening!" --icon=dialog-warning
+  exit 1
+fi
+
+inotifywait -e close "$1" &
+ip=$!
+
+# open file (you can replace this with xdg-open)
+xdg-open "$1"
+
+wait $ip # wait for file to be closed
+
+
+# vim:ft=sh

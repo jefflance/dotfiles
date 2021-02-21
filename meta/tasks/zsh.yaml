@@ -1,37 +1,6 @@
-- link:
-    ~/.zshenv: conf.d/zsh/zshenv
-    ~/.zshrc: conf.d/zsh/zshrc
-    ~/.oh-my-zsh:
-      force: true
-      path: meta/github/oh-my-zsh
-      #    ~/.oh-my-zsh/custom/:
-      #      glob: true
-      #      force: false
-      #      path: zsh/custom/*
-      #    ~/.oh-my-zsh/custom/plugins/:
-      #      glob: true
-      #      force: false
-      #      path: zsh/custom/plugins/*
-      #    ~/.oh-my-zsh/custom/themes/:
-      #      glob: true
-      #      force: false
-      #      path: zsh/custom/themes/*
 - shell:
-  -
-    command: ln -s $HOME/Dotfiles/zsh/custom/aliases.zsh $HOME/.oh-my-zsh/custom/aliases.zsh
+  - command: '/bin/bash -c helpers/install_zsh.sh'
+    description: Create latex personal directory
+    stderr: true
     stdout: true
-  -
-    command: ln -s $HOME/Dotfiles/zsh/custom/zshrc.zsh $HOME/.oh-my-zsh/custom/zshrc.zsh
-    stdout: true
-  -
-    command: rm -rf $HOME/.oh-my-zsh/custom/plugins
-    stdout: true
-  -
-    command: ln -s $HOME/Dotfiles/zsh/custom/plugins $HOME/.oh-my-zsh/custom/plugins
-    stdout: true
-  -
-    command: rm -rf $HOME/.oh-my-zsh/custom/themes
-    stdout: true
-  -
-    command: ln -s $HOME/Dotfiles/zsh/custom/themes $HOME/.oh-my-zsh/custom/themes
-    stdout: true
+

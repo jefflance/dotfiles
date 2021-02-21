@@ -1,0 +1,25 @@
+# File              : .notmuch-config
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 10.02.2015
+# Last Modified Date: 05.05.2020
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+
+[database]
+path=/home/jeff/Mail
+
+[user]
+name=Jeff LANCE
+primary_email=jeff.lance@mala.fr
+# other_email=mathslance@gmail.com
+
+[new]
+tags=new;
+ignore=.mbsyncstate;.isyncuidmap.db;.uidvalidity;.mbsyncstate.journal;.mbsyncstate.new;.mbsyncstate.lock;/.*[.](json|lock|bak)$/;
+
+[search]
+exclude_tags=
+
+[maildir]
+synchronize_flags=true
+
+# vim:ft=sh

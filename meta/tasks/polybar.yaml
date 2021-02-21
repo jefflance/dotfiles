@@ -1,3 +1,4 @@
 - link:
-    ~/.config/polybar: conf.d/polybar
+    ~/.config/polybar:
+      path: conf.d/polybar
 
