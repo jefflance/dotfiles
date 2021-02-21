@@ -1,6 +1,7 @@
 - link:
     ~/.config/kitty:
-      path: conf.d/kitty
+      glob: true
+      path: conf.d/kitty/*
 
 - shell:
   - command: 'echo "\n# completion for kitty" >> $HOME/.oh-my-zsh/custom/zshrc.zsh'

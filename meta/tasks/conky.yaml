@@ -1,3 +1,4 @@
 - link:
     ~/.config/conky:
-      path: conf.d/conky
+      glob: true
+      path: conf.d/conky/*

@@ -6,7 +6,8 @@
       glob: true
       path: conf.d/afew/*
     ${HOME}/.config/alot:
-      path: conf.d/alot
+      glob: true
+      path: conf.d/alot/*
     ${HOME}/.mbsyncrc:
       path: conf/mbsyncrc
     ${HOME}/.msmtprc:

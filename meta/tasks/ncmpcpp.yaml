@@ -1,3 +1,4 @@
 - link:
-    ~/.ncmpcpp/config:
-     path: conf.d/ncmpcpp/config
+    ${HOME}/.config/ncmpcpp:
+      glob: true
+      path: conf.d/ncmpcpp/*

@@ -1,6 +1,7 @@
 - link:
     ${HOME}/.config/nvim:
-      path: conf.d/nvim
+      glob: true
+      path: conf.d/nvim/*
 
 - shell:
     - command: '/bin/bash -c "$(which nvim) -es -u ${HOME}/.config/nvim/init.vim -i NONE -c PlugInstall -c qa || true"'
