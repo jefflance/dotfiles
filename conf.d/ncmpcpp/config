@@ -21,7 +21,7 @@
 ## (eg. ncmpc) also use that location.
 ##
 #
-lyrics_directory = /mnt/diskstation1/music/lyrics
+lyrics_directory = ~/Musique/lyrics
 #
 ##### connection settings #####
 #
@@ -34,7 +34,7 @@ mpd_port = 6600
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = /mnt/diskstation1/music
+mpd_music_dir = ~/Musique
 #
 mpd_crossfade_time = 5
 #
@@ -54,7 +54,7 @@ mpd_crossfade_time = 5
 ## }
 ##
 #
-visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_data_source = /tmp/mpd.fifo
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp
@@ -292,7 +292,7 @@ song_columns_list_format = (4)[]{: } (20)[]{a:Artiste} (6f)[white]{nE:Piste} (50
 ## Note: Custom command that will be executed each
 ## time song changes. Useful for notifications etc.
 ##
-execute_on_song_change = "~/.ncmpcpp/scripts/osd.sh"
+# execute_on_song_change = "~/.config/ncmpcpp/scripts/osd.sh"
 #
 #playlist_show_mpd_host = no
 #
