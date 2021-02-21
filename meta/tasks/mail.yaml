@@ -1,10 +1,16 @@
 - link:
-    ${HOME}/.mbsynrc:
-      path: conf/mbsyncrc
-    ${HOME}/.notmuch-config:
-      path: conf/notmuch-config
     ${HOME}/.config/astroid:
-      path: conf.d/astroid
+      glob: true
+      path: conf.d/astroid/*
+    ${HOME}/.config/afew:
+      glob: true
+      path: conf.d/afew/*
     ${HOME}/.config/alot:
       path: conf.d/alot
+    ${HOME}/.mbsyncrc:
+      path: conf/mbsyncrc
+    ${HOME}/.msmtprc:
+      path: conf/msmtprc
+    ${HOME}/.notmuch-config:
+      path: conf/notmuch-config
     
