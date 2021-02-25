@@ -15,6 +15,8 @@
       glob: true
       force: true
       path: conf.d/imapnotify/*
+    ${HOME}/.mailcap:
+      path: conf/mailcap
     ${HOME}/.mbsyncrc:
       path: conf/mbsyncrc
     ${HOME}/.msmtprc:
