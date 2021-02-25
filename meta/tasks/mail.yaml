@@ -8,6 +8,9 @@
     ${HOME}/.config/alot:
       glob: true
       path: conf.d/alot/*
+    ${HOME}/.config/imapnotify:
+      glob: true
+      path: conf.d/imapnotify/*
     ${HOME}/.mbsyncrc:
       path: conf/mbsyncrc
     ${HOME}/.msmtprc:

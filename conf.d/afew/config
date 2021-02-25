@@ -26,7 +26,7 @@ sent_tag = sent
 
 [Filter.1]
 message = Tag all messages from work
-query = 'from:STolsy@ac-creteil.fr'
+query = 'from:STolsy@ac-creteil.fr OR from:ce.0932047v@ac-creteil.fr' 
 tag = +evariste
 
 
