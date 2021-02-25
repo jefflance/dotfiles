@@ -1,15 +1,19 @@
 - link:
     ${HOME}/.config/astroid:
       glob: true
+      force: true
       path: conf.d/astroid/*
     ${HOME}/.config/afew:
       glob: true
+      force: true
       path: conf.d/afew/*
     ${HOME}/.config/alot:
       glob: true
+      force: true
       path: conf.d/alot/*
     ${HOME}/.config/imapnotify:
       glob: true
+      force: true
       path: conf.d/imapnotify/*
     ${HOME}/.mbsyncrc:
       path: conf/mbsyncrc
