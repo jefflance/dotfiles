@@ -8,6 +8,8 @@
 # Set some constants
 MAILDIR=${HOME}/Mail
 
+echo "[Begin astroid] $(basename $0) script"
+
 
 function test_connection() {
   # Check if we have a connection
@@ -85,9 +87,9 @@ if [ test_connection ]; then
   if [ test_maildir ]; then
     # deal_with_spam
     purge_trash
-    sync_mail
-    sync_db
-    refresh
+    # sync_mail
+    # sync_db
+    # refresh
   else
     echo "[ASTROID]: no maildir"
   fi
@@ -98,5 +100,6 @@ fi
 # We stop polling
 # astroid --stop-polling
 
+echo "[End   astroid] $(basename $0) script"
 
 # vim:ft=sh
