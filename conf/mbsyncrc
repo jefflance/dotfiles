@@ -198,68 +198,62 @@ Channel games@mala.fr-junk
 Channel games@mala.fr-archives
 
 
-## jean-francois.lance@ac-creteil.fr
-##--------------------------------------
+# jean-francois.lance@ac-creteil.fr
+#--------------------------------------
 
-#IMAPAccount jean-francois.lance@ac-montpellier.fr
-## Address to connect to
-#Host courrier.ac-montpellier.fr
-#User jlance
-#PassCmd "secret-tool lookup email jean-francois.lance@ac-montpellier.fr"
-## Use SSL
-#SSLType IMAPS
-## The following line should work.
-## If get certificate errors, uncomment the two
-## following lines and read the "Troubleshooting" section.
-#CertificateFile /etc/ssl/certs/ca-certificates.crt
+IMAPAccount jean-francois.lance@ac-creteil.fr
+# Address to connect to
+Host imap.ac-creteil.fr
+User jlance
+PassCmd "secret-tool lookup email jean-francois.lance@ac-creteil.fr service imap"
+# Use SSL
+SSLType IMAPS
+# The following line should work.
+# If get certificate errors, uncomment the two
+# following lines and read the "Troubleshooting" section.
+CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-#IMAPStore jean-francois.lance@ac-montpellier.fr-remote
-#Account jean-francois.lance@ac-montpellier.fr
+IMAPStore jean-francois.lance@ac-creteil.fr-remote
+Account jean-francois.lance@ac-creteil.fr
 
-#MaildirStore jean-francois.lance@ac-montpellier.fr-local
-#SubFolders Verbatim
-## The trailing "/" is important
-#Path ~/Mail/jean-francois.lance@ac-montpellier.fr/
-#Inbox ~/Mail/jean-francois.lance@ac-montpellier.fr/INBOX
+MaildirStore jean-francois.lance@ac-creteil.fr-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/Mail/jean-francois.lance@ac-creteil.fr/
+Inbox ~/Mail/jean-francois.lance@ac-creteil.fr/INBOX
 
-#Channel jean-francois.lance@ac-montpellier.fr-inbox
-#Master :jean-francois.lance@ac-montpellier.fr-remote:
-#Slave :jean-francois.lance@ac-montpellier.fr-local:
-#Patterns "INBOX"
-#Expunge Both
+Channel jean-francois.lance@ac-creteil.fr-inbox
+Master :jean-francois.lance@ac-creteil.fr-remote:
+Slave :jean-francois.lance@ac-creteil.fr-local:
+Patterns "INBOX"
+Expunge Both
 
-#Channel jean-francois.lance@ac-montpellier.fr-sent
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Sent"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:SENT
-#Expunge Both
+Channel jean-francois.lance@ac-creteil.fr-sent
+Master :jean-francois.lance@ac-creteil.fr-remote:"Sent"
+Slave :jean-francois.lance@ac-creteil.fr-local:SENT
+Expunge Both
 
-#Channel jean-francois.lance@ac-montpellier.fr-trash
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Trash"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:TRASH
-#Expunge Both
+Channel jean-francois.lance@ac-creteil.fr-trash
+Master :jean-francois.lance@ac-creteil.fr-remote:"Trash"
+Slave :jean-francois.lance@ac-creteil.fr-local:TRASH
+Expunge Both
 
-#Channel jean-francois.lance@ac-montpellier.fr-drafts
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Drafts"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:DRAFTS
-#Expunge Both
+Channel jean-francois.lance@ac-creteil.fr-drafts
+Master :jean-francois.lance@ac-creteil.fr-remote:"Drafts"
+Slave :jean-francois.lance@ac-creteil.fr-local:DRAFTS
+Expunge Both
 
-#Channel jean-francois.lance@ac-montpellier.fr-spams
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Spams"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:SPAMS
-#Expunge Both
+Channel jean-francois.lance@ac-creteil.fr-spams
+Master :jean-francois.lance@ac-creteil.fr-remote:"Pourriel"
+Slave :jean-francois.lance@ac-creteil.fr-local:SPAMS
+Expunge Both
 
-#Channel jean-francois.lance@ac-montpellier.fr-archives
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Archives"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:ARCHIVES
-#Patterns *
-
-#Group jean-francois.lance@ac-montpellier.fr
-#Channel jean-francois.lance@ac-montpellier.fr-inbox
-#Channel jean-francois.lance@ac-montpellier.fr-sent
-#Channel jean-francois.lance@ac-montpellier.fr-trash
-#Channel jean-francois.lance@ac-montpellier.fr-drafts
-#Channel jean-francois.lance@ac-montpellier.fr-spams
-#Channel jean-francois.lance@ac-montpellier.fr-archives
+Group jean-francois.lance@ac-creteil.fr
+Channel jean-francois.lance@ac-creteil.fr-inbox
+Channel jean-francois.lance@ac-creteil.fr-sent
+Channel jean-francois.lance@ac-creteil.fr-trash
+Channel jean-francois.lance@ac-creteil.fr-drafts
+Channel jean-francois.lance@ac-creteil.fr-spams
 
 
 
