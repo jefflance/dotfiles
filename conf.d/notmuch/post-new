@@ -1,0 +1,26 @@
+#!/bin/bash
+# File              : post-new
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 10.02.2015
+# Last Modified Date: 26.02.2021
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+
+ASTROID_BIN=$(which astroid)
+
+echo "[Begin notmuch]: $(basename $0)"
+
+echo "[----- notmuch]: local treatment"
+notmuch tag --input=${HOME}/Mail/.notmuch/tagupdate
+
+echo "[----- notmuch]: afew treatment"
+afew --tag --new
+afew --move-mails
+
+echo "[End   notmuch]: $(basename $0)"
+
+if [ "x${DISPLAY}" != "x" ]; then
+  logger -t notmuch "Astroid polling stop requested during post-new hook"
+  $ASTROID_BIN --stop-polling 2>&1 >/dev/null
+fi
+
+# vim:ft=sh

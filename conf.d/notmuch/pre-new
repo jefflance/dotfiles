@@ -1,0 +1,21 @@
+#!/bin/bash
+# File              : pre-new
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 04.05.2020
+# Last Modified Date: 26.02.2021
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+
+ASTROID_BIN=$(which astroid)
+
+echo "[Begin notmuch]: $(basename $0) script"
+
+if [ "x${DISPLAY}" != "x" ]; then
+  logger -t notmuch "Astroid polling start requested during pre-new hook"
+  $ASTROID_BIN --start-polling 2>&1 >/dev/null
+fi
+
+echo "[End   notmuch]: $(basename $0) script"
+
+exit 0
+
+# vim:ft=sh

@@ -23,4 +23,8 @@
       path: conf/msmtprc
     ${HOME}/.notmuch-config:
       path: conf/notmuch-config
+    ${HOME}/Mail/.notmuch/hooks:
+      glob: true
+      force: true
+      path: conf.d/notmuch/*
     
