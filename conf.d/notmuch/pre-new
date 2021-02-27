@@ -10,7 +10,7 @@ ASTROID_BIN=$(which astroid)
 echo "[Begin notmuch]: $(basename $0) script"
 
 if [ "x${DISPLAY}" != "x" ]; then
-  logger -t notmuch "Astroid polling start requested during pre-new hook"
+  logger -t notmuch "Astroid polling start requested during pre-new hook";
   $ASTROID_BIN --start-polling 2>&1 >/dev/null
 fi
 
