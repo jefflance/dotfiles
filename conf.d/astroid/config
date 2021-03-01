@@ -37,6 +37,24 @@
             "select_query": ""
         },
         "account2": {
+            "name": "Jean-François LANCE",
+            "email": "jean-francois.lance@ac-creteil.fr",
+            "gpgkey": "",
+            "always_gpg_sign": "false",
+            "sendmail": "msmtp -a jean-francois.lance@ac-creteil.fr --read-envelope-from -i -t",
+            "default": "false",
+            "save_sent": "true",
+            "save_sent_to": "\/home\/jeff\/Mail\/jean-francois.lance@ac-creteil.fr\/sent\/cur\/",
+            "additional_sent_tags": "",
+            "save_drafts_to": "\/home\/jeff\/Mail\/jean-francois.lance@ac-creteil.fr\/drafts\/cur\/",
+            "signature_separate": "false",
+            "signature_file": "",
+            "signature_file_markdown": "",
+            "signature_default_on": "true",
+            "signature_attach": "false",
+            "select_query": ""
+        },
+        "account3": {
             "name": "Maths LANCE",
             "email": "mathslance@gmail.com",
             "gpgkey": "",
@@ -54,18 +72,17 @@
             "signature_attach": "false",
             "select_query": ""
         },
-        "account3": {
+        "account4": {
             "name": "Games",
             "email": "games@mala.fr",
             "gpgkey": "",
             "always_gpg_sign": "false",
             "sendmail": "msmtp -a games@mala.fr --read-envelope-from -i -t",
-            "default": "true",
+            "default": "false",
             "save_sent": "true",
             "save_sent_to": "\/home\/jeff\/Mail\/games@mala.fr\/sent\/cur\/",
             "additional_sent_tags": "",
-            "save_drafts_to":
-            "\/home\/jeff\/Mail\/games@mala.fr\/drafts\/cur\/",
+            "save_drafts_to": "\/home\/jeff\/Mail\/games@mala.fr\/drafts\/cur\/",
             "signature_separate": "false",
             "signature_file": "",
             "signature_file_markdown": "",
@@ -77,10 +94,11 @@
     "startup": {
         "queries": {
             "INBOX": "tag:inbox",
-            "IMPORTANT": "tag:flagged",
             "Jeff LANCE (MaLa)": "tag:inbox folder:/jeff.lance@mala.fr/",
+            "Pro (Creteil)": "tag:inbox folder:/jean-francois.lance@ac-creteil.fr/",
             "Maths LANCE (GMail)": "tag:inbox folder:/mathslance@gmail.com/",
-            "Games (MaLa)": "tag:inbox folder:/games@mala.fr/"
+            "Games (MaLa)": "tag:inbox folder:/games@mala.fr/",
+            "IMPORTANT": "tag:flagged"
         }
     },
     "terminal": {
@@ -92,16 +110,16 @@
         "sort_order": "newest",
         "cell": {
             "font_description": "default",
-            "line_spacing": "5",
-            "date_length": "10",
+            "line_spacing": "7",
+            "date_length": "15",
             "message_count_length": "4",
-            "authors_length": "20",
+            "authors_length": "50",
             "subject_color": "#807d74",
             "subject_color_selected": "#000000",
             "background_color_selected": "",
             "background_color_marked": "#fff584",
             "background_color_marked_selected": "#bcb559",
-            "tags_length": "80",
+            "tags_length": "100",
             "tags_upper_color": "#e5e5e5",
             "tags_lower_color": "#333333",
             "tags_alpha": "0.5",
@@ -111,7 +129,7 @@
     "general": {
         "time": {
             "clock_format": "local",
-            "same_year": "%b %-e",
+            "same_year": "%-e %B",
             "diff_year": "%x"
         }
     },
@@ -138,11 +156,11 @@
         "message_id_user": "",
         "user_agent": "default",
         "send_delay": "2",
-        "close_on_success": "false",
+        "close_on_success": "true",
         "format_flowed": "false"
     },
     "poll": {
-        "interval": "600",
+        "interval": "-1",
         "always_full_refresh": "true"
     },
     "attachment": {
@@ -150,7 +168,7 @@
     },
     "thread_view": {
         "open_html_part_external": "false",
-        "preferred_type": "plain",
+        "preferred_type": "html",
         "preferred_html_only": "true",
         "allow_remote_when_encrypted": "true",
         "open_external_link": "xdg-open",
@@ -174,5 +192,14 @@
         "save_history": "true",
         "history_lines_to_show": "15",
         "history_lines": "1000"
+    },
+    "plugins": {
+      "hls_hsv_tag_color": {
+        "colorspace" : "hsv",
+        "saturation" : 0.5,
+        "lightness" : 0.7,
+        "value" : 0.9,
+        "alpha" : 0.9
+      }
     }
 }

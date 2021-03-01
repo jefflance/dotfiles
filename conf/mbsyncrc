@@ -28,7 +28,7 @@ IMAPAccount jeff.lance@mala.fr
 # Address to connect to
 Host ssl0.ovh.net
 User jeff.lance@mala.fr
-PassCmd "secret-tool lookup email jeff.lance@mala.fr"
+PassCmd "secret-tool lookup email jeff.lance@mala.fr service imap"
 # Use SSL
 # SSLType IMAPS
 SSLType None
@@ -117,7 +117,7 @@ IMAPAccount games@mala.fr
 # Address to connect to
 Host ssl0.ovh.net
 User games@mala.fr
-PassCmd "secret-tool lookup email games@mala.fr"
+PassCmd "secret-tool lookup email games@mala.fr service imap"
 # Use SSL
 # SSLType IMAPS
 SSLType None
@@ -178,24 +178,12 @@ SyncState *
 Expunge Both
 
 
-Channel games@mala.fr-archives
-Master :games@mala.fr-remote:"Archives"
-Slave  :games@mala.fr-local:archives
-Pattern *
-Create Slave
-MaxMessages 500 
-Sync New Delete Push
-SyncState *
-Expunge Both
-
-
 Group games@mala.fr
 Channel games@mala.fr-inbox
 Channel games@mala.fr-sent
 Channel games@mala.fr-trash
 Channel games@mala.fr-drafts
 Channel games@mala.fr-junk
-Channel games@mala.fr-archives
 
 
 # jean-francois.lance@ac-creteil.fr
@@ -220,32 +208,35 @@ MaildirStore jean-francois.lance@ac-creteil.fr-local
 SubFolders Verbatim
 # The trailing "/" is important
 Path ~/Mail/jean-francois.lance@ac-creteil.fr/
-Inbox ~/Mail/jean-francois.lance@ac-creteil.fr/INBOX
+Inbox ~/Mail/jean-francois.lance@ac-creteil.fr/inbox
 
 Channel jean-francois.lance@ac-creteil.fr-inbox
 Master :jean-francois.lance@ac-creteil.fr-remote:
 Slave :jean-francois.lance@ac-creteil.fr-local:
 Patterns "INBOX"
+Sync PullNew PullDelete Push
+SyncState *
 Expunge Both
 
 Channel jean-francois.lance@ac-creteil.fr-sent
 Master :jean-francois.lance@ac-creteil.fr-remote:"Sent"
-Slave :jean-francois.lance@ac-creteil.fr-local:SENT
+Slave :jean-francois.lance@ac-creteil.fr-local:sent
+Sync PullNew PullDelete Push
+SyncState *
 Expunge Both
 
 Channel jean-francois.lance@ac-creteil.fr-trash
 Master :jean-francois.lance@ac-creteil.fr-remote:"Trash"
-Slave :jean-francois.lance@ac-creteil.fr-local:TRASH
+Slave :jean-francois.lance@ac-creteil.fr-local:trash
+Sync PullNew PullDelete Push
+SyncState *
 Expunge Both
 
 Channel jean-francois.lance@ac-creteil.fr-drafts
 Master :jean-francois.lance@ac-creteil.fr-remote:"Drafts"
-Slave :jean-francois.lance@ac-creteil.fr-local:DRAFTS
-Expunge Both
-
-Channel jean-francois.lance@ac-creteil.fr-spams
-Master :jean-francois.lance@ac-creteil.fr-remote:"Pourriel"
-Slave :jean-francois.lance@ac-creteil.fr-local:SPAMS
+Slave :jean-francois.lance@ac-creteil.fr-local:drafts
+Sync PullNew PullDelete Push
+SyncState *
 Expunge Both
 
 Group jean-francois.lance@ac-creteil.fr
@@ -253,7 +244,6 @@ Channel jean-francois.lance@ac-creteil.fr-inbox
 Channel jean-francois.lance@ac-creteil.fr-sent
 Channel jean-francois.lance@ac-creteil.fr-trash
 Channel jean-francois.lance@ac-creteil.fr-drafts
-Channel jean-francois.lance@ac-creteil.fr-spams
 
 
 

@@ -28,9 +28,10 @@ function s:config_mail()
   return [
         \ { 'line': 'afew', 'cmd': 'edit ${HOME}/.config/afew/' },
         \ { 'line': 'astroid', 'cmd': 'edit ${HOME}/.config/astroid/' },
+        \ { 'line': 'imapnotify', 'cmd': 'edit ${HOME}/.config/imapnotify' },
         \ { 'line': 'mbsync', 'cmd': 'edit ${HOME}/.mbsyncrc' },
         \ { 'line': 'notmuch config', 'cmd': 'edit ${HOME}/.notmuch-config' },
-        \ { 'line': 'notmuch hooks', 'cmd': 'edit ${HOME}/Mail/.notmuch/hooks/' },
+        \ { 'line': 'notmuch dir', 'cmd': 'edit ${HOME}/Mail/.notmuch' },
         \ ]
 endfunction
 

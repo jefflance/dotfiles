@@ -4,40 +4,18 @@
 ; Last Modified Date: 06.05.2020
 ; Last Modified By  : Jeff LANCE <email@jefflance.me>
 
-#[SpamFilter]
-#spam_tag = scum
-#
-#
-#[BogoFilter]
-
 
 [KillThreadsFilter]
 
-
 [ListMailsFilter]
-
 
 [SentMailsFilter]
 sent_tag = sent
 
-
 [ArchiveSentMailsFilter]
-
-
-[Filter.1]
-message = Tag all messages from work
-query = 'from:STolsy@ac-creteil.fr OR from:ce.0932047v@ac-creteil.fr' 
-tag = +evariste
-
-
-[Filter.2]
-message = Tag all message from @mala.fr addresses
-query = 'from:games@mala.fr'
-tag = +MOI
-
+sent_tag = sent
 
 [InboxFilter]
-
 
 [MailMover]
 folders = jeff.lance@mala.fr/archives jeff.lance@mala.fr/drafts jeff.lance@mala.fr/inbox jeff.lance@mala.fr/junk jeff.lance@mala.fr/sent jeff.lance@mala.fr/trash
