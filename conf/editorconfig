@@ -10,15 +10,11 @@ root = true
 [{*,.*}]
 end_of_line = lf
 insert_final_newline = true
+trim_trailing_whitespace = true
 indent_style = space
 indent_size = 2
 max_line_length = 80
 charset = utf-8
-
-[*.py]
-indent_style = space
-indent_size = 4
-max_line_length = 79
 
 [{Makefile,makefile,*.mk}]
 indent_style = tab
@@ -26,5 +22,16 @@ indent_style = tab
 [*.md]
 indent_style = space
 
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length = 79
+
 [*.sh]
+indent_style = space
 max_line_length = 0
+
+[*.vim]
+indent_style = space
+max_line_length = 0
+

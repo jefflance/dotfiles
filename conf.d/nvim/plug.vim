@@ -1,7 +1,7 @@
 " File              : plug.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 24.06.2020
+" Last Modified Date: 03.03.2021
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -50,6 +50,9 @@ Plug 'roxma/vim-hug-neovim-rpc'
 
 " Buffer exploration
 Plug 'bagrat/vim-buffet', { 'as': 'buffet' }
+
+" Editorconfig
+Plug 'editorconfig/editorconfig-vim'
 
 " Folding
 Plug 'Konfekt/FastFold'
