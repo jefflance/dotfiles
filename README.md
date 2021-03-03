@@ -1,9 +1,9 @@
 # My dotfiles
 
-My dotfiles for awesome, emacs, vim, zsh, tmux,...
+My dotfiles for awesomewm, emacs, vim, zsh, tmux,...
 
-## Externals / Librairies used
+## Some externals librairies i use
   * [dotbot](https://github.com/anishathalye/dotbot/)
   * [editorconfig](https://editorconfig.org/)
-  * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+  * [Zsh IMproved FrameWork](https://github.com/zimfw/zimfw)
   * [vim-plug](https://github.com/junegunn/vim-plug)
