@@ -1,0 +1,15 @@
+# File              : vscode.yaml
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 03.03.2021
+# Last Modified Date: 03.03.2021
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+- link:
+    ${HOME}/.config/Code - OSS/User/settings.json:
+      path: conf.d/vscode/vscode-settings.json
+
+- shell:
+  - command: '/bin/bash -c "xargs -n1 code --install-extension < conf.d/vscode/vscode-extensions.txt"'
+    description: Install vscode extensions
+    stderr: true
+    stdout: true
+

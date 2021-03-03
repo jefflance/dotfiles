@@ -1,0 +1,72 @@
+{
+    "editor.wordWrap": "bounded",
+    "files.associations": {
+        "*.asy": "c"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.leader": ";",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [";", ";"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+          "before": ["<leader>", "d"],
+          "after": ["d", "d"]
+        },
+        {
+          "before": ["<leader>", "w"],
+          "commands": [":w"]
+        },
+        {
+            "before": ["<leader>", "W"],
+            "commands": [":w! sudo tee %"]
+        },
+        {
+            "before": ["<leader>", "z"],
+            "commands": [":x"]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "commands": [":q"]
+        },
+        {
+            "before": ["<leader>", "Q"],
+            "commands": [":q!"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [";", ";"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "latex-workshop.message.update.show": false,
+    "latex-workshop.message.log.show": false,
+    "latex-workshop.progress.barStyle": "Block Quadrants",
+    "latex-workshop.progress.runIconType": "Circled",
+    "latex-workshop.chktex.path": "/Library/TeX/texbin/chktex",
+    "latex-workshop.chktex.enabled": true,
+    "latex-workshop.intellisense.file.base": "both",
+    "latex-workshop.view.pdf.viewer": "external",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "vscodeWorkspaceSwitcher.paths": [
+        "~/Bureau",
+        "~/Desktop"
+    ],
+    "vscodeWorkspaceSwitcher.showTreeView": false,
+    "editor.fontSize": 18,
+    "workbench.colorTheme": "Dark+ Material",
+    "terminal.integrated.inheritEnv": false,
+    "vscode-md.options.mode": "wysiwyg",
+    "vscode-md.options.preview.math.engine": "MathJax",
+    "vscode-md.theme.code": "vim",
+    "kite.showWelcomeNotificationOnStartup": false,
+    "python.languageServer": "Pylance",
+    "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
+}
