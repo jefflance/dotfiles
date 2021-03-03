@@ -1,7 +1,7 @@
 {
     "astroid": {
         "config": {
-            "version": "11"
+            "version": "12"
         },
         "notmuch_config": "\/home\/jeff\/.notmuch-config",
         "debug": {
