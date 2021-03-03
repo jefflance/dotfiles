@@ -15,8 +15,8 @@ zmodule termtitle
 zmodule utility
 # Provides archive and unarchive functions for easy archive manipulation.
 zmodule archive
-# Debian aliases and functions.
-zmodule debian
+# Manjaro aliases and functions.
+zmodule manjaro
 # Personal aliases
 zmodule jl-helper
 # sudo module
