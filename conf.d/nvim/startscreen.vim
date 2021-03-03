@@ -1,17 +1,17 @@
 " File              : startscreen.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 01.11.2020
-" Last Modified Date: 27.01.2021
+" Last Modified Date: 03.03.2021
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 "
 "  ____ _____  _    ____ _____ ___ _______   __
 " / ___|_   _|/ \  |  _ \_   _|_ _|  ___\ \ / /
-" \___ \ | | / _ \ | |_) || |  | || |_   \ V / 
-"  ___) || |/ ___ \|  _ < | |  | ||  _|   | |  
-" |____/ |_/_/   \_\_| \_\|_| |___|_|     |_|  
-"                                              
+" \___ \ | | / _ \ | |_) || |  | || |_   \ V /
+"  ___) || |/ ___ \|  _ < | |  | ||  _|   | |
+" |____/ |_/_/   \_\_| \_\|_| |___|_|     |_|
+"
 "
 """"""""""""""""""""""""""""""""""""""""""""""""
 
@@ -63,11 +63,11 @@ let g:startify_lists = [
   \ ]
 
 let g:startify_bookmarks = [
-  \ '${HOME}/.config/',
-  \ '${HOME}/dotfiles/',
-  \ '${HOME}/Projets',
-  \ '${HOME}/Projets/latex/latex-homework',
-  \ '${HOME}/.asy'
+  \ '~/.config/',
+  \ '~/dotfiles/',
+  \ '~/Projets/',
+  \ '~/Projets/latex/latex-homework/',
+  \ '~/.asy/'
   \ ]
 
 let g:startify_commands = [

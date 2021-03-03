@@ -1,16 +1,16 @@
 " File              : keybindings.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 24.06.2020
+" Last Modified Date: 03.03.2021
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  _  _________   ______ ___ _   _ ____ ___ _   _  ____ ____
 " | |/ / ____\ \ / / __ )_ _| \ | |  _ \_ _| \ | |/ ___/ ___|
 " | ' /|  _|  \ V /|  _ \| ||  \| | | | | ||  \| | |  _\___ \
-" | . \| |___  | | | |_) | || |\  | |_| | || |\  | |_| |___) | 
+" | . \| |___  | | | |_) | || |\  | |_| | || |\  | |_| |___) |
 " |_|\_\_____| |_| |____/___|_| \_|____/___|_| \_|\____|____/
-" 
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Custom {{{
@@ -62,7 +62,7 @@ command! -bang -nargs=? -complete=dir Files
 	\ <bang>0
 	\ )
 map <C-w> :echom 'Close buffer' <bar> :call BufClose()<cr>
-map <C-o> :e 
+map <C-o> :e
 map <C-n> :Startify<cr>
 map <C-PageDown> :bn<cr>
 map <C-PageUp> :bp<cr>
@@ -90,59 +90,6 @@ map <C-l> :call WinMove('l')<cr>
 "map <leader>tc :tabclose<cr>
 "map <C-]> :tabnext<cr>
 "map <C-[> :tabprev<cr>
-
-" -----
-"  }}}
-
-
-" COC {{{
-" -----
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <C-space> coc#refresh()
-else
-  inoremap <silent><expr> <C-@> coc#refresh()
-endif
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 " -----
 "  }}}
@@ -261,18 +208,6 @@ map Pui :PlugInstall<cr>
 
 " -----
 "  }}}
-
-
-"" REPL {{{
-"" -----
-"
-"nnoremap <leader>rp :REPLToggle<Cr>
-"autocmd Filetype python nnoremap <F12> <Esc>:REPLDebugStopAtCurrentLine<Cr>
-"autocmd Filetype python nnoremap <F10> <Esc>:REPLPDBN<Cr>
-"autocmd Filetype python nnoremap <F11> <Esc>:REPLPDBS<Cr>
-"
-"" -----
-""  }}}
 
 
 " Vimroom {{{

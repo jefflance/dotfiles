@@ -476,6 +476,9 @@ let g:deoplete#enable_at_startup = 0
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 au FileType gitcommit let b:EditorConfig_disable = 1
+au FileType cls let b:EditorConfig_disable = 1
+au FileType sty let b:EditorConfig_disable = 1
+au FileType tex let b:EditorConfig_disable = 1
 
 " -----
 "  }}}
@@ -598,9 +601,10 @@ let g:tmux_navigator_save_on_switch = 2
 " Vimroom {{{
 " -----
 
-let g:goyo_width=200
-let g:goyo_margin_top = 2
-let g:goyo_margin_bottom = 2
+let g:goyo_height = '100%'
+let g:goyo_width = '90%'
+let g:goyo_margin_top = 0
+let g:goyo_margin_bottom = 0
 
 " -----
 "  }}}
@@ -643,6 +647,7 @@ source ${HOME}/.config/nvim/startscreen.vim
 
 " Load functions from file
 source ${HOME}/.config/nvim/functions.vim
+source ${HOME}/.config/nvim/coc.vim
 
 
 
