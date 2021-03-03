@@ -26,6 +26,7 @@ alias youtube-dl='youtube-dl -f best'    # youtube-dl best download
 
 hash -d crs="${HOME}/Cours"              # cours  
 hash -d doc="${HOME}/Documents"          # documents
+hash -d dot="${HOME}/dotfiles"           # dotfiles
 
 
 #
