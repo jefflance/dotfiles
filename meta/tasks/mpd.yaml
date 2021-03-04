@@ -1,4 +1,8 @@
 - link:
+    ${HOME}/.config/mpd/mpd.conf:
+      path: conf.d/mpd/mpd.conf
+
+- link:
     ${HOME}/.config/ncmpcpp:
       glob: true
       path: conf.d/ncmpcpp/*

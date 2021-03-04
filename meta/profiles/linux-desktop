@@ -14,8 +14,7 @@ latex
 lgogdownloader
 tmux
 mail
-mopidy
-ncmpcpp
+mpd
 nvim
 polybar
 x
