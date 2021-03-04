@@ -1,7 +1,7 @@
 " File              : init.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 03.03.2021
+" Last Modified Date: 04.03.2021
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -476,6 +476,7 @@ let g:deoplete#enable_at_startup = 0
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 au FileType gitcommit let b:EditorConfig_disable = 1
+au FileType conf let b:EditorConfig_disable = 1
 au FileType cls let b:EditorConfig_disable = 1
 au FileType sty let b:EditorConfig_disable = 1
 au FileType tex let b:EditorConfig_disable = 1
