@@ -91,4 +91,7 @@ tags
 [._]*.un~
 fonts/*/.uuid
 
+# astroid
+conf.d/astroid/searches
+
 # End of https://www.gitignore.io/api/vim
