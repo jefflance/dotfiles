@@ -13,8 +13,8 @@
 # pamac Operations
 #
 
-alias pamse='pamac search'              # search through apt software package
-alias pamin='pamac info'                # show info about a package
+alias pamsr='pamac search'              # search through apt software package
+alias paminf='pamac info'               # show info about a package
 alias pamud='pamac update'              # update packages database
 alias pamug='pamac upgrade'             # upgrade packages
 alias pamin='pamac install'             # install package
@@ -26,6 +26,6 @@ alias pamudg='pamud && pamug'
 #  pkgfile Operations
 #
 
-alias pksf='pkgfile'                    # search file in packages
+alias pamsf='pkgfile'                    # search file in packages
 
 
