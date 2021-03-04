@@ -512,7 +512,7 @@ endif
 
 let g:header_field_author = 'Jeff LANCE'
 let g:header_field_author_email = 'email@jefflance.me'
-let g:header_auto_add_header = 1
+let g:header_auto_add_header = 0
 
 " -----
 "  }}}
