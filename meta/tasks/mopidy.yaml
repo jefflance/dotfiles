@@ -1,3 +1,8 @@
+# File              : mopidy.yaml
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 04.03.2021
+# Last Modified Date: 04.03.2021
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
 - link:
-    ~/.config/mopidy/mopidy.conf:
+    ${HOME}/.config/mopidy/mopidy.conf:
       path: conf/mopidy.conf
