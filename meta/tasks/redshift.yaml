@@ -1,0 +1,4 @@
+- link:
+    ${HOME}/.config/redshift.conf:
+      path: conf/redshift.conf
+
