@@ -16,6 +16,13 @@ typeset -U path
 path=(~/bin ~/.local/bin $path[@])
 # <<< set PATH so it includes user's private bin if it exists <<<
 
+# >>> active gnome-keyring >>>
+if [ -n "${DESKTOP_SESSION}" ];then
+   eval $(gnome-keyring-daemon --start)
+   export SSH_AUTH_SOCK
+fi
+# <<< active gnome-keyring <<<
+
 # >>> environment variables >>>
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
