@@ -129,8 +129,8 @@ bindkey -M vicmd 'j' history-substring-search-down
 # >>> tmux initialization >>>
 #
 if [[ $DISPLAY ]]; then
-    # If not running interactively, do not do anything
-    [[ $- != *i* ]] && return
+  # If not running interactively, do not do anything
+  [[ $- != *i* ]] && return
 
 	if [[ -z "$TMUX" ]] ;then
 	    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
