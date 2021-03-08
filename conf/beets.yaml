@@ -1,15 +1,17 @@
-directory: /mnt/diskstation1/music 
-library: /mnt/diskstation1/music/beets_library.blb
+directory: ~/Musique
+library: ~/Musique/beets_library.blb
 
 import:
     copy: no
-    write: yes 
+    write: no
     move: no
 
 paths:
     default: $albumartist/$original_year - $album%aunique{}/%if{$multidisc,Disc $disc/}$track - $albumartist - $album%if{$multidisc, (disc $disc)} - $title
     singleton: Singles/$artist/$track - $artist - $title
-    comp: Compilations/$original_year - $album%aunique{}/$track - $title
+    comp: Various Artists/$original_year - $album%aunique{}/$track - $title
+
+ignore: ['@eaDir']
 
 item_fields:
     multidisc: 1 if disctotal > 1 else 0
