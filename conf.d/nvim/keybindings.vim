@@ -239,16 +239,17 @@ map <leader>r :call RenameFile()<cr>
 " Open file under cursor
 map <leader>o :call GotoFile("")<cr>
 
-map <leader>' ciw''<esc>P
-map <leader>" c""<esc>P
-map <leader>[ c[]<esc>P
-map <leader>{ c{}<esc>P
+" Surround
+map <leader>' S'<cr>
+map <leader>" S"<cr>
+map <leader>[ S[<cr>
+map <leader>{ S{<cr>
 
-" Rewrap paragraph using <S-q>
-map <silent> <S-q> {gq}<Bar>:echo "Rewrapped paragraph"<CR>
+" " Rewrap paragraph using <S-q>
+" map <silent> <S-q> {gq}<Bar>:echo "Rewrapped paragraph"<CR>
 
 " Git
-map <silent> <leader>Gs :Git status<cr>
+map <leader>Gs :Git status<cr>
 map <leader>Ga :Git add
 map <leader>Gc :Git commit
 " -----

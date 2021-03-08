@@ -6,7 +6,7 @@
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 " __     _____ __  __   ____  _    _   _  ____
-" \ \   / /_ _|  \/  | |  _ \| |  | | | |/ ___| 
+" \ \   / /_ _|  \/  | |  _ \| |  | | | |/ ___|
 "  \ \ / / | || |\/| | | |_) | |  | | | | |  _
 "   \ V /  | || |  | | |  __/| |__| |_| | |_| |
 "    \_/  |___|_|  |_| |_|   |_____\___/ \____|
@@ -56,6 +56,9 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Folding
 Plug 'Konfekt/FastFold'
+
+" Grammalecte
+Plug 'dpelle/vim-Grammalecte'
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
