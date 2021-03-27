@@ -128,19 +128,19 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # >>> tmux initialization >>>
 #
-if [[ $DISPLAY ]]; then
-  # If not running interactively, do not do anything
-  [[ $- != *i* ]] && return
+# if [[ $DISPLAY ]]; then
+#   # If not running interactively, do not do anything
+#   [[ $- != *i* ]] && return
 
-	if [[ -z "$TMUX" ]] ;then
-	    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
-	    if [[ -z "$ID" ]] ;then # if not available create a new one
-	        tmux new-session
-	    else
-	        tmux attach-session -t "$ID" # if available attach to it
-	    fi
-	fi
-fi
+# 	if [[ -z "$TMUX" ]] ;then
+# 	    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
+# 	    if [[ -z "$ID" ]] ;then # if not available create a new one
+# 	        tmux new-session
+# 	    else
+# 	        tmux attach-session -t "$ID" # if available attach to it
+# 	    fi
+# 	fi
+# fi
 # <<< tmux initialization <<<
 
 #
@@ -151,3 +151,9 @@ fi
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # <<< fzf initialization <<<
+
+# >>> opam configuration >>>
+#
+test -r /home/jeff/.opam/opam-init/init.zsh && . /home/jeff/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# <<< opam configuration <<<
+
