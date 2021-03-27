@@ -53,7 +53,7 @@ flycheck_*.el
 
 # Compiled source #
 ###################
-*.com
+# *.com
 *.class
 *.dll
 *.exe

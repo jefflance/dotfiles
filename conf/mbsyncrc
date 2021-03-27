@@ -10,7 +10,7 @@
 CopyArrivalDate yes
 # Automatically create missing mailboxes,
 # both locally and on the server
-Create Slave
+Create Near
 
 
 
@@ -50,50 +50,50 @@ Inbox ~/Mail/jeff.lance@mala.fr/inbox
 
 
 Channel jeff.lance@mala.fr-inbox
-Master :jeff.lance@mala.fr-remote:"Inbox"
-Slave  :jeff.lance@mala.fr-local:inbox
+Far :jeff.lance@mala.fr-remote:
+Near  :jeff.lance@mala.fr-local:inbox
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 
 Channel jeff.lance@mala.fr-sent
-Master :jeff.lance@mala.fr-remote:"Sent Items"
-Slave  :jeff.lance@mala.fr-local:sent
+Far :jeff.lance@mala.fr-remote:"Sent Items"
+Near  :jeff.lance@mala.fr-local:sent
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 
 Channel jeff.lance@mala.fr-trash
-Master :jeff.lance@mala.fr-remote:"Deleted Items"
-Slave  :jeff.lance@mala.fr-local:trash
+Far :jeff.lance@mala.fr-remote:"Deleted Items"
+Near  :jeff.lance@mala.fr-local:trash
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 
 Channel jeff.lance@mala.fr-drafts
-Master :jeff.lance@mala.fr-remote:"Drafts"
-Slave  :jeff.lance@mala.fr-local:drafts
+Far :jeff.lance@mala.fr-remote:"Drafts"
+Near  :jeff.lance@mala.fr-local:drafts
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 
 Channel jeff.lance@mala.fr-junk
-Master :jeff.lance@mala.fr-remote:"Junk Email"
-Slave  :jeff.lance@mala.fr-local:junk
+Far :jeff.lance@mala.fr-remote:"Junk Email"
+Near  :jeff.lance@mala.fr-local:junk
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 
 Channel jeff.lance@mala.fr-archives
-Master :jeff.lance@mala.fr-remote:"Archives"
-Slave  :jeff.lance@mala.fr-local:archives
+Far :jeff.lance@mala.fr-remote:"Archives"
+Near  :jeff.lance@mala.fr-local:archives
 Pattern *
-Create Slave
+Create Near
 MaxMessages 500 
 Sync New Delete Push
 SyncState *
@@ -139,40 +139,40 @@ Inbox ~/Mail/games@mala.fr/inbox
 
 
 Channel games@mala.fr-inbox
-Master :games@mala.fr-remote:"Inbox"
-Slave  :games@mala.fr-local:inbox
+Far :games@mala.fr-remote:
+Near  :games@mala.fr-local:inbox
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 
 Channel games@mala.fr-sent
-Master :games@mala.fr-remote:"Sent Items"
-Slave  :games@mala.fr-local:sent
+Far :games@mala.fr-remote:"Sent Items"
+Near  :games@mala.fr-local:sent
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 
 Channel games@mala.fr-trash
-Master :games@mala.fr-remote:"Deleted Items"
-Slave  :games@mala.fr-local:trash
+Far :games@mala.fr-remote:"Deleted Items"
+Near  :games@mala.fr-local:trash
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 
 Channel games@mala.fr-drafts
-Master :games@mala.fr-remote:"Drafts"
-Slave  :games@mala.fr-local:drafts
+Far :games@mala.fr-remote:"Drafts"
+Near  :games@mala.fr-local:drafts
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 
 Channel games@mala.fr-junk
-Master :games@mala.fr-remote:"Junk Email"
-Slave  :games@mala.fr-local:junk
+Far :games@mala.fr-remote:"Junk Email"
+Near  :games@mala.fr-local:junk
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
@@ -211,30 +211,30 @@ Path ~/Mail/jean-francois.lance@ac-creteil.fr/
 Inbox ~/Mail/jean-francois.lance@ac-creteil.fr/inbox
 
 Channel jean-francois.lance@ac-creteil.fr-inbox
-Master :jean-francois.lance@ac-creteil.fr-remote:
-Slave :jean-francois.lance@ac-creteil.fr-local:
+Far :jean-francois.lance@ac-creteil.fr-remote:
+Near :jean-francois.lance@ac-creteil.fr-local:
 Patterns "INBOX"
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 Channel jean-francois.lance@ac-creteil.fr-sent
-Master :jean-francois.lance@ac-creteil.fr-remote:"Sent"
-Slave :jean-francois.lance@ac-creteil.fr-local:sent
+Far :jean-francois.lance@ac-creteil.fr-remote:"Sent"
+Near :jean-francois.lance@ac-creteil.fr-local:sent
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 Channel jean-francois.lance@ac-creteil.fr-trash
-Master :jean-francois.lance@ac-creteil.fr-remote:"Trash"
-Slave :jean-francois.lance@ac-creteil.fr-local:trash
+Far :jean-francois.lance@ac-creteil.fr-remote:"Trash"
+Near :jean-francois.lance@ac-creteil.fr-local:trash
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
 
 Channel jean-francois.lance@ac-creteil.fr-drafts
-Master :jean-francois.lance@ac-creteil.fr-remote:"Drafts"
-Slave :jean-francois.lance@ac-creteil.fr-local:drafts
+Far :jean-francois.lance@ac-creteil.fr-remote:"Drafts"
+Near :jean-francois.lance@ac-creteil.fr-local:drafts
 Sync PullNew PullDelete Push
 SyncState *
 Expunge Both
@@ -272,34 +272,34 @@ Channel jean-francois.lance@ac-creteil.fr-drafts
 #Inbox ~/Mail/jean-francois.lance@ac-montpellier.fr/INBOX
 
 #Channel jean-francois.lance@ac-montpellier.fr-inbox
-#Master :jean-francois.lance@ac-montpellier.fr-remote:
-#Slave :jean-francois.lance@ac-montpellier.fr-local:
+#Far :jean-francois.lance@ac-montpellier.fr-remote:
+#Near :jean-francois.lance@ac-montpellier.fr-local:
 #Patterns "INBOX"
 #Expunge Both
 
 #Channel jean-francois.lance@ac-montpellier.fr-sent
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Sent"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:SENT
+#Far :jean-francois.lance@ac-montpellier.fr-remote:"Sent"
+#Near :jean-francois.lance@ac-montpellier.fr-local:SENT
 #Expunge Both
 
 #Channel jean-francois.lance@ac-montpellier.fr-trash
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Trash"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:TRASH
+#Far :jean-francois.lance@ac-montpellier.fr-remote:"Trash"
+#Near :jean-francois.lance@ac-montpellier.fr-local:TRASH
 #Expunge Both
 
 #Channel jean-francois.lance@ac-montpellier.fr-drafts
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Drafts"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:DRAFTS
+#Far :jean-francois.lance@ac-montpellier.fr-remote:"Drafts"
+#Near :jean-francois.lance@ac-montpellier.fr-local:DRAFTS
 #Expunge Both
 
 #Channel jean-francois.lance@ac-montpellier.fr-spams
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Spams"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:SPAMS
+#Far :jean-francois.lance@ac-montpellier.fr-remote:"Spams"
+#Near :jean-francois.lance@ac-montpellier.fr-local:SPAMS
 #Expunge Both
 
 #Channel jean-francois.lance@ac-montpellier.fr-archives
-#Master :jean-francois.lance@ac-montpellier.fr-remote:"Archives"
-#Slave :jean-francois.lance@ac-montpellier.fr-local:ARCHIVES
+#Far :jean-francois.lance@ac-montpellier.fr-remote:"Archives"
+#Near :jean-francois.lance@ac-montpellier.fr-local:ARCHIVES
 #Patterns *
 
 #Group jean-francois.lance@ac-montpellier.fr
