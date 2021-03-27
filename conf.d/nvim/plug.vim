@@ -41,6 +41,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Startup screen
 Plug 'mhinz/vim-startify'
 
+" Ansible
+Plug 'pearofducks/ansible-vim'
+
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -61,8 +64,9 @@ Plug 'Konfekt/FastFold'
 Plug 'dpelle/vim-Grammalecte'
 
 " Markdown
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
@@ -76,9 +80,6 @@ Plug 'tpope/vim-commentary'
 " Abolish
 Plug 'tpope/vim-abolish'
 
-" " Vinegar
-" Plug 'tpope/vim-vinegar'
-" Show hex codes as colors
 " Plug 'chrisbra/Colorizer'
 Plug 'norcalli/nvim-colorizer.lua'
 
@@ -90,12 +91,6 @@ Plug 'lervag/vimtex'
 
 " Open file
 Plug 'amix/open_file_under_cursor.vim'
-
-" Python autocompletion
-" Plug 'deoplete-plugins/deoplete-jedi'
-
-" Completion from other opened files
-" Plug 'Shougo/context_filetype.vim'
 
 " Linting
 Plug 'dense-analysis/ale'
@@ -153,6 +148,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " REPL
 Plug 'jpalardy/vim-slime'
+
+" " Mermaid diagram
+" Plug 'zhaozg/vim-diagram'
 
 " Required {{{
 " -----
