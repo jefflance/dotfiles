@@ -27,13 +27,16 @@ alias pareo='parem -o'                    # remove orphan packages
 # pacman Operations
 #
 
-alias pacss='sudo pacman -Ss'                  # search through package repositories
-alias pacud='sudo pacman -Syu'                 # update system (and install package)
-alias pacin='sudo pacman -S'                   # install package
-alias pacrm='sudo pacman -R'                   # remove package
+alias pacss='pacman -Ss'                       # search through package repositories
+alias pacsi='pacman -Si'                       # display info about a package in the repositories
+alias pacud='sudo pacman -Sy'                  # update & refresh local package db
+alias pacug='sudo pacman -Syu'                 # sync with repositories before upgrading packages
+alias pacin='sudo pacman -S'                   # install package from repositories
+alias pacrm='sudo pacman -R'                   # remove package, keeping settings and depedencies
+alias pacRm='sudo pacman -Rns'                 # remove package with its settings and depedencies
 alias paclo='sudo pacman -Qdt'                 # list orphans
 alias pacro='sudo pacman -Rs $(pacman -Qdt)'   # remove orphans
-
+alias pacow='pacmon -Qo'                       # show which package own a file
 
 #
 #  pkgfile Operations
