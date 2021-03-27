@@ -1,0 +1,18 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Comment",
+    "shortcut": "Ctrl+F1",
+    "tag": [
+        "%",
+        "%",
+        "% •",
+        "%",
+        "%"
+    ],
+    "trigger": ""
+}

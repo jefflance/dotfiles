@@ -1,0 +1,14 @@
+{
+"name" : "nom" ,
+"tag" : [
+ "%SCRIPT",
+ "code"
+ ],
+"description" : [
+ "desc"
+ ],
+"abbrev" : "abre" ,
+"trigger" : "decl" ,
+"menu" : "" ,
+"shortcut" : ""
+}

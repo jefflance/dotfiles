@@ -1,0 +1,16 @@
+{
+"name" : "Questions" ,
+"tag" : [
+ "% Questions",
+ "\begin{questions}",
+ "  %<•%>",
+ "\end{questions}"
+ ],
+"description" : [
+ ""
+ ],
+"abbrev" : "" ,
+"trigger" : "" ,
+"menu" : "" ,
+"shortcut" : "Ctrl+F6"
+}

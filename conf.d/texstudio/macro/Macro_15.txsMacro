@@ -1,0 +1,13 @@
+{
+"name" : "Maths en gras" ,
+"tag" : [
+ "\boldsymbol{%<•%:id:1%>}"
+ ],
+"description" : [
+ ""
+ ],
+"abbrev" : "" ,
+"trigger" : "" ,
+"menu" : "" ,
+"shortcut" : "Ctrl+Shift+B"
+}

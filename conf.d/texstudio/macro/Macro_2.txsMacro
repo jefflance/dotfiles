@@ -1,0 +1,17 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Exercice",
+    "shortcut": "Ctrl+F3",
+    "tag": [
+        "% exercice",
+        "\\begin{exercice}",
+        "",
+        "\\end{exercice}"
+    ],
+    "trigger": ""
+}

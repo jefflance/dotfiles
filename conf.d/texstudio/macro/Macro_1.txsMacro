@@ -1,0 +1,19 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Cours frame",
+    "shortcut": "Ctrl+F2",
+    "tag": [
+        "% frame",
+        "\\begin{frame}",
+        "\t\\ftitre",
+        "\t",
+        "\t",
+        "\\end{frame}"
+    ],
+    "trigger": ""
+}

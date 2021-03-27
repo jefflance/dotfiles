@@ -1,0 +1,17 @@
+{
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Python",
+    "shortcut": "Ctrl+F8",
+    "tag": [
+        "% code python",
+        "\\begin{python}",
+        "",
+        "\\end{python}"
+    ],
+    "trigger": ""
+}

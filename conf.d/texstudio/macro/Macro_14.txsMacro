@@ -1,0 +1,16 @@
+{
+"name" : "Python" ,
+"tag" : [
+ "% code python",
+ "\begin{python}",
+ "  %<•%>",
+ "\end{python}"
+ ],
+"description" : [
+ ""
+ ],
+"abbrev" : "" ,
+"trigger" : "" ,
+"menu" : "" ,
+"shortcut" : "Ctrl+F11"
+}
