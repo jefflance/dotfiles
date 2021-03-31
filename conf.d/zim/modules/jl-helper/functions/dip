@@ -1,0 +1,9 @@
+# vim:et sts=2 sw=2 ft=zsh
+#
+# Display ip of the docker container passed as arg 
+#
+
+
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${1}
+
+compdef _files dip
