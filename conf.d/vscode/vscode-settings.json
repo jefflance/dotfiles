@@ -56,8 +56,7 @@
     "latex-workshop.view.pdf.viewer": "external",
     "terminal.integrated.shell.osx": "/bin/zsh",
     "vscodeWorkspaceSwitcher.paths": [
-        "~/Bureau",
-        "~/Desktop"
+        "~/"
     ],
     "vscodeWorkspaceSwitcher.showTreeView": false,
     "editor.fontSize": 18,
@@ -69,4 +68,5 @@
     "kite.showWelcomeNotificationOnStartup": false,
     "python.languageServer": "Pylance",
     "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
+    "workbench.editor.enablePreview": false,
 }
