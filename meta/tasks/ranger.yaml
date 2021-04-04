@@ -1,0 +1,17 @@
+- link:
+    ${HOME}/.config/ranger/rc.conf:
+      glob: false
+      path: conf.d/ranger/rc.conf
+    ${HOME}/.config/ranger/rifle.conf:
+      glob: false
+      path: conf.d/ranger/rifle.conf
+    ${HOME}/.config/ranger/scope.sh:
+      glob: false
+      path: conf.d/ranger/scope.sh
+    ${HOME}/.config/ranger/colorschemes:
+      glob: true
+      path: conf.d/ranger/colorschemes/*
+    ${HOME}/.config/ranger/plugins:
+      glob: true
+      path: conf.d/ranger/plugins/*
+
