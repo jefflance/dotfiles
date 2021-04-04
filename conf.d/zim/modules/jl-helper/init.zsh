@@ -21,9 +21,9 @@ alias vim='nvim'                         # redirect vim to nvim
 # Utilities
 #
 
+alias ls='lsd'                           # pretty ls
 alias md='mkdir -p'                      # mkdir alias
 alias open='xdg-open'                    # open files
-alias ls='lsd'                           # pretty ls
 alias youtube-dl='youtube-dl -f best'    # youtube-dl best download
 alias xcolor='xcolor | xclip -i'         # xcolor
 
