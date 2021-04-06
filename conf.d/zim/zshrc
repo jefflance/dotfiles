@@ -152,8 +152,21 @@ bindkey -M vicmd 'j' history-substring-search-down
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # <<< fzf initialization <<<
 
+#
+# ocaml
+#
+
 # >>> opam configuration >>>
 #
 test -r /home/jeff/.opam/opam-init/init.zsh && . /home/jeff/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 # <<< opam configuration <<<
+
+#
+# conda
+#
+
+# >>> conda configuration >>>
+#
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+# <<< conda configuration <<<
 
