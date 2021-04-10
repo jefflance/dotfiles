@@ -167,6 +167,6 @@ test -r /home/jeff/.opam/opam-init/init.zsh && . /home/jeff/.opam/opam-init/init
 
 # >>> conda configuration >>>
 #
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+[ -f /home/jeff/miniconda3/etc/profile.d/conda.sh ] && source /home/jeff/miniconda3/etc/profile.d/conda.sh
 # <<< conda configuration <<<
 
