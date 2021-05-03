@@ -1,0 +1,6 @@
+shrinkpdf() {
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$(basename -s .pdf ${1})_shrink.pdf" "${1}"
+}
+
+compdef _files shrinkpdf
+

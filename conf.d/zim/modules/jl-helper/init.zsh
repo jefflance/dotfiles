@@ -18,6 +18,14 @@ alias vim='nvim'                         # redirect vim to nvim
 
 
 #
+# Mail, internet
+#
+
+alias mutt='neomutt -f ${HOME}/Mail/jeff.lance@mala.fr/inbox/'
+alias neomutt='neomutt -f ${HOME}/Mail/jeff.lance@mala.fr/inbox/'
+
+
+#
 # Utilities
 #
 
