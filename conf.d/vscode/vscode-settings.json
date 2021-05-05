@@ -50,13 +50,13 @@
     "latex-workshop.message.log.show": false,
     "latex-workshop.progress.barStyle": "Block Quadrants",
     "latex-workshop.progress.runIconType": "Circled",
-    "latex-workshop.chktex.path": "/Library/TeX/texbin/chktex",
+    "latex-workshop.chktex.path": "/usr/bin/chktex",
     "latex-workshop.chktex.enabled": true,
     "latex-workshop.intellisense.file.base": "both",
     "latex-workshop.view.pdf.viewer": "external",
     "terminal.integrated.shell.osx": "/bin/zsh",
     "vscodeWorkspaceSwitcher.paths": [
-        "~/"
+        "~/Projets"
     ],
     "vscodeWorkspaceSwitcher.showTreeView": false,
     "editor.fontSize": 18,
@@ -69,4 +69,33 @@
     "python.languageServer": "Pylance",
     "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
     "workbench.editor.enablePreview": false,
+    "tabnine.experimentalAutoImports": true,
+    "autoDocstring.docstringFormat": "sphinx",
+    "autoDocstring.startOnNewLine": true,
+    "latex-workshop.kpsewhich.path": "/usr/bin/kpsewhich",
+    "latex-workshop.synctex.path": "/usr/bin/synctex",
+    "latex-workshop.texcount.path": "/usr/bin/texcount",
+    "latex-workshop.texdoc.path": "/usr/bin/texdoc",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim",
+    "vscode-neovim.highlightGroups.highlights": {
+
+        "Directory": "vim",
+        "IncSearch": {
+            "backgroundColor": "theme.editor.findMatchBackground",
+            "borderColor": "theme.editor.findMatchBorder"
+        },
+        "Search": {
+            "backgroundColor": "theme.editor.findMatchHighlightBackground",
+            "borderColor": "theme.editor.findMatchHighlightBorder"
+        },
+        "Visual": {
+            "backgroundColor": "theme.editor.selectionBackground"
+        },
+        "Conceal": "vim",
+        "Substitute": "vim"
+    },
+    "vscode-neovim.useCtrlKeysForInsertMode": false,
+    "vscode-neovim.useCtrlKeysForNormalMode": false,
+    "workbench.settings.openDefaultKeybindings": true,
 }
