@@ -1,16 +1,14 @@
 {
-"name" : "Questions" ,
-"tag" : [
- "% Questions",
- "\begin{questions}",
- "  %<•%>",
- "\end{questions}"
- ],
-"description" : [
- ""
- ],
-"abbrev" : "" ,
-"trigger" : "" ,
-"menu" : "" ,
-"shortcut" : "Ctrl+F6"
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Python inline",
+    "shortcut": "Ctrl+F7",
+    "tag": [
+        "\\pythoninline//"
+    ],
+    "trigger": ""
 }

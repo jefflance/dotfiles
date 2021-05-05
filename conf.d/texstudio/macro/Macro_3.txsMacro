@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Questions",
-    "shortcut": "Ctrl+F4",
+    "name": "Propriété",
+    "shortcut": "",
     "tag": [
-        "% questions",
-        "\\begin{questions}",
-        "",
-        "\\end{questions}"
+        "% propriété",
+        "\\begin{propriete}[]",
+        "\t",
+        "\\end{propriete}"
     ],
     "trigger": ""
 }

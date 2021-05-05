@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Solution",
-    "shortcut": "Ctrl+F5",
+    "name": "Exemple",
+    "shortcut": "",
     "tag": [
-        "% solution",
-        "\\begin{solution}",
-        "\t",
-        "\\end{solution}"
+        "% exemple",
+        "\\begin{exemple}",
+        "",
+        "\\end{exercice}"
     ],
     "trigger": ""
 }

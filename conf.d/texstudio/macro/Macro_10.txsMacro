@@ -1,16 +1,17 @@
 {
-"name" : "Solution" ,
-"tag" : [
- "% Solution",
- "\begin{solution}",
- "  %<•%>",
- "\end{solution}"
- ],
-"description" : [
- ""
- ],
-"abbrev" : "" ,
-"trigger" : "" ,
-"menu" : "" ,
-"shortcut" : "Ctrl+Shift+F6"
+    "abbrev": "",
+    "description": [
+        ""
+    ],
+    "formatVersion": 1,
+    "menu": "",
+    "name": "Python",
+    "shortcut": "Ctrl+F8",
+    "tag": [
+        "% code python",
+        "\\begin{python}",
+        "",
+        "\\end{python}"
+    ],
+    "trigger": ""
 }

@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Python",
-    "shortcut": "Ctrl+F8",
+    "name": "Solution",
+    "shortcut": "Ctrl+F5",
     "tag": [
-        "% code python",
-        "\\begin{python}",
-        "",
-        "\\end{python}"
+        "% solution",
+        "\\begin{solution}",
+        "\t",
+        "\\end{solution}"
     ],
     "trigger": ""
 }

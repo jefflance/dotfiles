@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Exercice",
-    "shortcut": "Ctrl+F3",
+    "name": "Définiton",
+    "shortcut": "",
     "tag": [
-        "% exercice",
-        "\\begin{exercice}",
-        "",
-        "\\end{exercice}"
+        "% définition",
+        "\\begin{definition}[]",
+        "\t",
+        "\\end{definition}"
     ],
     "trigger": ""
 }

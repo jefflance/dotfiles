@@ -5,10 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Python inline",
-    "shortcut": "Ctrl+F7",
+    "name": "Questions",
+    "shortcut": "Ctrl+F4",
     "tag": [
-        "\\pythoninline//"
+        "% questions",
+        "\\begin{questions}",
+        "",
+        "\\end{questions}"
     ],
     "trigger": ""
 }

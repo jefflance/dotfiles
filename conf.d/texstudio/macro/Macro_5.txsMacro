@@ -5,10 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Vide",
-    "shortcut": "Ctrl+F6",
+    "name": "Exercice",
+    "shortcut": "Ctrl+F3",
     "tag": [
-        "|\\fbox{\\phantom{XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}}|"
+        "% exercice",
+        "\\begin{exercice}",
+        "",
+        "\\end{exercice}"
     ],
     "trigger": ""
 }
