@@ -36,7 +36,7 @@ alias pacrm='sudo pacman -R'                   # remove package, keeping setting
 alias pacRm='sudo pacman -Rns'                 # remove package with its settings and depedencies
 alias paclo='sudo pacman -Qdt'                 # list orphans
 alias pacro='sudo pacman -Rs $(pacman -Qdt)'   # remove orphans
-alias pacow='pacmon -Qo'                       # show which package own a file
+alias pacow='pacman -Qo'                       # show which package own a file
 
 #
 #  pkgfile Operations
