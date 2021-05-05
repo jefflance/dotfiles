@@ -28,8 +28,11 @@ function s:config_mail()
   return [
         \ { 'line': 'afew', 'cmd': 'edit ${HOME}/.config/afew/' },
         \ { 'line': 'astroid', 'cmd': 'edit ${HOME}/.config/astroid/' },
+        \ { 'line': 'imapfilter', 'cmd': 'edit ${HOME}/.config/imapfilter' },
         \ { 'line': 'imapnotify', 'cmd': 'edit ${HOME}/.config/imapnotify' },
         \ { 'line': 'mbsync', 'cmd': 'edit ${HOME}/.mbsyncrc' },
+        \ { 'line': 'msmtp', 'cmd': 'edit ${HOME}/.msmtprc' },
+        \ { 'line': 'neomutt', 'cmd': 'edit ${HOME}/.config/neomutt' },
         \ { 'line': 'notmuch config', 'cmd': 'edit ${HOME}/.notmuch-config' },
         \ { 'line': 'notmuch dir', 'cmd': 'edit ${HOME}/Mail/.notmuch' },
         \ ]

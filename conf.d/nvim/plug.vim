@@ -136,6 +136,7 @@ Plug 'jdsimcoe/hyper.vim', { 'as': 'hyper' }
 Plug 'jacoborus/tender.vim', { 'as': 'tender' }
 Plug 'connorholyday/vim-snazzy', { 'as': 'snazzy' }
 Plug 'hardcoreplayers/oceanic-material', { 'as': 'oceanic' }
+Plug 'dylanaraps/wal.vim'
 
 " Customization
 Plug 'ryanoasis/vim-devicons'

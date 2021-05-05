@@ -1,7 +1,7 @@
 " File              : keybindings.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 03.03.2021
+" Last Modified Date: 05.05.2021
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -26,7 +26,8 @@ nnoremap <space> za
 map <leader>s :echom 'Source file' <bar> :so %<cr>
 
 " Two semicolons to escape
-imap ;; <Esc>
+map  <leader>; <Esc>
+map! <leader>; <Esc>
 
 " Open a current file with sudo
 " map <silent> <leader>E :e suda://%<cr>
@@ -45,7 +46,7 @@ map <silent> <C-[> <<
 map <silent> <C-u> uu
 
 " Save as
-map <C-s> :saveas<cr>
+map <C-s> :saveas<space>
 " -----
 "  }}}
 
@@ -62,7 +63,7 @@ command! -bang -nargs=? -complete=dir Files
 	\ <bang>0
 	\ )
 map <C-w> :echom 'Close buffer' <bar> :call BufClose()<cr>
-map <C-o> :e
+map <C-o> :e<space>
 map <C-n> :Startify<cr>
 map <C-PageDown> :bn<cr>
 map <C-PageUp> :bp<cr>
