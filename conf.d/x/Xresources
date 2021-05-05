@@ -1,15 +1,15 @@
 ! ------------------------------------------------------------------------------
-! Theme Configuration 
+! Theme Configuration
 ! ------------------------------------------------------------------------------
-#include ".Xresources.d/themes/jellybeans.res"
+!#include ".Xresources.d/themes/jellybeans.res"
 
 ! ------------------------------------------------------------------------------
 ! ROFI Configuration
 ! ------------------------------------------------------------------------------
-#include ".Xresources.d/rofi/jellybeans.res"
+!#include ".Xresources.d/rofi/jellybeans.res"
 
 ! ------------------------------------------------------------------------------
-! Xft fonts Configuration 
+! Xft fonts Configuration
 ! ------------------------------------------------------------------------------
 Xft.dpi:                96
 Xft.antialias:          true
@@ -53,38 +53,46 @@ ssh-askpass.Indicator.maximumCount:       24
 ! ------------------------------------------------------------------------------
 ! Urxvt
 ! ------------------------------------------------------------------------------
-URxvt.perl-lib:				  /home/jeff/.urxvt/urxvt-perls
-URxvt*termName:				  rxvt-color
-URxvt*font:				      xft:Monofur Nerd Font Mono:pixelsize=18:size=13:style=Book
+!URxvt.perl-lib:				  /home/jeff/.urxvt/urxvt-perls
+!URxvt*termName:				  rxvt-color
+!URxvt*font:               xft:Inconsolata:pixelsize=12
+!URxvt*font:				      xft:Monospace Regular:pixelsize=18:size=16:style=Book
 !URxvt.letterSpace:			  -1
-URxvt.depth:				  32
-URxvt.geometry:				  80x24+877+462
-URxvt.background:			  rgba:0000/0000/0000/e800
-!URxvt*transparent:			  True
-!URxvt*shading:			  	  15
+!URxvt.depth:              32
+!URxvt.geometry:				  80x24+877+462
+!URxvt.background:			  rgba:0000/0000/0000/e800
+URxvt*transparent:			  True
+URxvt*shading:			  	  15
 URxvt*scrollBar:			  False
 URxvt.scrollBar_right:		  False
 URxvt.scrollBar_floating:	  False
 URxvt.scrollstyle:			  rxvt
 
-!URxvt.perl-ext-common:		  default,keyboard-select,url-select,clipboard,tabbed
-URxvt.perl-ext-common:		  default,keyboard-select,url-select,clipboard
-! keyboard-select
-URxvt.keysym.M-Escape:		  perl:keyboard-select:activate
-URxvt.keysym.M-s:			  perl:keyboard-select:search
-! url-select
-URxvt.keysym.M-u:			  perl:url-select:select_next
-URxvt.url-select.autocopy:	  true
-URxvt.url-select.launcher:	  /usr/bin/xdg-open
-URxvt.url-select.button:	  2
-URxvt.url-select.underline:	  true
-!clipboard
-URxvt.keysym.M-c:		  	  perl:clipboard:copy
-URxvt.keysym.I-c:		  	  perl:clipboard:copy
-URxvt.keysym.M-v:		  	  perl:clipboard:paste
-URxvt.keysym.I-v:		  	  perl:clipboard:paste
-URxvt.clipboard.autocopy:	  true
-! tabbed
+URxvt.perl-ext-common     default,resize-font,vim-insert
+URxvt.keysym.C-Up:        font-size:increase
+URxvt.keysym.C-Down:      font-size:decrease
+URxvt.keysym.C-S-Up:      font-size:incglobal
+URxvt.keysym.C-S-Down:    font-size:decglobal
+URxvt.keysym.C-equal:     font-size:reset
+URxvt.keysym.C-slash:     font-size:show
+!!URxvt.perl-ext-common:		  default,keyboard-select,url-select,clipboard,tabbed
+!URxvt.perl-ext-common:		  default,keyboard-select,url-select,clipboard
+!! keyboard-select
+!URxvt.keysym.M-Escape:		  perl:keyboard-select:activate
+!URxvt.keysym.M-s:			  perl:keyboard-select:search
+!! url-select
+!URxvt.keysym.M-u:			  perl:url-select:select_next
+!URxvt.url-select.autocopy:	  true
+!URxvt.url-select.launcher:	  /usr/bin/xdg-open
+!URxvt.url-select.button:	  2
+!URxvt.url-select.underline:	  true
+!!clipboard
+!URxvt.keysym.M-c:		  	  perl:clipboard:copy
+!URxvt.keysym.I-c:		  	  perl:clipboard:copy
+!URxvt.keysym.M-v:		  	  perl:clipboard:paste
+!URxvt.keysym.I-v:		  	  perl:clipboard:paste
+!URxvt.clipboard.autocopy:	  true
+!! tabbed
 
 ! ------------------------------------------------------------------------------
 ! XTerm
