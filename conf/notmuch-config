@@ -10,11 +10,10 @@ path=/home/jeff/Mail
 [user]
 name=Jeff LANCE
 primary_email=jeff.lance@mala.fr
-other_email=jean-francois.lance@ac-creteil.fr;games@mala.fr;mathslance@gmail.com
 
 [new]
 tags=new;
-ignore=.mbsyncstate;.isyncuidmap.db;.uidvalidity;.mbsyncstate.journal;.mbsyncstate.new;.mbsyncstate.lock;/.*[.](json|lock|bak)$/;
+ignore=.mbsyncstate;.isyncuidmap.db;.uidvalidity;.mbsyncstate.journal;.mbsyncstate.new;.mbsyncstate.lock;/.*[.](json|lock|bak)$/;.templates;
 
 [search]
 exclude_tags=

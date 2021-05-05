@@ -5,10 +5,6 @@
 # Last Modified Date: 01.03.2021
 # Last Modified By  : Jeff LANCE <email@jefflance.me>
 
-
-ASTROID_BIN=$(which astroid)
-
-
 # purging trash
 notmuch search --output=files --format=text0 \
   -- tag:deleted date:...7d | xargs -0 --no-run-if-empty rm

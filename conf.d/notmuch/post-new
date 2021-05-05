@@ -6,7 +6,7 @@
 # Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 
-# 
+#
 ASTROID_BIN=$(which astroid)
 NOTMUCH_BIN=$(which notmuch)
 NOTIFY_BIN=$(which notify-send)
@@ -15,31 +15,24 @@ NOTIFY_BIN=$(which notify-send)
 function notify() {
   # count new mails and display a message
   newcount=$(${NOTMUCH_BIN} count tag:new)
-  summary="Tu as reçu ${newcount} new message"
-  
+  summary="Tu as reçu ${newcount} message"
+
   # come on, who here doesn't actually hate "you have 1 new message(s)"?
   if [ $newcount -gt 1 ]; then
     summary="${summary}s"
   fi
-  
+
   if [ $newcount -gt 0 ]; then
     detail="$(${NOTMUCH_BIN} search --output=summary --format=json tag:new \
       | sed -e 's/.*authors": "//;s/|[^"]*"/"/;s/", "subject": "/ : /;s/".*//')"
   fi
-  
+
   if [ ${newcount} -gt 0 ]; then
     ${NOTIFY_BIN} \
       -i /usr/share/notify-osd/icons/hicolor/scalable/status/notification-message-email.svg \
       -c Mail "${summary}." "${detail}" -t 10000
   fi
 }
-
-
-function refresh_ui() {
-  # refresh astroid ui
-  ${ASTROID_BIN} --refresh 0
-}
-
 
 # some additional tags
 ${NOTMUCH_BIN} tag --input=${HOME}/Mail/.notmuch/tagupdate
@@ -52,15 +45,8 @@ fi
 
 
 # run afew on mew mails and make moves
-afew --tag --new
-afew --move-mails
-
-
-if [ "x${DISPLAY}" != "x" ]; then
-  logger -t notmuch "post-new: refresh_ui"
-  refresh_ui
-fi
-
+# afew --tag --new
+# afew --move-mails
 
 exit 0
 
