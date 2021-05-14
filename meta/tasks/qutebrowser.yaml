@@ -2,4 +2,18 @@
     ${HOME}/.config/qutebrowser/config.py:
       glob: false
       path: conf.d/qutebrowser/config.py
+    ${HOME}/.config/qutebrowser/autoconfig.yml:
+      glob: false
+      path: conf.d/qutebrowser/autoconfig.yml
+    ${HOME}/.config/qutebrowser/quickmarks:
+      glob: false
+      path: conf.d/qutebrowser/quickmarks
+    ${HOME}/.config/qutebrowser/dracula:
+      glob: false
+      path: conf.d/qutebrowser/dracula
+    ${HOME}/.config/qutebrowser/userscripts:
+      glob: false
+      path: conf.d/qutebrowser/userscripts
+
+
 

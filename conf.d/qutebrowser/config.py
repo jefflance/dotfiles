@@ -3,14 +3,26 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+## Imports
+# import helpers.bind_chained
+import dracula.draw
+
+
+## Helpers functions
+def bind_chained(key, *commands):
+    config.bind(key, ' ;; '.join(commands))
+
+##
+
+
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
-# config.load_autoconfig()
+config.load_autoconfig()
 
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
 ## Type: Dict
-# c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
+c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save', 'ddg': 'open ddg'}
 
 ## Time interval (in milliseconds) between auto-saves of
 ## config/cookies/etc.
@@ -33,7 +45,7 @@
 ## Valid values:
 ##   - webengine: Use QtWebEngine (based on Chromium).
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari).
-# c.backend = 'webengine'
+c.backend = 'webengine'
 
 ## This setting can be used to map keys to other keys. When the key used
 ## as dictionary-key is pressed, the binding for the key used as
@@ -406,6 +418,7 @@
 ##   - bookmarks
 ##   - history
 # c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history']
+c.completion.open_categories = ['searchengines', 'quickmarks', 'history']
 
 ## Move on to the next part when there's only one possible completion
 ## left.
@@ -436,6 +449,7 @@
 ## Format of timestamps (e.g. for the history completion).
 ## Type: TimestampTemplate
 # c.completion.timestamp_format = '%Y-%m-%d'
+c.completion.timestamp_format = '%d/%m/%Y'
 
 ## Execute the best-matching command on a partial match.
 ## Type: Bool
@@ -513,6 +527,7 @@
 ## describing an encoding such as _utf-8_, _iso-8859-1_, etc.
 ## Type: String
 # c.content.default_encoding = 'iso-8859-1'
+c.content.default_encoding = 'utf-8'
 
 ## Allow websites to share screen content. On Qt < 5.10, a dialog box is
 ## always displayed, even if this is set to "true".
@@ -525,7 +540,7 @@
 
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
-# c.content.dns_prefetch = True
+c.content.dns_prefetch = True
 
 ## Expand each subframe to its contents. This will flatten all the frames
 ## to become one scrollable page.
@@ -538,12 +553,13 @@
 ##   - true
 ##   - false
 ##   - ask
-# c.content.geolocation = 'ask'
+c.content.geolocation = 'ask'
 
 ## Value to send in the `Accept-Language` header. Note that the value
 ## read from JavaScript is always the global value.
 ## Type: String
 # c.content.headers.accept_language = 'en-US,en'
+c.content.headers.accept_language = 'fr-FR,fr,en-US,en'
 
 ## Custom headers for qutebrowser HTTP requests.
 ## Type: Dict
@@ -553,7 +569,7 @@
 ## qutebrowser asks websites to not track your identity. If set to null,
 ## the DNT header is not sent at all.
 ## Type: Bool
-# c.content.headers.do_not_track = True
+c.content.headers.do_not_track = True
 
 ## When to send the Referer header. The Referer header tells websites
 ## from which website you were coming from when visiting them. No restart
@@ -569,6 +585,7 @@
 ## read from JavaScript is always the global value.
 ## Type: String
 # c.content.headers.user_agent = None
+c.content.headers.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0'
 
 ## Enable host blocking.
 ## Type: Bool
@@ -601,11 +618,11 @@
 
 ## Load images automatically in web pages.
 ## Type: Bool
-# c.content.images = True
+c.content.images = True
 
 ## Show javascript alerts.
 ## Type: Bool
-# c.content.javascript.alert = True
+c.content.javascript.alert = True
 
 ## Allow JavaScript to read from or write to the clipboard. With
 ## QtWebEngine, writing the clipboard as response to a user interaction
@@ -623,7 +640,7 @@
 
 ## Enable JavaScript.
 ## Type: Bool
-# c.content.javascript.enabled = True
+c.content.javascript.enabled = True
 
 ## Log levels to use for JavaScript console logging messages. When a
 ## JavaScript message with the level given in the dictionary key is
@@ -651,7 +668,7 @@
 
 ## Enable support for HTML 5 local storage and Web SQL.
 ## Type: Bool
-# c.content.local_storage = True
+c.content.local_storage = True
 
 ## Allow websites to record audio/video.
 ## Type: BoolAsk
@@ -691,7 +708,7 @@
 ## still be downloaded by clicking the download button in the pdf.js
 ## viewer.
 ## Type: Bool
-# c.content.pdfjs = False
+c.content.pdfjs = True
 
 ## Allow websites to request persistent storage quota via
 ## `navigator.webkitPersistentStorage.requestQuota`.
@@ -704,7 +721,7 @@
 
 ## Enable plugins in Web pages.
 ## Type: Bool
-# c.content.plugins = False
+c.content.plugins = True
 
 ## Draw the background color and images also when the page is printed.
 ## Type: Bool
@@ -750,7 +767,7 @@
 
 ## Enable WebGL.
 ## Type: Bool
-# c.content.webgl = True
+c.content.webgl = True
 
 ## Which interfaces to expose via WebRTC. On Qt 5.10, this option doesn't
 ## work because of a Qt bug.
@@ -765,7 +782,7 @@
 ## Limit fullscreen to the browser window (does not expand to fill the
 ## screen).
 ## Type: Bool
-# c.content.windowed_fullscreen = False
+c.content.fullscreen.window = True
 
 ## Monitor load requests for cross-site scripting attempts. Suspicious
 ## scripts will be blocked and reported in the inspector's JavaScript
@@ -824,60 +841,60 @@
 
 ## Encoding to use for the editor.
 ## Type: Encoding
-# c.editor.encoding = 'utf-8'
+c.editor.encoding = 'utf-8'
 
 ## Font used in the completion categories.
 ## Type: Font
-# c.fonts.completion.category = 'bold 10pt monospace'
+c.fonts.completion.category = '14pt monofurbold nerd font mono'
 
 ## Font used in the completion widget.
 ## Type: Font
-# c.fonts.completion.entry = '10pt monospace'
+c.fonts.completion.entry = '14pt monofur nerd font mono'
 
 ## Font used for the debugging console.
 ## Type: QtFont
-# c.fonts.debug_console = '10pt monospace'
+c.fonts.debug_console = '14pt monofur nerd font mono'
 
 ## Font used for the downloadbar.
 ## Type: Font
-# c.fonts.downloads = '10pt monospace'
+c.fonts.downloads = '14pt monofur nerd font mono'
 
 ## Font used for the hints.
 ## Type: Font
-# c.fonts.hints = 'bold 10pt monospace'
+c.fonts.hints = 'bold 14pt monofur nerd font mono'
 
 ## Font used in the keyhint widget.
 ## Type: Font
-# c.fonts.keyhint = '10pt monospace'
+c.fonts.keyhint = '14pt monofur nerd font mono'
 
 ## Font used for error messages.
 ## Type: Font
-# c.fonts.messages.error = '10pt monospace'
+c.fonts.messages.error = '14pt monofur nerd font mono'
 
 ## Font used for info messages.
 ## Type: Font
-# c.fonts.messages.info = '10pt monospace'
+c.fonts.messages.info = '14pt monofur nerd font mono'
 
 ## Font used for warning messages.
 ## Type: Font
-# c.fonts.messages.warning = '10pt monospace'
+c.fonts.messages.warning = '12pt monofur nerd font mono'
 
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-# c.fonts.monospace = '"xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+# c.fonts.monospace = '"Monofur Nerd Font Mono", "DejaVu Sans Mono", Hack, "xos4 Terminus", Terminus, Monospace, Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
 ## Font used for prompts.
 ## Type: Font
-# c.fonts.prompts = '10pt sans-serif'
+c.fonts.prompts = '12pt monofur nerd font mono'
 
 ## Font used in the statusbar.
 ## Type: Font
-# c.fonts.statusbar = '10pt monospace'
+c.fonts.statusbar = '14pt monofur nerd font mono'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-# c.fonts.tabs = '10pt monospace'
+# c.fonts.tabs = '14pt monofur nerd font mono'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -941,6 +958,7 @@
 ## Characters used for hint strings.
 ## Type: UniqueCharString
 # c.hints.chars = 'asdfghjkl'
+c.hints.chars = 'asdfjkl;'
 
 ## Dictionary file to be used by the word hints.
 ## Type: File
@@ -952,6 +970,7 @@
 ##   - javascript: Better but slower
 ##   - python: Slightly worse but faster
 # c.hints.find_implementation = 'python'
+c.hints.find_implementation = 'javascript'
 
 ## Hide unmatched hints in rapid mode.
 ## Type: Bool
@@ -1012,30 +1031,30 @@
 
 ## Enter insert mode if an editable element is clicked.
 ## Type: Bool
-# c.input.insert_mode.auto_enter = True
+c.input.insert_mode.auto_enter = True
 
 ## Leave insert mode if a non-editable element is clicked.
 ## Type: Bool
-# c.input.insert_mode.auto_leave = True
+c.input.insert_mode.auto_leave = True
 
 ## Automatically enter insert mode if an editable element is focused
 ## after loading the page.
 ## Type: Bool
-# c.input.insert_mode.auto_load = False
+c.input.insert_mode.auto_load = False
 
 ## Leave insert mode when starting a new page load. Patterns may be
 ## unreliable on this setting, and they may match the url you are
 ## navigating to, or the URL you are navigating from.
 ## Type: Bool
-# c.input.insert_mode.leave_on_load = True
+c.input.insert_mode.leave_on_load = False
 
 ## Switch to insert mode when clicking flash and other plugins.
 ## Type: Bool
-# c.input.insert_mode.plugins = False
+# c.input.insert_mode.plugins = True
 
 ## Include hyperlinks in the keyboard focus chain when tabbing.
 ## Type: Bool
-# c.input.links_included_in_focus_chain = True
+# c.input.links_included_in_focus_chain = False
 
 ## Timeout (in milliseconds) for partially typed key bindings. If the
 ## current input forms only partial matches, the keystring will be
@@ -1046,7 +1065,7 @@
 ## Enable Opera-like mouse rocker gestures. This disables the context
 ## menu.
 ## Type: Bool
-# c.input.rocker_gestures = False
+c.input.mouse.rocker_gestures = True
 
 ## Enable spatial navigation. Spatial navigation consists in the ability
 ## to navigate between focusable elements in a Web page, such as
@@ -1088,7 +1107,7 @@
 ##   - tab-silent: Open a new tab in the existing window without activating the window.
 ##   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
 ##   - window: Open in a new window.
-# c.new_instance_open_target = 'tab'
+c.new_instance_open_target = 'tab-silent'
 
 ## Which window to choose when opening links as new tabs. When
 ## `new_instance_open_target` is not set to `window`, this is ignored.
@@ -1098,7 +1117,7 @@
 ##   - last-opened: Open new tabs in the last (newest) opened window.
 ##   - last-focused: Open new tabs in the most recently focused window.
 ##   - last-visible: Open new tabs in the most recently visible window.
-# c.new_instance_open_target_window = 'last-focused'
+c.new_instance_open_target_window = 'last-focused'
 
 ## Show a filebrowser in upload/download prompts.
 ## Type: Bool
@@ -1106,7 +1125,7 @@
 
 ## Rounding radius (in pixels) for the edges of prompts.
 ## Type: Int
-# c.prompt.radius = 8
+# c.prompt.radius = 10
 
 ## Additional arguments to pass to Qt, without leading `--`. With
 ## QtWebEngine, some Chromium arguments (see
@@ -1137,7 +1156,7 @@
 ## as it can cause issues with some bitmap fonts. As an alternative to
 ## this, it's possible to set font sizes and the `zoom.default` setting.
 ## Type: Bool
-# c.qt.highdpi = False
+c.qt.highdpi = True
 
 ## When to use Chromium's low-end device mode. This improves the RAM
 ## usage of renderer processes, at the expense of performance.
@@ -1146,7 +1165,7 @@
 ##   - always: Always use low-end device mode.
 ##   - auto: Decide automatically (uses low-end mode with < 1 GB available RAM).
 ##   - never: Never use low-end device mode.
-# c.qt.low_end_device_mode = 'auto'
+c.qt.low_end_device_mode = 'auto'
 
 ## Which Chromium process model to use. Alternative process models use
 ## less resources, but decrease security and robustness. See the
@@ -1158,7 +1177,7 @@
 ##   - process-per-site-instance: Pages from separate sites are put into separate processes and separate visits to the same site are also isolated.
 ##   - process-per-site: Pages from separate sites are put into separate processes. Unlike Process per Site Instance, all visits to the same site will share an OS process. The benefit of this model is reduced memory consumption, because more web pages will share processes. The drawbacks include reduced security, robustness, and responsiveness.
 ##   - single-process: Run all tabs in a single process. This should be used for debugging purposes only, and it disables `:open --private`.
-# c.qt.process_model = 'process-per-site-instance'
+c.qt.process_model = 'process-per-site-instance'
 
 ## When to show the scrollbar.
 ## Type: String
@@ -1166,12 +1185,14 @@
 ##   - always: Always show the scrollbar.
 ##   - never: Never show the scrollbar.
 ##   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
-# c.scrolling.bar = 'when-searching'
+c.scrolling.bar = 'when-searching'
+# c.scrolling.bar = 'always'
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
 ## Type: Bool
 # c.scrolling.smooth = False
+c.scrolling.smooth = True
 
 ## When to find text on a page case-insensitively.
 ## Type: IgnoreCase
@@ -1184,7 +1205,7 @@
 ## Find text on a page incrementally, renewing the search for each typed
 ## character.
 ## Type: Bool
-# c.search.incremental = True
+c.search.incremental = True
 
 ## Name of the session to save by default. If this is set to null, the
 ## session which was last loaded is saved.
@@ -1243,11 +1264,11 @@
 ##   - tr-TR: Turkish (Turkey)
 ##   - uk-UA: Ukrainian (Ukraine)
 ##   - vi-VN: Vietnamese (Viet Nam)
-# c.spellcheck.languages = []
+c.spellcheck.languages = ['fr-FR', 'en-US']
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-# c.statusbar.hide = False
+# c.statusbar.hide = True
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
@@ -1274,7 +1295,7 @@
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
-# c.tabs.background = False
+c.tabs.background = True
 
 ## Mouse button with which to close tabs.
 ## Type: String
@@ -1304,7 +1325,7 @@
 ##   - always: Always show favicons.
 ##   - never: Always hide favicons.
 ##   - pinned: Show favicons only on pinned tabs.
-# c.tabs.favicons.show = 'always'
+c.tabs.favicons.show = 'always'
 
 ## Padding (in pixels) for tab indicators.
 ## Type: Padding
@@ -1323,6 +1344,7 @@
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
 # c.tabs.last_close = 'ignore'
+c.tabs.last_close = 'startpage'
 
 ## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
 ## only applies when tabs are horizontal. This setting does not apply to
@@ -1345,7 +1367,7 @@
 ##   - persist: Retain the current mode.
 ##   - restore: Restore previously saved mode.
 ##   - normal: Always revert to normal mode.
-# c.tabs.mode_on_change = 'normal'
+c.tabs.mode_on_change = 'normal'
 
 ## Switch between tabs using the mouse wheel.
 ## Type: Bool
@@ -1359,13 +1381,13 @@
 ##   - next: After the current tab.
 ##   - first: At the beginning.
 ##   - last: At the end.
-# c.tabs.new_position.related = 'next'
+c.tabs.new_position.related = 'next'
 
 ## Stack related tabs on top of each other when opened consecutively.
 ## Only applies for `next` and `prev` values of
 ## `tabs.new_position.related` and `tabs.new_position.unrelated`.
 ## Type: Bool
-# c.tabs.new_position.stacking = True
+c.tabs.new_position.stacking = True
 
 ## Position of new tabs which are not opened from another tab. See
 ## `tabs.new_position.stacking` for controlling stacking behavior.
@@ -1376,6 +1398,7 @@
 ##   - first: At the beginning.
 ##   - last: At the end.
 # c.tabs.new_position.unrelated = 'last'
+c.tabs.new_position.unrelated = 'last'
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
@@ -1405,6 +1428,7 @@
 ##   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
 ##   - last-used: Select the previously selected tab.
 # c.tabs.select_on_remove = 'next'
+c.tabs.select_on_remove = 'prev'
 
 ## When to show the tab bar.
 ## Type: String
@@ -1471,7 +1495,7 @@
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'https://start.duckduckgo.com/'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -1488,6 +1512,7 @@
 ## invoked without parameters.
 ## Type: Bool
 # c.url.open_base_url = False
+c.url.open_base_url = True
 
 ## Search engines which can be used via the address bar. Maps a search
 ## engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -1498,11 +1523,16 @@
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
+                       'ddg': 'https://duckduckgo.com/?q={}',
+                       'mb':'https://musicbrainz.org/search?query={}&type=artist&method=indexed',
+                       'amz': 'https://www.amazon.fr/search/s?k={}',
+                       'lyr': 'https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7&q={}',
+                       'ggl': 'https://www.google.com/search?hl=fr&q={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-# c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['https://start.duckduckgo.com']
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String
@@ -1512,11 +1542,13 @@
 ## Wayland.
 ## Type: Bool
 # c.window.hide_decoration = False
+c.window.hide_decoration = False
 
 ## Format to use for the window title. The same placeholders like for
 ## `tabs.title.format` are defined.
 ## Type: FormatString
 # c.window.title_format = '{perc}{title}{title_sep}qutebrowser'
+# c.window.title_format = '{title}{perc}'
 
 ## Default zoom level.
 ## Type: Perc
@@ -1534,7 +1566,72 @@
 ## Type: Bool
 # c.zoom.text_only = False
 
+## Unbindings for normal mode
+config.unbind('<Escape>', mode='normal')
+config.unbind('<F5>', mode='normal')
+
+# config.unbind('<Home>', mode='normal') # NiA
+
+# config.unbind('<Alt-Left>', mode='normal') # NiA
+# config.unbind('<Alt-Right>', mode='normal') # NiA
+
+config.unbind('<Ctrl-h>', mode='normal')
+# config.unbind('<Ctrl-i>', mode='normal') # NiA
+# config.unbind('<Ctrl-l>', mode='normal') # NiA
+# config.unbind('<Ctrl-r>', mode='normal')
+config.unbind('<Ctrl-s>', mode='normal')
+config.unbind('<Ctrl-w>', mode='normal')
+
+# config.unbind('<Ctrl-Shift-r>', mode='normal') # NiA
+config.unbind('<Ctrl-Shift-w>', mode='normal')
+
+config.unbind('<Back>', mode='normal')
+config.unbind('<Forward>', mode='normal')
+
+config.unbind('b', mode='normal')
+config.unbind('B', mode='normal')
+config.unbind('d', mode='normal')
+config.unbind('D', mode='normal')
+config.unbind('H', mode='normal')
+config.unbind('L', mode='normal')
+config.unbind('m', mode='normal')
+config.unbind('M', mode='normal')
+config.unbind('o', mode='normal')
+
 ## Bindings for normal mode
+config.bind(';;', 'clear-keychain ;; search ;; fullscreen --leave')
+config.bind('<Escape>', 'clear-keychain ;; search ;; fullscreen --leave')
+config.bind('<F5>', 'reload')
+
+config.bind('<Ctrl-h>', 'home')
+
+config.bind('<Alt-Left>', 'back')
+config.bind('<Alt-Right>', 'forward')
+
+config.bind('<Ctrl-l>', 'set-cmd-text -s :open')
+config.bind('<Ctrl-r>', 'reload')
+config.bind('<Ctrl-s>', 'stop')
+config.bind('<Ctrl-w>', 'tab-close')
+
+bind_chained('<Ctrl-Shift-r>', 'message-info "Reload config"', 'config-source')
+config.bind('<Ctrl-Shift-w>', 'close')
+
+config.bind('b', 'set-cmd-text -s :quickmark-load')
+config.bind('B', 'set-cmd-text -s :quickmark-load -t')
+config.bind('m', 'quickmark-save')
+
+# qute-pass
+config.bind('Qa', "spawn --userscript \
+            ~/.config/qutebrowser/userscripts/qute-pass -p \
+            '/home/jeff/Private/.password-store/'")
+config.bind('Qu', "spawn --userscript \
+            ~/.config/qutebrowser/userscripts/qute-pass -p \
+            '/home/jeff/Private/.password-store/' --username-only")
+config.bind('Qp', "spawn --userscript \
+            ~/.config/qutebrowser/userscripts/qute-pass -p \
+            '/home/jeff/Private/.password-store/' --password-only")
+
+# config.bind('<Ctrl-s>', 'stop')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
@@ -1822,3 +1919,16 @@
 # config.bind('<Return>', 'prompt-accept', mode='yesno')
 # config.bind('n', 'prompt-accept no', mode='yesno')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
+
+## Binding for personal commands
+# keepass password manager
+#config.bind('<Ctrl-i>', 'spawn --userscript qute-keepass -p ~/Dropbox/Applications/Keepass2Android/heimdall.kdbx  --keyfile-path ~/Dropbox/Applications/Keepass2Android/heimdall.asc')
+# pass password manager
+
+## Theme
+dracula.draw.blood(c, {
+    'spacing': {
+        'vertical': 6,
+        'horizontal': 8
+    }
+})
