@@ -80,7 +80,7 @@ Plug 'tpope/vim-commentary'
 " Abolish
 Plug 'tpope/vim-abolish'
 
-" Plug 'chrisbra/Colorizer'
+" Colorization
 Plug 'norcalli/nvim-colorizer.lua'
 
 " Put an header in file
@@ -120,7 +120,6 @@ Plug 'sunaku/vim-shortcut'
 
 " Status line
 Plug 'hardcoreplayers/spaceline.vim'
-" Plug 'itchyny/lightline.vim'
 
 " Tmux
 Plug 'edkolev/tmuxline.vim'
@@ -149,6 +148,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " REPL
 Plug 'jpalardy/vim-slime'
+
+" Jupyter notebook
+Plug 'jupyter-vim/jupyter-vim'
 
 " " Mermaid diagram
 " Plug 'zhaozg/vim-diagram'
