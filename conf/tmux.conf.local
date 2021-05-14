@@ -356,3 +356,18 @@ bind C-a send-prefix
 #
 # "$@"
 # # /!\ do not remove the previous line
+#
+set -g @tpm_plugins ' \
+  tmux-plugins/tpm    \
+  dracula/tmux        \
+'
+
+set -g @dracula-show-fahrenheit false
+set -g @dracula-day-month true
+set -g @dracula-show-powerline true
+set -g @dracula-show-network false
+set -g @dracula-show-powerline true
+set -g @dracula-show-battery false
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run -b '~/.tmux/plugins/tpm/tpm'
