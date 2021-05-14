@@ -1,0 +1,5 @@
+- link:
+    ${HOME}/.config/qutebrowser/config.py:
+      glob: false
+      path: conf.d/qutebrowser/config.py
+
