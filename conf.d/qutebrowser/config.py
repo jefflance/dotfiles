@@ -845,56 +845,56 @@ c.editor.encoding = 'utf-8'
 
 ## Font used in the completion categories.
 ## Type: Font
-c.fonts.completion.category = '14pt monofurbold nerd font mono'
+c.fonts.completion.category = '12pt Hack Bold Nerd Font Mono'
 
 ## Font used in the completion widget.
 ## Type: Font
-c.fonts.completion.entry = '14pt monofur nerd font mono'
+c.fonts.completion.entry = '12pt Hack Nerd Font Mono'
 
 ## Font used for the debugging console.
 ## Type: QtFont
-c.fonts.debug_console = '14pt monofur nerd font mono'
+c.fonts.debug_console = '12pt Hack Nerd Font Mono'
 
 ## Font used for the downloadbar.
 ## Type: Font
-c.fonts.downloads = '14pt monofur nerd font mono'
+c.fonts.downloads = '12pt Hack Nerd Font Mono'
 
 ## Font used for the hints.
 ## Type: Font
-c.fonts.hints = 'bold 14pt monofur nerd font mono'
+c.fonts.hints = 'bold 12pt Hack Nerd Font Mono'
 
 ## Font used in the keyhint widget.
 ## Type: Font
-c.fonts.keyhint = '14pt monofur nerd font mono'
+c.fonts.keyhint = '12pt Hack Nerd Font Mono'
 
 ## Font used for error messages.
 ## Type: Font
-c.fonts.messages.error = '14pt monofur nerd font mono'
+c.fonts.messages.error = '12pt Hack Nerd Font Mono'
 
 ## Font used for info messages.
 ## Type: Font
-c.fonts.messages.info = '14pt monofur nerd font mono'
+c.fonts.messages.info = '12pt Hack Nerd Font Mono'
 
 ## Font used for warning messages.
 ## Type: Font
-c.fonts.messages.warning = '12pt monofur nerd font mono'
+c.fonts.messages.warning = '11pt Hack Nerd Font Mono'
 
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-# c.fonts.monospace = '"Monofur Nerd Font Mono", "DejaVu Sans Mono", Hack, "xos4 Terminus", Terminus, Monospace, Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+# c.fonts.monospace = '"Hack Nerd Font Mono", "DejaVu Sans Mono", Hack, "xos4 Terminus", Terminus, Monospace, Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = '12pt monofur nerd font mono'
+c.fonts.prompts = '11pt Hack Nerd Font Mono'
 
 ## Font used in the statusbar.
 ## Type: Font
-c.fonts.statusbar = '14pt monofur nerd font mono'
+c.fonts.statusbar = '12pt Hack Nerd Font Mono'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-# c.fonts.tabs = '14pt monofur nerd font mono'
+# c.fonts.tabs = '14pt Hack Nerd Font Mono'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -1524,11 +1524,11 @@ c.url.open_base_url = True
 ## `:open google qutebrowser`.
 ## Type: Dict
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
-                       'ddg': 'https://duckduckgo.com/?q={}',
-                       'mb':'https://musicbrainz.org/search?query={}&type=artist&method=indexed',
-                       'amz': 'https://www.amazon.fr/search/s?k={}',
-                       'lyr': 'https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7&q={}',
-                       'ggl': 'https://www.google.com/search?hl=fr&q={}'}
+                       'sdg': 'https://duckduckgo.com/?q={}',
+                       'smb': 'https://musicbrainz.org/search?query={}&type=artist&method=indexed',
+                       'sam': 'https://www.amazon.fr/search/s?k={}',
+                       'sly': 'https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7&q={}',
+                       'sgo': 'https://www.google.com/search?hl=fr&q={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
