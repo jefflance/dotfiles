@@ -11,7 +11,7 @@
         "% exemple",
         "\\begin{exemple}",
         "",
-        "\\end{exercice}"
+        "\\end{exemple}"
     ],
     "trigger": ""
 }
