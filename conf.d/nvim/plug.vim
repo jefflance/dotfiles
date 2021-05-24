@@ -126,15 +126,15 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'benmills/vimux'
 
 " Colorschemes
-" Plug 'wgwoods/vim-systemd-syntax'
-Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
 Plug 'jdsimcoe/abstract.vim', { 'as': 'abstract' }
-Plug 'xero/sourcerer.vim', { 'as': 'sourcerer' }
 Plug 'romainl/Apprentice', { 'as': 'apprentice' }
 Plug 'jdsimcoe/hyper.vim', { 'as': 'hyper' }
-Plug 'jacoborus/tender.vim', { 'as': 'tender' }
-Plug 'connorholyday/vim-snazzy', { 'as': 'snazzy' }
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
 Plug 'hardcoreplayers/oceanic-material', { 'as': 'oceanic' }
+Plug 'xero/sourcerer.vim', { 'as': 'sourcerer' }
+Plug 'connorholyday/vim-snazzy', { 'as': 'snazzy' }
+Plug 'jacoborus/tender.vim', { 'as': 'tender' }
 Plug 'dylanaraps/wal.vim'
 
 " Customization
