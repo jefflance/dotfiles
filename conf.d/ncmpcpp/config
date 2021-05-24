@@ -291,7 +291,8 @@ song_columns_list_format = (4)[]{: } (20)[]{a:Artiste} (6f)[white]{nE:Piste} (50
 ## Note: Custom command that will be executed each
 ## time song changes. Useful for notifications etc.
 ##
-# execute_on_song_change = "~/.config/ncmpcpp/scripts/osd.sh"
+# execute_on_song_change = ~/.config/ncmpcpp/osd.sh
+execute_on_song_change = notify-send "Là, vous entendez" "$(mpc --format '%title% \n%artist% - %album%' current)"
 #
 #playlist_show_mpd_host = no
 #
@@ -371,7 +372,7 @@ store_lyrics_in_song_dir = yes
 #
 generate_win32_compatible_filenames = yes
 #
-#allow_for_physical_item_deletion = no
+allow_for_physical_item_deletion = yes
 #
 ##
 ## Note: If you set this variable, ncmpcpp will try to
