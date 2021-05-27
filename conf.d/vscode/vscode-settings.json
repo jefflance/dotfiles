@@ -99,4 +99,7 @@
     "python.dataScience.askForKernelRestart": false,
     "python.condaPath": "/home/jeff/miniconda3/condabin/conda",
     "python.dataScience.alwaysTrustNotebooks": true,
+    "git.autofetch": true,
+    "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:mm:ss",
+    "gitlens.defaultTimeFormat": "HH:mm:ss",
 }
