@@ -30,8 +30,8 @@ Host ssl0.ovh.net
 User jeff.lance@mala.fr
 # Get the password account through secret-tool
 # I replaced it by a pass command
-PassCmd "secret-tool lookup email jeff.lance@mala.fr service imap"
-# PassCmd "pass emails/jeff.lance@mala.fr"
+# PassCmd "secret-tool lookup email jeff.lance@mala.fr service imap"
+PassCmd "pass ssl0.ovh.net/jeff.lance@mala.fr"
 # Use SSL
 # SSLType IMAPS
 SSLType None
@@ -122,8 +122,8 @@ Host ssl0.ovh.net
 User games@mala.fr
 # Get the password account through secret-tool
 # I replaced it by a pass command
-PassCmd "secret-tool lookup email games@mala.fr service imap"
-# PassCmd "pass emails/games@mala.fr"
+# PassCmd "secret-tool lookup email games@mala.fr service imap"
+PassCmd "pass ssl0.ovh.net/games@mala.fr"
 # Use SSL
 # SSLType IMAPS
 SSLType None
@@ -201,8 +201,8 @@ Host imap.ac-creteil.fr
 User jlance
 # Get the password account through secret-tool
 # I replaced it by a pass command
-PassCmd "secret-tool lookup email jean-francois.lance@ac-creteil.fr service imap"
-# PassCmd "pass emails/jean-francois.lance@ac-creteil.fr"
+# PassCmd "secret-tool lookup email jean-francois.lance@ac-creteil.fr service imap"
+PassCmd "pass ac-creteil.fr/jlance"
 # Use SSL
 SSLType IMAPS
 # The following line should work.
