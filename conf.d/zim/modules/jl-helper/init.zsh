@@ -32,8 +32,12 @@ alias neomutt='neomutt -f ${HOME}/Mail/jeff.lance@mala.fr/inbox/'
 alias ls='lsd'                           # pretty ls
 alias md='mkdir -p'                      # mkdir alias
 alias open='xdg-open'                    # open files
-alias youtube-dl='youtube-dl -f best'    # youtube-dl best download
+alias t='tmux'                           # tmux
+alias ta='t a -t'                        # tmux attach to a session
+alias tls='t ls'                         # tmux list sessions
+alias tn='t n -t'                        # tmux new session
 alias xcolor='xcolor | xclip -i'         # xcolor
+alias youtube-dl='youtube-dl -f best'    # youtube-dl best download
 
 
 #
