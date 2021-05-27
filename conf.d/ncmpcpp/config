@@ -292,7 +292,7 @@ song_columns_list_format = (4)[]{: } (20)[]{a:Artiste} (6f)[white]{nE:Piste} (50
 ## time song changes. Useful for notifications etc.
 ##
 # execute_on_song_change = ~/.config/ncmpcpp/osd.sh
-execute_on_song_change = notify-send "Là, vous entendez" "$(mpc --format '%title% \n%artist% - %album%' current)"
+execute_on_song_change = notify-send "Là, vous écoutez" "$(mpc --format '%title% \n%artist% - %album%' current)"
 #
 #playlist_show_mpd_host = no
 #
