@@ -218,7 +218,8 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right="#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
+# tmux_conf_theme_status_right="#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
+tmux_conf_theme_status_right="#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} | #{username}#{root} | #{hostname} "
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -357,9 +358,9 @@ bind C-a send-prefix
 # "$@"
 # # /!\ do not remove the previous line
 #
-set -g @tpm_plugins ' \
-  tmux-plugins/tpm    \
-  dracula/tmux        \
+set -g @tpm_plugins '            \
+  tmux-plugins/tpm               \
+  dracula/tmux                   \
 '
 
 set -g @dracula-show-fahrenheit false
@@ -368,6 +369,8 @@ set -g @dracula-show-powerline true
 set -g @dracula-show-network false
 set -g @dracula-show-powerline true
 set -g @dracula-show-battery false
+set -g @dracula-show-timezone false
+set -g @dracula-military-time true
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
