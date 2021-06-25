@@ -1,4 +1,9 @@
-# : << EOF
+# File              : .tmux.conf.local
+# Author            : Jeff LANCE <email@jefflance.me>
+# Date              : 25.06.2021
+# Last Modified Date: 25.06.2021
+# Last Modified By  : Jeff LANCE <email@jefflance.me>
+#
 # https://github.com/gpakosz/.tmux
 # (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
 #         without any warranty.
@@ -374,3 +379,6 @@ set -g @dracula-military-time true
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
+
+
+" vim:ft=tmux
