@@ -65,8 +65,8 @@ command! -bang -nargs=? -complete=dir Files
 map <C-w> :echom 'Close buffer' <bar> :call BufClose()<cr>
 map <C-o> :e<space>
 map <C-n> :Startify<cr>
-map <C-PageDown> :bn<cr>
-map <C-PageUp> :bp<cr>
+map <A-PageDown> :bn<cr>
+map <A-PageUp> :bp<cr>
 
 " -----
 "  }}}

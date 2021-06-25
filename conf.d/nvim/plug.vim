@@ -126,16 +126,16 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'benmills/vimux'
 
 " Colorschemes
-Plug 'jdsimcoe/abstract.vim', { 'as': 'abstract' }
-Plug 'romainl/Apprentice', { 'as': 'apprentice' }
-Plug 'jdsimcoe/hyper.vim', { 'as': 'hyper' }
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
-Plug 'hardcoreplayers/oceanic-material', { 'as': 'oceanic' }
-Plug 'xero/sourcerer.vim', { 'as': 'sourcerer' }
+" Plug 'jdsimcoe/abstract.vim', { 'as': 'abstract' }
+" Plug 'romainl/Apprentice', { 'as': 'apprentice' }
+" Plug 'jdsimcoe/hyper.vim', { 'as': 'hyper' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
+" Plug 'hardcoreplayers/oceanic-material', { 'as': 'oceanic' }
+" Plug 'xero/sourcerer.vim', { 'as': 'sourcerer' }
 Plug 'connorholyday/vim-snazzy', { 'as': 'snazzy' }
-Plug 'jacoborus/tender.vim', { 'as': 'tender' }
-Plug 'dylanaraps/wal.vim'
+" Plug 'jacoborus/tender.vim', { 'as': 'tender' }
+" Plug 'dylanaraps/wal.vim'
 
 " Customization
 Plug 'ryanoasis/vim-devicons'
@@ -151,6 +151,9 @@ Plug 'jpalardy/vim-slime'
 
 " Jupyter notebook
 Plug 'jupyter-vim/jupyter-vim'
+
+" indentLine
+Plug 'Yggdroot/indentLine'
 
 " " Mermaid diagram
 " Plug 'zhaozg/vim-diagram'

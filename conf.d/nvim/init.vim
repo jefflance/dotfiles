@@ -528,6 +528,16 @@ let g:header_auto_add_header = 0
 "  }}}
 
 
+" IndentLine {{{
+" -----
+
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_enabled = 0
+
+" -----
+"  }}}
+
+
 " Markdown {{{
 " -----
 
