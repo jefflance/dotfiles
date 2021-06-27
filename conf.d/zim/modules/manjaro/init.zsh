@@ -2,7 +2,7 @@
 # File              : init.zsh
 # Author            : Jeff LANCE <email@jefflance.me>
 # Date              : 03.03.2021
-# Last Modified Date: 03.03.2021
+# Last Modified Date: 27.06.2021
 # Last Modified By  : Jeff LANCE <email@jefflance.me>
 #
 # Manjaro Shortcuts and Aliases
@@ -13,14 +13,14 @@
 # pamac Operations
 #
 
-alias pasea='pamac search'                # search through package repositories
-alias painf='pamac info'                  # show info about a package
-alias pau='pamac update'                  # update packages database
-alias paU='pamac upgrade'                 # upgrade packages
-alias pain='pamac install'                # install package
-alias parem='pamac remove'                # remove package
-alias pauU='pamud && pamug'
-alias pareo='parem -o'                    # remove orphan packages
+alias pamss='pamac search'                # search through package repositories
+alias pamsi='pamac info'                  # show info about a package
+alias pamud='pamac update'                # update packages database
+alias pamug='pamac upgrade'               # upgrade packages
+alias pamin='pamac install'               # install package
+alias pamrm='pamac remove'                # remove package
+alias pamdg='pamud && pamug'
+alias pamro='pamrm -o'                    # remove orphan packages
 
 
 #
