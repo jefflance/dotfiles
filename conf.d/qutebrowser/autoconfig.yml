@@ -7,4 +7,4 @@
 config_version: 2
 settings:
   fonts.default_size:
-    global: 14pt
+    global: 12pt

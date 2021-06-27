@@ -45,7 +45,7 @@ c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save
 ## Valid values:
 ##   - webengine: Use QtWebEngine (based on Chromium).
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari).
-c.backend = 'webengine'
+# c.backend = 'webengine'
 
 ## This setting can be used to map keys to other keys. When the key used
 ## as dictionary-key is pressed, the binding for the key used as
@@ -894,7 +894,7 @@ c.fonts.statusbar = '12pt Hack Nerd Font Mono'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-# c.fonts.tabs = '14pt Hack Nerd Font Mono'
+# c.fonts.tabs = '12pt Hack Nerd Font Mono'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -958,7 +958,7 @@ c.fonts.statusbar = '12pt Hack Nerd Font Mono'
 ## Characters used for hint strings.
 ## Type: UniqueCharString
 # c.hints.chars = 'asdfghjkl'
-c.hints.chars = 'asdfjkl;'
+c.hints.chars = 'sdfjkl'
 
 ## Dictionary file to be used by the word hints.
 ## Type: File
@@ -970,7 +970,7 @@ c.hints.chars = 'asdfjkl;'
 ##   - javascript: Better but slower
 ##   - python: Slightly worse but faster
 # c.hints.find_implementation = 'python'
-c.hints.find_implementation = 'javascript'
+# c.hints.find_implementation = 'javascript'
 
 ## Hide unmatched hints in rapid mode.
 ## Type: Bool
@@ -1599,8 +1599,8 @@ config.unbind('M', mode='normal')
 config.unbind('o', mode='normal')
 
 ## Bindings for normal mode
-config.bind(';;', 'clear-keychain ;; search ;; fullscreen --leave')
-config.bind('<Escape>', 'clear-keychain ;; search ;; fullscreen --leave')
+config.bind(';;', 'mode-leave', mode='insert')
+# config.bind('<Escape>', 'clear-keychain ;; search ;; fullscreen --leave')
 config.bind('<F5>', 'reload')
 
 config.bind('<Ctrl-h>', 'home')
