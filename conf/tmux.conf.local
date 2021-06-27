@@ -1,7 +1,8 @@
+# : << EOF
 # File              : .tmux.conf.local
 # Author            : Jeff LANCE <email@jefflance.me>
 # Date              : 25.06.2021
-# Last Modified Date: 25.06.2021
+# Last Modified Date: 27.06.2021
 # Last Modified By  : Jeff LANCE <email@jefflance.me>
 #
 # https://github.com/gpakosz/.tmux
@@ -339,6 +340,20 @@ bind C-a send-prefix
 #set -g status-position top
 
 
+set -g @plugins '     \
+  dracula/tmux        \
+'
+
+set -g @dracula-show-fahrenheit false
+set -g @dracula-day-month true
+set -g @dracula-show-powerline true
+set -g @dracula-show-network false
+set -g @dracula-show-powerline true
+set -g @dracula-show-battery false
+set -g @dracula-show-timezone false
+set -g @dracula-military-time true
+
+
 # -- custom variables ----------------------------------------------------------
 # to define a custom #{foo} variable, define a POSIX shell function between the
 # '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
@@ -362,23 +377,4 @@ bind C-a send-prefix
 #
 # "$@"
 # # /!\ do not remove the previous line
-#
-set -g @tpm_plugins '            \
-  tmux-plugins/tpm               \
-  dracula/tmux                   \
-'
 
-set -g @dracula-show-fahrenheit false
-set -g @dracula-day-month true
-set -g @dracula-show-powerline true
-set -g @dracula-show-network false
-set -g @dracula-show-powerline true
-set -g @dracula-show-battery false
-set -g @dracula-show-timezone false
-set -g @dracula-military-time true
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run -b '~/.tmux/plugins/tpm/tpm'
-
-
-" vim:ft=tmux
