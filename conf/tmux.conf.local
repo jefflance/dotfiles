@@ -339,10 +339,8 @@ bind C-a send-prefix
 # move status line to top
 #set -g status-position top
 
-
-set -g @plugins '     \
-  dracula/tmux        \
-'
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'dracula/tmux'
 
 set -g @dracula-show-fahrenheit false
 set -g @dracula-day-month true
@@ -377,4 +375,5 @@ set -g @dracula-military-time true
 #
 # "$@"
 # # /!\ do not remove the previous line
+
 
