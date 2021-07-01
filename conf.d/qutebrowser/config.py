@@ -1598,38 +1598,43 @@ config.unbind('m', mode='normal')
 config.unbind('M', mode='normal')
 config.unbind('o', mode='normal')
 
-## Bindings for normal mode
 config.bind(';;', 'mode-leave', mode='insert')
-# config.bind('<Escape>', 'clear-keychain ;; search ;; fullscreen --leave')
 config.bind('<F5>', 'reload')
-
-config.bind('<Ctrl-h>', 'home')
 
 config.bind('<Alt-Left>', 'back')
 config.bind('<Alt-Right>', 'forward')
 
+config.bind('<Ctrl-h>', 'home')
 config.bind('<Ctrl-l>', 'set-cmd-text -s :open')
 config.bind('<Ctrl-r>', 'reload')
 config.bind('<Ctrl-s>', 'stop')
 config.bind('<Ctrl-w>', 'tab-close')
+config.bind('<Ctrl-PgDown>', 'tab-next')
+config.bind('<Ctrl-PgUp>', 'tab-prev')
 
 bind_chained('<Ctrl-Shift-r>', 'message-info "Reload config"', 'config-source')
 config.bind('<Ctrl-Shift-w>', 'close')
+config.bind('<Ctrl-Shift-PgDown>', 'tab-move +')
+config.bind('<Ctrl-Shift-PgUp>', 'tab-move -')
 
 config.bind('b', 'set-cmd-text -s :quickmark-load')
 config.bind('B', 'set-cmd-text -s :quickmark-load -t')
 config.bind('m', 'quickmark-save')
 
-# qute-pass
+# password_fill
 config.bind('Qa', "spawn --userscript \
-            ~/.config/qutebrowser/userscripts/qute-pass -p \
-            '/home/jeff/Private/.password-store/'")
-config.bind('Qu', "spawn --userscript \
-            ~/.config/qutebrowser/userscripts/qute-pass -p \
-            '/home/jeff/Private/.password-store/' --username-only")
-config.bind('Qp', "spawn --userscript \
-            ~/.config/qutebrowser/userscripts/qute-pass -p \
-            '/home/jeff/Private/.password-store/' --password-only")
+            ~/.config/qutebrowser/userscripts/password_fill")
+
+# # qute-pass
+# config.bind('Qa', "spawn --userscript \
+#         ~/.config/qutebrowser/userscripts/qute-pass -p \
+#         '/home/jeff/Private/.password-store/'")
+# config.bind('Qu', "spawn --userscript \
+#         ~/.config/qutebrowser/userscripts/qute-pass -p \
+#         '/home/jeff/Private/.password-store/' --username-only")
+# config.bind('Qp', "spawn --userscript \
+#         ~/.config/qutebrowser/userscripts/qute-pass -p \
+#         '/home/jeff/Private/.password-store/' --password-only")
 
 # config.bind('<Ctrl-s>', 'stop')
 # config.bind("'", 'enter-mode jump_mark')

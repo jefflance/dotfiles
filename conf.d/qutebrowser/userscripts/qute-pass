@@ -122,7 +122,7 @@ def find_pass_candidates(domain, password_store_path):
             pass_path = path[len(password_store_path):]
             secrets = fnmatch.filter(file_names, '*.gpg')
             candidates.extend(os.path.join(pass_path, os.path.splitext(secret)[0]) for secret in secrets)
-        
+
 #            pass_path = path[len(password_store_path):]
 #            split_path = pass_path.split(os.path.sep)
 #            for secret in secrets:
@@ -241,7 +241,7 @@ def main(arguments):
         fake_key_raw(password)
 
     if arguments.insert_mode:
-        qute_command('enter-mode insert')
+        qute_command('mode-enter insert')
 
     return ExitCodes.SUCCESS
 
