@@ -42,6 +42,6 @@ alias pacow='pacman -Qo'                       # show which package own a file
 #  pkgfile Operations
 #
 
-alias pasf  ='pkgfile'                    # search file in packages
+alias pasf='pkgfile'    # search file in packages
 
 
