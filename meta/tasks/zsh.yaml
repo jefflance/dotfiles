@@ -1,6 +1,6 @@
 - shell:
-  - command: '/bin/bash -c helpers/install_zsh.sh'
-    description: Create latex personal directory
+  - command: '/usr/bin/env bash -c helpers/install_zsh.sh'
+    description: Installation of zsh configuration
     stderr: true
     stdout: true
 
