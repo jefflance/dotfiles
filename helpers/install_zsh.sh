@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ZIMDIR=${HOME}/.zim
 ZIMFILES="zimrc zshenv zlogin zshrc"
