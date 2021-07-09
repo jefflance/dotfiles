@@ -6,5 +6,21 @@
 
 config_version: 2
 settings:
+  colors.tabs.even.bg:
+    global: '#909090'
+  colors.tabs.even.fg:
+    global: '#282a36'
+  colors.tabs.indicator.system:
+    global: none
+  colors.tabs.odd.bg:
+    global: '#909090'
+  colors.tabs.odd.fg:
+    global: '#282a36'
+  colors.tabs.selected.even.bg:
+    global: '#282a36'
+  colors.tabs.selected.even.fg:
+    global: '#f8f8f2'
+  colors.tabs.selected.odd.bg:
+    global: '#282a36'
   fonts.default_size:
     global: 12pt

@@ -2,7 +2,6 @@ Banque Populaire https://www.rivesparis.banquepopulaire.fr/portailinternet/Pages
 OVH - Manager https://www.ovh.com/auth/?action=disconnect&onsuccess=https%3A%2F%2Fwww.ovh.com%2Fmanager%2Fweb%2F%23%2Fconfiguration
 Diskstation1 - Accueil https://diskstation1.loc:5001/
 Diskstation1 - Audio https://diskstation1.loc/audio
-Diskstation1 - LMS http://diskstation1.loc:9000/plugins/LMSnewGUI/html/app.html?player=00:04:20:2d:23:0b
 Jupyterhub https://jupyterhub.jefflance.me/hub/login
 MaLa - File https://cloud.mala.fr/file/
 MaLa - Cluster https://cluster.mala.fr:8006/#v1:0:18:4::::::
@@ -16,3 +15,4 @@ Mail - OVH https://www.ovh.com/fr/mail/
 Gandi - Manager https://id.gandi.net/fr/login?redirect=https%3A%2F%2Fid.gandi.net%2Ffr%2Fauthorize%3Fclient_id%3D56a74aae-7f20-11e5-93d5-00163e60d80f%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fadmin.gandi.net%252Fdashboard%252Fapi%252Fv5%252Flogin%26state%3D3cebeb061b
 Paroles https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7
 Recherche de paroles https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7
+Diskstation - Squeezebox http://diskstation1.loc:9000/
