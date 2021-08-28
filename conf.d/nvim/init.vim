@@ -591,7 +591,7 @@ let g:mkdp_open_ip = ''
 
 " specify browser to open preview page
 " default: ''
-let g:mkdp_browser = ''
+let g:mkdp_browser = 'qutebrowser'
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0
@@ -666,7 +666,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 " -----
 
 " merlin
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+let g:opamshare = substitute(system('opam var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " ocp-indent
