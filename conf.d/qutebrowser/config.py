@@ -553,7 +553,7 @@ c.content.dns_prefetch = True
 ##   - true
 ##   - false
 ##   - ask
-c.content.geolocation = 'ask'
+c.content.geolocation = False
 
 ## Value to send in the `Accept-Language` header. Note that the value
 ## read from JavaScript is always the global value.
@@ -590,7 +590,7 @@ c.content.headers.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.
 
 ## Enable host blocking.
 ## Type: Bool
-# c.content.host_blocking.enabled = True
+c.content.blocking.enabled = True
 
 ## List of URLs of lists which contain hosts to block.  The file can be
 ## in one of the following formats:  - An `/etc/hosts`-like file - One
@@ -1066,7 +1066,7 @@ c.input.insert_mode.leave_on_load = False
 ## Enable Opera-like mouse rocker gestures. This disables the context
 ## menu.
 ## Type: Bool
-c.input.mouse.rocker_gestures = True
+c.input.mouse.rocker_gestures = False
 
 ## Enable spatial navigation. Spatial navigation consists in the ability
 ## to navigate between focusable elements in a Web page, such as
@@ -1600,6 +1600,7 @@ config.unbind('M', mode='normal')
 config.unbind('o', mode='normal')
 
 config.bind(';;', 'mode-leave', mode='insert')
+config.bind(';;', 'leave-mode', mode='passthrough')
 config.bind('<F5>', 'reload')
 
 config.bind('<Alt-Left>', 'back')
@@ -1626,16 +1627,6 @@ config.bind('m', 'quickmark-save')
 config.bind('Qa', "spawn --userscript \
             ~/.config/qutebrowser/userscripts/password_fill")
 
-# # qute-pass
-# config.bind('Qa', "spawn --userscript \
-#         ~/.config/qutebrowser/userscripts/qute-pass -p \
-#         '/home/jeff/Private/.password-store/'")
-# config.bind('Qu', "spawn --userscript \
-#         ~/.config/qutebrowser/userscripts/qute-pass -p \
-#         '/home/jeff/Private/.password-store/' --username-only")
-# config.bind('Qp', "spawn --userscript \
-#         ~/.config/qutebrowser/userscripts/qute-pass -p \
-#         '/home/jeff/Private/.password-store/' --password-only")
 
 # config.bind('<Ctrl-s>', 'stop')
 # config.bind("'", 'enter-mode jump_mark')
@@ -1926,10 +1917,6 @@ config.bind('Qa', "spawn --userscript \
 # config.bind('n', 'prompt-accept no', mode='yesno')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
 
-## Binding for personal commands
-# keepass password manager
-#config.bind('<Ctrl-i>', 'spawn --userscript qute-keepass -p ~/Dropbox/Applications/Keepass2Android/heimdall.kdbx  --keyfile-path ~/Dropbox/Applications/Keepass2Android/heimdall.asc')
-# pass password manager
 
 ## Theme
 dracula.draw.blood(c, {
