@@ -76,7 +76,7 @@ endfunction
 function! BufClose()
   if (CountBuffers() == 1 || IsExplorerBuffer() || IsEmptyBuffer())
     bwipeout
-    Startify
+    Dashboard
   else
     bwipeout
   endif

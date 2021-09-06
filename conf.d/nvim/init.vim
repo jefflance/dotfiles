@@ -126,7 +126,7 @@ set clipboard=unnamedplus
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ";"
+let g:mapleader = ";"
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -298,11 +298,11 @@ endif
 " Installing the Plug plugin manager
 source ${HOME}/.config/nvim/plug.vim
 
-" Start startify if no arg
+" Start dashboard if no arg
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter *
   \ if (argc() == 0 && !exists("s:std_in") && !has('gui'))
-  \ | Startify
+  \ | Dashboard
   \ | endif
 
 " " needed so deoplete can auto select the first suggestion
@@ -434,6 +434,24 @@ let g:colorizer_auto_filetype='css,html,xml,py,js'
 " -----
 "  }}}
 
+
+" Dashboard {{{
+" -----
+
+let g:dashboard_custom_shortcut={
+  \ 'last_session'       : 'SPC s l',
+  \ 'find_history'       : 'SPC f h',
+  \ 'find_file'          : 'SPC f f',
+  \ 'new_file'           : 'SPC c n',
+  \ 'change_colorscheme' : 'SPC t c',
+  \ 'find_word'          : 'SPC f a',
+  \ 'book_marks'         : 'SPC f b',
+\ }
+
+let g:dashboard_default_executive ='fzf'
+
+" -----
+"  }}}
 
 
 " Defx {{{
@@ -771,7 +789,7 @@ let g:tex_flavor = 'latex'
 """""""""""""""""""""""""""""""""""""""""""""""""
 
 " Load functions from file
-source ${HOME}/.config/nvim/startscreen.vim
+" source ${HOME}/.config/nvim/startscreen.vim
 
 
 

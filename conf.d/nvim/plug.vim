@@ -39,7 +39,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 " -----
 
 " Startup screen
-Plug 'mhinz/vim-startify'
+Plug 'glepnir/dashboard-nvim'
+" Plug 'mhinz/vim-startify'
 
 " Ansible
 Plug 'pearofducks/ansible-vim'

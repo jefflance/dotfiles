@@ -1,7 +1,7 @@
 " File              : keybindings.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 05.05.2021
+" Last Modified Date: 06.09.2021
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -64,7 +64,7 @@ command! -bang -nargs=? -complete=dir Files
 	\ )
 map <C-w> :echom 'Close buffer' <bar> :call BufClose()<cr>
 map <C-o> :e<space>
-map <C-n> :Startify<cr>
+map <C-n> :DashboardNewFile<cr>
 map <A-PageDown> :bn<cr>
 map <A-PageUp> :bp<cr>
 
@@ -84,13 +84,17 @@ map <C-l> :call WinMove('l')<cr>
 "  }}}
 
 
-" Tabs {{{
+" Dashboard {{{
 " -----
 
-"map <leader>tn :tabnew<cr> <bar> :Startify<cr>
-"map <leader>tc :tabclose<cr>
-"map <C-]> :tabnext<cr>
-"map <C-[> :tabprev<cr>
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>ff :DashboardFindFile<CR>
+nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
+nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
 
 " -----
 "  }}}
@@ -185,7 +189,7 @@ endfunction
 " FZF {{{
 " -----
 
-map <C-f> :Files<cr>
+map <C-f> :DashboardFindFile<cr>
 
 " -----
 "  }}}
@@ -195,17 +199,6 @@ map <C-f> :Files<cr>
 " -----
 
 map <f4> :AddHeader<cr>
-
-" -----
-"  }}}
-
-
-" Plug {{{
-" -----
-
-map Pud :PlugUpdate<cr>
-map Pug :PlugUpgrade<cr>
-map Pui :PlugInstall<cr>
 
 " -----
 "  }}}
