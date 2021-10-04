@@ -1496,7 +1496,7 @@ c.tabs.select_on_remove = 'prev'
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'https://start.duckduckgo.com/?key=5f50a4ce56d3b08a34fe92f00b9197dbbb7eee9b54c85de610279d4c30aeba46ac11ed00a02216908a49048b4f9dc5aab4ee45ac19b4396ec0e5e6c2b7a9b4a8'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -1599,29 +1599,59 @@ config.unbind('m', mode='normal')
 config.unbind('M', mode='normal')
 config.unbind('o', mode='normal')
 
+# global moves
 config.bind(';;', 'mode-leave', mode='insert')
 config.bind(';;', 'leave-mode', mode='passthrough')
 config.bind('<F5>', 'reload')
+config.bind('<Ctrl-l>', 'set-cmd-text -s :open')
 
+# in page moves
 config.bind('<Alt-Left>', 'back')
 config.bind('<Alt-Right>', 'forward')
-
 config.bind('<Ctrl-h>', 'home')
-config.bind('<Ctrl-l>', 'set-cmd-text -s :open')
 config.bind('<Ctrl-r>', 'reload')
 config.bind('<Ctrl-s>', 'stop')
+
+# tabs movements
 config.bind('<Ctrl-w>', 'tab-close')
 config.bind('<Ctrl-PgDown>', 'tab-next')
 config.bind('<Ctrl-PgUp>', 'tab-prev')
-
-bind_chained('<Ctrl-Shift-r>', 'message-info "Reload config"', 'config-source')
-config.bind('<Ctrl-Shift-w>', 'close')
 config.bind('<Ctrl-Shift-PgDown>', 'tab-move +')
 config.bind('<Ctrl-Shift-PgUp>', 'tab-move -')
+config.bind('tg', 'tab-give')
 
+# windows movements
+config.bind('<Ctrl-Shift-w>', 'close')
+
+# quickmarks
 config.bind('b', 'set-cmd-text -s :quickmark-load')
 config.bind('B', 'set-cmd-text -s :quickmark-load -t')
 config.bind('m', 'quickmark-save')
+
+config.bind('dc', 'download-clear')
+
+# config
+bind_chained('<Ctrl-Shift-r>', 'message-info "Reload config"', 'config-source')
+config.bind('cIH', 'config-cycle -p -u *://*.{url:host}/* content.images ;; reload')
+config.bind('cIh', 'config-cycle -p -u *://{url:host}/* content.images ;; reload')
+config.bind('cIu', 'config-cycle -p -u {url} content.images ;; reload')
+config.bind('cPH', 'config-cycle -p -u *://*.{url:host}/* content.plugins ;; reload')
+config.bind('cPh', 'config-cycle -p -u *://{url:host}/* content.plugins ;; reload')
+config.bind('cPu', 'config-cycle -p -u {url} content.plugins ;; reload')
+config.bind('cSH', 'config-cycle -p -u *://*.{url:host}/* content.javascript.enabled ;; reload')
+config.bind('cSh', 'config-cycle -p -u *://{url:host}/* content.javascript.enabled ;; reload')
+config.bind('cSu', 'config-cycle -p -u {url} content.javascript.enabled ;; reload')
+config.bind('ch', 'back -t')
+config.bind('ciH', 'config-cycle -p -t -u *://*.{url:host}/* content.images ;; reload')
+config.bind('cih', 'config-cycle -p -t -u *://{url:host}/* content.images ;; reload')
+config.bind('ciu', 'config-cycle -p -t -u {url} content.images ;; reload')
+config.bind('cl', 'forward -t')
+config.bind('cpH', 'config-cycle -p -t -u *://*.{url:host}/* content.plugins ;; reload')
+config.bind('cph', 'config-cycle -p -t -u *://{url:host}/* content.plugins ;; reload')
+config.bind('cpu', 'config-cycle -p -t -u {url} content.plugins ;; reload')
+config.bind('csH', 'config-cycle -p -t -u *://*.{url:host}/* content.javascript.enabled ;; reload')
+config.bind('csh', 'config-cycle -p -t -u *://{url:host}/* content.javascript.enabled ;; reload')
+config.bind('csu', 'config-cycle -p -t -u {url} content.javascript.enabled ;; reload')
 
 # password_fill
 config.bind('Qa', "spawn --userscript \

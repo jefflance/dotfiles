@@ -30,7 +30,11 @@ export MYVIMRC="${HOME}/.vimrc"
 export PASSWORD_STORE_DIR="${HOME}/Private/.password-store"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=True
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
-#<<< environment variables <<<
+# <<< environment variables <<<
+
+# >>> kitty completion >>>
+# __kitty_complete
+# <<< kitty completion <<<
 
 # }}} End personnal configuration directives
 

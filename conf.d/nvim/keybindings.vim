@@ -238,6 +238,7 @@ map <leader>' S'<cr>
 map <leader>" S"<cr>
 map <leader>[ S[<cr>
 map <leader>{ S{<cr>
+map <leader>( S(<cr>
 
 " " Rewrap paragraph using <S-q>
 " map <silent> <S-q> {gq}<Bar>:echo "Rewrapped paragraph"<CR>

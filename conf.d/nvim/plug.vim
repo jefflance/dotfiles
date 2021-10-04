@@ -38,12 +38,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Plugins {{{
 " -----
 
-" Startup screen
-Plug 'glepnir/dashboard-nvim'
-" Plug 'mhinz/vim-startify'
-
 " Ansible
 Plug 'pearofducks/ansible-vim'
+
+" Artify
+Plug 'delphinus/artify.nvim'
 
 " Deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -54,6 +53,9 @@ Plug 'roxma/vim-hug-neovim-rpc'
 
 " Buffer exploration
 Plug 'bagrat/vim-buffet', { 'as': 'buffet' }
+
+" Dashboard
+Plug 'glepnir/dashboard-nvim'
 
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'

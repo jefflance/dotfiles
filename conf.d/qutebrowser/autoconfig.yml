@@ -22,5 +22,7 @@ settings:
     global: '#f8f8f2'
   colors.tabs.selected.odd.bg:
     global: '#282a36'
+  content.javascript.enabled:
+    '*://radarr.video/*': true
   fonts.default_size:
     global: 12pt

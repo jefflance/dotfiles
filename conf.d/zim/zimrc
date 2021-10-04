@@ -23,8 +23,9 @@ zmodule jl-helper
 zmodule sudo
 # z module
 zmodule https://github.com/rupa/z.git
+# zsh-kitty completion
+zmodule https://github.com/redxtech/zsh-kitty.git
 
-#
 # Prompt
 #
 # Exposes git repository status information to prompts.

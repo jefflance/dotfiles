@@ -47,7 +47,7 @@ if "test ! -d ~/.tmux/plugins/tpm" \
 
 set -g @tpm_plugins '          \
   tmux-plugins/tpm             \
-  jimeh/tmux-themepack         \
+  # jimeh/tmux-themepack         \
   dracula/tmux                 \
   tmux-plugins/tmux-resurrect  \
   tmux-plugins/tmux-continuum  \

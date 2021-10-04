@@ -1,7 +1,7 @@
 " File              : init.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 04.03.2021
+" Last Modified Date: 06.09.2021
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -126,7 +126,7 @@ set clipboard=unnamedplus
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let g:mapleader = ";"
+let mapleader = ";"
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -397,6 +397,19 @@ function! g:BuffetSetCustomColors()
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Artify {{{
+" -----
+
+lua <<EOF
+local artify = require( 'artify' )
+artify('if', 'italic')
+artify('let', 'bold')
+EOF
+
+" -----
+"  }}}
+
+
 " Buffet {{{
 " -----
 
@@ -410,7 +423,6 @@ let g:buffet_right_trunc_icon = "\uf0a9"
 
 " -----
 "  }}}
-
 
 
 " COC {{{
