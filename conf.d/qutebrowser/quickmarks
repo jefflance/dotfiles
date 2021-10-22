@@ -7,6 +7,7 @@ DAC http://192.168.0.130/playback
 Diskstation1 - Accueil https://diskstation1.loc:5001/
 Diskstation1 - Audio https://diskstation1.loc/audio
 Diskstation1 - Squeezebox http://diskstation1.loc:9000/
+Diskstation1 - UrBackup http://diskstation1.loc:55414/
 INA https://ina.mala.fr
 MaLa - Cloud https://cloud.mala.fr
 4.. --

@@ -586,7 +586,7 @@ c.content.headers.do_not_track = True
 ## read from JavaScript is always the global value.
 ## Type: String
 # c.content.headers.user_agent = None
-c.content.headers.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0'
+c.content.headers.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0'
 
 ## Enable host blocking.
 ## Type: Bool

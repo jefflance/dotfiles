@@ -24,5 +24,6 @@ settings:
     global: '#282a36'
   content.javascript.enabled:
     '*://radarr.video/*': true
+    https://www.mcdonalds.fr/produits/menus: true
   fonts.default_size:
     global: 12pt
