@@ -24,6 +24,7 @@ fi
 # <<< active gnome-keyring <<<
 
 # >>> environment variables >>>
+export BROWSER=qutebrowser
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export MYVIMRC="${HOME}/.vimrc"
