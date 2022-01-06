@@ -5,10 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Vide",
-    "shortcut": "Ctrl+F6",
+    "name": "Solution",
+    "shortcut": "Ctrl+F5",
     "tag": [
-        "|\\fbox{\\phantom{XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}}|"
+        "% solution",
+        "\\begin{solution}",
+        "\t",
+        "\\end{solution}"
     ],
     "trigger": ""
 }

@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Questions",
-    "shortcut": "Ctrl+F4",
+    "name": "Exercice",
+    "shortcut": "Ctrl+F3",
     "tag": [
-        "% questions",
-        "\\begin{questions}",
+        "% exercice",
+        "\\begin{exercice}",
         "",
-        "\\end{questions}"
+        "\\end{exercice}"
     ],
     "trigger": ""
 }

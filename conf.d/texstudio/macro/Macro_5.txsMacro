@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Exercice",
-    "shortcut": "Ctrl+F3",
+    "name": "Exemple",
+    "shortcut": "",
     "tag": [
-        "% exercice",
-        "\\begin{exercice}",
+        "% exemple",
+        "\\begin{exemple}",
         "",
-        "\\end{exercice}"
+        "\\end{exemple}"
     ],
     "trigger": ""
 }

@@ -5,10 +5,10 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Python inline",
-    "shortcut": "Ctrl+F7",
+    "name": "Vide",
+    "shortcut": "Ctrl+F6",
     "tag": [
-        "\\pythoninline//"
+        "|\\fbox{\\phantom{XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}}|"
     ],
     "trigger": ""
 }

@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Propriété",
+    "name": "Définiton",
     "shortcut": "",
     "tag": [
-        "% propriété",
-        "\\begin{propriete}[]",
+        "% définition",
+        "\\begin{definition}[]",
         "\t",
-        "\\end{propriete}"
+        "\\end{definition}"
     ],
     "trigger": ""
 }

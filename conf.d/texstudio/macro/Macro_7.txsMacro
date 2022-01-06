@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Solution",
-    "shortcut": "Ctrl+F5",
+    "name": "Questions",
+    "shortcut": "Ctrl+F4",
     "tag": [
-        "% solution",
-        "\\begin{solution}",
-        "\t",
-        "\\end{solution}"
+        "% questions",
+        "\\begin{questions}",
+        "",
+        "\\end{questions}"
     ],
     "trigger": ""
 }

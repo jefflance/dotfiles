@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Définiton",
+    "name": "Application",
     "shortcut": "",
     "tag": [
-        "% définition",
-        "\\begin{definition}[]",
+        "% application",
+        "\\begin{application}[]",
         "\t",
-        "\\end{definition}"
+        "\\end{application}"
     ],
     "trigger": ""
 }

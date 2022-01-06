@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Exemple",
+    "name": "Propriété",
     "shortcut": "",
     "tag": [
-        "% exemple",
-        "\\begin{exemple}",
-        "",
-        "\\end{exemple}"
+        "% propriété",
+        "\\begin{propriete}[]",
+        "\t",
+        "\\end{propriete}"
     ],
     "trigger": ""
 }
