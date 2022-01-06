@@ -26,5 +26,7 @@ settings:
     '*://radarr.video/*': true
     https://ensap.gouv.fr/web/accueilnonconnecte: true
     https://www.mcdonalds.fr/produits/menus: true
+  content.notifications.enabled:
+    https://www.youtube.com: false
   fonts.default_size:
     global: 12pt

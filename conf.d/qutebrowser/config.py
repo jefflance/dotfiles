@@ -1041,7 +1041,7 @@ c.input.insert_mode.auto_leave = True
 ## Automatically enter insert mode if an editable element is focused
 ## after loading the page.
 ## Type: Bool
-c.input.insert_mode.auto_load = False
+c.input.insert_mode.auto_load = True
 
 ## Leave insert mode when starting a new page load. Patterns may be
 ## unreliable on this setting, and they may match the url you are
@@ -1051,7 +1051,7 @@ c.input.insert_mode.leave_on_load = False
 
 ## Switch to insert mode when clicking flash and other plugins.
 ## Type: Bool
-# c.input.insert_mode.plugins = True
+c.input.insert_mode.plugins = True
 
 ## Include hyperlinks in the keyboard focus chain when tabbing.
 ## Type: Bool
