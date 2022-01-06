@@ -1,7 +1,7 @@
 " File              : init.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 06.09.2021
+" Last Modified Date: 17.11.2021
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """"""""""""""""""""""""""""""""""""""""""""""
