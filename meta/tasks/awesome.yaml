@@ -1,0 +1,6 @@
+- link:
+    ~/.config/awesome:
+      path: conf.d/awesome
+
+
+
