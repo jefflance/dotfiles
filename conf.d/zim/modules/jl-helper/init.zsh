@@ -29,6 +29,7 @@ alias neomutt='neomutt -f ${HOME}/Mail/jeff.lance@mala.fr/inbox/'
 # Utilities
 #
 
+alias rs='rsync -Pavzl'                  # rsync shortcut
 alias ls='lsd'                           # pretty ls
 alias md='mkdir -p'                      # mkdir alias
 alias open='xdg-open'                    # open files
