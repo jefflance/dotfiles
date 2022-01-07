@@ -106,4 +106,5 @@
     "security.workspace.trust.untrustedFiles": "open",
     "go.toolsManagement.autoUpdate": true,
     "terminal.integrated.defaultProfile.linux": "zsh",
+    "git.enableSmartCommit": true,
 }
