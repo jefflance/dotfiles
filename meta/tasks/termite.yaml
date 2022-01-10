@@ -1,0 +1,7 @@
+- link:
+    ~/.config/termite:
+      glob: true
+      path: conf.d/termite/*
+
+
+
