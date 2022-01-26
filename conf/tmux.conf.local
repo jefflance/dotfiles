@@ -36,32 +36,38 @@ set -g prefix C-a
 bind C-a send-prefix
 
 # move status line to top
-#set -g status-position top
+# set -g status-right '%Y-%m-%d %H:%M #{tmux_mode_indicator}'
 
 
 # -- plugins configuration -----------------------------------------------------
 #
+set-environment -g TMUX_PLUGIN_MANAGER_PATH '$HOME/.tmux/plugins'
 
-if "test ! -d ~/.tmux/plugins/tpm" \
-   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
-
-set -g @tpm_plugins '          \
-  tmux-plugins/tpm             \
-  # jimeh/tmux-themepack         \
-  dracula/tmux                 \
-  tmux-plugins/tmux-resurrect  \
-  tmux-plugins/tmux-continuum  \
+set -g @tpm_plugins '             \
+  tmux-plugins/tpm                \
+  odedlaz/tmux-onedark-theme      \
+  # dracula/tmux                    \
+  MunifTanjim/tmux-mode-indicator \
+  tmux-plugins/tmux-resurrect     \
+  tmux-plugins/tmux-continuum     \
 '
 
-set -g @dracula-show-fahrenheit false
-set -g @dracula-day-month true
-set -g @dracula-show-powerline true
-set -g @dracula-show-network false
-set -g @dracula-show-powerline true
-set -g @dracula-show-battery false
-set -g @dracula-show-timezone false
-set -g @dracula-military-time true
-set -g @dracula-show-left-icon session
+set -g @onedark_widgets "#(date +%s)"
+
+# set -g @dracula-refresh-rate 5
+# set -g @dracula-show-fahrenheit false
+# set -g @dracula-day-month true
+# set -g @dracula-show-powerline true
+# set -g @dracula-show-network false
+# set -g @dracula-show-powerline true
+# set -g @dracula-show-battery false
+# set -g @dracula-show-timezone false
+# set -g @dracula-military-time true
+# set -g @dracula-show-left-icon session
+
+
+if "test ! -d ~/.tmux/plugins/tpm" \
+ "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
 
 
 run '~/.tmux/plugins/tpm/tpm'
