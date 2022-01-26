@@ -27,6 +27,7 @@ settings:
     https://ensap.gouv.fr/web/accueilnonconnecte: true
     https://www.mcdonalds.fr/produits/menus: true
   content.notifications.enabled:
+    https://www.forums.supertoinette.com: false
     https://www.youtube.com: false
   fonts.default_size:
     global: 12pt
