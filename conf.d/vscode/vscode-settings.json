@@ -107,4 +107,5 @@
     "go.toolsManagement.autoUpdate": true,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "git.enableSmartCommit": true,
+    "editor.fontFamily": "'Source Code Pro', 'Nunito Sans', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
 }
