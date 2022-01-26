@@ -10,7 +10,7 @@
     "tag": [
         "% questions",
         "\\begin{questions}",
-        "",
+        "\t\\item",
         "\\end{questions}"
     ],
     "trigger": ""

@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Exemple",
+    "name": "Tâche",
     "shortcut": "",
     "tag": [
-        "% exemple",
-        "\\begin{exemple}",
-        "\t",
-        "\\end{exemple}"
+        "%",
+        "\\begin{tasks}[](1)",
+        "\t\\task",
+        "\\end{tasks}"
     ],
     "trigger": ""
 }

@@ -10,7 +10,7 @@
     "tag": [
         "% exercice",
         "\\begin{exercice}",
-        "",
+        "\t",
         "\\end{exercice}"
     ],
     "trigger": ""
