@@ -165,8 +165,42 @@ test -r /home/jeff/.opam/opam-init/init.zsh && . /home/jeff/.opam/opam-init/init
 # conda
 #
 
-# >>> conda configuration >>>
-#
-[ -f /home/jeff/miniconda3/etc/profile.d/conda.sh ] && source /home/jeff/miniconda3/etc/profile.d/conda.sh
-# <<< conda configuration <<<
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/jeff/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/jeff/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/jeff/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/jeff/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
+#
+# direnv
+#
+
+# >>> direnv configuration >>>
+setopt PROMPT_SUBST
+
+show_virtual_env() {
+  if [[ -n "$CONDA_DEFAULT_ENV" && -n "$DIRENV_DIR" ]]; then
+    echo "($(basename $CONDA_DEFAULT_ENV))"
+  fi
+}
+PS1='$(show_virtual_env)'$PS1
+
+eval "$(direnv hook zsh)"
+# <<< direnv configuration <<<
+
+#
+# starship
+#
+
+# >>> starship >>>
+eval "$(starship init zsh)"
+# <<< starship <<<
