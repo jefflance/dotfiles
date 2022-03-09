@@ -3,3 +3,6 @@ auto_activate_base: false
 create_default_packages:
   - pip
   - ipython
+channels:
+  - conda-forge
+  - defaults
