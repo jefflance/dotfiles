@@ -50,8 +50,8 @@ set synmaxcol=512
 set nobackup
 set nowritebackup
 set undofile noswapfile
-set directory=$DATA_PATH/swap//,$DATA_PATH,~/tmp,/var/tmp,/tmp
-set undodir=$DATA_PATH/undo//,$DATA_PATH,~/tmp,/var/tmp,/tmp
+set directory=$DATA_PATH/swap/,$DATA_PATH,~/tmp,/var/tmp,/tmp
+set undodir=$DATA_PATH/undo/,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set backupdir=$DATA_PATH/backup/,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set viewdir=$DATA_PATH/view/
 " Use the coc-spell-checker to do this
@@ -445,6 +445,16 @@ let g:colorizer_auto_filetype='css,html,xml,py,js'
 
 " -----
 "  }}}
+
+
+" Commentary {{{
+" -----
+"
+
+autocmd FileType toml setlocal commentstring=#\ %s
+
+" -----
+" }}}
 
 
 " Dashboard {{{

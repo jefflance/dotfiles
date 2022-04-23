@@ -204,6 +204,15 @@ map <f4> :AddHeader<cr>
 "  }}}
 
 
+" Markdown {{{
+" -----
+
+map <leader>mp :! pandoc "%" -o "%:r".pdf && zathura "%:r".pdf<cr>
+
+" -----
+"  }}}
+
+
 " Vimroom {{{
 " -----
 
