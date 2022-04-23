@@ -11,7 +11,10 @@ CopyArrivalDate yes
 # Automatically create missing mailboxes,
 # both locally and on the server
 Create Near
-
+# The per-Channel, per-direction instantaneous
+# memory usage above which mbsync will refrain
+# from using more memory.
+BufferLimit 100M
 
 
 ##########################
@@ -57,6 +60,7 @@ Far :jeff.lance@mala.fr-remote:
 Near :jeff.lance@mala.fr-local:inbox
 Sync PullNew PullDelete Push
 SyncState *
+# Remove Both
 Expunge Both
 
 
