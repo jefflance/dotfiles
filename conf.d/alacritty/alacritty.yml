@@ -173,6 +173,12 @@ window:
   # it is recommended to set `use_thin_strokes` to `false`.
   #use_thin_strokes: true
 
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 0.9
+
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
@@ -353,12 +359,6 @@ indexed_colors: []
   #     args: ["Hello, World!"]
   #
   #command: None
-
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
 
 #selection:
   # This string contains all characters that are used as separators for
