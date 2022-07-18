@@ -1,0 +1,8 @@
+{
+  "languageserver": {
+    "digestif": {
+      "command": "~/bin/digestif",
+      "filetypes": ["tex", "plaintex", "context"]
+    }
+  }
+}

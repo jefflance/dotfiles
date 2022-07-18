@@ -302,7 +302,7 @@ source ${HOME}/.config/nvim/plug.vim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter *
   \ if (argc() == 0 && !exists("s:std_in") && !has('gui'))
-  \ | Dashboard
+  " \ | Dashboard
   \ | endif
 
 " " needed so deoplete can auto select the first suggestion
@@ -401,9 +401,9 @@ function! g:BuffetSetCustomColors()
 " -----
 
 lua <<EOF
-local artify = require( 'artify' )
+local artify = require 'artify'
 artify('if', 'italic')
-artify('let', 'bold')
+artify('let', 'italic')
 EOF
 
 " -----
@@ -460,61 +460,26 @@ autocmd FileType toml setlocal commentstring=#\ %s
 " Dashboard {{{
 " -----
 
-let g:dashboard_custom_shortcut={
-  \ 'last_session'       : 'SPC s l',
-  \ 'find_history'       : 'SPC f h',
-  \ 'find_file'          : 'SPC f f',
-  \ 'new_file'           : 'SPC c n',
-  \ 'change_colorscheme' : 'SPC t c',
-  \ 'find_word'          : 'SPC f a',
-  \ 'book_marks'         : 'SPC f b',
-\ }
-
-let g:dashboard_default_executive ='fzf'
+source ${HOME}/.config/nvim/dashboard.lua
 
 " -----
 "  }}}
 
 
-" Defx {{{
+" DDC/DDU {{{
 " -----
 
-" Set appearance
-call defx#custom#option(
-  \ '_', {
-  \   'winwidth': 40,
-  \   'split': 'vertical',
-  \   'direction': 'botright',
-  \   'show_ignored_files': 0,
-  \   'buffer_name': 'defxplorer',
-  \   'toggle': 1,
-  \   'columns': 'icon:indent:icons:filename',
-  \   'resume': 1,
-  \   }
-  \ )
-
-call defx#custom#column(
-  \ 'icon', {
-  \   'directory_icon': '▸',
-  \   'opened_icon': '▾',
-  \   }
-  \ )
-
-call defx#custom#column(
-  \ 'mark', {
-    \ 'readonly_icon': '✗',
-	  \ 'selected_icon': '✓',
-    \ }
-  \ )
+source ${HOME}/.config/nvim/ddc.vim
+source ${HOME}/.config/nvim/ddu.vim
 
 " -----
 "  }}}
 
 
-" Deoplete {{{
+" Devicons {{{
 " -----
 
-let g:deoplete#enable_at_startup = 0
+source ${HOME}/.config/nvim/devicons.lua
 
 " -----
 "  }}}
@@ -530,28 +495,6 @@ au FileType cls let b:EditorConfig_disable = 1
 au FileType md let b:EditorConfig_disable = 1
 au FileType sty let b:EditorConfig_disable = 1
 au FileType tex let b:EditorConfig_disable = 1
-
-" -----
-"  }}}
-
-
-" FZF {{{
-" -----
-
-" This is the default extra key bindings
-let g:fzf_action = {
-  \ 'enter': 'e',
-  \ 'ctrl-h': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \ }
-
-" Preview window
-let g:fzf_preview_window = 'right:60%'
-if !exists('g:fzf_layout')
-  autocmd! FileType fzf
-  autocmd  FileType fzf set laststatus=0 noshowmode noruler
-    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-endif
 
 " -----
 "  }}}

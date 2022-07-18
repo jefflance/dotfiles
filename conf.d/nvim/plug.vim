@@ -38,24 +38,32 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Plugins {{{
 " -----
 
+" Dashboard
+Plug 'glepnir/dashboard-nvim'
+
+" DDC/DDU
+Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc.vim'
+Plug 'Shougo/ddu.vim'
+Plug 'Shougo/ddc-around'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
+
+" Buffer exploration
+Plug 'bagrat/vim-buffet', { 'as': 'buffet' }
+
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
+" Devicons
+Plug 'kyazdani42/nvim-web-devicons'
+
 " Ansible
 Plug 'pearofducks/ansible-vim'
 
 " Artify
 Plug 'delphinus/artify.nvim'
-
-" Deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'kristijanhusak/defx-icons'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-
-" Buffer exploration
-Plug 'bagrat/vim-buffet', { 'as': 'buffet' }
-
-" Dashboard
-Plug 'glepnir/dashboard-nvim'
 
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
@@ -110,10 +118,6 @@ Plug 'mhinz/vim-signify'
 " Golden resizing
 Plug 'roman/golden-ratio'
 
-" Fuzzy finder
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-
 " Distraction-free writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -139,9 +143,6 @@ Plug 'benmills/vimux'
 Plug 'connorholyday/vim-snazzy', { 'as': 'snazzy' }
 " Plug 'jacoborus/tender.vim', { 'as': 'tender' }
 " Plug 'dylanaraps/wal.vim'
-
-" Customization
-Plug 'ryanoasis/vim-devicons'
 
 " Sudo workaround plugin
 Plug 'lambdalisue/suda.vim'

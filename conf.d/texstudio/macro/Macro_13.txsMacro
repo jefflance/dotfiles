@@ -5,13 +5,13 @@
     ],
     "formatVersion": 1,
     "menu": "",
-    "name": "Théorème",
+    "name": "Remarque",
     "shortcut": "",
     "tag": [
-        "% théorème",
-        "\\begin{theoreme}[]",
+        "% remarque",
+        "\\begin{remarque}",
         "\t",
-        "\\end{theoreme}"
+        "\\end{remarque}"
     ],
     "trigger": ""
 }

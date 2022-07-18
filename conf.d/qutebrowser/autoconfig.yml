@@ -31,3 +31,7 @@ settings:
     https://www.youtube.com: false
   fonts.default_size:
     global: 12pt
+  scrolling.bar:
+    global: always
+  tabs.show:
+    global: never

@@ -214,8 +214,8 @@ song_library_format "{%n > }{%t}|{%f}"
 #
 #alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
 #
-#now_playing_prefix = $b
-now_playing_prefix = " $2♫$9$2"
+now_playing_prefix = "$2$9$2"
+# now_playing_prefix = " $2♫$9$2"
 #
 #now_playing_suffix = $/b
 now_playing_suffix = "$9"
@@ -283,7 +283,7 @@ browser_playlist_prefix = "$2playlist »$9 "
 ##
 #
 #song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
-song_columns_list_format = (4)[]{: } (20)[]{a:Artiste} (6f)[white]{nE:Piste} (50)[white]{t|f:Titre} (20)[white]{b} (7f)[red]{l:Durée}
+song_columns_list_format = (4)[]{: } (20)[]{a:Artiste} (50)[white]{t|f:Titre} (6f)[white]{nE:Piste} (20)[white]{b} (7f)[red]{l:Durée}
 #
 ##### various settings #####
 #
