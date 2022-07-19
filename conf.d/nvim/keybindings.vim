@@ -54,15 +54,17 @@ map <C-s> :saveas<space>
 " Buffers {{{
 " -----
 
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(
-		\ <q-args>,
-		\ fzf#vim#with_preview(
-		\	{'options': ['--layout=reverse', '--info=inline']}
-		\ ),
-	\ <bang>0
-	\ )
-map <C-w> :echom 'Close buffer' <bar> :call BufClose()<cr>
+" command! -bang -nargs=? -complete=dir Files
+"     \ call fzf#vim#files(
+" 		\ <q-args>,
+" 		\ fzf#vim#with_preview(
+" 		\	{'options': ['--layout=reverse', '--info=inline']}
+" 		\ ),
+" 	\ <bang>0
+" 	\ )
+command -bang CloseBuffer :call CloseBuffer()
+
+map <C-w> :echom 'Close buffer' <bar> :CloseBuffer!<cr>
 map <C-o> :e<space>
 map <C-n> :DashboardNewFile<cr>
 map <A-PageDown> :bn<cr>

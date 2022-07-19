@@ -688,6 +688,15 @@ let g:suda_smart_edit = 1
 "  }}}
 
 
+" Telescope {{{
+" -----
+
+source $HOME/.config/nvim/telescope.lua
+
+" -----
+"  }}}
+
+
 " Tmuxline {{{
 " -----
 

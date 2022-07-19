@@ -72,13 +72,13 @@ endfunction
 
 
 " Close current buffer
-" If the last buffer is closed go back to Startify
-function! BufClose()
+" If the last buffer is closed go back to startup screen
+function! CloseBuffer()
   if (CountBuffers() == 1 || IsExplorerBuffer() || IsEmptyBuffer())
-    bwipeout
+    bwipeout!
     Dashboard
   else
-    bwipeout
+    bwipeout!
   endif
 endfunction
 
