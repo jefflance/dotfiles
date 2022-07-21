@@ -64,9 +64,12 @@ map <C-s> :saveas<space>
 " 	\ )
 command -bang CloseBuffer :call CloseBuffer()
 
-map <C-w> :echom 'Close buffer' <bar> :CloseBuffer!<cr>
+map <Leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+map <Leader>fd <cmd>lua require('telescope.builtin').find_files({ cwd = '/home/jeff/dotfiles' })<cr>
+map <Leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
+map <Leader>cn :echom 'Nouveau buffer' <bar> :DashboardNewFile<cr>
 map <C-o> :e<space>
-map <C-n> :DashboardNewFile<cr>
+map <C-w> :echom 'Fermeture buffer' <bar> :CloseBuffer!<cr>
 map <A-PageDown> :bn<cr>
 map <A-PageUp> :bp<cr>
 
@@ -91,21 +94,10 @@ map <C-l> :call WinMove('l')<cr>
 
 nmap <Leader>ss :<C-u>SessionSave<CR>
 nmap <Leader>sl :<C-u>SessionLoad<CR>
-nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
-nnoremap <silent> <Leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
-nnoremap <silent> <Leader>fa :DashboardFindWord<CR>
-nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
-nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
 
 " -----
 "  }}}
 
-
-" Find file {{{
-" -----
-
-map <C-f> <cmd>lua require('telescope.builtin').find_files()<cr>
 
 " -----
 "  }}}
