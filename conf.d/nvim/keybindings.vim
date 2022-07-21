@@ -1,7 +1,7 @@
 " File              : keybindings.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 06.09.2021
+" Last Modified Date: 22.07.2022
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,10 +66,10 @@ command -bang CloseBuffer :call CloseBuffer()
 
 map <Leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 map <Leader>fd <cmd>lua require('telescope.builtin').find_files({ cwd = '/home/jeff/dotfiles' })<cr>
-map <Leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
-map <Leader>cn :echom 'Nouveau buffer' <bar> :DashboardNewFile<cr>
+map <Leader>fh <cmd>lua require('telescope.builtin').oldfiles()<cr>
+map <Leader>cn :echom 'Nouveau fichier' <bar> :DashboardNewFile<cr>
 map <C-o> :e<space>
-map <C-w> :echom 'Fermeture buffer' <bar> :CloseBuffer!<cr>
+map <C-w> :echom 'Fermeture fichier' <bar> :CloseBuffer!<cr>
 map <A-PageDown> :bn<cr>
 map <A-PageUp> :bp<cr>
 
@@ -145,10 +145,10 @@ map <Leader>vp :VimuxPromptCommand<cr>
 " -----
 
 " Renaming
-map <leader>r :call RenameFile()<cr>
+map <leader>fr :call RenameFile()<cr>
 
 " Open file under cursor
-map <leader>o :call GotoFile("")<cr>
+map <leader>foc :call GotoFile("")<cr>
 
 " Surround
 map <leader>' S'<cr>

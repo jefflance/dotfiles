@@ -1,7 +1,7 @@
 " File              : functions.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 03.03.2021
+" Last Modified Date: 22.07.2022
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""

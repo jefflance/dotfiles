@@ -1,5 +1,14 @@
+--[[--
+File              : telescope.lua
+Author            : Jeff LANCE <email@jefflance.me>
+Date              : 20.07.2022
+Last Modified Date: 22.07.2022
+Last Modified By  : Jeff LANCE <email@jefflance.me>
+--]]--
+
 local previewers = require("telescope.previewers")
 local Job = require("plenary.job")
+
 local new_maker = function(filepath, bufnr, opts)
   filepath = vim.fn.expand(filepath)
   Job:new({
