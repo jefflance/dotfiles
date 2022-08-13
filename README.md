@@ -2,7 +2,7 @@
 
 My dotfiles for awesomewm, emacs, vim, zsh, tmux,...
 
-## Some externals librairies i use
+## Here are some external libraries i'm using
   * [dotbot](https://github.com/anishathalye/dotbot/)
   * [editorconfig](https://editorconfig.org/)
   * [Zsh IMproved FrameWork](https://github.com/zimfw/zimfw)
