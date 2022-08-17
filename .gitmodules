@@ -2,9 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "conf.d/astroid/plugins/astroid-syntax-highlight"]
-	path = conf.d/astroid/plugins/astroid-syntax-highlight
-	url = https://github.com/astroidmail/astroid-syntax-highlight.git
 [submodule "conf.d/qutebrowser/dracula"]
 	path = conf.d/qutebrowser/dracula
 	url = https://github.com/dracula/qutebrowser-dracula-theme.git
