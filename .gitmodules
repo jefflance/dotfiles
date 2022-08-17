@@ -2,9 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "conf.d/astroid/plugins/astroid-plugin-avatar"]
-	path = conf.d/astroid/plugins/astroid-plugin-avatar
-	url = https://github.com/astroidmail/astroid-plugin-avatar.git
 [submodule "conf.d/astroid/plugins/astroid-plugin-seccomp"]
 	path = conf.d/astroid/plugins/astroid-plugin-seccomp
 	url = https://github.com/astroidmail/astroid-plugin-seccomp.git
