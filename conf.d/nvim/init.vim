@@ -500,6 +500,14 @@ au FileType tex let b:EditorConfig_disable = 1
 "  }}}
 
 
+" Grammalecte {{{
+" -----
+
+let g:grammalecte_cli_py='/usr/bin/grammalecte-cli'
+
+"  -----
+"  }}}
+
 " Header {{{
 " -----
 
