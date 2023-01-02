@@ -1,7 +1,7 @@
 " File              : init.vim
 " Author            : Jeff LANCE <email@jefflance.me>
 " Date              : 15.04.2015
-" Last Modified Date: 17.11.2021
+" Last Modified Date: 01.09.2022
 " Last Modified By  : Jeff LANCE <email@jefflance.me>
 
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -305,17 +305,6 @@ autocmd VimEnter *
   " \ | Dashboard
   \ | endif
 
-" " needed so deoplete can auto select the first suggestion
-" set completeopt+=noinsert
-" " comment this line to enable autocompletion preview window
-" " (displays documentation related to the selected completion option)
-" " disabled by default because preview makes the window flicker
-" set completeopt-=preview
-
-" " autocompletion of files and commands behaves like shell
-" " (complete only the common part, list the options that match)
-" " set wildmode=list:longest
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -449,7 +438,6 @@ let g:colorizer_auto_filetype='css,html,xml,py,js'
 
 " Commentary {{{
 " -----
-"
 
 autocmd FileType toml setlocal commentstring=#\ %s
 
@@ -653,6 +641,14 @@ let g:python3_host_prog = '/usr/bin/python3'
 "  }}}
 
 
+" Noice {{{
+" -----
+
+lua require("noice").setup()
+
+" -----
+" }}}
+
 " OCaml {{{
 " -----
 
@@ -665,6 +661,15 @@ set rtp^="/home/jeff/.opam/default/share/ocp-indent/vim"
 
 " -----
 "  }}}
+
+
+" Pum {{{
+" -----
+
+source ${HOME}/.config/nvim/pum.vim
+
+" -----
+" }}}
 
 
 " Slime {{{
@@ -760,18 +765,24 @@ let g:tex_flavor = 'latex'
 "  }}}
 
 
+" Vimwiki {{{
+" -----
 
-"""""""""""""""""""""""""""""""""""""""""""""""""
-"  ____ _____  _    ____ _____ ___ _______   __
-" / ___|_   _|/ \  |  _ \_   _|_ _|  ___\ \ / /
-" \___ \ | | / _ \ | |_) || |  | || |_   \ V /
-"  ___) || |/ ___ \|  _ < | |  | ||  _|   | |
-" |____/ |_/_/   \_\_| \_\|_| |___|_|     |_|
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimwiki_list = [{
+  \ 'path': '~/Projets/web/www.jefflance.me/posts/',
+  \ 'auto_export': 1,
+  \ 'automatic_nested_syntaxes': 1,
+  \ 'path_html': '/home/jeff/Projets/web/www.jefflance.me/posts/',
+  \ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp'},
+  \ 'syntax': 'media',
+  \ 'ext': '.wiki',
+  \ 'custom_wiki2html': '/home/jeff/bin/web/nikola_build.sh',
+  \ 'html_filename_parameterization': 1,
+\ }]
 
-" Load functions from file
-" source ${HOME}/.config/nvim/startscreen.vim
+" /home/jeff/.local/bin/vimwiki_markdown
+" -----
+" }}}
 
 
 

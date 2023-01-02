@@ -45,9 +45,11 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'vim-denops/denops.vim'
 Plug 'Shougo/ddc.vim'
 Plug 'Shougo/ddu.vim'
-Plug 'Shougo/ddc-around'
+Plug 'Shougo/ddc-ui-native'
+Plug 'Shougo/ddc-source-around'
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
+Plug 'Shougo/pum.vim'
 
 " Buffer exploration
 Plug 'bagrat/vim-buffet', { 'as': 'buffet' }
@@ -55,6 +57,10 @@ Plug 'bagrat/vim-buffet', { 'as': 'buffet' }
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
+" Noice
+Plug 'folke/noice.nvim'
+Plug 'MunifTanjim/nui.nvim'
 
 " Devicons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -64,6 +70,9 @@ Plug 'pearofducks/ansible-vim'
 
 " Artify
 Plug 'delphinus/artify.nvim'
+
+" Diagram syntax
+Plug 'zhaozg/vim-diagram'
 
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
@@ -159,8 +168,8 @@ Plug 'jupyter-vim/jupyter-vim'
 " indentLine
 Plug 'Yggdroot/indentLine'
 
-" " Mermaid diagram
-" Plug 'zhaozg/vim-diagram'
+" vim-wiki
+Plug 'vimwiki/vimwiki'
 
 " Required {{{
 " -----

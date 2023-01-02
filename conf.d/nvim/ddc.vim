@@ -1,4 +1,10 @@
 " Customize global settings
+
+" You must set the default ui.
+" Note: native ui
+" https://github.com/Shougo/ddc-ui-native"
+call ddc#custom#patch_global('ui', 'native')
+
 " Use around source.
 " https://github.com/Shougo/ddc-around
 call ddc#custom#patch_global('sources', ['around'])
@@ -30,7 +36,6 @@ call ddc#custom#patch_filetype('markdown', 'sourceParams', {
       \ })
 
 " Mappings
-
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
 \ ddc#map#pum_visible() ? '<C-n>' :
@@ -42,3 +47,6 @@ inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
 
 " Use ddc.
 call ddc#enable()
+
+
+" vim:ft=vim

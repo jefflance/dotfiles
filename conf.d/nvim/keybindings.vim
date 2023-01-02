@@ -16,6 +16,9 @@
 " Custom {{{
 " -----
 
+" For COC
+verbose imap <tab>
+
 " Disable highlights when you press <leader><cr>:
 map <silent> <leader><cr> :noh<cr>
 
@@ -29,12 +32,6 @@ map <leader>s :echom 'Source file' <bar> :so %<cr>
 map  <leader>; <Esc>
 map! <leader>; <Esc>
 
-" Open a current file with sudo
-" map <silent> <leader>E :e suda://%<cr>
-
-" Save a current file with sudo
-" map <silent> <leader>W :w suda://%<cr>
-
 " Comment the target of a motion
 map <silent> <leader>/ :Commentary<cr>
 
@@ -43,7 +40,7 @@ map <silent> <C-]> >>
 map <silent> <C-[> <<
 
 " (Re|Un)do
-map <silent> <C-u> uu
+" map <silent> <C-u> uu
 
 " Save as
 map <C-s> :saveas<space>
