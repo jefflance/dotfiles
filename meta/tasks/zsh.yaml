@@ -1,6 +1,5 @@
 - shell:
-  - command: '/usr/bin/env bash -c helpers/install_zsh.sh'
-    description: Installation of zsh configuration
-    stderr: true
-    stdout: true
-
+- command: '/usr/bin/env bash -c helpers/install_zsh.sh'
+  description: Installation of zsh configuration
+  stderr: true
+  stdout: true

@@ -17,7 +17,7 @@
 " -----
 
 " For COC
-verbose imap <tab>
+" verbose imap <tab>
 
 " Disable highlights when you press <leader><cr>:
 map <silent> <leader><cr> :noh<cr>
@@ -51,14 +51,6 @@ map <C-s> :saveas<space>
 " Buffers {{{
 " -----
 
-" command! -bang -nargs=? -complete=dir Files
-"     \ call fzf#vim#files(
-" 		\ <q-args>,
-" 		\ fzf#vim#with_preview(
-" 		\	{'options': ['--layout=reverse', '--info=inline']}
-" 		\ ),
-" 	\ <bang>0
-" 	\ )
 command -bang CloseBuffer :call CloseBuffer()
 
 map <Leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>

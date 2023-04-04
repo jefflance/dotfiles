@@ -17,10 +17,10 @@ path=(~/bin ~/.local/bin $path[@])
 # <<< set PATH so it includes user's private bin if it exists <<<
 
 # >>> active gnome-keyring >>>
-if [ -n "${DESKTOP_SESSION}" ];then
-   eval $(gnome-keyring-daemon --replace)
-   export SSH_AUTH_SOCK
-fi
+# if [ -n "${DESKTOP_SESSION}" ];then
+   # eval $(gnome-keyring-daemon --start) 2>/dev/null
+   # export SSH_AUTH_SOCK
+# fi
 
 # Check if the ssh-agent is already running
 # if [ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]; then
@@ -43,7 +43,7 @@ fi
 # >>> environment variables >>>
 export BROWSER=qutebrowser
 export EDITOR=nvim
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export MYVIMRC="${HOME}/.vimrc"
 export PASSWORD_STORE_DIR="${HOME}/Private/.password-store"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=True

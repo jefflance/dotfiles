@@ -78,9 +78,9 @@ run '~/.tmux/plugins/tpm/tpm'
 
 # make tmux works with ssh-agent
 set -g update-environment "DISPLAY SSH_ASKPASS \
-                           SSH_AUTH_SOCK SSH_AGENT_PID \
+                           SSH_AGENT_PID \
                            SSH_CONNECTION WINDOWID XAUTHORITY"
-setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
+setenv -g SSH_AUTH_SOCK "/run/user/1000/keyring/ssh"
 
 # start with a new session
 new-session

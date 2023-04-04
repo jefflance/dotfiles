@@ -96,9 +96,9 @@ SyncState *
 Expunge Both
 
 
-Channel jeff.lance@mala.fr-archives
-Far :jeff.lance@mala.fr-remote:"Archives"
-Near :jeff.lance@mala.fr-local:archives
+Channel jeff.lance@mala.fr-archive
+Far :jeff.lance@mala.fr-remote:"Archive"
+Near :jeff.lance@mala.fr-local:archive
 Pattern *
 Create Near
 MaxMessages 1500 
@@ -113,7 +113,7 @@ Channel jeff.lance@mala.fr-sent
 Channel jeff.lance@mala.fr-trash
 Channel jeff.lance@mala.fr-drafts
 Channel jeff.lance@mala.fr-junk
-Channel jeff.lance@mala.fr-archives
+Channel jeff.lance@mala.fr-archive
 
 
 

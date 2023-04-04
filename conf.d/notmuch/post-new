@@ -7,7 +7,7 @@
 
 
 #
-ASTROID_BIN=$(which astroid)
+MAILCLIENT_BIN=$(which aerc)
 NOTMUCH_BIN=$(which notmuch)
 NOTIFY_BIN=$(which notify-send)
 

@@ -58,6 +58,12 @@ Plug 'bagrat/vim-buffet', { 'as': 'buffet' }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" Nvim-notify
+Plug 'rcarriga/nvim-notify'
+
 " Noice
 Plug 'folke/noice.nvim'
 Plug 'MunifTanjim/nui.nvim'
@@ -82,6 +88,9 @@ Plug 'Konfekt/FastFold'
 
 " Grammalecte
 Plug 'dpelle/vim-Grammalecte'
+
+" LanguageTool
+Plug 'dpelle/vim-LanguageTool'
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
@@ -142,16 +151,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'benmills/vimux'
 
 " Colorschemes
-" Plug 'jdsimcoe/abstract.vim', { 'as': 'abstract' }
-" Plug 'romainl/Apprentice', { 'as': 'apprentice' }
-" Plug 'jdsimcoe/hyper.vim', { 'as': 'hyper' }
-" Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'nanotech/jellybeans.vim', { 'as': 'jellybeans' }
-" Plug 'hardcoreplayers/oceanic-material', { 'as': 'oceanic' }
-" Plug 'xero/sourcerer.vim', { 'as': 'sourcerer' }
 Plug 'connorholyday/vim-snazzy', { 'as': 'snazzy' }
-" Plug 'jacoborus/tender.vim', { 'as': 'tender' }
-" Plug 'dylanaraps/wal.vim'
 
 " Sudo workaround plugin
 Plug 'lambdalisue/suda.vim'

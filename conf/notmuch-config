@@ -12,13 +12,16 @@ name=Jeff LANCE
 primary_email=jeff.lance@mala.fr
 
 [new]
-tags=new;
+tags=new;unread;inbox;
 ignore=.mbsyncstate;.isyncuidmap.db;.uidvalidity;.mbsyncstate.journal;.mbsyncstate.new;.mbsyncstate.lock;/.*[.](json|lock|bak)$/;.templates;
 
 [search]
-exclude_tags=
+exclude_tags=deleted;spam;
 
 [maildir]
-synchronize_flags=true
+synchronize_flags=false
+
+[crypto]
+gpg_path=gpg
 
 # vim:ft=sh

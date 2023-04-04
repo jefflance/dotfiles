@@ -250,7 +250,7 @@ set hlsearch
 set incsearch
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw
+set nolazyredraw
 
 " For regular expressions turn magic on
 set magic
@@ -418,10 +418,10 @@ let g:buffet_right_trunc_icon = "\uf0a9"
 " -----
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Disable warnings
-let g:coc_disable_startup_warning = 1
+" let g:coc_disable_startup_warning = 1
 
 " -----
 "  }}}
@@ -647,7 +647,17 @@ let g:python3_host_prog = '/usr/bin/python3'
 lua require("noice").setup()
 
 " -----
+"  }}}
+
+
+" Notify {{{
+" -----
+
+lua require("notify").setup()
+
+" -----
 " }}}
+
 
 " OCaml {{{
 " -----
@@ -738,6 +748,15 @@ let g:tmuxline_theme = 'sourcerer'
 
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 2
+
+" -----
+"  }}}
+
+
+" Treesitter {{{
+" -----
+
+lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}
 
 " -----
 "  }}}
