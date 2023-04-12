@@ -14,7 +14,7 @@ alias udvrld='sudo udevadm control --reload-rules && sudo udevadm trigger'
 # Editors
 #
 
-alias vim='nvim'                         # redirect vim to nvim
+alias vim='lvim'                         # redirect vim to nvim
 
 
 #

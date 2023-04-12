@@ -13,6 +13,7 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
+
 #env:
 # TERM variable
 #
@@ -22,6 +23,7 @@
 # available, otherwise `xterm-256color` is used.
 #TERM: alacritty
 TERM: xterm-256color
+
 window:
   # Window dimensions (changes require restart)
   #
@@ -85,7 +87,7 @@ window:
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark`
   # and `light`. Set this to `None` to use the default theme variant.
-  windows.decorations_theme_variant: dark
+  decorations_theme_variant: Dark
 
   #scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -93,19 +95,22 @@ window:
   #history: 10000
   # Scrolling distance multiplier.
   #multiplier: 3
-  # Font configuration
-  #font:
-  # Normal (roman) font face
-  #normal:
-  # Font family
+
+# Background opacity
   #
-  # Default:
-  #   - (macOS) Menlo
-  #   - (Linux/BSD) monospace
-  #   - (Windows) Consolas
-  #family: monospace
-  # The `style` can be specified to pick a specific face.
-  #style: Regular
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  # Opacity
+  opacity: 0.9
+
+# background_opacity: 0.9
+
+# Font configuration
+font:
+  normal:
+    family: FantasqueSansMono Nerd Font Mono
+    style: Regular
+  size: 13.0
   # Bold font face
   #bold:
   # Font family
@@ -152,43 +157,75 @@ window:
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`.
   #use_thin_strokes: true
-  # Background opacity
-  #
-  # Window opacity as a floating point number from `0.0` to `1.0`.
-  # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.9
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
+
 # Colors (Tomorrow Night)
+# colors:
+#   name: astromouse
+#   author: ""
+#   primary:
+#     background: "#000000"
+#     foreground: "#ffffff"
+#   cursor:
+#     text: "#000000"
+#     cursor: "#ffffff"
+#   normal:
+#     black: "#1c1c1c"
+#     red: "#d770af"
+#     green: "#9acc79"
+#     yellow: "#d0d26b"
+#     blue: "#77b6c5"
+#     magenta: "#a488d9"
+#     cyan: "#7fcab3"
+#     white: "#8d8d8d"
+#   bright:
+#     black: "#3d3a3a"
+#     red: "#d28abf"
+#     green: "#8fb676"
+#     yellow: "#c8bc45"
+#     blue: "#8fa7b9"
+#     magenta: "#bd89de"
+#     cyan: "#6ec2a8"
+#     white: "#dad3d3"
+# indexed_colors: []
+
 colors:
-  name: astromouse
-  author: ""
+  name: onedarkpro
   primary:
-    background: "#000000"
-    foreground: "#ffffff"
-  cursor:
-    text: "#000000"
-    cursor: "#ffffff"
+    background: '#000000'
+    foreground: '#abb2bf'
+
   normal:
-    black: "#1c1c1c"
-    red: "#d770af"
-    green: "#9acc79"
-    yellow: "#d0d26b"
-    blue: "#77b6c5"
-    magenta: "#a488d9"
-    cyan: "#7fcab3"
-    white: "#8d8d8d"
+    black:      '#000000'
+    red:        '#ef596f'
+    green:      '#89ca78'
+    yellow:     '#e5c07b'
+    blue:       '#61afef'
+    magenta:    '#d55fde'
+    cyan:       '#2bbac5'
+    white:      '#abb2bf'
+
   bright:
-    black: "#3d3a3a"
-    red: "#d28abf"
-    green: "#8fb676"
-    yellow: "#c8bc45"
-    blue: "#8fa7b9"
-    magenta: "#bd89de"
-    cyan: "#6ec2a8"
-    white: "#dad3d3"
+    black:      '#1a1a1a'
+    red:        '#f38897'
+    green:      '#a9d89d'
+    yellow:     '#edd4a6'
+    blue:       '#8fc6f4'
+    magenta:    '#e089e7'
+    cyan:       '#4bced8'
+    white:      '#c8cdd5'
+
+  cursor:
+    text: CellBackground
+    cursor: CellForeground # syntax-cursor-color
+
+  selection:
+    text: CellForeground
+    background: "#434852"
 indexed_colors: []
+
 
 # Bell
 #
@@ -215,6 +252,7 @@ indexed_colors: []
 #duration: 0
 # Visual bell animation color.
 #color: '#ffffff'
+
 # Bell Command
 #
 # This program is executed whenever the bell is rung.
@@ -231,8 +269,10 @@ indexed_colors: []
 # This string contains all characters that are used as separators for
 # "semantic words" in Alacritty.
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
 # When set to `true`, selected text will be copied to the primary clipboard.
 #save_to_clipboard: false
+
 cursor:
   # Cursor style
   style:
@@ -680,9 +720,11 @@ shell:
 #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
 #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
 #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
+
 # Colorscheme
 import:
   - ~/.config/alacritty/panda.yml
+  - ~/.config/alacritty/onedarkpro.yml
   #debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
@@ -700,4 +742,6 @@ import:
   #log_level: Warn
   # Print all received window events.
   #print_events: false
-theme: Astromouse
+
+# Theme
+theme: onedarkpro
