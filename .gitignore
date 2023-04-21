@@ -70,7 +70,7 @@ flycheck_*.el
 ### Vim ###
 autoload
 plugged
-/conf.d/lvim/plugins/
+conf.d/lvim/plugins/
 
 # Swap
 [._]*.s[a-v][a-z]
