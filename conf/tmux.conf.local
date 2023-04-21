@@ -85,7 +85,8 @@ set -g @dracula-fixed-location "Livry-Gargan"
 # set -g @dracula-show-timezone false
 # set -g @dracula-military-time true
 # set -g @dracula-show-left-icon session
-
+set -g status-right 'Continuum status: #{continuum_status}'
+set -g @continuum-boot 'on'
 
 if "test ! -d ~/.tmux/plugins/tpm" \
  "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
@@ -103,4 +104,4 @@ set -g update-environment "DISPLAY SSH_ASKPASS \
 setenv -g SSH_AUTH_SOCK "/run/user/1000/keyring/ssh"
 
 # start with a new session
-new-session
+new-session -s jeff
