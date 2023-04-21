@@ -8,6 +8,8 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
+
+
 -- general
 --
 
@@ -20,69 +22,53 @@ lvim.transparent_window = true
 -- lvim.use_icons = false
 
 
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
+--
+
 lvim.leader = ";"
--- add your own keymapping
+
 lvim.keys.insert_mode[";;"] = "<Esc>"
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.normal_mode["<C-[>"] = "<<"
-lvim.keys.normal_mode["<C-[>"] = "<<"
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
--- unmap a default keymapping
--- vim.keymap.del("n", "<C-Up>")
--- override a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
+lvim.keys.normal_mode["<C-]>"] = ">>"
 
--- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
+lvim.builtin.which_key.mappings["d"] = lvim.builtin.which_key.mappings[";"]
 
--- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
--- }
-lvim.builtin.which_key.mappings[";"] = {}
-lvim.builtin.which_key.mappings["a"] = { "<Cmd>Alpha<CR>", "Dashboard" }
-lvim.builtin.which_key.mappings["P"] = { "<Cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["r"] = { "<Cmd>Telescope oldfiles<CR>", "Open recent file"}
-lvim.builtin.terminal.open_mapping = "<C-t>"
+lvim.builtin.which_key.mappings["G"] = lvim.builtin.which_key.mappings["g"]
+lvim.builtin.which_key.mappings["g"] = {}
+
+lvim.builtin.which_key.mappings["Lv"] = lvim.builtin.which_key.mappings["L"]
+lvim.builtin.which_key.mappings["L"] = lvim.builtin.which_key.mappings["l"]
+lvim.builtin.which_key.mappings["l"] = {}
+
+lvim.builtin.which_key.mappings["P"] = lvim.builtin.which_key.mappings["p"]
+lvim.builtin.which_key.mappings["p"] = { "<CMD>Telescope projects<CR>", "Projects" }
+
+lvim.builtin.which_key.mappings["S"] = lvim.builtin.which_key.mappings["s"]
+lvim.builtin.which_key.mappings["s"] = { "<CMD>echom 'Sourcing' <BAR> source %<CR>", "Source current file" }
+
+lvim.builtin.which_key.mappings["r"] = { "<CMD>Telescope oldfiles<CR>", "Open recent file" }
+
 lvim.builtin.which_key.mappings["z"] = {
   name = "+Zettel",
-  c = { "<Cmd>lua require('neuron/cmd').new_edit('/home/jeff/Notes/')<CR>", "Create new note" },
-  z = { "<Cmd>lua require'neuron/telescope'.find_zettels()<CR>", "Find notes" },
-  Z = { "<Cmd>lua require'neuron/telescope'.find_zettels {insert = true}<CR>", "Insert the found note ID" },
-  b = { "<Cmd>lua require'neuron/telescope'.find_backlinks()<CR>", "Backlinks of the current note" },
-  B = { "<Cmd>lua require'neuron/telescope'.find_backlinks {insert = true}<CR>", "As b but insert the found ID" },
-  t = { "<Cmd>lua require'neuron/telescope'.find_tags()<CR>", "Find all tags and insert" },
-  s = { "<Cmd>lua require'neuron'.rib {address = '127.0.0.1:8200', verbose = true}<CR>", "Start neuron server" },
-  n = { "<Cmd>lua require'neuron'.goto_next_extmark()<CR>", "Goto next link" },
-p = { "<Cmd>lua require'neuron'.goto_prev_extmark()<CR>", "Goto previous link" },
+  c = { "<CMD>lua require('neuron/cmd').new_edit('/home/jeff/Notes/')<CR>", "Create new note" },
+  z = { "<CMD>lua require'neuron/telescope'.find_zettels()<CR>", "Find notes" },
+  Z = { "<CMD>lua require'neuron/telescope'.find_zettels {insert = true}<CR>", "Insert the found note ID" },
+  b = { "<CMD>lua require'neuron/telescope'.find_backlinks()<CR>", "Backlinks of the current note" },
+  B = { "<CMD>lua require'neuron/telescope'.find_backlinks {insert = true}<CR>", "As b but insert the found ID" },
+  t = { "<CMD>lua require'neuron/telescope'.find_tags()<CR>", "Find all tags and insert" },
+  s = { "<CMD>lua require'neuron'.rib {address = '127.0.0.1:8200', verbose = true}<CR>", "Start neuron server" },
+  n = { "<CMD>lua require'neuron'.goto_next_extmark()<CR>", "Goto next link" },
+  p = { "<CMD>lua require'neuron'.goto_prev_extmark()<CR>", "Goto previous link" },
 }
--- lvim.builtin.which_key.mappings["v"] = {
---   name = ""
--- }
+
+lvim.builtin.which_key.mappings["x"] = { "<CMD>w! <BAR> q!<CR>", "Save and quit"}
+
+lvim.builtin.which_key.mappings[";"] = {}
+lvim.builtin.terminal.open_mapping = "<C-t>"
+
+
 
 -- Change theme settings
 --
