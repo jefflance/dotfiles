@@ -81,6 +81,7 @@ conf.d/lvim/plugins
 
 # Session
 Session.vim
+Sessionx.vim
 vim/vim/files/info/viminfo
 
 # Temporary
@@ -90,9 +91,11 @@ vim/vim/files/info/viminfo
 tags
 # Persistent undo
 [._]*.un~
+
+### Fonts ###
 fonts/*/.uuid
 
-# astroid
+### astroid ###
 conf.d/astroid/searches
 
-# End of https://www.gitignore.io/api/vim
+# End of https://www.gitignore.io/api
