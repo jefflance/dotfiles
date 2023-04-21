@@ -30,6 +30,8 @@ lvim.leader = ";"
 
 lvim.keys.insert_mode[";;"] = "<Esc>"
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
+lvim.keys.normal_mode["<C-r>"] = ":redo<CR>"
+lvim.keys.normal_mode["<C-u>"] = ":undo<CR>"
 lvim.keys.normal_mode["<C-[>"] = "<<"
 lvim.keys.normal_mode["<C-]>"] = ">>"
 
@@ -98,6 +100,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
+  "zsh",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -267,7 +270,9 @@ lvim.plugins = {
   -- vim-surround
   {
     'tpope/vim-surround',
-
+    config = function()
+      vim.o.timeoutlen = 500
+    end
     -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
     -- setup = function()
     --  vim.o.timeoutlen = 500
@@ -307,7 +312,7 @@ lvim.plugins = {
           }),
         },
         symbols = {
-          encode = map.gen_encode_symbols.dot('4x2'),
+          encode = map.gen_encode_symbols.dot('2x1'),
         },
         window = {
           side = 'right',
@@ -334,33 +339,33 @@ lvim.plugins = {
 --
 
 -- minimap view
--- lvim.autocommands = {
---   {
---     {"BufEnter", "Filetype"},
---     {
---       desc = "Open mini.map and exclude some filetypes",
---       pattern = { "*" },
---       callback = function()
---         local exclude_ft = {
---           "qf",
---           "NvimTree",
---           "toggleterm",
---           "TelescopePrompt",
---           "alpha",
---           "netrw",
---         }
+lvim.autocommands = {
+  {
+    {"BufEnter", "Filetype"},
+    {
+      desc = "Open mini.map and exclude some filetypes",
+      pattern = { "*" },
+      callback = function()
+        local exclude_ft = {
+          "qf",
+          "NvimTree",
+          "toggleterm",
+          "TelescopePrompt",
+          "alpha",
+          "netrw",
+        }
 
---         local map = require('mini.map')
---         if vim.tbl_contains(exclude_ft, vim.o.filetype) then
---           vim.b.minimap_disable = true
---           map.close()
---         elseif vim.o.buftype == "" then
---           map.open()
---         end
---       end,
---     },
---   },
--- }
+        local map = require('mini.map')
+        if vim.tbl_contains(exclude_ft, vim.o.filetype) then
+          vim.b.minimap_disable = true
+          map.close()
+        elseif vim.o.buftype == "" then
+          map.open()
+        end
+      end,
+    },
+  },
+}
 
 -- wrap mode for json files
 vim.api.nvim_create_autocmd("BufEnter", {
