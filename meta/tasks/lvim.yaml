@@ -3,9 +3,3 @@
       glob: true
       path: conf.d/lvim
 
-# - shell:
-#     - command: '/usr/bin/env bash -c "$(which nvim) -es -u ${HOME}/.config/nvim/init.vim -i NONE -c PlugInstall -c qa || true"'
-#       stdout: true
-#       stdin: true
-#       stderr: true
-#       description: Installing Nvim plugins
