@@ -1,5 +1,4 @@
 - link:
-    ${HOME}/.config/lvim:
-      glob: true
-      path: conf.d/lvim
+    ${HOME}/.config/lvim/config.lua:
+      path: conf/lvim.lua
 
