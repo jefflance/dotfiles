@@ -266,6 +266,10 @@ lvim.plugins = {
       vim.g.mkdp_auto_start = 1
     end,
   },
+  -- suda
+  {
+    'lambdalisue/suda.vim',
+  },
   -- vim-surround
   {
     'tpope/vim-surround',
