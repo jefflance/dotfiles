@@ -1,0 +1,4 @@
+- link:
+    ${HOME}/.config/i3/config:
+      path: conf/i3.config
+
