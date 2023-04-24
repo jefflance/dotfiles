@@ -61,20 +61,21 @@ ssh-askpass.Indicator.maximumCount:       24
 !URxvt.depth:              32
 !URxvt.geometry:				  80x24+877+462
 !URxvt.background:			  rgba:0000/0000/0000/e800
-URxvt*transparent:			  True
-URxvt*shading:			  	  15
-URxvt*scrollBar:			  False
-URxvt.scrollBar_right:		  False
-URxvt.scrollBar_floating:	  False
-URxvt.scrollstyle:			  rxvt
+! URxvt.internalBorder:     6
+! URxvt*transparent:			  True
+! URxvt*shading:			  	  15
+! URxvt*scrollBar:			    False
+! URxvt.scrollBar_right:		False
+! URxvt.scrollBar_floating:	False
+! URxvt.scrollstyle:			  rxvt
 
-URxvt.perl-ext-common     default,resize-font,vim-insert
-URxvt.keysym.C-Up:        font-size:increase
-URxvt.keysym.C-Down:      font-size:decrease
-URxvt.keysym.C-S-Up:      font-size:incglobal
-URxvt.keysym.C-S-Down:    font-size:decglobal
-URxvt.keysym.C-equal:     font-size:reset
-URxvt.keysym.C-slash:     font-size:show
+! URxvt.perl-ext-common     default,resize-font,vim-insert
+! URxvt.keysym.C-Up:        font-size:increase
+! URxvt.keysym.C-Down:      font-size:decrease
+! URxvt.keysym.C-S-Up:      font-size:incglobal
+! URxvt.keysym.C-S-Down:    font-size:decglobal
+! URxvt.keysym.C-equal:     font-size:reset
+! URxvt.keysym.C-slash:     font-size:show
 !!URxvt.perl-ext-common:		  default,keyboard-select,url-select,clipboard,tabbed
 !URxvt.perl-ext-common:		  default,keyboard-select,url-select,clipboard
 !! keyboard-select
@@ -99,3 +100,51 @@ URxvt.keysym.C-slash:     font-size:show
 ! ------------------------------------------------------------------------------
 XTerm*termName:				  xterm-256color
 
+! ------------------------------------------------------------------------------
+! i3 colors
+! ------------------------------------------------------------------------------
+*background:            #272827
+*foreground:            #657b83
+*fading:                15
+*fadeColor:             black
+*cursorColor:           #16A085
+*pointerColorBackground:#2B2C2B
+*pointerColorForeground:#16A085
+
+
+! special
+*.foreground:           #bfbfbf
+*.background:           #162025
+*.cursorColor:          #bfbfbf
+
+! black
+*.color0:               #0f1619
+*.color8:               #365a5c
+
+! red
+*.color1:               #393843
+*.color9:               #662b37
+
+! green
+*.color2:               #75404b
+*.color10:              #193a48
+
+! yellow
+*.color3:               #235964
+*.color11:              #393843
+
+! blue
+*.color4:               #0b4753
+*.color12:              #75404b
+
+! magenta
+*.color5:               #2a474a
+*.color13:              #662b37
+
+! cyan
+*.color6:               #662b37
+*.color14:              #083842
+
+! white
+*.color7:               #bfbfbf
+*.color15:              #bfbfbf
