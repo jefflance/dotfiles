@@ -1,5 +1,5 @@
 - link:
-    ~/.config/i3:
+    ${HOME}/.config/i3:
       glob: true
-      path: conf.d/i3
+      path: conf.d/i3/*
 
