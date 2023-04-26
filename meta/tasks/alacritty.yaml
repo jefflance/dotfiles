@@ -1,3 +1,6 @@
+- clean:
+    ${HOME}/.config/alacritty:
+
 - link:
     ${HOME}/.config/alacritty:
       glob: true

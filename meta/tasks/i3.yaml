@@ -1,3 +1,6 @@
+- clean:
+    ${HOME}/.config/i3:
+
 - link:
     ${HOME}/.config/i3:
       glob: true
