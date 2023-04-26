@@ -1,7 +1,7 @@
 - link:
     ~/.config/alacritty:
       glob: true
-      path: conf.d/alacritty/*
+      path: conf.d/alacritty
 
 
 
