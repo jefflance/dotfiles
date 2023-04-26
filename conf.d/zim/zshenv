@@ -42,7 +42,7 @@ path=(~/bin ~/.local/bin $path[@])
 
 # >>> environment variables >>>
 export BROWSER=qutebrowser
-export EDITOR=nvim
+export EDITOR=vim
 export TERMINAL=alacritty
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
