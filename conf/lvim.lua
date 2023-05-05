@@ -41,11 +41,16 @@ lvim.builtin.which_key.mappings["G"] = lvim.builtin.which_key.mappings["g"]
 lvim.builtin.which_key.mappings["g"] = {}
 
 lvim.builtin.which_key.mappings["Lv"] = lvim.builtin.which_key.mappings["L"]
-lvim.builtin.which_key.mappings["L"] = lvim.builtin.which_key.mappings["l"]
+lvim.builtin.which_key.mappings["Ll"] = lvim.builtin.which_key.mappings["l"]
+lvim.builtin.which_key.mappings["L"] = {
+  name = "LSP, Lunar"
+}
 lvim.builtin.which_key.mappings["l"] = {}
 
+lvim.builtin.which_key.mappings["o"] = { "<CMD>Telescope find_files<CR>", "Open a file" }
+
 lvim.builtin.which_key.mappings["P"] = lvim.builtin.which_key.mappings["p"]
-lvim.builtin.which_key.mappings["p"] = { "<CMD>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["p"] = { "<CMD>Telescope projects<CR>", "Projects"}
 
 lvim.builtin.which_key.mappings["S"] = lvim.builtin.which_key.mappings["s"]
 lvim.builtin.which_key.mappings["s"] = { "<CMD>echom 'Sourcing' <BAR> source %<CR>", "Source current file" }
@@ -189,6 +194,10 @@ lvim.builtin.treesitter.highlight.enable = true
 --
 
 lvim.plugins = {
+  -- asyncrun
+  {
+    "skywind3000/asyncrun.vim",
+  },
   -- colorschemes
   {
     'Abstract-IDE/Abstract-cs',
@@ -235,28 +244,6 @@ lvim.plugins = {
       })
     end
   },
-  -- asyncrun
-  {
-    "skywind3000/asyncrun.vim",
-  },
-  -- trouble
-  {
-    'folke/trouble.nvim',
-    cmd = "TroubleToggle",
-  },
-  -- neuron: note taking
-  {
-    'oberblastmeister/neuron.nvim',
-    config = function()
-      require("neuron").setup({
-        virtual_titles = true,
-        mappings = true,
-        run = nil,
-        neuron_dir = "~/Notes",
-        leader = ";z",
-      })
-    end,
-  },
   -- markdown previewer
   {
     'iamcco/markdown-preview.nvim',
@@ -264,37 +251,6 @@ lvim.plugins = {
     ft = "markdown",
     config = function()
       vim.g.mkdp_auto_start = 1
-    end,
-  },
-  -- suda
-  {
-    'lambdalisue/suda.vim',
-  },
-  -- vim-surround
-  {
-    'tpope/vim-surround',
-    config = function()
-      vim.o.timeoutlen = 500
-    end
-    -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
-    -- setup = function()
-    --  vim.o.timeoutlen = 500
-    -- end
-  },
-  -- colorizer: color highlighter
-  {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require("colorizer").setup({ '*' }, {
-          RGB = true, -- #RGB hex codes
-          RRGGBB = true, -- #RRGGBB hex codes
-          RRGGBBAA = true, -- #RRGGBBAA hex codes
-          rgb_fn = true, -- CSS rgb() and rgba() functions
-          hsl_fn = true, -- CSS hsl() and hsla() functions
-          css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-          mode = 'background',
-      })
     end,
   },
   -- minimap
@@ -326,6 +282,63 @@ lvim.plugins = {
       })
     end
   },
+  -- neoscroll: smooth scrolling
+  {
+  "karb94/neoscroll.nvim",
+  event = "WinScrolled",
+  config = function()
+  require('neoscroll').setup({
+        -- All these keys will be mapped to their corresponding default scrolling animation
+        mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
+        '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+        hide_cursor = true,          -- Hide cursor while scrolling
+        stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+        use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
+        respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+        easing_function = nil,        -- Default easing function
+        pre_hook = nil,              -- Function to run before the scrolling animation starts
+        post_hook = nil,              -- Function to run after the scrolling animation ends
+        })
+  end
+  },
+  -- neuron: note taking
+  {
+    'oberblastmeister/neuron.nvim',
+    config = function()
+      require("neuron").setup({
+        virtual_titles = true,
+        mappings = true,
+        run = nil,
+        neuron_dir = "~/Notes",
+        leader = ";z",
+      })
+    end,
+  },
+  -- colorizer: color highlighter
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require("colorizer").setup({ '*' }, {
+          RGB = true, -- #RGB hex codes
+          RRGGBB = true, -- #RRGGBB hex codes
+          RRGGBBAA = true, -- #RRGGBBAA hex codes
+          rgb_fn = true, -- CSS rgb() and rgba() functions
+          hsl_fn = true, -- CSS hsl() and hsla() functions
+          css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+          mode = 'background',
+      })
+    end,
+  },
+  -- suda
+  {
+    'lambdalisue/suda.vim',
+    -- setup = function()
+    --   -- vim.g.prompt = 'Mot de passe: ',
+    --   vim.g.suda_smart_edit = 1,
+    -- end,
+  },
   -- telescope-project
   {
     "nvim-telescope/telescope-project.nvim",
@@ -333,6 +346,26 @@ lvim.plugins = {
     setup = function()
       vim.cmd [[packadd telescope.nvim]]
     end,
+  },
+  -- trouble
+  {
+    'folke/trouble.nvim',
+    cmd = "TroubleToggle",
+  },
+  -- vim-repeat: enable repeating supported plugin maps with "."
+  {
+    "tpope/vim-repeat"
+  },
+  -- vim-surround
+  {
+    'tpope/vim-surround',
+    config = function()
+      vim.o.timeoutlen = 500
+    end
+    -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
+    -- setup = function()
+    --  vim.o.timeoutlen = 500
+    -- end
   },
 }
 
