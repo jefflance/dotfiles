@@ -1,0 +1,8 @@
+- clean:
+    ${HOME}/.config/rofi:
+
+- link:
+    ${HOME}/.config/rofi:
+      glob: true
+      path: conf.d/rofi/*
+
