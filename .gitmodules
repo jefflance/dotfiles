@@ -14,6 +14,6 @@
 [submodule "dotbot_plugins/dotbot-apt-get"]
 	path = dotbot_plugins/dotbot-apt-get
 	url = https://github.com/rubenvereecken/dotbot-apt-get
-[submodule "dotbot_plugins/dotbot-ifplatform"]
-	path = dotbot_plugins/dotbot-ifplatform
-	url = https://github.com/ssbanerje/dotbot-ifplatform.git
+[submodule "dotbot_plugins/dotbot-conditional"]
+	path = dotbot_plugins/dotbot-conditional
+	url = https://gitlab.com/gnfzdz/dotbot-conditional.git
