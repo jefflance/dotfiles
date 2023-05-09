@@ -1,6 +1,10 @@
+- clean:
+    ${HOME}/.config/awesome:
+
 - link:
-    ~/.config/awesome:
-      path: conf.d/awesome
+    ${HOME}/.config/awesome:
+      glob: true
+      path: conf.d/awesome/*
 
 
 

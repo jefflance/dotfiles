@@ -8,3 +8,9 @@
 [submodule "dotbot_plugins/dotbot-yay"]
 	path = dotbot_plugins/dotbot-yay
 	url = https://github.com/oxson/dotbot-yay
+[submodule "dotbot_plugins/dotbot-pamac"]
+	path = dotbot_plugins/dotbot-pamac
+	url = https://github.com/skwinnik/dotbot-pamac.git
+[submodule "dotbot_plugins/dotbot-apt-get"]
+	path = dotbot_plugins/dotbot-apt-get
+	url = https://github.com/rubenvereecken/dotbot-apt-get
