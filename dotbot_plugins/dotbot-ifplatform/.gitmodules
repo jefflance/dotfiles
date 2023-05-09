@@ -1,3 +1,0 @@
-[submodule "lib/distro"]
-	path = lib/distro
-	url = git@github.com:python-distro/distro.git
