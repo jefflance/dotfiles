@@ -36,7 +36,11 @@ for config in ${CONFIGS} ${@}; do
     # cmd=("${BASE_DIR}/${META_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" \
     #       -p "${BASE_DIR}/${META_DIR}/dotbot-yay/yay.py" -c "$configFile")
     cmd=("${BASE_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASE_DIR}" \
-          -p "${BASE_DIR}/dotbot_plugins/dotbot-yay/yay.py" -c "$configFile")
+          -p "${BASE_DIR}/dotbot_plugins/dotbot-apt-get/aptget.py" \
+          -p "${BASE_DIR}/dotbot_plugins/dotbot-ifplatform/ifplatform.py" \
+          -p "${BASE_DIR}/dotbot_plugins/dotbot-pamac/pamac.py" \
+          -p "${BASE_DIR}/dotbot_plugins/dotbot-yay/yay.py" \
+          -c "$configFile")
 
     if [[ $config == *"sudo"* ]]; then
         cmd=(sudo "${cmd[@]}")
