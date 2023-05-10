@@ -5,17 +5,23 @@
 
 - shell:
     - [
-    git submodule update --init --recursive, "Installing submodules.",
+    git submodule update --init --recursive, "Installing submodules."
     ]
 
 - clean: [
     '~',
-    '~/.config',
+    '~/.config'
     ]
 
+
+- defaults:
+    conditional:
+        isolated: False
+
 - conditional:
-    if: 'command -v pamac'
+    if:
+        tty:
     then:
         shell:
-        - pamac install yay
+        - command: "echo oui"
 
