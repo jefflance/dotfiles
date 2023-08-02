@@ -18,10 +18,11 @@
     description: Delete the test file.
     quiet: true
 
-- ifarch:
-  - shell:
-    -
-      command: echo "Test du plugin ifplatform."
-      stdout: true
-      description: Test ifplatform
-      quiet: false
+- if:
+  - cond: 'test $(distro -j | jq ".id" | grep manjaro)'
+    met:
+      - shell:
+        - echo "Using Manjaro"
+    unmet:
+      - shell:
+        - echo "Not using Manjaro"
