@@ -2,26 +2,16 @@
     link:
       create: true
       relink: true
+    conditional:
+      isolated: false
 
 - shell:
     - [
-    git submodule update --init --recursive, "Installing submodules."
+      git submodule update --init --recursive, "Installing submodules."
     ]
 
 - clean: [
     '~',
     '~/.config'
     ]
-
-
-- defaults:
-    conditional:
-        isolated: False
-
-- conditional:
-    if:
-        tty:
-    then:
-        shell:
-        - command: "echo oui"
 
