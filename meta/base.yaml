@@ -15,3 +15,9 @@
     '~/.config'
     ]
 
+- ifanylinux:
+  - shell:
+    - [
+      echo "Archlinux test", "Using ifplatform module."
+    ]
+

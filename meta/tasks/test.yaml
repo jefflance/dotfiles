@@ -1,0 +1,27 @@
+- shell:
+  -
+    command: echo "This is a test file. If you are reading this, it is that everything is ok." > /tmp/dotbot_test_file
+    stdin: false
+    stdout: false
+    description: Create a test file.
+    quiet: true
+  -
+    command: cat /tmp/dotbot_test_file
+    stdin: false
+    stdout: true
+    description: Read the test file.
+    quiet: true
+  -
+    command: rm /tmp/dotbot_test_file
+    stdin: false
+    stdout: false
+    description: Delete the test file.
+    quiet: true
+
+- ifanylinux:
+  - shell:
+    -
+      command: echo "Test du plugin ifplatform."
+      stdout: true
+      description: Test ifplatform
+      quiet: false
