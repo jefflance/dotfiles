@@ -18,7 +18,7 @@
     description: Delete the test file.
     quiet: true
 
-- ifanylinux:
+- ifarch:
   - shell:
     -
       command: echo "Test du plugin ifplatform."
