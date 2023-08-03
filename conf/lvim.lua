@@ -1,12 +1,15 @@
---[[
+--[[--
+File              : /home/jeff/.config/lvim/config.lua
+Author            : Jeff Lance <email@jefflance.me>
+Date              : 03.08.2023 16:16:54
+Last Modified Date: 03.08.2023 16:16:54
+Last Modified By  : Jeff Lance <email@jefflance.me>
+
+---
+
 lvim is the global options object
 
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
+--]]--
 
 
 
@@ -56,12 +59,62 @@ lvim.builtin.which_key.mappings["d"] = lvim.builtin.which_key.mappings[";"]
 lvim.builtin.which_key.mappings["G"] = lvim.builtin.which_key.mappings["g"]
 lvim.builtin.which_key.mappings["g"] = {}
 
+lvim.builtin.which_key.mappings["H"] = { 
+  name = "+Header",
+  H  = { "<CMD>AddHeader<CR>"    , "Add header to the file" },
+  h  = { "<CMD>AddMinHeader<CR>" , "Add minimal header to the file" },
+  lg = { "<CMD>AddGNULicense<CR>", "Add GPLv3 License" },
+  lm = { "<CMD>AddMITLicense<CR>", "Add MIT License" },
+}
+
 lvim.builtin.which_key.mappings["Lv"] = lvim.builtin.which_key.mappings["L"]
 lvim.builtin.which_key.mappings["Ll"] = lvim.builtin.which_key.mappings["l"]
 lvim.builtin.which_key.mappings["L"] = {
   name = "LSP, Lunar"
 }
 lvim.builtin.which_key.mappings["l"] = {}
+lvim.builtin.which_key.mappings["l"] = {
+  name = "LaTeX",
+  m = { "<cmd>VimtexContextMenu<CR>", "Open Context Menu" },
+  u = { "<cmd>VimtexCountLetters<CR>", "Count Letters" },
+  w = { "<cmd>VimtexCountWords<CR>", "Count Words" },
+  d = { "<cmd>VimtexDocPackage<CR>", "Open Doc for package" },
+  e = { "<cmd>VimtexErrors<CR>", "Look at the errors" },
+  s = { "<cmd>VimtexStatus<CR>", "Look at the status" },
+  a = { "<cmd>VimtexToggleMain<CR>", "Toggle Main" },
+  v = { "<cmd>VimtexView<CR>", "View pdf" },
+  i = { "<cmd>VimtexInfo<CR>", "Vimtex Info" },
+  l = {
+    name = "Clean",
+    l = { "<cmd>VimtexClean<CR>", "Clean Project" },
+    c = { "<cmd>VimtexClean<CR>", "Clean Cache" },
+  },
+  c = {
+    name = "Compile",
+    c = { "<cmd>VimtexCompile<CR>", "Compile Project" },
+    o = {
+      "<cmd>VimtexCompileOutput<CR>",
+      "Compile Project and Show Output",
+    },
+    s = { "<cmd>VimtexCompileSS<CR>", "Compile project super fast" },
+    e = { "<cmd>VimtexCompileSelected<CR>", "Compile Selected" },
+  },
+  r = {
+    name = "Reload",
+    r = { "<cmd>VimtexReload<CR>", "Reload" },
+    s = { "<cmd>VimtexReloadState<CR>", "Reload State" },
+  },
+  o = {
+    name = "Stop",
+    p = { "<cmd>VimtexStop<CR>", "Stop" },
+    a = { "<cmd>VimtexStopAll<CR>", "Stop All" },
+  },
+  t = {
+    name = "TOC",
+    o = { "<cmd>VimtexTocOpen<CR>", "Open TOC" },
+    t = { "<cmd>VimtexTocToggle<CR>", "Toggle TOC" },
+  },
+}
 
 lvim.builtin.which_key.mappings["o"] = { "<CMD>Telescope find_files<CR>", "Open a file" }
 
@@ -76,6 +129,7 @@ lvim.builtin.which_key.mappings["r"] = { "<CMD>Telescope oldfiles<CR>", "Open re
 lvim.builtin.which_key.mappings["z"] = {
   name = "+Zettel",
   c = { "<CMD>lua require('neuron/cmd').new_edit('/home/jeff/Notes/')<CR>", "Create new note" },
+  i = { "<CMD>lua require'neuron'.goto_index()<CR>", "Goto notes index"},
   z = { "<CMD>lua require'neuron/telescope'.find_zettels()<CR>", "Find notes" },
   Z = { "<CMD>lua require'neuron/telescope'.find_zettels {insert = true}<CR>", "Insert the found note ID" },
   b = { "<CMD>lua require'neuron/telescope'.find_backlinks()<CR>", "Backlinks of the current note" },
@@ -107,12 +161,18 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
+
+
+-- Treesitter settings
+--
+
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
   "javascript",
   "json",
+  "latex",
   "lua",
   "python",
   "typescript",
@@ -128,81 +188,68 @@ lvim.builtin.treesitter.highlight.enable = true
 
 
 
--- generic LSP settings
+-- Generic LSP settings
 --
 
--- -- make sure server will always be installed even if the server is in skipped_servers list
--- lvim.lsp.installer.setup.ensure_installed = {
---     "sumneko_lua",
---     "jsonls",
--- }
--- -- change UI setting of `LspInstallInfo`
--- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
--- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
--- lvim.lsp.installer.setup.ui.border = "rounded"
--- lvim.lsp.installer.setup.ui.keymaps = {
---     uninstall_server = "d",
---     toggle_server_expand = "o",
--- }
+vim.diagnostic.config({ virtual_text = true })
 
--- ---@usage disable automatic installation of servers
--- lvim.lsp.installer.setup.automatic_installation = false
+-- setup LSP
+local capabilities = require("lvim.lsp").common_capabilities()
+require("lvim.lsp.manager").setup("texlab", {
+  on_attach = require("lvim.lsp").common_on_attach,
+  on_init = require("lvim.lsp").common_on_init,
+  capabilities = capabilities,
+})
 
--- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
--- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
--- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pyright", opts)
 
--- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
--- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
--- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
---   return server ~= "emmet_ls"
--- end, lvim.lsp.automatic_configuration.skipped_servers)
 
--- -- you can set a custom on_attach function that will be used for all the language servers
--- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
--- lvim.lsp.on_attach_callback = function(client, bufnr)
---   local function buf_set_option(...)
---     vim.api.nvim_buf_set_option(bufnr, ...)
---   end
---   --Enable completion triggered by <c-x><c-o>
---   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
--- end
+-- Setup formatters and linters
+--
 
--- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "black", filetypes = { "python" } },
---   { command = "isort", filetypes = { "python" } },
---   {
---     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "prettier",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--print-with", "100" },
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+-- formatters
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+  { name = "black" },
+  { command = "latexindent", filetypes = { "tex" } },
+})
 
--- -- set additional linters
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
---     command = "shellcheck",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--severity", "warning" },
---   },
---   {
---     command = "codespell",
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "javascript", "python" },
---   },
--- }
+lvim.format_on_save.enabled = true
+lvim.format_on_save.pattern = { "*.py", "*.tex" }
+
+-- linters
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+  { command = "flake8", filetypes = { "python" } },
+  { command = "chktex", filetypes = { "tex" } },
+})
+
+
+
+-- Python management setup
+--
+
+-- -- setup debug adapter
+-- lvim.builtin.dap.active = true
+-- local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+-- pcall(function()
+--   require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
+-- end)
+
+-- -- setup testing
+-- require("neotest").setup({
+--   adapters = {
+--     require("neotest-python")({
+--       -- Extra arguments for nvim-dap configuration
+--       -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
+--       dap = {
+--         justMyCode = false,
+--         console = "integratedTerminal",
+--       },
+--       args = { "--log-level", "DEBUG", "--quiet" },
+--       runner = "pytest",
+--     })
+--   }
+-- })
 
 
 
@@ -210,6 +257,19 @@ lvim.builtin.treesitter.highlight.enable = true
 --
 
 lvim.plugins = {
+  -- addheader
+  {
+    'alpertuna/vim-header',
+    config = function ()
+      vim.cmd ([[
+        let g:header_field_author = 'Jeff Lance'
+        let g:header_field_author_email = 'email@jefflance.me'
+        let g:header_auto_update_header = 1
+        let g:header_field_filename_path = 1
+        let g:header_field_timestamp_format = '%d.%m.%Y %H:%M:%S'
+      ]])
+    end,
+  },
   -- asyncrun
   {
     "skywind3000/asyncrun.vim",
@@ -263,7 +323,7 @@ lvim.plugins = {
   -- markdown previewer
   {
     'iamcco/markdown-preview.nvim',
-    run = "cd app && npm install",
+    build = "cd app && npm install",
     ft = "markdown",
     config = function()
       vim.g.mkdp_auto_start = 1
@@ -364,14 +424,14 @@ lvim.plugins = {
       vim.g.suda_smart_edit = 1
     end,
   },
-  -- telescope-project
-  {
-    "nvim-telescope/telescope-project.nvim",
-    event = "BufWinEnter",
-    setup = function()
-      vim.cmd [[packadd telescope.nvim]]
-    end,
-  },
+  ---- telescope-project
+  --{
+  --  "nvim-telescope/telescope-project.nvim",
+  --  event = "BufWinEnter",
+  --  setup = function()
+  --    vim.cmd [[packadd telescope.nvim]]
+  --  end,
+  --},
   -- trouble
   {
     'folke/trouble.nvim',
@@ -384,15 +444,54 @@ lvim.plugins = {
   -- vim-surround
   {
     'tpope/vim-surround',
-    config = function()
+    config = function ()
       vim.o.timeoutlen = 500
-    end
-    -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
-    -- setup = function()
-    --  vim.o.timeoutlen = 500
-    -- end
+    end,
   },
+  -- LaTeX management needed plugins
+  {
+    "lervag/vimtex",
+    config = function ()
+      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_quickfix_enabled = 0
+    end,
+  },
+  {
+    "kdheepak/cmp-latex-symbols"
+  },
+  {
+    "KeitaNakamura/tex-conceal.vim"
+  },
+  {
+    -- "SirVer/ultisnips"
+  },
+  -- Python management needed plugins
+  {
+    "ChristianChiarulli/swenv.nvim"
+  },
+  {
+    "stevearc/dressing.nvim"
+  },
+  -- {
+  --   "mfussenegger/nvim-dap-python"
+  -- },
+  -- {
+  --   "nvim-neotest/neotest"
+  -- },
+  -- {
+  --   "nvim-neotest/neotest-python"
+  -- },
 }
+
+
+
+-- Telescope plugins load
+--
+
+lvim.builtin.telescope.on_config_done = function(telescope)
+  -- pcall(telescope.load_extension, "telescope-project")
+  -- any other extensions loading
+end
 
 
 
@@ -441,5 +540,14 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     -- let treesitter use bash highlight for zsh files as well
     require("nvim-treesitter.highlight").attach(0, "bash")
+  end,
+})
+
+-- latex cmp
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("LaTeXGroup", { clear = true }),
+  pattern = "tex",
+  callback = function()
+    require("user.cmp")
   end,
 })
