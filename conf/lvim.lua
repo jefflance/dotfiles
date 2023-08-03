@@ -2,7 +2,7 @@
 File              : /home/jeff/.config/lvim/config.lua
 Author            : Jeff Lance <email@jefflance.me>
 Date              : 03.08.2023 16:16:54
-Last Modified Date: 03.08.2023 16:16:54
+Last Modified Date: 03.08.2023 22:22:06
 Last Modified By  : Jeff Lance <email@jefflance.me>
 
 ---
@@ -235,21 +235,21 @@ pcall(function()
   require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
 end)
 
--- -- setup testing
--- require("neotest").setup({
---   adapters = {
---     require("neotest-python")({
---       -- Extra arguments for nvim-dap configuration
---       -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
---       dap = {
---         justMyCode = false,
---         console = "integratedTerminal",
---       },
---       args = { "--log-level", "DEBUG", "--quiet" },
---       runner = "pytest",
---     })
---   }
--- })
+-- setup testing
+require("neotest").setup({
+  adapters = {
+    require("neotest-python")({
+      -- Extra arguments for nvim-dap configuration
+      -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
+      dap = {
+        justMyCode = false,
+        console = "integratedTerminal",
+      },
+      args = { "--log-level", "DEBUG", "--quiet" },
+      runner = "pytest",
+    })
+  }
+})
 
 
 
@@ -546,11 +546,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- latex cmp
-vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("LaTeXGroup", { clear = true }),
-  pattern = "tex",
-  callback = function()
-    require("user.cmp")
-  end,
-})
+-- -- latex cmp
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = vim.api.nvim_create_augroup("LaTeXGroup", { clear = true }),
+--   pattern = "tex",
+--   callback = function()
+--     require("user.cmp")
+--   end,
+-- })
