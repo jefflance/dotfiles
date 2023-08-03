@@ -19,7 +19,7 @@
     quiet: true
 
 - if:
-  - cond: 'test $(distro -j | jq ".id" | grep manjaro)'
+  - cond: "test $(distro -j | jq .id | grep manjaro)"
     met:
       - shell:
         - echo "Using Manjaro"
