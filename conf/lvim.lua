@@ -60,7 +60,7 @@ lvim.builtin.which_key.mappings["G"] = lvim.builtin.which_key.mappings["g"]
 lvim.builtin.which_key.mappings["g"] = {}
 
 lvim.builtin.which_key.mappings["H"] = { 
-  name = "+Header",
+  name = "Header",
   H  = { "<CMD>AddHeader<CR>"    , "Add header to the file" },
   h  = { "<CMD>AddMinHeader<CR>" , "Add minimal header to the file" },
   lg = { "<CMD>AddGNULicense<CR>", "Add GPLv3 License" },
@@ -69,10 +69,10 @@ lvim.builtin.which_key.mappings["H"] = {
 
 lvim.builtin.which_key.mappings["Lv"] = lvim.builtin.which_key.mappings["L"]
 lvim.builtin.which_key.mappings["Ll"] = lvim.builtin.which_key.mappings["l"]
+lvim.builtin.which_key.mappings["l"] = {}
 lvim.builtin.which_key.mappings["L"] = {
   name = "LSP, Lunar"
 }
-lvim.builtin.which_key.mappings["l"] = {}
 lvim.builtin.which_key.mappings["l"] = {
   name = "LaTeX",
   m = { "<cmd>VimtexContextMenu<CR>", "Open Context Menu" },
@@ -127,7 +127,7 @@ lvim.builtin.which_key.mappings["s"] = { "<CMD>echom 'Sourcing' <BAR> source %<C
 lvim.builtin.which_key.mappings["r"] = { "<CMD>Telescope oldfiles<CR>", "Open recent file" }
 
 lvim.builtin.which_key.mappings["z"] = {
-  name = "+Zettel",
+  name = "Zettel",
   c = { "<CMD>lua require('neuron/cmd').new_edit('/home/jeff/Notes/')<CR>", "Create new note" },
   i = { "<CMD>lua require'neuron'.goto_index()<CR>", "Goto notes index"},
   z = { "<CMD>lua require'neuron/telescope'.find_zettels()<CR>", "Find notes" },
@@ -228,12 +228,12 @@ linters.setup({
 -- Python management setup
 --
 
--- -- setup debug adapter
--- lvim.builtin.dap.active = true
--- local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
--- pcall(function()
---   require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
--- end)
+-- setup debug adapter
+lvim.builtin.dap.active = true
+local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+pcall(function()
+  require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
+end)
 
 -- -- setup testing
 -- require("neotest").setup({
@@ -452,8 +452,11 @@ lvim.plugins = {
   {
     "lervag/vimtex",
     config = function ()
-      vim.g.vimtex_view_method = "zathura"
-      vim.g.vimtex_quickfix_enabled = 0
+      vim.cmd([[
+        let g:vimtex_view_method = "zathura"
+        let g:vimtex_quickfix_enabled = 0
+        let g:vimtex_compiler_method = 'latexmk'
+      ]])
     end,
   },
   {
@@ -472,15 +475,15 @@ lvim.plugins = {
   {
     "stevearc/dressing.nvim"
   },
-  -- {
-  --   "mfussenegger/nvim-dap-python"
-  -- },
-  -- {
-  --   "nvim-neotest/neotest"
-  -- },
-  -- {
-  --   "nvim-neotest/neotest-python"
-  -- },
+  {
+    "mfussenegger/nvim-dap-python"
+  },
+  {
+    "nvim-neotest/neotest"
+  },
+  {
+    "nvim-neotest/neotest-python"
+  },
 }
 
 
