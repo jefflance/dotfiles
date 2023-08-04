@@ -2,7 +2,7 @@
 File              : /home/jeff/.config/lvim/config.lua
 Author            : Jeff Lance <email@jefflance.me>
 Date              : 03.08.2023 16:16:54
-Last Modified Date: 03.08.2023 22:22:06
+Last Modified Date: 04.08.2023 00:49:41
 Last Modified By  : Jeff Lance <email@jefflance.me>
 
 ---
@@ -52,7 +52,7 @@ lvim.keys.normal_mode["<C-[>"] = ":<<CR>"
 lvim.keys.normal_mode["<C-]>"] = ":><CR>"
 
 -- remap neo-tree shortcut to rnvimr
-lvim.lsp.buffer_mappings.normal_mode[';e'] = { "<CMD>RnvimrToggle<CR>", "File explorer" }
+lvim.builtin.which_key.mappings["e"] = { "<CMD>RnvimrToggle<CR>", "File explorer" }
 
 lvim.builtin.which_key.mappings["d"] = lvim.builtin.which_key.mappings[";"]
 
@@ -185,6 +185,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.rainbow.enable = true
 
 
 
@@ -220,7 +221,7 @@ lvim.format_on_save.pattern = { "*.py", "*.tex" }
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
   { command = "flake8", filetypes = { "python" } },
-  { command = "chktex", filetypes = { "tex" } },
+  -- { command = "chktex", filetypes = { "tex" } },
 })
 
 
@@ -391,6 +392,10 @@ lvim.plugins = {
       })
     end,
   },
+  -- nvim-ts-rainbow: rainbowed parenthesis
+  {
+    "mrjones2014/nvim-ts-rainbow",
+  },
   -- colorizer: color highlighter
   {
     'norcalli/nvim-colorizer.lua',
@@ -453,9 +458,10 @@ lvim.plugins = {
     "lervag/vimtex",
     config = function ()
       vim.cmd([[
-        let g:vimtex_view_method = "zathura"
+        " let g:vimtex_view_method = "zathura"
         let g:vimtex_quickfix_enabled = 0
         let g:vimtex_compiler_method = 'latexmk'
+        let g:vimtex_view_use_temp_files = 1
       ]])
     end,
   },
