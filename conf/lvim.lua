@@ -116,6 +116,15 @@ lvim.builtin.which_key.mappings["l"] = {
   },
 }
 
+lvim.builtin.which_key.mappings["n"] = {
+  name = "Notes",
+  n = { "<CMD>ZkNew { title = vim.fn.input('Titre: ') }<CR>", "Créer une nouvelle note" },
+  o = { "<CMD>ZkNotes { sort = { 'modified' } }<CR>", "Ouvrir une note"},
+  O = { "<CMD>ZkTags<CR>", "Ouvrir les notes avec le tag sélectionné" },
+  f = { "<CMD>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Rechercher note: ') } }<CR>", "Rechercher une note" },
+  F = { ":'<,'>ZkMatch<CR>", "Rechercher les notes contenant la sélection" },
+}
+
 lvim.builtin.which_key.mappings["o"] = { "<CMD>Telescope find_files<CR>", "Open a file" }
 
 lvim.builtin.which_key.mappings["P"] = lvim.builtin.which_key.mappings["p"]
@@ -125,20 +134,6 @@ lvim.builtin.which_key.mappings["S"] = lvim.builtin.which_key.mappings["s"]
 lvim.builtin.which_key.mappings["s"] = { "<CMD>echom 'Sourcing' <BAR> source %<CR>", "Source current file" }
 
 lvim.builtin.which_key.mappings["r"] = { "<CMD>Telescope oldfiles<CR>", "Open recent file" }
-
-lvim.builtin.which_key.mappings["z"] = {
-  name = "Zettel",
-  c = { "<CMD>lua require('neuron/cmd').new_edit('/home/jeff/Notes/')<CR>", "Create new note" },
-  i = { "<CMD>lua require'neuron'.goto_index()<CR>", "Goto notes index"},
-  z = { "<CMD>lua require'neuron/telescope'.find_zettels()<CR>", "Find notes" },
-  Z = { "<CMD>lua require'neuron/telescope'.find_zettels {insert = true}<CR>", "Insert the found note ID" },
-  b = { "<CMD>lua require'neuron/telescope'.find_backlinks()<CR>", "Backlinks of the current note" },
-  B = { "<CMD>lua require'neuron/telescope'.find_backlinks {insert = true}<CR>", "As b but insert the found ID" },
-  t = { "<CMD>lua require'neuron/telescope'.find_tags()<CR>", "Find all tags and insert" },
-  s = { "<CMD>lua require'neuron'.rib {address = '127.0.0.1:8200', verbose = true}<CR>", "Start neuron server" },
-  n = { "<CMD>lua require'neuron'.goto_next_extmark()<CR>", "Goto next link" },
-  p = { "<CMD>lua require'neuron'.goto_prev_extmark()<CR>", "Goto previous link" },
-}
 
 lvim.builtin.which_key.mappings["x"] = { "<CMD>w! <BAR> q!<CR>", "Save and quit"}
 
@@ -379,16 +374,11 @@ lvim.plugins = {
         })
   end
   },
-  -- neuron: note taking
+  -- zk: a plain text note-taking assistant
   {
-    'oberblastmeister/neuron.nvim',
+    'mickael-menu/zk-nvim',
     config = function()
-      require("neuron").setup({
-        virtual_titles = true,
-        mappings = true,
-        run = nil,
-        neuron_dir = "~/Notes",
-        leader = ";z",
+      require("zk").setup({
       })
     end,
   },
@@ -508,33 +498,33 @@ end
 --
 
 -- minimap view
-lvim.autocommands = {
-  {
-    {"BufEnter", "Filetype"},
-    {
-      desc = "Open mini.map and exclude some filetypes",
-      pattern = { "*" },
-      callback = function()
-        local exclude_ft = {
-          "qf",
-          "NvimTree",
-          "toggleterm",
-          "TelescopePrompt",
-          "alpha",
-          "netrw",
-        }
+-- lvim.autocommands = {
+--   {
+--     {"BufEnter", "Filetype"},
+--     {
+--       desc = "Open mini.map and exclude some filetypes",
+--       pattern = { "*" },
+--       callback = function()
+--         local exclude_ft = {
+--           "qf",
+--           "NvimTree",
+--           "toggleterm",
+--           "TelescopePrompt",
+--           "alpha",
+--           "netrw",
+--         }
 
-        local map = require('mini.map')
-        if vim.tbl_contains(exclude_ft, vim.o.filetype) then
-          vim.b.minimap_disable = true
-          map.close()
-        elseif vim.o.buftype == "" then
-          map.open()
-        end
-      end,
-    },
-  },
-}
+--         local map = require('mini.map')
+--         if vim.tbl_contains(exclude_ft, vim.o.filetype) then
+--           vim.b.minimap_disable = true
+--           map.close()
+--         elseif vim.o.buftype == "" then
+--           map.open()
+--         end
+--       end,
+--     },
+--   },
+-- }
 
 -- wrap mode for json files
 vim.api.nvim_create_autocmd("BufEnter", {
