@@ -1,0 +1,8 @@
+- shell:
+  - 'if [[ ! -d ${HOME}/.config/zk ]]; then mkdir ${HOME}/.config/zk; fi'
+
+- link:
+    ${HOME}/.config/zk:
+      glob: true
+      path: conf.d/zk/*
+
