@@ -9,7 +9,8 @@ Last Modified By  : Jeff Lance <email@jefflance.me>
 
 lvim is the global options object
 
---]]--
+--]]
+--
 
 
 
@@ -19,7 +20,7 @@ lvim is the global options object
 -- lvim config
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.format_on_save.pattern = { "*.py", "*.tex" }
+lvim.format_on_save.pattern = { "*.asy", "*.lua", "*.py", "*.tex", ".toml" }
 lvim.colorscheme = "onedark_dark"
 lvim.background = "dark"
 lvim.transparent_window = true
@@ -76,10 +77,10 @@ lvim.builtin.which_key.mappings["g"] = {}
 
 lvim.builtin.which_key.mappings["H"] = {
   name = "Header",
-  H  = { "<CMD>AddHeader<CR>"    , "Add header to the file" },
-  h  = { "<CMD>AddMinHeader<CR>" , "Add minimal header to the file" },
-  lg = { "<CMD>AddGNULicense<CR>", "Add GPLv3 License" },
-  lm = { "<CMD>AddMITLicense<CR>", "Add MIT License" },
+  H    = { "<CMD>AddHeader<CR>", "Add header to the file" },
+  h    = { "<CMD>AddMinHeader<CR>", "Add minimal header to the file" },
+  lg   = { "<CMD>AddGNULicense<CR>", "Add GPLv3 License" },
+  lm   = { "<CMD>AddMITLicense<CR>", "Add MIT License" },
 }
 
 lvim.builtin.which_key.mappings["Lv"] = lvim.builtin.which_key.mappings["L"]
@@ -92,23 +93,24 @@ lvim.builtin.which_key.mappings["L"] = {
 lvim.builtin.which_key.mappings["n"] = {
   name = "Notes",
   n = { "<CMD>ZkNew { title = vim.fn.input('Titre: ') }<CR>", "Créer une nouvelle note" },
-  o = { "<CMD>ZkNotes { sort = { 'modified' } }<CR>", "Ouvrir une note"},
+  o = { "<CMD>ZkNotes { sort = { 'modified' } }<CR>", "Ouvrir une note" },
   O = { "<CMD>ZkTags<CR>", "Ouvrir les notes avec le tag sélectionné" },
-  f = { "<CMD>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Rechercher note: ') } }<CR>", "Rechercher une note" },
+  f = { "<CMD>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Rechercher note: ') } }<CR>",
+    "Rechercher une note" },
   F = { ":'<,'>ZkMatch<CR>", "Rechercher les notes contenant la sélection" },
 }
 
 lvim.builtin.which_key.mappings["o"] = { "<CMD>Telescope find_files<CR>", "Open a file" }
 
 lvim.builtin.which_key.mappings["P"] = lvim.builtin.which_key.mappings["p"]
-lvim.builtin.which_key.mappings["p"] = { "<CMD>Telescope projects<CR>", "Projects"}
+lvim.builtin.which_key.mappings["p"] = { "<CMD>Telescope projects<CR>", "Projects" }
 
 lvim.builtin.which_key.mappings["S"] = lvim.builtin.which_key.mappings["s"]
 lvim.builtin.which_key.mappings["s"] = { "<CMD>echom 'Sourcing' <BAR> source %<CR>", "Source current file" }
 
 lvim.builtin.which_key.mappings["r"] = { "<CMD>Telescope oldfiles<CR>", "Open recent file" }
 
-lvim.builtin.which_key.mappings["x"] = { "<CMD>w! <BAR> q!<CR>", "Save and quit"}
+lvim.builtin.which_key.mappings["x"] = { "<CMD>w! <BAR> q!<CR>", "Save and quit" }
 
 lvim.builtin.which_key.mappings[";"] = {}
 lvim.builtin.terminal.open_mapping = "<C-t>"
@@ -122,6 +124,7 @@ lvim.builtin.terminal.open_mapping = "<C-t>"
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
+  "java",
   "javascript",
   "json",
   "latex",
@@ -131,7 +134,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "tsx",
   "css",
   "rust",
-  "java",
+  "toml",
   "yaml",
 }
 
@@ -199,8 +202,8 @@ lvim.plugins = {
   -- addheader
   {
     'alpertuna/vim-header',
-    config = function ()
-      vim.cmd ([[
+    config = function()
+      vim.cmd([[
         let g:header_field_author = 'Jeff Lance'
         let g:header_field_author_email = 'email@jefflance.me'
         let g:header_auto_update_header = 1
@@ -226,7 +229,7 @@ lvim.plugins = {
   {
     'olimorris/onedarkpro.nvim',
     priority = 1000,
-    config = function ()
+    config = function()
       require("onedarkpro").setup({
         colors = {
           onedark = {
@@ -265,7 +268,7 @@ lvim.plugins = {
     build = "cd app && npm install",
     ft = "markdown",
     config = function()
-      vim.cmd ([[
+      vim.cmd([[
         let g:mkdp_auto_start = 1
       ]])
     end,
@@ -301,23 +304,23 @@ lvim.plugins = {
   },
   -- neoscroll: smooth scrolling
   {
-  "karb94/neoscroll.nvim",
-  event = "WinScrolled",
-  config = function()
-    require('neoscroll').setup({
-      -- All these keys will be mapped to their corresponding default scrolling animation
-      mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
-      '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
-      hide_cursor = true,          -- Hide cursor while scrolling
-      stop_eof = true,             -- Stop at <EOF> when scrolling downwards
-      use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
-      respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
-      cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-      easing_function = nil,        -- Default easing function
-      pre_hook = nil,              -- Function to run before the scrolling animation starts
-      post_hook = nil,              -- Function to run after the scrolling animation ends
-    })
-  end
+    "karb94/neoscroll.nvim",
+    event = "WinScrolled",
+    config = function()
+      require('neoscroll').setup({
+        -- All these keys will be mapped to their corresponding default scrolling animation
+        mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>',
+          '<C-y>', '<C-e>', 'zt', 'zz', 'zb' },
+        hide_cursor = true,          -- Hide cursor while scrolling
+        stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+        use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
+        respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+        easing_function = nil,       -- Default easing function
+        pre_hook = nil,              -- Function to run before the scrolling animation starts
+        post_hook = nil,             -- Function to run after the scrolling animation ends
+      })
+    end
   },
   -- zk: a plain text note-taking assistant
   {
@@ -336,14 +339,14 @@ lvim.plugins = {
     'norcalli/nvim-colorizer.lua',
     config = function()
       require("colorizer").setup({ '*' }, {
-          RGB = true, -- #RGB hex codes
-          RRGGBB = true, -- #RRGGBB hex codes
-          RRGGBBAA = true, -- #RRGGBBAA hex codes
-          rgb_fn = true, -- CSS rgb() and rgba() functions
-          hsl_fn = true, -- CSS hsl() and hsla() functions
-          css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-          mode = 'background',
+        RGB = true,      -- #RGB hex codes
+        RRGGBB = true,   -- #RRGGBB hex codes
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true,   -- CSS rgb() and rgba() functions
+        hsl_fn = true,   -- CSS hsl() and hsla() functions
+        css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        mode = 'background',
       })
     end,
   },
@@ -351,7 +354,7 @@ lvim.plugins = {
     "kevinhwang91/rnvimr",
     cmd = "RnvimrToggle",
     config = function()
-      vim.cmd ([[
+      vim.cmd([[
         let g:rnvimr_draw_border = 1
         let g:rnvimr_pick_enable = 1
         let g:rnvimr_bw_enable = 1
@@ -362,7 +365,7 @@ lvim.plugins = {
   {
     'lambdalisue/suda.vim',
     config = function()
-      vim.cmd ([[
+      vim.cmd([[
       let g:prompt = 'Mot de passe: '
       let g:suda_smart_edit = 1
       ]])
@@ -390,8 +393,8 @@ lvim.plugins = {
   -- vim-surround
   {
     'tpope/vim-surround',
-    config = function ()
-      vim.cmd ([[
+    config = function()
+      vim.cmd([[
         let timeoutlen = 500
       ]])
     end,
@@ -399,7 +402,7 @@ lvim.plugins = {
   -- LaTeX management needed plugins
   {
     "lervag/vimtex",
-    config = function ()
+    config = function()
       vim.cmd([[
         let g:vimtex_view_method = "zathura"
         let g:vimtex_quickfix_enabled = 0
