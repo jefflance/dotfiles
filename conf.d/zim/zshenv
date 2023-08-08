@@ -42,7 +42,7 @@ path=(~/bin ~/.local/bin $path[@])
 
 # >>> environment variables >>>
 export BROWSER=qutebrowser
-export EDITOR=vim
+export EDITOR=$([[ $(command -v lvim) ]] && echo lvim || echo vim)
 export TERMINAL=alacritty
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
@@ -51,6 +51,7 @@ export MYVIMRC="${HOME}/.vimrc"
 export PASSWORD_STORE_DIR="${HOME}/Private/.password-store"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=True
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
+export ZK_NOTEBOOK_DIR="${HOME}/Notes"
 # <<< environment variables <<<
 
 # >>> kitty completion >>>

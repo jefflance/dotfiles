@@ -95,7 +95,8 @@ tags
 [._]*.un~
 
 ### Fonts ###
-fonts/*/.uuid
+# fonts/*/*.uuid
+*.uuid
 
 ### astroid ###
 conf.d/astroid/searches

@@ -17,3 +17,6 @@
 [submodule "dotbot_plugins/dotbot-conditional"]
 	path = dotbot_plugins/dotbot-conditional
 	url = https://gitlab.com/gnfzdz/dotbot-conditional.git
+[submodule "dotbot_plugins/dotbot-if"]
+	path = dotbot_plugins/dotbot-if
+	url = https://github.com/wonderbeyond/dotbot-if.git

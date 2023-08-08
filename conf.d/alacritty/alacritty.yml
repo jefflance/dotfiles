@@ -108,7 +108,7 @@ window:
 # Font configuration
 font:
   normal:
-    family: FantasqueSansM Nerd Font Mono
+    family: FiraCode Nerd Font Mono
     style: Regular
   size: 13.0
   # Bold font face
