@@ -8,9 +8,9 @@
     ${HOME}/.config/qutebrowser/quickmarks:
       glob: false
       path: conf.d/qutebrowser/quickmarks
-    ${HOME}/.config/qutebrowser/dracula:
+    ${HOME}/.config/qutebrowser/themes:
       glob: false
-      path: conf.d/qutebrowser/dracula
+      path: conf.d/qutebrowser/themes
     ${HOME}/.config/qutebrowser/userscripts:
       glob: false
       path: conf.d/qutebrowser/userscripts

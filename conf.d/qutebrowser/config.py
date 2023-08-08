@@ -5,12 +5,13 @@
 
 ## Imports
 # import helpers.bind_chained
-import dracula.draw
+import themes.onedark.onedark
 
 
 ## Helpers functions
 def bind_chained(key, *commands):
-    config.bind(key, ' ;; '.join(commands))
+    config.bind(key, " ;; ".join(commands))
+
 
 ##
 
@@ -22,7 +23,14 @@ config.load_autoconfig()
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
 ## Type: Dict
-c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save', 'ddg': 'open ddg'}
+c.aliases = {
+    "w": "session-save",
+    "q": "close",
+    "qa": "quit",
+    "wq": "quit --save",
+    "wqa": "quit --save",
+    "ddg": "open ddg",
+}
 
 ## Time interval (in milliseconds) between auto-saves of
 ## config/cookies/etc.
@@ -45,7 +53,7 @@ c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save
 ## Valid values:
 ##   - webengine: Use QtWebEngine (based on Chromium).
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari).
-c.backend = 'webengine'
+c.backend = "webengine"
 
 ## This setting can be used to map keys to other keys. When the key used
 ## as dictionary-key is pressed, the binding for the key used as
@@ -418,7 +426,7 @@ c.backend = 'webengine'
 ##   - bookmarks
 ##   - history
 # c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history']
-c.completion.open_categories = ['searchengines', 'quickmarks', 'history']
+c.completion.open_categories = ["searchengines", "quickmarks", "history"]
 
 ## Move on to the next part when there's only one possible completion
 ## left.
@@ -449,7 +457,7 @@ c.completion.open_categories = ['searchengines', 'quickmarks', 'history']
 ## Format of timestamps (e.g. for the history completion).
 ## Type: TimestampTemplate
 # c.completion.timestamp_format = '%Y-%m-%d'
-c.completion.timestamp_format = '%d/%m/%Y'
+c.completion.timestamp_format = "%d/%m/%Y"
 
 ## Execute the best-matching command on a partial match.
 ## Type: Bool
@@ -527,7 +535,7 @@ c.completion.timestamp_format = '%d/%m/%Y'
 ## describing an encoding such as _utf-8_, _iso-8859-1_, etc.
 ## Type: String
 # c.content.default_encoding = 'iso-8859-1'
-c.content.default_encoding = 'utf-8'
+c.content.default_encoding = "utf-8"
 
 ## Allow websites to share screen content. On Qt < 5.10, a dialog box is
 ## always displayed, even if this is set to "true".
@@ -559,12 +567,14 @@ c.content.geolocation = False
 ## read from JavaScript is always the global value.
 ## Type: String
 # c.content.headers.accept_language = 'en-US,en'
-c.content.headers.accept_language = 'fr-FR,fr,en-US,en;q=0.5'
+c.content.headers.accept_language = "fr-FR,fr,en-US,en;q=0.5"
 
 ## Custom headers for qutebrowser HTTP requests.
 ## Type: Dict
 # c.content.headers.custom = {}
-c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
+c.content.headers.custom = {
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+}
 
 ## Value to send in the `DNT` header. When this is set to true,
 ## qutebrowser asks websites to not track your identity. If set to null,
@@ -586,7 +596,9 @@ c.content.headers.do_not_track = True
 ## read from JavaScript is always the global value.
 ## Type: String
 # c.content.headers.user_agent = None
-c.content.headers.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0'
+c.content.headers.user_agent = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0"
+)
 
 ## Enable host blocking.
 ## Type: Bool
@@ -842,43 +854,43 @@ c.content.fullscreen.window = True
 
 ## Encoding to use for the editor.
 ## Type: Encoding
-c.editor.encoding = 'utf-8'
+c.editor.encoding = "utf-8"
 
 ## Font used in the completion categories.
 ## Type: Font
-c.fonts.completion.category = '12pt Hack Bold Nerd Font Mono'
+c.fonts.completion.category = "12pt Hack Bold Nerd Font Mono"
 
 ## Font used in the completion widget.
 ## Type: Font
-c.fonts.completion.entry = '12pt Hack Nerd Font Mono'
+c.fonts.completion.entry = "12pt Hack Nerd Font Mono"
 
 ## Font used for the debugging console.
 ## Type: QtFont
-c.fonts.debug_console = '12pt Hack Nerd Font Mono'
+c.fonts.debug_console = "12pt Hack Nerd Font Mono"
 
 ## Font used for the downloadbar.
 ## Type: Font
-c.fonts.downloads = '12pt Hack Nerd Font Mono'
+c.fonts.downloads = "12pt Hack Nerd Font Mono"
 
 ## Font used for the hints.
 ## Type: Font
-c.fonts.hints = 'bold 12pt Hack Nerd Font Mono'
+c.fonts.hints = "bold 12pt Hack Nerd Font Mono"
 
 ## Font used in the keyhint widget.
 ## Type: Font
-c.fonts.keyhint = '12pt Hack Nerd Font Mono'
+c.fonts.keyhint = "12pt Hack Nerd Font Mono"
 
 ## Font used for error messages.
 ## Type: Font
-c.fonts.messages.error = '12pt Hack Nerd Font Mono'
+c.fonts.messages.error = "12pt Hack Nerd Font Mono"
 
 ## Font used for info messages.
 ## Type: Font
-c.fonts.messages.info = '12pt Hack Nerd Font Mono'
+c.fonts.messages.info = "12pt Hack Nerd Font Mono"
 
 ## Font used for warning messages.
 ## Type: Font
-c.fonts.messages.warning = '11pt Hack Nerd Font Mono'
+c.fonts.messages.warning = "11pt Hack Nerd Font Mono"
 
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
@@ -887,11 +899,11 @@ c.fonts.messages.warning = '11pt Hack Nerd Font Mono'
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = '11pt Hack Nerd Font Mono'
+c.fonts.prompts = "11pt Hack Nerd Font Mono"
 
 ## Font used in the statusbar.
 ## Type: Font
-c.fonts.statusbar = '12pt Hack Nerd Font Mono'
+c.fonts.statusbar = "12pt Hack Nerd Font Mono"
 
 ## Font used in the tab bar.
 ## Type: QtFont
@@ -959,7 +971,7 @@ c.fonts.statusbar = '12pt Hack Nerd Font Mono'
 ## Characters used for hint strings.
 ## Type: UniqueCharString
 # c.hints.chars = 'asdfghjkl'
-c.hints.chars = 'sdfjkl'
+c.hints.chars = "sdfjkl"
 
 ## Dictionary file to be used by the word hints.
 ## Type: File
@@ -1108,7 +1120,7 @@ c.input.mouse.rocker_gestures = False
 ##   - tab-silent: Open a new tab in the existing window without activating the window.
 ##   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
 ##   - window: Open in a new window.
-c.new_instance_open_target = 'tab-silent'
+c.new_instance_open_target = "tab-silent"
 
 ## Which window to choose when opening links as new tabs. When
 ## `new_instance_open_target` is not set to `window`, this is ignored.
@@ -1118,7 +1130,7 @@ c.new_instance_open_target = 'tab-silent'
 ##   - last-opened: Open new tabs in the last (newest) opened window.
 ##   - last-focused: Open new tabs in the most recently focused window.
 ##   - last-visible: Open new tabs in the most recently visible window.
-c.new_instance_open_target_window = 'last-focused'
+c.new_instance_open_target_window = "last-focused"
 
 ## Show a filebrowser in upload/download prompts.
 ## Type: Bool
@@ -1166,7 +1178,7 @@ c.qt.highdpi = True
 ##   - always: Always use low-end device mode.
 ##   - auto: Decide automatically (uses low-end mode with < 1 GB available RAM).
 ##   - never: Never use low-end device mode.
-c.qt.chromium.low_end_device_mode = 'auto'
+c.qt.chromium.low_end_device_mode = "auto"
 
 ## Which Chromium process model to use. Alternative process models use
 ## less resources, but decrease security and robustness. See the
@@ -1178,7 +1190,7 @@ c.qt.chromium.low_end_device_mode = 'auto'
 ##   - process-per-site-instance: Pages from separate sites are put into separate processes and separate visits to the same site are also isolated.
 ##   - process-per-site: Pages from separate sites are put into separate processes. Unlike Process per Site Instance, all visits to the same site will share an OS process. The benefit of this model is reduced memory consumption, because more web pages will share processes. The drawbacks include reduced security, robustness, and responsiveness.
 ##   - single-process: Run all tabs in a single process. This should be used for debugging purposes only, and it disables `:open --private`.
-c.qt.chromium.process_model = 'process-per-site-instance'
+c.qt.chromium.process_model = "process-per-site-instance"
 
 ## When to show the scrollbar.
 ## Type: String
@@ -1186,7 +1198,7 @@ c.qt.chromium.process_model = 'process-per-site-instance'
 ##   - always: Always show the scrollbar.
 ##   - never: Never show the scrollbar.
 ##   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
-c.scrolling.bar = 'when-searching'
+c.scrolling.bar = "when-searching"
 # c.scrolling.bar = 'always'
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
@@ -1265,7 +1277,7 @@ c.search.incremental = True
 ##   - tr-TR: Turkish (Turkey)
 ##   - uk-UA: Ukrainian (Ukraine)
 ##   - vi-VN: Vietnamese (Viet Nam)
-c.spellcheck.languages = ['fr-FR', 'en-US']
+c.spellcheck.languages = ["fr-FR", "en-US"]
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
@@ -1326,7 +1338,7 @@ c.tabs.background = True
 ##   - always: Always show favicons.
 ##   - never: Always hide favicons.
 ##   - pinned: Show favicons only on pinned tabs.
-c.tabs.favicons.show = 'always'
+c.tabs.favicons.show = "always"
 
 ## Padding (in pixels) for tab indicators.
 ## Type: Padding
@@ -1345,7 +1357,7 @@ c.tabs.favicons.show = 'always'
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
 # c.tabs.last_close = 'ignore'
-c.tabs.last_close = 'startpage'
+c.tabs.last_close = "startpage"
 
 ## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
 ## only applies when tabs are horizontal. This setting does not apply to
@@ -1368,7 +1380,7 @@ c.tabs.last_close = 'startpage'
 ##   - persist: Retain the current mode.
 ##   - restore: Restore previously saved mode.
 ##   - normal: Always revert to normal mode.
-c.tabs.mode_on_change = 'normal'
+c.tabs.mode_on_change = "normal"
 
 ## Switch between tabs using the mouse wheel.
 ## Type: Bool
@@ -1382,7 +1394,7 @@ c.tabs.mode_on_change = 'normal'
 ##   - next: After the current tab.
 ##   - first: At the beginning.
 ##   - last: At the end.
-c.tabs.new_position.related = 'next'
+c.tabs.new_position.related = "next"
 
 ## Stack related tabs on top of each other when opened consecutively.
 ## Only applies for `next` and `prev` values of
@@ -1399,7 +1411,7 @@ c.tabs.new_position.stacking = True
 ##   - first: At the beginning.
 ##   - last: At the end.
 # c.tabs.new_position.unrelated = 'last'
-c.tabs.new_position.unrelated = 'last'
+c.tabs.new_position.unrelated = "last"
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
@@ -1429,7 +1441,7 @@ c.tabs.new_position.unrelated = 'last'
 ##   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
 ##   - last-used: Select the previously selected tab.
 # c.tabs.select_on_remove = 'next'
-c.tabs.select_on_remove = 'prev'
+c.tabs.select_on_remove = "prev"
 
 ## When to show the tab bar.
 ## Type: String
@@ -1496,7 +1508,7 @@ c.tabs.select_on_remove = 'prev'
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-c.url.default_page = 'https://start.duckduckgo.com/?key=5f50a4ce56d3b08a34fe92f00b9197dbbb7eee9b54c85de610279d4c30aeba46ac11ed00a02216908a49048b4f9dc5aab4ee45ac19b4396ec0e5e6c2b7a9b4a8'
+c.url.default_page = "https://start.duckduckgo.com/?key=5f50a4ce56d3b08a34fe92f00b9197dbbb7eee9b54c85de610279d4c30aeba46ac11ed00a02216908a49048b4f9dc5aab4ee45ac19b4396ec0e5e6c2b7a9b4a8"
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -1524,16 +1536,18 @@ c.url.open_base_url = True
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
-                       'sdg': 'https://duckduckgo.com/?q={}',
-                       'smb': 'https://musicbrainz.org/search?query={}&type=artist&method=indexed',
-                       'sam': 'https://www.amazon.fr/search/s?k={}',
-                       'sly': 'https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7&q={}',
-                       'sgo': 'https://www.google.com/search?hl=fr&q={}'}
+c.url.searchengines = {
+    "DEFAULT": "https://duckduckgo.com/?q={}",
+    "sdg": "https://duckduckgo.com/?q={}",
+    "smb": "https://musicbrainz.org/search?query={}&type=artist&method=indexed",
+    "sam": "https://www.amazon.fr/search/s?k={}",
+    "sly": "https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7&q={}",
+    "sgo": "https://www.google.com/search?hl=fr&q={}",
+}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ["https://start.duckduckgo.com"]
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String
@@ -1568,94 +1582,106 @@ c.window.hide_decoration = False
 # c.zoom.text_only = False
 
 ## Unbindings for normal mode
-config.unbind('<Escape>', mode='normal')
-config.unbind('<F5>', mode='normal')
+config.unbind("<Escape>", mode="normal")
+config.unbind("<F5>", mode="normal")
 
 # config.unbind('<Home>', mode='normal') # NiA
 
 # config.unbind('<Alt-Left>', mode='normal') # NiA
 # config.unbind('<Alt-Right>', mode='normal') # NiA
 
-config.unbind('<Ctrl-h>', mode='normal')
+config.unbind("<Ctrl-h>", mode="normal")
 # config.unbind('<Ctrl-i>', mode='normal') # NiA
 # config.unbind('<Ctrl-l>', mode='normal') # NiA
 # config.unbind('<Ctrl-r>', mode='normal')
-config.unbind('<Ctrl-s>', mode='normal')
-config.unbind('<Ctrl-w>', mode='normal')
+config.unbind("<Ctrl-s>", mode="normal")
+config.unbind("<Ctrl-w>", mode="normal")
 
 # config.unbind('<Ctrl-Shift-r>', mode='normal') # NiA
-config.unbind('<Ctrl-Shift-w>', mode='normal')
+config.unbind("<Ctrl-Shift-w>", mode="normal")
 
-config.unbind('<Back>', mode='normal')
-config.unbind('<Forward>', mode='normal')
+config.unbind("<Back>", mode="normal")
+config.unbind("<Forward>", mode="normal")
 
-config.unbind('b', mode='normal')
-config.unbind('B', mode='normal')
-config.unbind('d', mode='normal')
-config.unbind('D', mode='normal')
-config.unbind('H', mode='normal')
-config.unbind('L', mode='normal')
-config.unbind('m', mode='normal')
-config.unbind('M', mode='normal')
-config.unbind('o', mode='normal')
+config.unbind("b", mode="normal")
+config.unbind("B", mode="normal")
+config.unbind("d", mode="normal")
+config.unbind("D", mode="normal")
+config.unbind("H", mode="normal")
+config.unbind("L", mode="normal")
+config.unbind("m", mode="normal")
+config.unbind("M", mode="normal")
+config.unbind("o", mode="normal")
 
 # global moves
-config.bind(';;', 'mode-leave', mode='insert')
-config.bind(';;', 'leave-mode', mode='passthrough')
-config.bind('<F5>', 'reload')
-config.bind('<Ctrl-l>', 'set-cmd-text -s :open')
+config.bind(";;", "mode-leave", mode="insert")
+config.bind(";;", "leave-mode", mode="passthrough")
+config.bind("<F5>", "reload")
+config.bind("<Ctrl-l>", "set-cmd-text -s :open")
 
 # in page moves
-config.bind('<Alt-Left>', 'back')
-config.bind('<Alt-Right>', 'forward')
-config.bind('<Ctrl-h>', 'home')
-config.bind('<Ctrl-r>', 'reload')
-config.bind('<Ctrl-s>', 'stop')
+config.bind("<Alt-Left>", "back")
+config.bind("<Alt-Right>", "forward")
+config.bind("<Ctrl-h>", "home")
+config.bind("<Ctrl-r>", "reload")
+config.bind("<Ctrl-s>", "stop")
 
 # tabs movements
-config.bind('<Ctrl-w>', 'tab-close')
-config.bind('<Ctrl-PgDown>', 'tab-next')
-config.bind('<Ctrl-PgUp>', 'tab-prev')
-config.bind('<Ctrl-Shift-PgDown>', 'tab-move +')
-config.bind('<Ctrl-Shift-PgUp>', 'tab-move -')
-config.bind('tg', 'tab-give')
+config.bind("<Ctrl-w>", "tab-close")
+config.bind("<Ctrl-PgDown>", "tab-next")
+config.bind("<Ctrl-PgUp>", "tab-prev")
+config.bind("<Ctrl-Shift-PgDown>", "tab-move +")
+config.bind("<Ctrl-Shift-PgUp>", "tab-move -")
+config.bind("tg", "tab-give")
 
 # windows movements
-config.bind('<Ctrl-Shift-w>', 'close')
+config.bind("<Ctrl-Shift-w>", "close")
 
 # quickmarks
-config.bind('b', 'set-cmd-text -s :quickmark-load')
-config.bind('B', 'set-cmd-text -s :quickmark-load -t')
-config.bind('m', 'quickmark-save')
+config.bind("b", "set-cmd-text -s :quickmark-load")
+config.bind("B", "set-cmd-text -s :quickmark-load -t")
+config.bind("m", "quickmark-save")
 
-config.bind('dc', 'download-clear')
+config.bind("dc", "download-clear")
 
 # config
-bind_chained('<Ctrl-Shift-r>', 'message-info "Reload config"', 'config-source')
-config.bind('cIH', 'config-cycle -p -u *://*.{url:host}/* content.images ;; reload')
-config.bind('cIh', 'config-cycle -p -u *://{url:host}/* content.images ;; reload')
-config.bind('cIu', 'config-cycle -p -u {url} content.images ;; reload')
-config.bind('cPH', 'config-cycle -p -u *://*.{url:host}/* content.plugins ;; reload')
-config.bind('cPh', 'config-cycle -p -u *://{url:host}/* content.plugins ;; reload')
-config.bind('cPu', 'config-cycle -p -u {url} content.plugins ;; reload')
-config.bind('cSH', 'config-cycle -p -u *://*.{url:host}/* content.javascript.enabled ;; reload')
-config.bind('cSh', 'config-cycle -p -u *://{url:host}/* content.javascript.enabled ;; reload')
-config.bind('cSu', 'config-cycle -p -u {url} content.javascript.enabled ;; reload')
-config.bind('ch', 'back -t')
-config.bind('ciH', 'config-cycle -p -t -u *://*.{url:host}/* content.images ;; reload')
-config.bind('cih', 'config-cycle -p -t -u *://{url:host}/* content.images ;; reload')
-config.bind('ciu', 'config-cycle -p -t -u {url} content.images ;; reload')
-config.bind('cl', 'forward -t')
-config.bind('cpH', 'config-cycle -p -t -u *://*.{url:host}/* content.plugins ;; reload')
-config.bind('cph', 'config-cycle -p -t -u *://{url:host}/* content.plugins ;; reload')
-config.bind('cpu', 'config-cycle -p -t -u {url} content.plugins ;; reload')
-config.bind('csH', 'config-cycle -p -t -u *://*.{url:host}/* content.javascript.enabled ;; reload')
-config.bind('csh', 'config-cycle -p -t -u *://{url:host}/* content.javascript.enabled ;; reload')
-config.bind('csu', 'config-cycle -p -t -u {url} content.javascript.enabled ;; reload')
+bind_chained("<Ctrl-Shift-r>", 'message-info "Reload config"', "config-source")
+config.bind("cIH", "config-cycle -p -u *://*.{url:host}/* content.images ;; reload")
+config.bind("cIh", "config-cycle -p -u *://{url:host}/* content.images ;; reload")
+config.bind("cIu", "config-cycle -p -u {url} content.images ;; reload")
+config.bind("cPH", "config-cycle -p -u *://*.{url:host}/* content.plugins ;; reload")
+config.bind("cPh", "config-cycle -p -u *://{url:host}/* content.plugins ;; reload")
+config.bind("cPu", "config-cycle -p -u {url} content.plugins ;; reload")
+config.bind(
+    "cSH", "config-cycle -p -u *://*.{url:host}/* content.javascript.enabled ;; reload"
+)
+config.bind(
+    "cSh", "config-cycle -p -u *://{url:host}/* content.javascript.enabled ;; reload"
+)
+config.bind("cSu", "config-cycle -p -u {url} content.javascript.enabled ;; reload")
+config.bind("ch", "back -t")
+config.bind("ciH", "config-cycle -p -t -u *://*.{url:host}/* content.images ;; reload")
+config.bind("cih", "config-cycle -p -t -u *://{url:host}/* content.images ;; reload")
+config.bind("ciu", "config-cycle -p -t -u {url} content.images ;; reload")
+config.bind("cl", "forward -t")
+config.bind("cpH", "config-cycle -p -t -u *://*.{url:host}/* content.plugins ;; reload")
+config.bind("cph", "config-cycle -p -t -u *://{url:host}/* content.plugins ;; reload")
+config.bind("cpu", "config-cycle -p -t -u {url} content.plugins ;; reload")
+config.bind(
+    "csH",
+    "config-cycle -p -t -u *://*.{url:host}/* content.javascript.enabled ;; reload",
+)
+config.bind(
+    "csh", "config-cycle -p -t -u *://{url:host}/* content.javascript.enabled ;; reload"
+)
+config.bind("csu", "config-cycle -p -t -u {url} content.javascript.enabled ;; reload")
 
 # password_fill
-config.bind('Qa', "spawn --userscript \
-            ~/.config/qutebrowser/userscripts/password_fill")
+config.bind(
+    "Qa",
+    "spawn --userscript \
+            ~/.config/qutebrowser/userscripts/password_fill",
+)
 
 
 # config.bind('<Ctrl-s>', 'stop')
@@ -1949,12 +1975,6 @@ config.bind('Qa', "spawn --userscript \
 
 
 ## Theme
-dracula.draw.blood(c, {
-    'spacing': {
-        'vertical': 6,
-        'horizontal': 8
-    }
-})
 
-c.colors.tabs.selected.even.fg = '#ff79c6'
-c.colors.tabs.selected.odd.fg = '#ff79c6'
+c.colors.tabs.selected.even.fg = "#ff79c6"
+c.colors.tabs.selected.odd.fg = "#ff79c6"
