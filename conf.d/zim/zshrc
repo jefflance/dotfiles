@@ -122,11 +122,17 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
+
+
+#
+# nvm
+#
+source /usr/share/nvm/init-nvm.sh
+
+
+
 #
 # tmux
-#
-
-# >>> tmux initialization >>>
 #
 if [ -z "$TMUX" ]; then
     # we're not in a tmux session
@@ -157,31 +163,26 @@ if [ -z "$TMUX" ]; then
         tmux attach
     fi
 fi
-# <<< tmux initialization <<<
+
+
 
 #
 # fuzzy file search
 #
-
-# >>> fzf initialization >>>
-#
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# <<< fzf initialization <<<
+
+
 
 #
 # ocaml
 #
-
-# >>> opam configuration >>>
-#
 test -r /home/jeff/.opam/opam-init/init.zsh && . /home/jeff/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-# <<< opam configuration <<<
+
+
 
 #
 # conda
 #
-
-# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/jeff/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -194,13 +195,12 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+
+
 
 #
 # direnv
 #
-
-# >>> direnv configuration >>>
 setopt PROMPT_SUBST
 
 show_virtual_env() {
@@ -211,15 +211,15 @@ show_virtual_env() {
 PS1='$(show_virtual_env)'$PS1
 
 eval "$(direnv hook zsh)"
-# <<< direnv configuration <<<
+
+
 
 #
 # starship
 #
-
-# >>> starship >>>
 # eval "$(starship init zsh)"
-# <<< starship <<<
+
+
 
 #
 # gnome-keyring-daemon
@@ -227,14 +227,13 @@ eval "$(direnv hook zsh)"
 eval $(gnome-keyring-daemon --start) 2>/dev/null
 export SSH_AUTH_SOCK
 
+
+
 #
 # passwordstore
 #
-
-# >>> passwordstore update >>>
 if [[ $(curl -s -w "%{http_code}\n" -L "https://git.jefflance.me/" -o /dev/null) = "200" ]]; then
   echo -ne "\npasswordstore: " && pass git pull
 else
   echo -ne "\npasswordstore: serveur hors ligne"
 fi
-# <<< passwordstore update <<<
