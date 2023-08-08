@@ -5,7 +5,6 @@
 
 ## Imports
 # import helpers.bind_chained
-import themes.onedark.onedark
 
 
 ## Helpers functions
@@ -1975,6 +1974,7 @@ config.bind(
 
 
 ## Theme
+config.source("themes/onedark/onedark.py")
 
 c.colors.tabs.selected.even.fg = "#ff79c6"
 c.colors.tabs.selected.odd.fg = "#ff79c6"
