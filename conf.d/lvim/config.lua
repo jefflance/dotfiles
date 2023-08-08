@@ -92,7 +92,8 @@ lvim.builtin.which_key.mappings["L"] = {
 
 lvim.builtin.which_key.mappings["n"] = {
   name = "Notes",
-  n = { "<CMD>ZkNew { title = vim.fn.input('Titre: ') }<CR>", "Créer une nouvelle note" },
+  n = { "<CMD>ZkNew { group = vim.fn.input('Groupe: '), title = vim.fn.input('Titre: ') }<CR>",
+    "Créer une nouvelle note" },
   o = { "<CMD>ZkNotes { sort = { 'modified' } }<CR>", "Ouvrir une note" },
   O = { "<CMD>ZkTags<CR>", "Ouvrir les notes avec le tag sélectionné" },
   f = { "<CMD>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Rechercher note: ') } }<CR>",
@@ -124,7 +125,6 @@ lvim.builtin.terminal.open_mapping = "<C-t>"
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
-  "comment",
   "java",
   "javascript",
   "json",
@@ -375,16 +375,6 @@ lvim.plugins = {
       ]])
     end,
   },
-  -- -- telescope-project
-  -- {
-  --  "nvim-telescope/telescope-project.nvim",
-  --  event = "BufWinEnter",
-  --  setup = function()
-  --    vim.cmd ([[
-  --     packadd telescope.nvim
-  --   ]])
-  --  end,
-  -- },
   -- trouble
   {
     'folke/trouble.nvim',
@@ -411,7 +401,7 @@ lvim.plugins = {
         let g:vimtex_view_method = "zathura"
         let g:vimtex_quickfix_enabled = 0
         let g:vimtex_compiler_method = 'latexmk'
-        let g:vimtex_view_use_temp_files = 1
+        let g:vimtex_view_use_temp_files = 0
       ]])
     end,
   },
