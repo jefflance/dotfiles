@@ -232,5 +232,9 @@ export SSH_AUTH_SOCK
 #
 
 # >>> passwordstore update >>>
-echo -ne "\npasswordstore: " && pass git pull
+if [[ $(curl -s -w "%{http_code}\n" -L "https://git.jefflance.me/" -o /dev/null) = "200" ]]; then
+  echo -ne "\npasswordstore: " && pass git pull
+else
+  echo -ne "\npasswordstore: serveur hors ligne"
+fi
 # <<< passwordstore update <<<

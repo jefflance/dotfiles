@@ -534,5 +534,5 @@ progressbar_elapsed_color = red
 #
 #window_border_color = green
 #
-#active_window_border = red
+# active_window_border = red
 #

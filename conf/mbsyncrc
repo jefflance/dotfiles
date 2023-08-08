@@ -101,7 +101,7 @@ Far :jeff.lance@mala.fr-remote:"Archive"
 Near :jeff.lance@mala.fr-local:archive
 Pattern *
 Create Near
-MaxMessages 1500 
+MaxMessages 1500
 Sync New Delete Push
 SyncState *
 Expunge Both
