@@ -2,6 +2,10 @@
 #
 # Uncomment the properties you want to customize.
 
+# NOTEBOOK SETTINGS
+[notebook]
+dir = "~/Notes"
+
 # NOTE SETTINGS
 #
 # Defines the default options used when generating new notes.
@@ -12,23 +16,25 @@
 language = "fr"
 
 # The default title used for new note, if no `--title` flag is provided.
-#default-title = "Untitled"
+default-title = "Untitled"
 
 # Template used to generate a note's filename, without extension.
 #filename = "{{id}}"
+filename = "{{id}}-{{slug title}}"
+# filename = "{{format-date now}}-{{slug title}}"
 
 # The file extension used for the notes.
-#extension = "md"
+extension = "md"
 
 # Template used to generate a note's content.
 # If not an absolute path, it is relative to .zk/templates/
 template = "default.md"
 
 # Path globs ignored while indexing existing notes.
-#ignore = [
-#    "drafts/*",
-#	"log.md"
-#]
+ignore = [
+  "drafts/*",
+  "log.md"
+]
 
 # Configure random ID generation.
 
@@ -38,13 +44,13 @@ template = "default.md"
 #   * alphanum: letters + numbers
 #   * hex: hexadecimal, from a to f and 0 to 9
 #   * custom string: will use any character from the provided value
-#id-charset = "alphanum"
+id-charset = "alphanum"
 
 # Length of the generated IDs.
-#id-length = 4
+id-length = 4
 
 # Letter case for the random IDs, among lower, upper or mixed.
-#id-case = "lower"
+id-case = "lower"
 
 
 # EXTRA VARIABLES
@@ -67,12 +73,17 @@ author = "Jeff Lance"
 # the group. This can be useful to quickly declare a group by the name of the
 # directory it applies to.
 
-#[group."<NAME>"]
-#paths = ["<DIR1>", "<DIR2>"]
-#[group."<NAME>".note]
-#filename = "{{format-date now}}"
-#[group."<NAME>".extra]
-#key = "value"
+[group."journal"]
+paths = ["journal/daily"]
+filename = "{{format-date now}}"
+extension = "md"
+template = "daily.md"
+
+[group."travail"]
+filename = "{{slug title}}_{{format-date now}}"
+
+[group."wiki"]
+filename = "{{format-date now}}_{{slug title}}"
 
 
 # MARKDOWN SETTINGS
@@ -113,7 +124,7 @@ pager = "less -FIRX"
 
 # bat is a great tool to render Markdown document with syntax highlighting.
 #https://github.com/sharkdp/bat
-# fzf-preview = "bat -p --color always {-1}"
+fzf-preview = "bat -p --color always {-1}"
 
 
 # LSP
@@ -151,7 +162,7 @@ dead-link = "error"
 # Matches the notes created the last two weeks. For example:
 #    $ zk list recents --limit 15
 #    $ zk edit recents --interactive
-#recents = "--sort created- --created-after 'last two weeks'"
+recents = "--sort created- --created-after 'last two weeks'"
 
 
 # COMMAND ALIASES
@@ -167,7 +178,14 @@ dead-link = "error"
 # Here are a few aliases to get you started.
 
 # Shortcut to a command.
-ls = "zk list $@"
+l = "zk list $@"
+c = "zk conf $@"
+e = "zk edit $@"
+el = "zk editlast $@"
+h = "zk hist $@"
+n = "zk new $@"
+nt = 'zk new --title "$*"'
+r = "zk recent $@"
 
 # Default flags for an existing command.
 list = "zk list --quiet $@"
@@ -193,4 +211,13 @@ lucky = "zk list --quiet --format full --sort random --limit 1"
 hist = "zk list --format path --delimiter0 --quiet $@ | xargs -t -0 git log --patch --"
 
 # Edit this configuration file.
-conf = '$EDITOR "$XDG_CONFIG_HOME/.zk/config.toml"'
+conf = '$EDITOR "${HOME}/.config/zk/config.toml"'
+
+# Create a new daily journal note.
+jour = 'zk new -g journal --no-input "$ZK_NOTEBOOK_DIR/journal/daily"'
+
+# Create a new work note.
+trav = 'zk new -g travail -t "$*" "$ZK_NOTEBOOK_DIR/travail"'
+
+# Create a new wiki note.
+wiki = 'zk new -g wiki -t "$*" "$ZK_NOTEBOOK_DIR/wiki"'
