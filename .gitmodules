@@ -2,9 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "conf.d/qutebrowser/dracula"]
-	path = conf.d/qutebrowser/dracula
-	url = https://github.com/dracula/qutebrowser-dracula-theme.git
 [submodule "dotbot_plugins/dotbot-yay"]
 	path = dotbot_plugins/dotbot-yay
 	url = https://github.com/oxson/dotbot-yay
