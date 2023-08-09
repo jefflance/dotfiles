@@ -3,10 +3,12 @@
 ###########################
 
 # where auxiliary files are to be written (don't work with lualatex)
-$aux_dir = "build";
+# $aux_dir = "aux";
 
 # where output files are to be written
 $out_dir = "build";
+
+$emulate_aux = 1;
 
 # files to be deleted during a cleanup operation
 $clean_ext = "nav pre snm synctex.gz bbl vrb";
@@ -27,3 +29,15 @@ $pdflatex = "lualatex -shell-escape -synctex=1 -interaction=nonstopmode -halt-on
 $pdf_mode = 4;
 $lualatex = "lualatex -shell-escape -synctex=1 -interaction=nonstopmode -halt-on-error %O %S";
 
+# sub asy {return system("asy -o '$aux_dir'/ '$_[0]'");}
+# sub asy {return system("asy -o '$out_dir'/ '$_[0]'");}
+sub asy {return system("asy '$_[0]'");}
+add_cus_dep("asy","eps",0,"asy");
+add_cus_dep("asy","pdf",0,"asy");
+add_cus_dep("asy","tex",0,"asy");
+
+END{
+  Run_subst('rm ./*.pdf ./*.aux');
+  Run_subst('mv ./build/%A.pdf .');
+  Run_subst('rm -rf ./build');
+}
