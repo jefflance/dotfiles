@@ -20,7 +20,7 @@ lvim is the global options object
 -- lvim config
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.format_on_save.pattern = { "*.asy", "*.lua", "*.py", "*.tex", ".toml" }
+lvim.format_on_save.pattern = { "*.asy", "*.lua", "*.py", ".toml" }
 lvim.colorscheme = "onedark_dark"
 lvim.background = "dark"
 lvim.transparent_window = true
@@ -75,7 +75,8 @@ lvim.builtin.which_key.mappings["d"] = lvim.builtin.which_key.mappings[";"]
 lvim.builtin.which_key.mappings["G"] = lvim.builtin.which_key.mappings["g"]
 lvim.builtin.which_key.mappings["g"] = {}
 
-lvim.builtin.which_key.mappings["H"] = {
+lvim.builtin.which_key.mappings["H"] = lvim.builtin.which_key.mappings["h"]
+lvim.builtin.which_key.mappings["h"] = {
   name = "Header",
   H    = { "<CMD>AddHeader<CR>", "Add header to the file" },
   h    = { "<CMD>AddMinHeader<CR>", "Add minimal header to the file" },
@@ -142,7 +143,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ignore_install = { "comment" }
 lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.treesitter.rainbow.enable = true
 
@@ -398,21 +399,15 @@ lvim.plugins = {
     "lervag/vimtex",
     config = function()
       vim.cmd([[
-        let g:vimtex_view_method = "zathura"
-        let g:vimtex_quickfix_enabled = 0
-        let g:vimtex_compiler_method = 'latexmk'
-        let g:vimtex_view_use_temp_files = 0
-      ]])
+          let g:vimtex_view_method = "zathura"
+          let g:vimtex_quickfix_enabled = 0
+          let g:vimtex_compiler_method = 'latexmk'
+          let g:vimtex_view_use_temp_files = 0
+        ]])
     end,
   },
   {
-    "kdheepak/cmp-latex-symbols"
-  },
-  {
     "KeitaNakamura/tex-conceal.vim"
-  },
-  {
-    -- "SirVer/ultisnips"
   },
   -- Python management needed plugins
   {

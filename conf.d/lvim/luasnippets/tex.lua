@@ -4,7 +4,8 @@ Author            : Jeff Lance <email@jefflance.me>
 Date              : 05.08.2023 00:54:18
 Last Modified Date: 06.08.2023 12:55:15
 Last Modified By  : Jeff Lance <email@jefflance.me>
---]]--
+--]]
+--
 
 -- local get_visual = function(args, parent)
 --   if (#parent.snippet.env.LS_SELECT_RAW > 0) then
@@ -78,18 +79,53 @@ return {
   -- ),
   -- s("table",
   --   {
-	 --    t{"\\begin{tabular}{"},
-	 --    i(1,"0"),
-	 --    t{"}",""},
-	 --    d(2, table_node, {1}, {}),
-	 --    d(3, rec_table, {1}),
-	 --    t{"","\\end{tabular}"}
+  --    t{"\\begin{tabular}{"},
+  --    i(1,"0"),
+  --    t{"}",""},
+  --    d(2, table_node, {1}, {}),
+  --    d(3, rec_table, {1}),
+  --    t{"","\\end{tabular}"}
   --   }
   -- ),
   --
+  -- maths commands
+  --
+  s({ trig = "lim", dscr = "Limit" },
+    fmta(
+      [[
+        $ \lim\limits_{ <> } <> $
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    )
+  ),
+  s({ trig = "xto", dscr = "Limit" },
+    fmta(
+      [[
+        x \to <>
+      ]],
+      {
+        i(1),
+      }
+    )
+  ),
+  s({ trig = "stack", dscr = "Limit" },
+    fmta(
+      [[
+        \substack{ <> \\ <> }
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    )
+  ),
+  --
   -- environments
   --
-  s({trig="env", dscr="A LaTeX empty environment"},
+  s({ trig = "env", dscr = "A LaTeX empty environment" },
     fmt(
       [[
         \begin{<>}[<>]
@@ -107,7 +143,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="def", dscr="My LaTeX class definition environment"},
+  s({ trig = "def", dscr = "My LaTeX class definition environment" },
     fmt(
       [[
         \begin{definition}[<>]
@@ -123,7 +159,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="ppt", dscr="My LaTeX class property environment"},
+  s({ trig = "ppt", dscr = "My LaTeX class property environment" },
     fmt(
       [[
         \begin{propriete}[<>]
@@ -137,9 +173,9 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="cor", dscr="My LaTeX class corollair environment"},
+  s({ trig = "cor", dscr = "My LaTeX class corollair environment" },
     fmt(
-    [[
+      [[
         \begin{corollaire}[<>]
           <>
         \end{corollaire}
@@ -151,9 +187,9 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="thm", dscr="My LaTeX class theorem environment"},
+  s({ trig = "thm", dscr = "My LaTeX class theorem environment" },
     fmt(
-    [[
+      [[
         \begin{theoreme}[<>]
           <>
         \end{theoreme}
@@ -165,7 +201,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="dem", dscr="My LaTeX class proof environment"},
+  s({ trig = "dem", dscr = "My LaTeX class proof environment" },
     fmt(
       [[
         \begin{preuve}[<>]
@@ -179,7 +215,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="csq", dscr="My LaTeX class consequence environment"},
+  s({ trig = "csq", dscr = "My LaTeX class consequence environment" },
     fmt(
       [[
         \begin{consequence}[<>]
@@ -193,7 +229,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="rem", dscr="My LaTeX class remark environment"},
+  s({ trig = "rem", dscr = "My LaTeX class remark environment" },
     fmt(
       [[
         \begin{remarque}[<>]
@@ -207,7 +243,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="exp", dscr="My LaTeX class example environment"},
+  s({ trig = "exp", dscr = "My LaTeX class example environment" },
     fmt(
       [[
         \begin{exemple}[<>]
@@ -221,7 +257,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="met", dscr="My LaTeX class method environment"},
+  s({ trig = "met", dscr = "My LaTeX class method environment" },
     fmt(
       [[
         \begin{methode}[<>]
@@ -235,7 +271,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="app", dscr="My LaTeX class application environment"},
+  s({ trig = "app", dscr = "My LaTeX class application environment" },
     fmt(
       [[
         \begin{application}[<>]
@@ -249,7 +285,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="exe", dscr="My LaTeX class exercise environment"},
+  s({ trig = "exe", dscr = "My LaTeX class exercise environment" },
     fmt(
       [[
         \begin{exercice}[<>]
@@ -263,7 +299,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="rap", dscr="My LaTeX class recall environment"},
+  s({ trig = "rap", dscr = "My LaTeX class recall environment" },
     fmt(
       [[
         \begin{rappel}[<>]
@@ -277,7 +313,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({trig="aid", dscr="My LaTeX class help environment"},
+  s({ trig = "aid", dscr = "My LaTeX class help environment" },
     fmt(
       [[
         \begin{aide}[<>]
@@ -292,4 +328,3 @@ return {
     )
   ),
 }
-

@@ -1,10 +1,11 @@
 --[[--
-File              : ftplugin/tex.lua
+File              : conf.d/lvim/ftplugin/tex.lua
 Author            : Jeff Lance <email@jefflance.me>
 Date              : 06.08.2023 11:07:22
-Last Modified Date: 06.08.2023 11:07:22
+Last Modified Date: 08.08.2023 19:23:36
 Last Modified By  : Jeff Lance <email@jefflance.me>
---]]--
+--]]
+--
 
 
 
@@ -15,6 +16,8 @@ if not status_ok then
   return
 end
 
+-- Shortcuts
+--
 whk.register {
   ["<leader>l"] = {
     name = "LaTeX",
@@ -34,12 +37,12 @@ whk.register {
     },
     c = {
       name = "Compile",
-      c = { "<cmd>VimtexCompile<CR>", "Compile Project" },
+      c = { "<cmd>VimtexCompile<CR>", "Continuous compile project" },
       o = {
         "<cmd>VimtexCompileOutput<CR>",
         "Compile Project and Show Output",
       },
-      s = { "<cmd>VimtexCompileSS<CR>", "Compile project super fast" },
+      s = { "<cmd>VimtexCompileSS<CR>", "Single-shot compile project" },
       e = { "<cmd>VimtexCompileSelected<CR>", "Compile Selected" },
     },
     r = {
@@ -59,3 +62,17 @@ whk.register {
     },
   }
 }
+
+-- Linters
+--
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+  { command = "chktex", filetypes = { "tex" } },
+})
+
+-- Formatters
+--
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+  { command = "latexindent", filetypes = { "tex" } },
+})

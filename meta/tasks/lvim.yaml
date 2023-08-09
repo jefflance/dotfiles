@@ -1,3 +1,6 @@
+- shell:
+  - '[[ -f ${HOME}/.config/lvim/config.lua ]] && mv ${HOME}/.config/lvim/config.lua ${HOME}/.config/lvim/config.lua.bak'
+
 - link:
     ${HOME}/.config/lvim:
       glob: true
