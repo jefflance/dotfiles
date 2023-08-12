@@ -2,15 +2,14 @@
 File              : /home/jeff/.config/lvim/config.lua
 Author            : Jeff Lance <email@jefflance.me>
 Date              : 03.08.2023 16:16:54
-Last Modified Date: 04.08.2023 00:49:41
+Last Modified Date: 10.08.2023 00:57:51
 Last Modified By  : Jeff Lance <email@jefflance.me>
 
 ---
 
 lvim is the global options object
 
---]]
---
+--]]--
 
 
 
@@ -20,7 +19,7 @@ lvim is the global options object
 -- lvim config
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.format_on_save.pattern = { "*.asy", "*.lua", "*.py", ".toml" }
+lvim.format_on_save.pattern = { "*.asy", "*.py", ".toml" }
 lvim.colorscheme = "onedark_dark"
 lvim.background = "dark"
 lvim.transparent_window = true
@@ -28,6 +27,12 @@ lvim.transparent_window = true
 -- lvim.use_icons = false
 
 -- core plugins config
+-- local components = require("lvim.core.lualine.components")
+lvim.builtin.lualine.sections.lualine_a = { "mode" }
+-- lvim.builtin.lualine.sections.lualine_y = {
+--   -- components.spaces,
+--   -- components.location
+-- }
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.luasnip.enable_autosnippets = true
@@ -61,9 +66,10 @@ lvim.leader = ";"
 
 lvim.keys.insert_mode[";;"] = "<Esc>"
 
-lvim.keys.normal_mode["<C-s>"] = "<CMD>w<CR>"
-lvim.keys.normal_mode["<C-r>"] = "<CMD>redo<CR>"
-lvim.keys.normal_mode["<C-u>"] = "<CMD>undo<CR>"
+lvim.keys.normal_mode["<C-s>"] = "<CMD>w!<CR>"
+lvim.keys.normal_mode["<C-z>"] = "<CMD>undo<CR>"
+lvim.keys.normal_mode["<M-z>"] = "<CMD>redo<CR>"
+lvim.keys.normal_mode["<C-w>"] = "<CMD>BufferKill<CR>"
 lvim.keys.normal_mode["<C-[>"] = ":<<CR>"
 lvim.keys.normal_mode["<C-]>"] = ":><CR>"
 
@@ -78,8 +84,8 @@ lvim.builtin.which_key.mappings["g"] = {}
 lvim.builtin.which_key.mappings["H"] = lvim.builtin.which_key.mappings["h"]
 lvim.builtin.which_key.mappings["h"] = {
   name = "Header",
-  H    = { "<CMD>AddHeader<CR>", "Add header to the file" },
-  h    = { "<CMD>AddMinHeader<CR>", "Add minimal header to the file" },
+  h    = { "<CMD>AddHeader<CR>", "Add header to the file" },
+  m    = { "<CMD>AddMinHeader<CR>", "Add minimal header to the file" },
   lg   = { "<CMD>AddGNULicense<CR>", "Add GPLv3 License" },
   lm   = { "<CMD>AddMITLicense<CR>", "Add MIT License" },
 }
