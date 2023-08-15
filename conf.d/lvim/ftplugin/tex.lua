@@ -18,42 +18,44 @@ end
 
 -- Shortcuts
 --
--- vim.g.maplocalleader  = " "
+-- old way making the LaTeX menu appears with the LSP and Lunar one
+-- whk.register {
+--   ["<leader>L"] = {
+--     name = "LSP, Lunar, LaTeX", -- we edit the title of the L shortcut
+--   }
+-- }
+
+vim.g.maplocalleader  = " " -- we define a leader available only from tex files
 
 whk.register {
-  ["<leader>L"] = {
-    name = "LSP, Lunar, LaTeX", -- we edit the title of the L shortcut
-  }
+  ["<localleader>l"] = {} -- empties the default VimTeX menu mapping
 }
 
 whk.register {
-  ["<leader>Lx"] = {
+  ["<localleader>"] = {   -- to set a completly new using only the localleader key
     name = "LaTeX",
-    c = { "<cmd>VimtexCompileSS<CR>", "Single-shot compile project" },
-    C = { "<cmd>VimtexCompileSelected<CR>", "Compile Selected" },
-    D = { "<cmd>VimtexDocPackage<CR>", "Open Doc for package" },
-    e = { "<CMD>edit /home/jeff/.config/lvim/luasnippets/tex.lua<CR>", "Edit snippets" },
-    E = { "<cmd>VimtexErrors<CR>", "Look at the errors" },
-    I = { "<cmd>VimtexInfo<CR>", "Vimtex Info" },
-    K = {
-      name = "Clean",
-      p = { "<cmd>VimtexClean<CR>", "Clean Project" },
-      c = { "<cmd>VimtexClean<CR>", "Clean Cache" },
+    c = {
+      name = "Compile",
+      b = { "<cmd>VimtexCompileSS<CR>", "Single-shot compile project" },
+      e = { "<cmd>VimtexStop<CR>", "Stop compile" },
+      s = { "<cmd>VimtexCompileSelected<CR>", "Compile Selected" },
     },
+    d = { "<cmd>VimtexDocPackage<CR>", "Open Doc for package" },
+    e = { "<cmd>VimtexErrors<CR>", "Look at the errors" },
     m = { "<cmd>VimtexToggleMain<CR>", "Toggle Main" },
-    R = {
-      name = "Reload",
-      r = { "<cmd>VimtexReload<CR>", "Reload" },
-      s = { "<cmd>VimtexReloadState<CR>", "Reload State" },
-    },
-    s = { "<cmd>VimtexStop<CR>", "Stop compile" },
-    S = { "<cmd>VimtexStatus<CR>", "Look at the status" },
-    T = {
+    o = { "<cmd>VimtexView<CR>", "View pdf" },
+    s = { "<cmd>VimtexStatus<CR>", "Look at the status" },
+    t = {
       name = "TOC",
       o = { "<cmd>VimtexTocOpen<CR>", "Open TOC" },
       t = { "<cmd>VimtexTocToggle<CR>", "Toggle TOC" },
     },
-    v = { "<cmd>VimtexView<CR>", "View pdf" },
+    v = {
+      name = "VimTeX",
+      c = { "<CMD>edit /home/jeff/.config/lvim/ftplugin/tex.lua<CR>", "Edit configuration" },
+      s = { "<CMD>edit /home/jeff/.config/lvim/luasnippets/tex.lua<CR>", "Edit snippets" },
+      i = { "<cmd>VimtexInfo<CR>", "Vimtex Info" },
+    },
   }
 }
 
