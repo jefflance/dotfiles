@@ -8,8 +8,64 @@ Last Modified By  : Jeff Lance <email@jefflance.me>
 --
 
 
+--
+-- Helpers functions
+--
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
+
+local in_mathzone = function()
+  -- The `in_mathzone` function requires the VimTeX plugin
+  return vim.fn['vimtex#syntax#in_mathzone']() == 1
+end
+
+local in_text = function()
+  return not in_mathzone()
+end
+
+
+
+--
+-- Snippets
+--
 
 return {
+  --
+  -- text commands
+  --
+  s({ trig = "#", dscr = "Partie"},
+    fmta(
+      [[
+        \partie{<>}
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s({ trig = "##", dscr = "Sous-partie"},
+    fmta(
+      [[
+        \sspartie{<>}
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = line_begin }
+  ),
+  s({ trig = "###", dscr = "Sous-sous-partie"},
+    fmta(
+      [[
+        \ssspartie{<>}
+      ]],
+      {
+        i(1),
+      }
+    ), 
+    { condition = line_begin }
+  ),
+  --
   -- maths commands
   --
   s({ trig = "lim", dscr = "Limit" },
@@ -21,7 +77,8 @@ return {
         i(1),
         i(2),
       }
-    )
+    ),
+    {condition = in_text}
   ),
   s({ trig = "xto", dscr = "Limit" },
     fmta(
@@ -44,6 +101,29 @@ return {
       }
     )
   ),
+  --
+  -- sets
+  --
+  s({ trig = '([^%w])R', regTrig = true, wordTrig = false, dscr = "Set R" },
+    fmta(
+      [[
+        \mathbb{R}
+      ]],
+      {
+      }
+    ),
+    { condition = in_mathzone }
+  ),
+  -- s({ trig = '([^%w])R', regTrig = true, wordTrig = false, dscr = "Set R" },
+  --   fmta(
+  --     [[
+  --       $ \mathbb{R} $
+  --     ]],
+  --     {
+  --     }
+  --   ),
+  --   { condition = in_text }
+  -- ),
   --
   -- environments
   --

@@ -96,6 +96,8 @@ lvim.builtin.which_key.mappings["l"] = {}
 lvim.builtin.which_key.mappings["L"] = {
   name = "LSP, Lunar"
 }
+lvim.builtin.which_key.mappings["Lve"] = lvim.builtin.which_key.mappings["Lvc"]
+lvim.builtin.which_key.mappings["Lvc"] = {}
 
 lvim.builtin.which_key.mappings["n"] = {
   name = "Notes",
@@ -151,6 +153,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "comment" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.highlight.disable( "latex" )
 lvim.builtin.treesitter.rainbow.enable = true
 
 
