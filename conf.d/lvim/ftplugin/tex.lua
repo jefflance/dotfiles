@@ -34,23 +34,23 @@ whk.register {
 whk.register {
   ["<localleader>"] = {   -- to set a completly new using only the localleader key
     name = "LaTeX",
-    c = {
+    c = { "<cmd>VimtexCompileSS<CR>", "Single-shot compile project" },
+    C = {
       name = "Compile",
-      b = { "<cmd>VimtexCompileSS<CR>", "Single-shot compile project" },
-      e = { "<cmd>VimtexStop<CR>", "Stop compile" },
-      s = { "<cmd>VimtexCompileSelected<CR>", "Compile Selected" },
+      s = { "<cmd>VimtexStop<CR>", "Stop compile" },
+      c = { "<cmd>VimtexCompileSelected<CR>", "Compile Selected" },
     },
     d = { "<cmd>VimtexDocPackage<CR>", "Open Doc for package" },
     e = { "<cmd>VimtexErrors<CR>", "Look at the errors" },
     m = { "<cmd>VimtexToggleMain<CR>", "Toggle Main" },
     o = { "<cmd>VimtexView<CR>", "View pdf" },
     s = { "<cmd>VimtexStatus<CR>", "Look at the status" },
-    t = {
+    T = {
       name = "TOC",
       o = { "<cmd>VimtexTocOpen<CR>", "Open TOC" },
       t = { "<cmd>VimtexTocToggle<CR>", "Toggle TOC" },
     },
-    v = {
+    V = {
       name = "VimTeX",
       c = { "<CMD>edit /home/jeff/.config/lvim/ftplugin/tex.lua<CR>", "Edit configuration" },
       s = { "<CMD>edit /home/jeff/.config/lvim/luasnippets/tex.lua<CR>", "Edit snippets" },
@@ -72,3 +72,5 @@ local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
   { command = "latexindent", filetypes = { "tex" } },
 })
+
+
