@@ -20,22 +20,70 @@ push @generated_exts, "nav", "pre", "snm", "synctex.gz", "bbl", "vrb";
 
 # LaTeX processing program used when run with pdflatex option
 # i use lualatex and generate a pdf version of the document using pdflatex
-$pdf_mode = "1";
-$postscript_mode = $dvi_mode = 0;
-$pdflatex = "lualatex -shell-escape -synctex=1 -interaction=nonstopmode -halt-on-error %O %S";
+# $pdf_mode = "1";
+# $postscript_mode = $dvi_mode = 0;
+# $pdflatex = "lualatex -shell-escape -synctex=1 -interaction=nonstopmode -halt-on-error %O %S";
 
 # LaTeX processing program used when run with lualatex option
 # generate a pdf version of the document using lualatex
 $pdf_mode = 4;
+$postscript_mode = $dvi_mode = 0;
 $lualatex = "lualatex -shell-escape -synctex=1 -interaction=nonstopmode -halt-on-error %O %S";
 
-# sub asy {return system("asy -o '$aux_dir'/ '$_[0]'");}
-# sub asy {return system("asy -o '$out_dir'/ '$_[0]'");}
-sub asy {return system("asy '$_[0]'");}
-add_cus_dep("asy","eps",0,"asy");
-add_cus_dep("asy","pdf",0,"asy");
-add_cus_dep("asy","tex",0,"asy");
+# Asy compilation
+#
+# old way to compile asy through latexmk
+# sub asy {return system("asy '$_[0]'");}
+# add_cus_dep("asy","eps",0,"asy");
+# add_cus_dep("asy","pdf",0,"asy");
+# add_cus_dep("asy","tex",0,"asy");
 
+add_cus_dep("asy","eps",0,"asy2eps");
+add_cus_dep("asy","pdf",0,"asy2pdf");
+add_cus_dep("asy","tex",0,"asy2tex");
+
+sub asy2eps { return asy2x( $_[0], 'eps' ); }
+sub asy2pdf { return asy2x( $_[0], 'pdf' ); }
+sub asy2tex { return asy2x( $_[0], 'tex' ); }
+
+sub asy2x   {
+my $ret = system("asy -vv -f '$_[1]' '$_[0]' >& '$_[0].log'");
+  open( my $FH, "<", "$_[0].log" );
+  %imp = ();
+
+  while (<$FH>) {
+    if (/^(Including|Loading) .* from (.*)\s*$/) {
+      my $import = $2;
+      $imp{$import} = 1;
+    }
+    elsif ( /^error/ || /^.*\.asy: \d/ ) {
+      warn "==Message from asy: $_";
+      $ret = 1;
+    }
+    elsif ( /^kpsewhich / || /^Processing / || /^Using /
+       || /^Welcome / || /^Wrote /|| /^cd /|| /^gs /
+    ) {
+    }
+    else {
+      warn "==Message from asy: $_";
+    }
+  }
+  close $FH;
+  # For latexmk 4.48
+  rdb_set_source( $rule, keys %imp );
+  return $ret;
+}
+
+# SageTeX
+#
+add_cus_dep( 'sage', 'sout', 0, 'makesout' );
+$hash_calc_ignore_pattern{'sage'} = '^( _st_.goboom|print .SageT)';
+# $hash_calc_ignore_pattern{'sage'} = '^( _st_.goboom|print .SageT)|(_st_.current_tex_line|SageTeX paused|SageTeX unpaused)';
+sub makesout {
+  Run_subst('if [[ -f ./build/%A.sagetex.sage && ! -f ./build/%A.sagetex.sout ]]; then cd ./build ; sage %A.sagetex.sage ; cd .. ; fi');
+}
+
+# Some things to do after all the compile stuff
 END{
   Run_subst('rm ./*.pdf ./*.aux');
   Run_subst('mv ./build/%A.pdf .');
