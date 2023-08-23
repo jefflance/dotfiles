@@ -127,6 +127,21 @@ return {
   --
   -- environments
   --
+  s({ trig = "table", dscr = "My LaTeX table environment" },
+    fmta(
+      [[
+        \begin{tabular}{c|c}
+          \hline
+          \rule[-1ex]{0pt}{2.5ex} <> & <> \\
+          \hline
+        \end{tabular}
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    )
+  ),
   s({ trig = "env", dscr = "A LaTeX empty environment" },
     fmt(
       [[
