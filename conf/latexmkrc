@@ -11,9 +11,9 @@ $out_dir = "build";
 $emulate_aux = 1;
 
 # files to be deleted during a cleanup operation
-$clean_ext = "nav pre snm synctex.gz bbl vrb";
+$clean_ext = "nav pre pythontex-files-%R/* pythontex-files-%R snm synctex.gz bbl vrb";
 $clean_full_ext = "nav pre snm synctex.gz bbl vrb";
-push @generated_exts, "nav", "pre", "snm", "synctex.gz", "bbl", "vrb";
+push @generated_exts, "nav", "pre", "pytxcode", "snm", "synctex.gz", "bbl", "vrb";
 
 # default excluded files when run without any arguments
 @default_excluded_files = ("partie*.tex");
@@ -32,12 +32,6 @@ $lualatex = "lualatex -shell-escape -synctex=1 -interaction=nonstopmode -halt-on
 
 # Asy compilation
 #
-# old way to compile asy through latexmk
-# sub asy {return system("asy '$_[0]'");}
-# add_cus_dep("asy","eps",0,"asy");
-# add_cus_dep("asy","pdf",0,"asy");
-# add_cus_dep("asy","tex",0,"asy");
-
 add_cus_dep("asy","eps",0,"asy2eps");
 add_cus_dep("asy","pdf",0,"asy2pdf");
 add_cus_dep("asy","tex",0,"asy2tex");
@@ -72,6 +66,32 @@ my $ret = system("asy -vv -f '$_[1]' '$_[0]' >& '$_[0].log'");
   # For latexmk 4.48
   rdb_set_source( $rule, keys %imp );
   return $ret;
+}
+
+# PythonTeX
+#
+$pythontex = 'pythontex %O %S';
+$extra_rule_spec{'pythontex'}  = [ 'internal', '', 'mypythontex', "%Y%R.pytxcode",  "%Ypythontex-files-%R/%R.pytxmcr",    "%R", 1 ];
+
+sub mypythontex {
+   my $result_dir = $aux_dir1."pythontex-files-$$Pbase";
+   my $ret = Run_subst( $pythontex, 2 );
+   rdb_add_generated( glob "$result_dir/*" );
+   open( my $fh, "<", $$Pdest );
+   if ($fh) {
+      while (<$fh>) {
+         if ( /^%PythonTeX dependency:\s+'([^']+)';/ ) {
+	     print "Found pythontex dependency '$1'\n";
+             rdb_ensure_file( $rule, $aux_dir1.$1 );
+	 }
+      }
+      undef $fh;
+   }
+   else {
+       warn "mypythontex: I could not read '$$Pdest'\n",
+            "  to check dependencies\n";
+   }
+   return $ret;
 }
 
 # SageTeX
