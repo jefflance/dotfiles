@@ -101,7 +101,7 @@ lvim.builtin.which_key.mappings["Lvc"] = {}
 
 lvim.builtin.which_key.mappings["n"] = {
   name = "Notes",
-  n = { "<CMD>ZkNew { group = vim.fn.input('Groupe: '), title = vim.fn.input('Titre: ') }<CR>",
+  n = { "<CMD>ZkNew { dir = vim.fn.input('Groupe: '), title = vim.fn.input('Titre: ') }<CR>",
     "Créer une nouvelle note" },
   o = { "<CMD>ZkNotes { sort = { 'modified' } }<CR>", "Ouvrir une note" },
   O = { "<CMD>ZkTags<CR>", "Ouvrir les notes avec le tag sélectionné" },
