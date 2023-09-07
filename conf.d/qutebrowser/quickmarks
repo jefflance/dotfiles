@@ -1,35 +1,34 @@
 1.. ---
 Banque Populaire - https://www.rivesparis.banquepopulaire.fr/portailinternet/Pages/default.aspx
 Livry-Gargan - Espace familles https://livrygargan.portail-familles.com/livrygargan/index.html
-
 2.. ---
-Travail - ENT https://ent.iledefrance.fr/timeline/timeline
-
+ENT IdF https://ent.iledefrance.fr/timeline/timeline
+Osmose https://osmose.numerique.gouv.fr/plugins/DINUMThemePlugin/jsp/front/privateLoginOsmose.jsp?redirect=https%3A%2F%2Fosmose.numerique.gouv.fr%2Fjcms%2F
 3.. ---
 Cloud Azure - https://portal.azure.com/#home
 DAC - http://192.168.0.130/playback
-Diskstation1 - Accueil https://diskstation1.loc:5001/
-Diskstation1 - Audio https://diskstation1.loc/audio
-Diskstation1 - Squeezebox http://diskstation1.loc:9000/
-Diskstation1 - UrBackup http://diskstation1.loc:55414/
+Diskstation1 - Accueil https://diskstation1.local:5001/
+Diskstation1 - Audio https://diskstation1.local/audio
+Diskstation1 - Squeezebox http://diskstation1.local:9000/
+Diskstation1 - UrBackup http://diskstation1.local:55414/
 INA https://ina.mala.fr
 MaLa - Cloud https://cloud.mala.fr
 Thermostat - https://my.netatmo.com/app/energy
-
 4.. --
 Gandi - Manager https://id.gandi.net/fr/login?redirect=https%3A%2F%2Fid.gandi.net%2Ffr%2Fauthorize%3Fclient_id%3D56a74aae-7f20-11e5-93d5-00163e60d80f%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fadmin.gandi.net%252Fdashboard%252Fapi%252Fv5%252Flogin%26state%3D3cebeb061b
 OVH - Manager https://www.ovh.com/auth/?action=disconnect&onsuccess=https%3A%2F%2Fwww.ovh.com%2Fmanager%2Fweb%2F%23%2Fconfiguration
-
 5.. ---
+Mail - Créteil https://webmel.ac-creteil.fr/iwc_static/layout/login.html?lang=fr&3.0.1.3.0_16070513&svcs=calendar,abs,mail,c11n
 Mail - GMail mathslance https://mail.google.com/mail/u/1/#inbox
 Mail - GMail jeff.lance https://mail.google.com/mail/u/0/#inbox
 Mail - OVH https://www.ovh.com/fr/mail/
-
+Mail - Gandi https://webmail.gandi.net/SOGo/
 6.. ---
 RSI - Carte stellaire https://robertsspaceindustries.com/starmap?location=STANTON.MOONS.ARIAL&system=STANTON&camera=76.56,74.11,0.0002,0.0000567,0.0000239
 RSI - Accueil https://robertsspaceindustries.com/
 RSI - Spectrum https://robertsspaceindustries.com/spectrum/community/SC
-
 7.. ---
 Paroles https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7
-Recherche de paroles - https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7
+Recherche de paroles https://cse.google.com/cse?cx=004234001817710914369:abwpkdjsfq7
+8.. ---
+Symfony https://symfony.com/doc/6.2/the-fast-track/fr/index.html

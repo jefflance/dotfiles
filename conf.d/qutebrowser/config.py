@@ -399,6 +399,18 @@ c.backend = "webengine"
 ## Type: QtColor
 # c.colors.webpage.bg = 'white'
 
+c.colors.webpage.darkmode.algorithm = "lightness-cielab"
+c.colors.webpage.darkmode.contrast
+c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.grayscale.all = False
+c.colors.webpage.darkmode.grayscale.images = 0.0
+c.colors.webpage.darkmode.increase_text_contrast = False
+c.colors.webpage.darkmode.policy.images = "smart"
+c.colors.webpage.darkmode.policy.page = "smart"
+c.colors.webpage.darkmode.threshold.background = 0
+c.colors.webpage.darkmode.threshold.text = 256
+c.colors.webpage.preferred_color_scheme = "auto"
+
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
 ## Type: Int
@@ -482,7 +494,7 @@ c.completion.timestamp_format = "%d/%m/%Y"
 ##   - multiple-tabs: Show a confirmation if multiple tabs are opened.
 ##   - downloads: Show a confirmation if downloads are running
 ##   - never: Never show a confirmation.
-# c.confirm_quit = ['never']
+# c.confirm_quit = ['downloads', 'multiple-tabs']
 
 ## Automatically start playing `<video>` elements. Note: On Qt < 5.11,
 ## this option needs a restart and does not support URL patterns.
@@ -596,7 +608,7 @@ c.content.headers.do_not_track = True
 ## Type: String
 # c.content.headers.user_agent = None
 c.content.headers.user_agent = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/115.2"
 )
 
 ## Enable host blocking.
@@ -857,56 +869,61 @@ c.editor.encoding = "utf-8"
 
 ## Font used in the completion categories.
 ## Type: Font
-c.fonts.completion.category = "12pt Hack Bold Nerd Font Mono"
+c.fonts.completion.category = "12pt FantasqueSansMono Nerd Font Bold"
 
 ## Font used in the completion widget.
 ## Type: Font
-c.fonts.completion.entry = "12pt Hack Nerd Font Mono"
+c.fonts.completion.entry = "12pt FantasqueSansMono Nerd Font Mono"
 
 ## Font used for the debugging console.
 ## Type: QtFont
-c.fonts.debug_console = "12pt Hack Nerd Font Mono"
+c.fonts.debug_console = "12pt FantasqueSansMono Nerd Font Mono"
+
+## Default font families to use. Whenever "default_family" is used in a font setting,
+## it’s replaced with the fonts listed here. If set to an empty value,
+## a system-specific monospace default is used.
+## Type: List of Font, or Font
+## Default: empty
+c.fonts.default_family = []
+
+## Default font size to use.
+## Whenever "default_size" is used in a font setting, it’s replaced with the size listed here.
+## Valid values are either a float value with a "pt" suffix, or an integer value with a "px" suffix.
+## Type: String
+## Default: 10pt
+c.fonts.default_size = "12pt"
 
 ## Font used for the downloadbar.
 ## Type: Font
-c.fonts.downloads = "12pt Hack Nerd Font Mono"
+c.fonts.downloads = "12pt FantasqueSansMono Nerd Font Mono"
 
 ## Font used for the hints.
 ## Type: Font
-c.fonts.hints = "bold 12pt Hack Nerd Font Mono"
+c.fonts.hints = "bold 12pt FantasqueSansMono Nerd Font Mono"
 
 ## Font used in the keyhint widget.
 ## Type: Font
-c.fonts.keyhint = "12pt Hack Nerd Font Mono"
+c.fonts.keyhint = "12pt FantasqueSansMono Nerd Font Mono"
 
 ## Font used for error messages.
 ## Type: Font
-c.fonts.messages.error = "12pt Hack Nerd Font Mono"
+c.fonts.messages.error = "12pt FantasqueSansMono Nerd Font Mono"
 
 ## Font used for info messages.
 ## Type: Font
-c.fonts.messages.info = "12pt Hack Nerd Font Mono"
+c.fonts.messages.info = "12pt FantasqueSansMono Nerd Font Mono"
 
 ## Font used for warning messages.
 ## Type: Font
-c.fonts.messages.warning = "11pt Hack Nerd Font Mono"
-
-## Default monospace fonts. Whenever "monospace" is used in a font
-## setting, it's replaced with the fonts listed here.
-## Type: Font
-# c.fonts.monospace = '"Hack Nerd Font Mono", "DejaVu Sans Mono", Hack, "xos4 Terminus", Terminus, Monospace, Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.messages.warning = "12pt FantasqueSansMono Nerd Font Mono"
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = "11pt Hack Nerd Font Mono"
+c.fonts.prompts = "12pt FantasqueSansMono Nerd Font Mono"
 
 ## Font used in the statusbar.
 ## Type: Font
-c.fonts.statusbar = "12pt Hack Nerd Font Mono"
-
-## Font used in the tab bar.
-## Type: QtFont
-# c.fonts.tabs = '12pt Hack Nerd Font Mono'
+c.fonts.statusbar = "12pt FantasqueSansMono Nerd Font Mono"
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -1284,7 +1301,7 @@ c.spellcheck.languages = ["fr-FR", "en-US"]
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
-# c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
+c.statusbar.padding = {"top": 1, "bottom": 1, "left": 1, "right": 1}
 
 ## Position of the status bar.
 ## Type: VerticalPosition
@@ -1303,7 +1320,7 @@ c.spellcheck.languages = ["fr-FR", "en-US"]
 ##   - tabs: Current active tab, e.g. `2`.
 ##   - keypress: Display pressed keys when composing a vi command.
 ##   - progress: Progress bar for the current page loading.
-# c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
+c.statusbar.widgets = ["keypress", "history", "url", "scroll", "tabs", "progress"]
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
@@ -1414,15 +1431,15 @@ c.tabs.new_position.unrelated = "last"
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
-# c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
+c.tabs.padding = {"top": 15, "bottom": 15, "left": 15, "right": 15}
 
 ## Force pinned tabs to stay at fixed URL.
 ## Type: Bool
-# c.tabs.pinned.frozen = True
+c.tabs.pinned.frozen = True
 
 ## Shrink pinned tabs down to their contents.
 ## Type: Bool
-# c.tabs.pinned.shrink = True
+c.tabs.pinned.shrink = True
 
 ## Position of the tab bar.
 ## Type: Position
@@ -1449,7 +1466,7 @@ c.tabs.select_on_remove = "prev"
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-# c.tabs.show = 'always'
+c.tabs.show = "always"
 
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
@@ -1480,12 +1497,12 @@ c.tabs.select_on_remove = "prev"
 ## `{protocol}`: Protocol (http/https/...) of the current web page. *
 ## `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
-# c.tabs.title.format = '{audio}{index}: {title}'
+c.tabs.title.format = "{audio}{aligned_index}: {current_title}"
 
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.
 ## Type: FormatString
-# c.tabs.title.format_pinned = '{index}'
+c.tabs.title.format_pinned = " {audio}{aligned_index}: {current_title}"
 
 ## Width (in pixels or as percentage of the window) of the tab bar if
 ## it's vertical.
@@ -1602,6 +1619,7 @@ config.unbind("<Ctrl-Shift-w>", mode="normal")
 config.unbind("<Back>", mode="normal")
 config.unbind("<Forward>", mode="normal")
 
+config.unbind("@", mode="normal")
 config.unbind("b", mode="normal")
 config.unbind("B", mode="normal")
 config.unbind("d", mode="normal")
@@ -1611,12 +1629,13 @@ config.unbind("L", mode="normal")
 config.unbind("m", mode="normal")
 config.unbind("M", mode="normal")
 config.unbind("o", mode="normal")
+config.unbind("q", mode="normal")
 
 # global moves
 config.bind(";;", "mode-leave", mode="insert")
 config.bind(";;", "leave-mode", mode="passthrough")
 config.bind("<F5>", "reload")
-config.bind("<Ctrl-l>", "set-cmd-text -s :open")
+config.bind("<Ctrl-l>", "cmd-set-text -s :open")
 
 # in page moves
 config.bind("<Alt-Left>", "back")
@@ -1637,8 +1656,8 @@ config.bind("tg", "tab-give")
 config.bind("<Ctrl-Shift-w>", "close")
 
 # quickmarks
-config.bind("b", "set-cmd-text -s :quickmark-load")
-config.bind("B", "set-cmd-text -s :quickmark-load -t")
+config.bind("b", "cmd-set-text -s :quickmark-load")
+config.bind("B", "cmd-set-text -s :quickmark-load -t")
 config.bind("m", "quickmark-save")
 
 config.bind("dc", "download-clear")
@@ -1677,7 +1696,7 @@ config.bind("csu", "config-cycle -p -t -u {url} content.javascript.enabled ;; re
 
 # password_fill
 config.bind(
-    "Qa",
+    "qa",
     "spawn --userscript \
             ~/.config/qutebrowser/userscripts/password_fill",
 )
@@ -1688,8 +1707,8 @@ config.bind(
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
 # config.bind('.', 'repeat-command')
-# config.bind('/', 'set-cmd-text /')
-# config.bind(':', 'set-cmd-text :')
+# config.bind('/', 'cmd-set-text /')
+# config.bind(':', 'cmd-set-text :')
 # config.bind(';I', 'hint images tab')
 # config.bind(';O', 'hint links fill :open -t -r {hint-url}')
 # config.bind(';R', 'hint --rapid links window')
@@ -1745,9 +1764,9 @@ config.bind(
 # config.bind('<back>', 'back')
 # config.bind('<forward>', 'forward')
 # config.bind('=', 'zoom')
-# config.bind('?', 'set-cmd-text ?')
+# config.bind('?', 'cmd-set-text ?')
 # config.bind('@', 'run-macro')
-# config.bind('B', 'set-cmd-text -s :quickmark-load -t')
+# config.bind('B', 'cmd-set-text -s :quickmark-load -t')
 # config.bind('D', 'tab-close -o')
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
@@ -1757,7 +1776,7 @@ config.bind(
 # config.bind('L', 'forward')
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
-# config.bind('O', 'set-cmd-text -s :open -t')
+# config.bind('O', 'cmd-set-text -s :open -t')
 # config.bind('PP', 'open -t -- {primary}')
 # config.bind('Pp', 'open -t -- {clipboard}')
 # config.bind('R', 'reload -f')
@@ -1772,30 +1791,30 @@ config.bind(
 # config.bind(']]', 'navigate next')
 # config.bind('`', 'enter-mode set_mark')
 # config.bind('ad', 'download-cancel')
-# config.bind('b', 'set-cmd-text -s :quickmark-load')
+# config.bind('b', 'cmd-set-text -s :quickmark-load')
 # config.bind('cd', 'download-clear')
 # config.bind('co', 'tab-only')
 # config.bind('d', 'tab-close')
 # config.bind('f', 'hint')
 # config.bind('g$', 'tab-focus -1')
 # config.bind('g0', 'tab-focus 1')
-# config.bind('gB', 'set-cmd-text -s :bookmark-load -t')
+# config.bind('gB', 'cmd-set-text -s :bookmark-load -t')
 # config.bind('gC', 'tab-clone')
 # config.bind('gD', 'tab-give')
-# config.bind('gO', 'set-cmd-text :open -t -r {url:pretty}')
+# config.bind('gO', 'cmd-set-text :open -t -r {url:pretty}')
 # config.bind('gU', 'navigate up -t')
 # config.bind('g^', 'tab-focus 1')
 # config.bind('ga', 'open -t')
-# config.bind('gb', 'set-cmd-text -s :bookmark-load')
+# config.bind('gb', 'cmd-set-text -s :bookmark-load')
 # config.bind('gd', 'download')
 # config.bind('gf', 'view-source')
 # config.bind('gg', 'scroll-to-perc 0')
 # config.bind('gi', 'hint inputs --first')
 # config.bind('gl', 'tab-move -')
 # config.bind('gm', 'tab-move')
-# config.bind('go', 'set-cmd-text :open {url:pretty}')
+# config.bind('go', 'cmd-set-text :open {url:pretty}')
 # config.bind('gr', 'tab-move +')
-# config.bind('gt', 'set-cmd-text -s :buffer')
+# config.bind('gt', 'cmd-set-text -s :buffer')
 # config.bind('gu', 'navigate up')
 # config.bind('h', 'scroll left')
 # config.bind('i', 'enter-mode insert')
@@ -1804,15 +1823,15 @@ config.bind(
 # config.bind('l', 'scroll right')
 # config.bind('m', 'quickmark-save')
 # config.bind('n', 'search-next')
-# config.bind('o', 'set-cmd-text -s :open')
+# config.bind('o', 'cmd-set-text -s :open')
 # config.bind('pP', 'open -- {primary}')
 # config.bind('pp', 'open -- {clipboard}')
 # config.bind('q', 'record-macro')
 # config.bind('r', 'reload')
 # config.bind('sf', 'save')
-# config.bind('sk', 'set-cmd-text -s :bind')
-# config.bind('sl', 'set-cmd-text -s :set -t')
-# config.bind('ss', 'set-cmd-text -s :set')
+# config.bind('sk', 'cmd-set-text -s :bind')
+# config.bind('sl', 'cmd-set-text -s :set -t')
+# config.bind('ss', 'cmd-set-text -s :set')
 # config.bind('tIH', 'config-cycle -p -u *://*.{url:host}/* content.images ;; reload')
 # config.bind('tIh', 'config-cycle -p -u *://{url:host}/* content.images ;; reload')
 # config.bind('tIu', 'config-cycle -p -u {url} content.images ;; reload')
@@ -1835,18 +1854,18 @@ config.bind(
 # config.bind('tsu', 'config-cycle -p -t -u {url} content.javascript.enabled ;; reload')
 # config.bind('u', 'undo')
 # config.bind('v', 'enter-mode caret')
-# config.bind('wB', 'set-cmd-text -s :bookmark-load -w')
-# config.bind('wO', 'set-cmd-text :open -w {url:pretty}')
+# config.bind('wB', 'cmd-set-text -s :bookmark-load -w')
+# config.bind('wO', 'cmd-set-text :open -w {url:pretty}')
 # config.bind('wP', 'open -w -- {primary}')
-# config.bind('wb', 'set-cmd-text -s :quickmark-load -w')
+# config.bind('wb', 'cmd-set-text -s :quickmark-load -w')
 # config.bind('wf', 'hint all window')
 # config.bind('wh', 'back -w')
 # config.bind('wi', 'inspector')
 # config.bind('wl', 'forward -w')
-# config.bind('wo', 'set-cmd-text -s :open -w')
+# config.bind('wo', 'cmd-set-text -s :open -w')
 # config.bind('wp', 'open -w -- {clipboard}')
-# config.bind('xO', 'set-cmd-text :open -b -r {url:pretty}')
-# config.bind('xo', 'set-cmd-text -s :open -b')
+# config.bind('xO', 'cmd-set-text :open -b -r {url:pretty}')
+# config.bind('xo', 'cmd-set-text -s :open -b')
 # config.bind('yD', 'yank domain -s')
 # config.bind('yM', 'yank markdown -s')
 # config.bind('yP', 'yank pretty-url -s')
@@ -1976,5 +1995,5 @@ config.bind(
 ## Theme
 config.source("themes/onedark/onedark.py")
 
-c.colors.tabs.selected.even.fg = "#ff79c6"
-c.colors.tabs.selected.odd.fg = "#ff79c6"
+# c.colors.tabs.selected.even.fg = "#ff79c6"
+# c.colors.tabs.selected.odd.fg = "#ff79c6"

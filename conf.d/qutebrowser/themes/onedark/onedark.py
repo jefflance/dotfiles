@@ -4,25 +4,28 @@
 # COLORS #
 ##########
 
-# base16 colors but with variable names that 
+# base16 colors but with variable names that
 # reflect what the color is mainly used for
 
-bg_default = "#282c34"          # main shade darkest
+bg_default = "#111111"
 bg_lighter = "#353b45"
+bg_lightest = "#c8ccd4"  # main shade lightest
 bg_selection = "#3e4451"
-# "#545862"
+bg_passthrough_mode = "#56b6c2"  # teal
+bg_insert_mode = "#61afef"  # blue
+bg_warning = "#c678dd"  # purple
+fg_selection = "#98c379"
+fg_pinned = "#ee4427"
 fg_disabled = "#565c64"
 fg_default = "#abb2bf"
-# "#b6bdca"
-bg_lightest = "#c8ccd4"         # main shade lightest
-fg_error = "#e06c75"            # red
-# "#d19a66"                     # orange
-bg_hint = "#e5c07b"             # yellow
-fg_matched_text = "#98c379"     # green
-bg_passthrough_mode = "#56b6c2" # teal
-bg_insert_mode = "#61afef"      # blue
-bg_warning = "#c678dd"          # purple
+fg_error = "#e06c75"  # red
+bg_hint = "#e5c07b"  # yellow
+fg_matched_text = "#98c379"  # green
 # "#be5046"                     # dark red
+# "#282c34"          # main shade darkest
+# "#d19a66"                     # orange
+# "#b6bdca"
+# "#545862"
 
 ############
 # SETTINGS #
@@ -84,12 +87,12 @@ c.colors.contextmenu.disabled.fg = fg_disabled
 c.colors.contextmenu.menu.bg = bg_default
 
 # Foreground color of the context menu. If set to null, the Qt default is used.
-c.colors.contextmenu.menu.fg =  fg_default
+c.colors.contextmenu.menu.fg = fg_default
 
 # Background color of the context menu’s selected item. If set to null, the Qt default is used.
 c.colors.contextmenu.selected.bg = bg_selection
 
-#Foreground color of the context menu’s selected item. If set to null, the Qt default is used.
+# Foreground color of the context menu’s selected item. If set to null, the Qt default is used.
 c.colors.contextmenu.selected.fg = fg_default
 
 # Background color for the download bar.
@@ -258,7 +261,7 @@ c.colors.tabs.indicator.error = fg_error
 c.colors.tabs.odd.fg = fg_default
 
 # Background color of unselected odd tabs.
-c.colors.tabs.odd.bg = bg_lighter
+c.colors.tabs.odd.bg = bg_default
 
 # Foreground color of unselected even tabs.
 c.colors.tabs.even.fg = fg_default
@@ -267,41 +270,41 @@ c.colors.tabs.even.fg = fg_default
 c.colors.tabs.even.bg = bg_default
 
 # Background color of pinned unselected even tabs.
-c.colors.tabs.pinned.even.bg = bg_passthrough_mode
+c.colors.tabs.pinned.even.bg = bg_default
 
 # Foreground color of pinned unselected even tabs.
-c.colors.tabs.pinned.even.fg = bg_lightest
+c.colors.tabs.pinned.even.fg = fg_pinned
 
 # Background color of pinned unselected odd tabs.
-c.colors.tabs.pinned.odd.bg = fg_matched_text
+c.colors.tabs.pinned.odd.bg = bg_default
 
 # Foreground color of pinned unselected odd tabs.
-c.colors.tabs.pinned.odd.fg = bg_lightest
+c.colors.tabs.pinned.odd.fg = fg_pinned
 
 # Background color of pinned selected even tabs.
-c.colors.tabs.pinned.selected.even.bg = bg_selection
+c.colors.tabs.pinned.selected.even.bg = bg_default
 
 # Foreground color of pinned selected even tabs.
-c.colors.tabs.pinned.selected.even.fg = fg_default
+c.colors.tabs.pinned.selected.even.fg = fg_selection
 
 # Background color of pinned selected odd tabs.
-c.colors.tabs.pinned.selected.odd.bg = bg_selection
+c.colors.tabs.pinned.selected.odd.bg = bg_default
 
 # Foreground color of pinned selected odd tabs.
-c.colors.tabs.pinned.selected.odd.fg = fg_default
+c.colors.tabs.pinned.selected.odd.fg = fg_selection
 
 # Foreground color of selected odd tabs.
-c.colors.tabs.selected.odd.fg = fg_default
+c.colors.tabs.selected.odd.fg = fg_selection
 
 # Background color of selected odd tabs.
-c.colors.tabs.selected.odd.bg = bg_selection
+c.colors.tabs.selected.odd.bg = bg_default
 
 # Foreground color of selected even tabs.
-c.colors.tabs.selected.even.fg = fg_default
+c.colors.tabs.selected.even.fg = fg_selection
 
 # Background color of selected even tabs.
-c.colors.tabs.selected.even.bg = bg_selection
+c.colors.tabs.selected.even.bg = bg_default
 
 # Background color for webpages if unset (or empty to use the theme's
 # color).
-# c.colors.webpage.bg = bg_default
+c.colors.webpage.bg = bg_default
