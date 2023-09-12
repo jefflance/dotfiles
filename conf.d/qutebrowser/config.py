@@ -400,16 +400,16 @@ c.backend = "webengine"
 # c.colors.webpage.bg = 'white'
 
 c.colors.webpage.darkmode.algorithm = "lightness-cielab"
-c.colors.webpage.darkmode.contrast
+c.colors.webpage.darkmode.contrast = 0.0
 c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.grayscale.all = False
 c.colors.webpage.darkmode.grayscale.images = 0.0
-c.colors.webpage.darkmode.increase_text_contrast = False
+c.colors.webpage.darkmode.increase_text_contrast = True
 c.colors.webpage.darkmode.policy.images = "smart"
 c.colors.webpage.darkmode.policy.page = "smart"
-c.colors.webpage.darkmode.threshold.background = 0
-c.colors.webpage.darkmode.threshold.text = 256
-c.colors.webpage.preferred_color_scheme = "auto"
+c.colors.webpage.darkmode.threshold.background = 205
+c.colors.webpage.darkmode.threshold.text = 150
+c.colors.webpage.preferred_color_scheme = "dark"
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
