@@ -69,7 +69,7 @@ lvim.keys.insert_mode[";;"] = "<Esc>"
 lvim.keys.normal_mode["<C-s>"] = "<CMD>w!<CR>"
 lvim.keys.normal_mode["<C-z>"] = "<CMD>undo<CR>"
 lvim.keys.normal_mode["<M-z>"] = "<CMD>redo<CR>"
-lvim.keys.normal_mode["<C-w>"] = "<CMD>BufferKill<CR>"
+-- lvim.keys.normal_mode["<C-w>"] = "<CMD>BufferKill<CR>"
 lvim.keys.normal_mode["<C-[>"] = ":<<CR>"
 lvim.keys.normal_mode["<C-]>"] = ":><CR>"
 
@@ -274,6 +274,15 @@ lvim.plugins = {
           transparency = true,
         }
       })
+    end
+  },
+  -- languagetool
+  {
+    'dpelle/vim-grammalecte',
+    config = function ()
+      vim.cmd([[
+        let g:grammalecte_cli_py = '/usr/bin/grammalecte-cli'
+      ]])
     end
   },
   -- markdown previewer
