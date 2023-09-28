@@ -110,4 +110,5 @@
     "editor.fontFamily": "'Source Code Pro', 'Nunito Sans', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "autoHeader": {},
     "redhat.telemetry.enabled": true,
+    "arduino.useArduinoCli": true,
 }
