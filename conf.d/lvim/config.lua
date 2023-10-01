@@ -276,6 +276,10 @@ lvim.plugins = {
       })
     end
   },
+  -- gitignore
+  {
+    'benknoble/gitignore-vim',
+  },
   -- languagetool
   {
     'dpelle/vim-grammalecte',
