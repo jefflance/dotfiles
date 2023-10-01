@@ -1,4 +1,7 @@
 - link:
+    ${HOME}/.config/ranger/command.py:
+      glob: false
+      path: conf.d/ranger/command.py
     ${HOME}/.config/ranger/rc.conf:
       glob: false
       path: conf.d/ranger/rc.conf
@@ -14,4 +17,7 @@
     ${HOME}/.config/ranger/plugins:
       glob: true
       path: conf.d/ranger/plugins/*
+    ${HOME}/.config/ranger/scripts:
+      glob: true
+      path: conf.d/ranger/scripts/*
 
