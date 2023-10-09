@@ -20,7 +20,7 @@ default-title = "Untitled"
 
 # Template used to generate a note's filename, without extension.
 #filename = "{{id}}"
-filename = "{{id}}-{{slug title}}"
+filename = "{{slug title}}"
 # filename = "{{format-date now}}-{{slug title}}"
 
 # The file extension used for the notes.
@@ -58,7 +58,9 @@ id-case = "lower"
 # A dictionary of variables you can use for any custom values when generating
 # new notes. They are accessible in templates with {{extra.<key>}}
 [extra]
+
 author = "Jeff Lance"
+mail = "email@jefflance.me"
 
 
 # GROUP OVERRIDES

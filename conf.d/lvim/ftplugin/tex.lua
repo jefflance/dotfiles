@@ -33,10 +33,10 @@ whk.register {
 
 whk.register {
   ["<localleader>"] = {   -- to set a completly new using only the localleader key
-    name = "LaTeX",
+    name = " LaTeX",
     c = { "<cmd>VimtexCompileSS<CR>", "Single-shot compile project" },
     C = {
-      name = "Compile",
+      name = " Compile",
       s = { "<cmd>VimtexStop<CR>", "Stop compile" },
       c = { "<cmd>VimtexCompileSelected<CR>", "Compile Selected" },
     },
@@ -46,12 +46,12 @@ whk.register {
     o = { "<cmd>VimtexView<CR>", "View pdf" },
     s = { "<cmd>VimtexStatus<CR>", "Look at the status" },
     T = {
-      name = "TOC",
+      name = " TOC",
       o = { "<cmd>VimtexTocOpen<CR>", "Open TOC" },
       t = { "<cmd>VimtexTocToggle<CR>", "Toggle TOC" },
     },
     V = {
-      name = "VimTeX",
+      name = " VimTeX",
       c = { "<CMD>edit /home/jeff/.config/lvim/ftplugin/tex.lua<CR>", "Edit configuration" },
       s = { "<CMD>edit /home/jeff/.config/lvim/luasnippets/tex.lua<CR>", "Edit snippets" },
       i = { "<cmd>VimtexInfo<CR>", "Vimtex Info" },
