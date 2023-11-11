@@ -31,6 +31,7 @@ settings:
   content.media.video_capture:
     https://rendez-vous.renater.fr: true
   content.notifications.enabled:
+    https://my.netatmo.com: true
     https://www.forums.supertoinette.com: false
     https://www.youtube.com: false
   fonts.default_size:
