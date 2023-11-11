@@ -114,6 +114,9 @@ lvim.builtin.which_key.mappings["N"] = {
 
 lvim.builtin.which_key.mappings["o"] = { "<CMD>Telescope find_files<CR>", "Open a file" }
 
+lvim.builtin.which_key.mappings["P"] = {
+  name = " Plugins"
+}
 lvim.builtin.which_key.mappings["P"] = lvim.builtin.which_key.mappings["p"]
 lvim.builtin.which_key.mappings["p"] = { "<CMD>Telescope projects<CR>", "Projects" }
 
@@ -167,10 +170,15 @@ vim.diagnostic.config({ virtual_text = true })
 
 -- setup LSP
 local capabilities = require("lvim.lsp").common_capabilities()
-require("lvim.lsp.manager").setup("texlab", {
+require("lvim.lsp.manager").setup(
+  "texlab", {
   on_attach = require("lvim.lsp").common_on_attach,
   on_init = require("lvim.lsp").common_on_init,
   capabilities = capabilities,
+})
+
+require("lvim.lsp.manager").setup(
+  "marksman", {
 })
 
 
@@ -236,6 +244,17 @@ lvim.plugins = {
   {
     "skywind3000/asyncrun.vim",
   },
+  -- cmp addons
+  {
+    "tzachar/cmp-tabnine",
+    build = "./install.sh",
+    dependencies = "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+  },
+  {
+    "micangl/cmp-vimtex",
+    dependencies = "hrsh7th/nvim-cmp",
+  },
   -- colorschemes
   {
     'Abstract-IDE/Abstract-cs',
@@ -284,7 +303,7 @@ lvim.plugins = {
   },
   -- gitignore
   {
-    'benknoble/gitignore-vim',
+    'jefflance/vim-gitignore',
   },
   -- languagetool
   {
