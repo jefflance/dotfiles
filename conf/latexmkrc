@@ -105,7 +105,11 @@ sub makesout {
 
 # Some things to do after all the compile stuff
 END{
-  Run_subst('rm ./*.pdf ./*.aux');
+  # Need to correct the following line as it makes the deletion of all the pdf files in the current directory
+  # and this is not compatible when you have multiple tex files to compile without the same name but in the
+  # directory.
+  # Run_subst('rm ./*.pdf ./*.aux');
+  Run_subst('rm ./*.aux');
   Run_subst('mv ./build/%A.pdf .');
   Run_subst('rm -rf ./build');
 }
