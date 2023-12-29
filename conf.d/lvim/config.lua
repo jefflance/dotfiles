@@ -48,87 +48,32 @@ lvim.builtin.terminal.active = true
 -- lvim.builtin.theme.options.style = "storm"
 
 
+-- ==============================================
+-- Trying to make a modular configuration
+-- plugins
+--
+-- require("user.plugins")
 
--- variables
+
+
+-- -- functions
+-- --
+-- require("user.functions")
+
+
+
+-- keybindings
+--
+require("user.keybindings").setup()
 --
 
 
 
--- functions
+-- which_key
 --
-
-
-
--- keymappings [view all the defaults by pressing <leader>Lvk]
+require("user.whichkey").setup()
 --
-
-lvim.leader = ";"
-
-lvim.keys.insert_mode[";;"] = "<Esc>"
-
-lvim.keys.normal_mode["<C-s>"] = "<CMD>w!<CR>"
-lvim.keys.normal_mode["<C-z>"] = "<CMD>undo<CR>"
-lvim.keys.normal_mode["<M-z>"] = "<CMD>redo<CR>"
--- lvim.keys.normal_mode["<C-w>"] = "<CMD>BufferKill<CR>"
-lvim.keys.normal_mode["<C-[>"] = ":<<CR>"
-lvim.keys.normal_mode["<C-]>"] = ":><CR>"
-
--- remap neo-tree shortcut to rnvimr
-lvim.builtin.which_key.mappings["e"] = { "<CMD>RnvimrToggle<CR>", "File explorer" }
-
-lvim.builtin.which_key.mappings["d"] = lvim.builtin.which_key.mappings[";"]
-
-lvim.builtin.which_key.mappings["G"] = lvim.builtin.which_key.mappings["g"]
-lvim.builtin.which_key.mappings["g"] = {}
-
-lvim.builtin.which_key.mappings["H"] = lvim.builtin.which_key.mappings["h"]
-lvim.builtin.which_key.mappings["h"] = {
-  name = " Header",
-  h    = { "<CMD>AddHeader<CR>", "Add header to the file" },
-  m    = { "<CMD>AddMinHeader<CR>", "Add minimal header to the file" },
-  lg   = { "<CMD>AddGNULicense<CR>", "Add GPLv3 License" },
-  lm   = { "<CMD>AddMITLicense<CR>", "Add MIT License" },
-}
-
-lvim.builtin.which_key.mappings["Lv"] = lvim.builtin.which_key.mappings["L"]
-lvim.builtin.which_key.mappings["Ll"] = lvim.builtin.which_key.mappings["l"]
-lvim.builtin.which_key.mappings["l"] = {}
-lvim.builtin.which_key.mappings["L"] = {
-  name = " LSP, Lunar"
-}
-lvim.builtin.which_key.mappings["Lve"] = lvim.builtin.which_key.mappings["Lvc"]
-lvim.builtin.which_key.mappings["Lvc"] = {}
-
-lvim.builtin.which_key.mappings["n"] = { "<CMD>AdvancedNewFile<CR>", "Create a new file"}
-lvim.builtin.which_key.mappings["N"] = {
-  name = " Notes",
-  c = { "<CMD>edit /home/jeff/.config/zk/config.toml<CR>", "Edit config.toml" },
-  n = { "<CMD>ZkNew { dir = vim.fn.input('Groupe: '), title = vim.fn.input('Titre: '), date = 'now' }<CR>",
-    "Créer une nouvelle note" },
-  o = { "<CMD>ZkNotes { sort = { 'modified' } }<CR>", "Ouvrir une note" },
-  O = { "<CMD>ZkTags<CR>", "Ouvrir les notes avec le tag sélectionné" },
-  f = { "<CMD>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Rechercher note: ') } }<CR>",
-    "Rechercher une note" },
-  F = { ":'<,'>ZkMatch<CR>", "Rechercher les notes contenant la sélection" },
-}
-
-lvim.builtin.which_key.mappings["o"] = { "<CMD>Telescope find_files<CR>", "Open a file" }
-
-lvim.builtin.which_key.mappings["P"] = {
-  name = " Plugins"
-}
-lvim.builtin.which_key.mappings["P"] = lvim.builtin.which_key.mappings["p"]
-lvim.builtin.which_key.mappings["p"] = { "<CMD>Telescope projects<CR>", "Projects" }
-
-lvim.builtin.which_key.mappings["S"] = lvim.builtin.which_key.mappings["s"]
-lvim.builtin.which_key.mappings["s"] = { "<CMD>echom 'Sourcing' <BAR> source %<CR>", "Source current file" }
-
-lvim.builtin.which_key.mappings["r"] = { "<CMD>Telescope oldfiles<CR>", "Open recent file" }
-
-lvim.builtin.which_key.mappings["x"] = { "<CMD>w! <BAR> q!<CR>", "Save and quit" }
-
-lvim.builtin.which_key.mappings[";"] = {}
-lvim.builtin.terminal.open_mapping = "<C-t>"
+-- ==============================================
 
 
 
@@ -343,7 +288,7 @@ lvim.plugins = {
           }),
         },
         symbols = {
-          encode = map.gen_encode_symbols.dot('2x1'),
+        encode = map.gen_encode_symbols.dot('2x1'),
         },
         window = {
           side = 'right',
