@@ -1,0 +1,23 @@
+import = ["/home/jeff/.config/alacritty/onedarkpro.toml"]
+live_config_reload = true
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "FiraCode Nerd Font Mono"
+style = "Regular"
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "full"
+decorations_theme_variant = "Dark"
+dynamic_title = true
+opacity = 0.9
+title = "Alacritty"
