@@ -41,11 +41,20 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.terminal.active = true
 
+
+
 -- theme settings
 --
 
 -- lvim.builtin.theme.options.dim_inactive = true
 -- lvim.builtin.theme.options.style = "storm"
+
+
+
+-- variables
+--
+local home = vim.fn.expand("$HOME")
+
 
 
 -- ==============================================
@@ -188,6 +197,21 @@ lvim.plugins = {
   -- asyncrun
   {
     "skywind3000/asyncrun.vim",
+  },
+  -- chatgpt
+  {
+    "jackMort/ChatGPT.nvim",
+      event = "VeryLazy",
+      config = function()
+        require("chatgpt").setup({
+          api_key_cmd = "pass _api_keys/openai_perso-1"
+      })
+      end,
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
   },
   -- cmp addons
   {
