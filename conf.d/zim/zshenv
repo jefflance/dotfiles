@@ -7,38 +7,13 @@
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
 # }}} End configuration added by Zim install
 
-#
-# Personnal configuration directives
-#
+# >>> define PATH variable as an array
 typeset -U path
+# <<< define PATH variable as an array
 
 # >>> set PATH so it includes user's private bin if it exists >>>
 path=(~/bin ~/.local/bin $path[@])
 # <<< set PATH so it includes user's private bin if it exists <<<
-
-# >>> active gnome-keyring >>>
-# if [ -n "${DESKTOP_SESSION}" ];then
-   # eval $(gnome-keyring-daemon --start) 2>/dev/null
-   # export SSH_AUTH_SOCK
-# fi
-
-# Check if the ssh-agent is already running
-# if [ "$(ps -u $USER | grep ssh-agent | wc -l)" -lt "1" ]; then
-#   echo "$(date +%F@%T) - SSH-AGENT: Agent will be started"
-#   # Start the ssh-agent and redirect the environment variables into a file
-#   ssh-agent -s >~/.ssh/ssh-agent
-#   # Load the environment variables from the file
-#   . ~/.ssh/ssh-agent >/dev/null
-#   # Add the default key to the ssh-agent
-#   for f in ${HOME}/.ssh/*.pub; do
-#     ssh-add ${HOME}/.ssh/$(basename -s .pub $f)
-#   done
-# else
-#   echo "$(date +%F@%T) - SSH-AGENT: Agent already running"
-#   . ~/.ssh/ssh-agent >/dev/null
-# fi
-
-# <<< active gnome-keyring <<<
 
 # >>> environment variables >>>
 export BROWSER=qutebrowser
@@ -52,7 +27,7 @@ export PASSWORD_STORE_DIR="${HOME}/Private/.password-store"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=True
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
 export ZK_NOTEBOOK_DIR="${HOME}/Notes"
-# export OPENAI_API_KEY=""
+export OPENAI_API_KEY="$(pass _api_keys/openai_perso-1)"
 # <<< environment variables <<<
 
 # }}} End personnal configuration directives
