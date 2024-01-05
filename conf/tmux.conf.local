@@ -23,17 +23,20 @@ set -g history-limit 10000
 # start with mouse mode enabled
 set -g mouse on
 
-# force Vi mode
-#   really you should export VISUAL or EDITOR environment variable, see manual
-#set -g status-keys vi
-#set -g mode-keys vi
-
-# replace C-b by C-a instead of using both prefixes
+# replace C-b by C-Space instead of using both prefixes
 set -gu prefix2
-unbind C-a
-unbind C-b
-set -g prefix C-a
-bind C-a send-prefix
+set -g prefix C-Space
+bind C-Space send-prefix
+
+# colored underscores
+set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'
+
+# true-color support
+set -as terminal-overrides ',alacritty:RGB'
+
+# keybindings correction for home and end keys as i set the terminal env for tmux to alacritty
+bind-key -n Home send Escape "OH"
+bind-key -n End send Escape "OF"
 
 # move status line to top
 # set -g status-right '%Y-%m-%d %H:%M #{tmux_mode_indicator}'
@@ -66,10 +69,10 @@ set-environment -g TMUX_PLUGIN_MANAGER_PATH '$HOME/.tmux/plugins'
 set -g @tpm_plugins '             \
   tmux-plugins/tpm                \
   odedlaz/tmux-onedark-theme      \
-  # dracula/tmux                    \
   MunifTanjim/tmux-mode-indicator \
   tmux-plugins/tmux-resurrect     \
   tmux-plugins/tmux-continuum     \
+  dracula/tmux                    \
 '
 
 set -g @onedark_widgets "#(date +%s)"
@@ -94,7 +97,7 @@ if "test ! -d ~/.tmux/plugins/tpm" \
 run '~/.tmux/plugins/tpm/tpm'
 
 
-# -- start customizations -----------------------------------------------------
+# -- startup customizations -----------------------------------------------------
 #
 
 # make tmux works with ssh-agent

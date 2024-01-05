@@ -21,3 +21,8 @@ decorations_theme_variant = "Dark"
 dynamic_title = true
 opacity = 0.9
 title = "Alacritty"
+
+[keyboard]
+bindings = [
+  {key = "|", mods = "Control", chars = "\\x01\\x7c"}
+]
