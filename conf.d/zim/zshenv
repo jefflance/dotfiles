@@ -28,6 +28,7 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=True
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
 export ZK_NOTEBOOK_DIR="${HOME}/Notes"
 export OPENAI_API_KEY="$(pass _api_keys/openai_perso-1)"
+export IPINFO_API_KEY="$(pass _api_keys/ipinfo_perso-0)"
 # <<< environment variables <<<
 
 # }}} End personnal configuration directives

@@ -1,9 +1,9 @@
 # vim:et sts=2 sw=2 ft=zsh
 #
-# Display public ip information 
+# Display public ip information
 #
 
-URL="ipinfo.io?token=2a605445c3e4fe"
+URL="ipinfo.io?token=$(pass _api_keys/ipinfo_perso-0)"
 
 case "${1}" in
  (-a)
