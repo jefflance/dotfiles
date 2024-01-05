@@ -1524,7 +1524,7 @@ c.tabs.title.format_pinned = " {audio}{aligned_index}: {current_title}"
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-c.url.default_page = "https://start.duckduckgo.com/?key=5f50a4ce56d3b08a34fe92f00b9197dbbb7eee9b54c85de610279d4c30aeba46ac11ed00a02216908a49048b4f9dc5aab4ee45ac19b4396ec0e5e6c2b7a9b4a8"
+c.url.default_page = "https://start.duckduckgo.com/"
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
