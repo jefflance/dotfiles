@@ -52,11 +52,8 @@ export PASSWORD_STORE_DIR="${HOME}/Private/.password-store"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=True
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
 export ZK_NOTEBOOK_DIR="${HOME}/Notes"
+export OPENAI_API_KEY="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"
 # <<< environment variables <<<
-
-# >>> kitty completion >>>
-# __kitty_complete
-# <<< kitty completion <<<
 
 # }}} End personnal configuration directives
 
