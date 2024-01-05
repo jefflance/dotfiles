@@ -1,8 +1,0 @@
-[options]
-font = Source Code Pro 12
-font = Hack 12
-
-[colors]
-foreground = #dcdccc
-background = rgba(5, 5, 5, 0.8)
-
