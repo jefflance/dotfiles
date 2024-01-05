@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-echo "Updating/cleaning Vim plugins."
-
-source ~/.vimrc
-
-# Thanks for greywh in #vim for this tip
-vim -e -c ':PlugInstall' -c ':PlugClean' -c ':qa!'
