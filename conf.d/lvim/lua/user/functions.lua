@@ -44,7 +44,7 @@ M.xplr_toggle = function()
   local direction = "float"
 
   local xplr = Terminal:new {
-    cmd = "xplr",
+    cmd = "ranger",
     hidden = true,
     direction = direction,
     -- size = 20 | function()
