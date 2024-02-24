@@ -12,11 +12,11 @@ local M = {}
 
 M.setup = function()
   -- ============
-  -- key mappings
+  -- key mappings examples using nvim or lvim api.
   --
-  -- vim-surround shortcuts as example
   -- vim.api.nvim_set_keymap("n", "sw", "<Plug>Ysurroundiw", { noremap = true, silent = true })
   -- vim.api.nvim_set_keymap("n", "Sw", "<Plug>YSurroundiw", { noremap = true, silent = true })
+  -- lvim.keys.normal_mode["<C-t>"] = ":FloatermToggle terminal<CR>"
   --
 
   lvim.leader = ";"
@@ -28,7 +28,6 @@ M.setup = function()
   lvim.keys.normal_mode["<C-r>"] = "<CMD>redo<CR>"
   lvim.keys.normal_mode["<C-[>"] = ":<<CR>"
   lvim.keys.normal_mode["<C-]>"] = ":><CR>"
-  -- lvim.keys.normal_mode["<C-t>"] = ":FloatermToggle terminal<CR>"
 
 end
 
