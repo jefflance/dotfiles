@@ -38,8 +38,8 @@ alias rs='rsync -Pavzl'                  # rsync shortcut
 alias t='tmux'                           # tmux
 alias ta='t a -t'                        # tmux attach to a session
 alias tls='t ls'                         # tmux list sessions
-alias tvs='transcode-video --scan'       # tmux new session
 alias tn='t n -t'                        # tmux new session
+alias tvs='transcode-video --scan'       #
 alias xcolor='xcolor | xclip -i'         # xcolor
 alias yd='yt-dlp'                        # yt-dlp best download
 
