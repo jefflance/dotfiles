@@ -1,3 +1,3 @@
 " Vim filetype detection file
-" Language: Asymptote
-au BufNewFile,BufRead *.asy setfiletype asy
+" Language: asymptote
+au BufNewFile,BufRead *.asy set filetype=asy

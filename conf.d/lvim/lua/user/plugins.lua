@@ -10,10 +10,14 @@ Last Modified By  : Jeff Lance <email@jefflance.me>
 
 local M = {}
 
-M.setup = function ()
-  -- local config = require("user.plugin-configs")
+M.setup = function()
+  local configs = require("user.plugin-configs")
 
   lvim.plugins = {
+    -- abolish
+    {
+      'tpope/vim-abolish',
+    },
     -- addheader
     {
       'alpertuna/vim-header',
@@ -34,6 +38,21 @@ M.setup = function ()
     -- asyncrun
     {
       "skywind3000/asyncrun.vim",
+    },
+    -- chatgpt
+    {
+      "jackMort/ChatGPT.nvim",
+        event = "VeryLazy",
+        config = function()
+          require("chatgpt").setup({
+            api_key_cmd = "pass _api_keys/openai_perso-1"
+        })
+        end,
+        dependencies = {
+          "MunifTanjim/nui.nvim",
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim"
+        }
     },
     -- cmp addons
     {
@@ -92,6 +111,10 @@ M.setup = function ()
         })
       end
     },
+    -- floaterm
+    {
+      'voldikss/vim-floaterm',
+    },
     -- gitignore
     {
       'jefflance/vim-gitignore',
@@ -116,6 +139,64 @@ M.setup = function ()
         ]])
       end,
     },
+    -- mason
+    {
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
+      config = function()
+        local mason = require('mason-tool-installer')
+        mason.setup({
+          ensure_installed = {
+            'xo',
+            'textlint',
+            'yamllint',
+            'yq',
+            'ansible-lint',
+            'xmlformatter',
+            'typescript-language-server',
+            'tailwindcss-language-server',
+            'texlab',
+            'pyright',
+            'golines',
+            'prettier',
+            'lua-language-server',
+            'markdownlint',
+            'black',
+            'bash-language-server',
+            'golangci-lint',
+            'go-debug-adapter',
+            'editorconfig-checker',
+            'autopep8',
+            'beautysh',
+            'clangd',
+            'djlint',
+            'docker-compose-language-service',
+            'dockerfile-language-server',
+            'dot-language-server',
+            'golangci-lint-langserver',
+            'gopls',
+            'html-lsp',
+            'intelephense',
+            'jq',
+            'json-lsp',
+            'jsonlint',
+            'latexindent',
+            'lemminx',
+            'markdown-toc',
+            'marksman',
+            'perlnavigator',
+            'php-debug-adapter',
+            'twigcs',
+            'vim-language-server',
+            'yaml-language-server',
+            'yamlfix',
+          },
+          auto_update = true,
+          run_on_start = true,
+          start_delay = 3000,
+          debounce_hours = 24,
+        })
+      end
+    },
     -- minimap
     {
       'echasnovski/mini.map',
@@ -134,7 +215,7 @@ M.setup = function ()
             }),
           },
           symbols = {
-            encode = map.gen_encode_symbols.dot('2x1'),
+          encode = map.gen_encode_symbols.dot('2x1'),
           },
           window = {
             side = 'right',
@@ -193,17 +274,24 @@ M.setup = function ()
         })
       end,
     },
-    {
-      "kevinhwang91/rnvimr",
-      cmd = "RnvimrToggle",
-      config = function()
-        vim.cmd([[
-          let g:rnvimr_draw_border = 1
-          let g:rnvimr_pick_enable = 1
-          let g:rnvimr_bw_enable = 1
-        ]])
-      end,
-    },
+    -- -- rnvimr
+    -- {
+    --   "kevinhwang91/rnvimr",
+    --   cmd = "RnvimrToggle",
+    --   config = function()
+    --     vim.cmd([[
+    --       let g:rnvimr_enable_ex = 1
+    --       let g:rnvimr_enable_picker = 1
+    --       let g:rnvimr_edit_cmd = 'drop'
+    --       let g:rnvimr_draw_border = 1
+    --       let g:rnvimr_hide_gitignore = 1
+    --       " let g:rnvimr_border_attr = {'fg': 14, 'bg': 0}
+    --       let g:rnvimr_enable_bw = 1
+    --       " let g:rnvimr_shadow_winblend = 70
+    --       let g:rnvimr_ranger_cmd = ['ranger', '--cmd=set draw_borders both']
+    --     ]])
+    --   end,
+    -- },
     -- suda
     {
       'lambdalisue/suda.vim',
