@@ -29,6 +29,7 @@ c.aliases = {
     "wq": "quit --save",
     "wqa": "quit --save",
     "ddg": "open ddg",
+    "bk": "spawn --userscript buku",
 }
 
 ## Time interval (in milliseconds) between auto-saves of
@@ -402,13 +403,10 @@ c.backend = "webengine"
 c.colors.webpage.darkmode.algorithm = "lightness-cielab"
 c.colors.webpage.darkmode.contrast = 0.0
 c.colors.webpage.darkmode.enabled = True
-c.colors.webpage.darkmode.grayscale.all = False
-c.colors.webpage.darkmode.grayscale.images = 0.0
-c.colors.webpage.darkmode.increase_text_contrast = True
 c.colors.webpage.darkmode.policy.images = "smart"
 c.colors.webpage.darkmode.policy.page = "smart"
 c.colors.webpage.darkmode.threshold.background = 205
-c.colors.webpage.darkmode.threshold.text = 150
+c.colors.webpage.darkmode.threshold.foreground = 150
 c.colors.webpage.preferred_color_scheme = "dark"
 
 ## Number of commands to save in the command history. 0: no history / -1:
@@ -1655,10 +1653,10 @@ config.bind("tg", "tab-give")
 # windows movements
 config.bind("<Ctrl-Shift-w>", "close")
 
-# quickmarks
-config.bind("b", "cmd-set-text -s :quickmark-load")
-config.bind("B", "cmd-set-text -s :quickmark-load -t")
-config.bind("m", "quickmark-save")
+# # quickmarks
+# config.bind("b", "cmd-set-text -s :quickmark-load")
+# config.bind("B", "cmd-set-text -s :quickmark-load -t")
+# config.bind("m", "quickmark-save")
 
 config.bind("dc", "download-clear")
 
@@ -1698,7 +1696,7 @@ config.bind("csu", "config-cycle -p -t -u {url} content.javascript.enabled ;; re
 config.bind(
     "qa",
     "spawn --userscript \
-            ~/.config/qutebrowser/userscripts/password_fill",
+            /usr/share/qutebrowser/userscripts/password_fill",
 )
 
 
