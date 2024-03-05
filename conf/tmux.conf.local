@@ -28,6 +28,14 @@ set -as terminal-overrides ',alacritty:RGB'
 bind-key -n Home send Escape "OH"
 bind-key -n End send Escape "OF"
 
+# # swap panes
+# bind-key -r "<" swap-panes -d -t -1
+# bind-key -r ">" swap-panes -d -t +1
+
+# swap windows
+bind-key -r "<" swap-window -d -t -1
+bind-key -r ">" swap-window -d -t +1
+
 # move status line to top
 # set -g status-right '%Y-%m-%d %H:%M #{tmux_mode_indicator}'
 
@@ -61,8 +69,12 @@ set -g @dracula-show-network false
 set -g @dracula-show-powerline true
 set -g @dracula-show-battery false
 set -g @dracula-show-left-icon session
+
 set -g status-right 'Continuum status: #{continuum_status}'
 set -g @continuum-boot 'on'
+
+set -g @menus_trigger 'F1'
+set -g @menus_without_prefix 1
 
 run '~/.tmux/plugins/tpm/tpm'
 

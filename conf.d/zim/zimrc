@@ -36,16 +36,14 @@ zmodule manjaro
 zmodule jl-helper
 # sudo module
 zmodule sudo
-# z module
-zmodule https://github.com/rupa/z.git
-# zsh-kitty completion
-zmodule https://github.com/redxtech/zsh-kitty.git
 # Utility aliases and functions. Adds colour to ls, grep and less.
 zmodule utility
 # exa
 zmodule exa
 # fzf
 zmodule fzf
+# zoxide
+zmodule kiesman99/zim-zoxide
 
 # Syntx highlighting
 #
